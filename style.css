@@ -1,38 +1,146 @@
 /*-- scss:rules --*/
-/* Table styles */
 
+/* Overall page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+/* Main content area */
+.quarto-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+/* Header styling */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: #1a252f;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    border-right: 3px solid #4CAF50;
+}
+
+/* Code blocks */
+pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+code {
+    background-color: #f1f3f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Table styles (keeping your existing functionality but enhanced) */
 table {
     width: 100%;
-    border-collapse: collapse; /* Ensures borders are clear and consistent */
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Prevent wrapping in the first column of a table */
-
 table td:nth-child(1),
 table td:nth-child(2) {
     white-space: nowrap;
 }
 
 th, td {
-    padding: 10px; /* Adds some padding for better readability */
-    border: 1px solid #ddd; /* Defines clear boundaries between columns */
-    text-align: left; /* Aligns text to the left */
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey background for even rows */
+    background-color: #f8f9fa;
 }
 
 tr:nth-child(odd) {
-    background-color: #ffffff; /* White background for odd rows */
+    background-color: #ffffff;
 }
 
 th {
-    background-color: #4CAF50; /* Green background for header row */
-    color: black; /* White text color for header row */
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
 }
 
+/* Hover effect for table rows */
+tbody tr:hover {
+    background-color: #e8f5e8;
+    transition: background-color 0.2s ease;
+}
 
+/* Cards/content blocks */
+.card, .callout {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Navigation and buttons */
+.btn, button {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover, button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Your existing title meta customization */
 .quarto-title-meta-heading::before {
     content: "Due Date";
 }
@@ -47,4 +155,46 @@ th {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+/* Footer styling */
+footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid #4CAF50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quarto-container {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* Subtle animation for page load */
+.quarto-container {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
