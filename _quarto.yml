@@ -6,7 +6,7 @@ website:
   title: "BST 260: Introduction to Data Science"
   site-url: "https://datasciencelabs.github.io/2025/"
   repo-url: "https://github.com/datasciencelabs/2025"
-  repo-branch: main
+  repo-branch: master
   repo-actions: [source]
   sidebar:
     background: primary
