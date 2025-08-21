@@ -156,7 +156,7 @@ $$
 
 ```{r, echo=FALSE}
 library(dslabs) 
-mnist <- read_mnist("~/Downloads/mnist")
+mnist <- read_mnist()
 x <- mnist$train$images  
 y <- mnist$train$labels 
 ```

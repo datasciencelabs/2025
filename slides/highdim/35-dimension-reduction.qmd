@@ -876,7 +876,7 @@ We learn that:
 
 ```{r}
 #| echo: false
-if (!exists("mnist")) mnist <- dslabs::read_mnist("~/Downloads/mnist")
+if (!exists("mnist")) mnist <- dslabs::read_mnist()
 ``` 
 
 - The written digits example has 784 features.

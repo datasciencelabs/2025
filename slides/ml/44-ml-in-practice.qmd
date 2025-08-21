@@ -34,7 +34,7 @@ mnist <- read_mnist()
 library(caret)
 library(randomForest)
 library(dslabs) 
-mnist <- read_mnist("~/Downloads/mnist/") 
+mnist <- read_mnist() 
 ``` 
 
 

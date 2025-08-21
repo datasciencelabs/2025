@@ -201,9 +201,9 @@ tab <- response |> resp_body_string() |> read_csv()
 - We can use the `req_url_path_append` to add this to our request:
 
 ```{r} 
-response <- request(url) |>  
-  req_url_path_append("?$limit=100000") |>  
-  req_perform()  
+response <- request(url) |> 
+  req_url_query(.multi = "comma", `$limit` = "100000") |>
+  req_perform()
 ``` 
 
 - The CDC service returns data in csv format but a more common format used by web services is JSON.

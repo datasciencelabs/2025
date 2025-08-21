@@ -329,7 +329,7 @@ mnist <- read_mnist()
 
 ```{r, message=FALSE, warning=FALSE,echo=FALSE} 
 library(dslabs) 
-mnist <- read_mnist("~/Downloads/mnist/") 
+mnist <- read_mnist() 
 ``` 
 
 ## Preprocessing

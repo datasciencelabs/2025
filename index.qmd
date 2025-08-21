@@ -4,15 +4,15 @@ title: "BST 260 Introduction to Data Science"
 
 ## Course Information
 
-* Instructor: [Rafael A.Irizarry](https://rafalab.dfci.harvard.edu/)
-* Teaching fellows:  Corri Sept, Nikhil Vytla, and Yuan Wang
-* Location: Kresge 202A and 202B,	Harvard School of Public Health
+* Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
+* Teaching fellows:  Ava Harrington, Angela Wang, Emma Crenshaw, Jing Li
+* Location: Kresge G1,	Harvard School of Public Health
 * Date and time: Mon & Wed 9.45 - 11:15am
-* Textbooks: <https://github.com/rafalab/dsbook-part-1>, <https://github.com/rafalab/dsbook-part-2>
-* Slack: <https://bst260fall2024.slack.com/>
-* Canvas: <https://canvas.harvard.edu/courses/143922/pages/Course%20Information>
-* GitHub repo: <https://github.com/datasciencelabs/2024>
-* Remember to read the [syllabus](syllabus.qmd), [listen to SD](https://www.youtube.com/embed/aL_fP5axQV4).
+* Textbooks: [DS Book (Part 1)](https://rafalab.dfci.harvard.edu/dsbook-part-1/), [DS Book (Part 2)](https://rafalab.dfci.harvard.edu/dsbook-part-2/)
+* Slack: <https://bst260fall2025.slack.com/>
+* Canvas: <https://canvas.harvard.edu/courses/158943>
+* GitHub repo: <https://github.com/datasciencelabs/2025>
+* Remember to read the [syllabus](syllabus.qmd)
 
 ## Lectures 
 
