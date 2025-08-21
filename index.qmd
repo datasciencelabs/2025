@@ -9,7 +9,7 @@ title: "BST 260 Introduction to Data Science"
 * Location: Kresge G1,	Harvard School of Public Health
 * Date and time: Mon & Wed 9.45 - 11:15am
 * Textbooks: [DS Book (Part 1)](https://rafalab.dfci.harvard.edu/dsbook-part-1/), [DS Book (Part 2)](https://rafalab.dfci.harvard.edu/dsbook-part-2/)
-* Slack: <https://bst260fall2025.slack.com/>
+* Slack: <https://bst-260-f25-7j2.slack.com/>
 * Canvas: <https://canvas.harvard.edu/courses/158943>
 * GitHub repo: <https://github.com/datasciencelabs/2025>
 * Remember to read the [syllabus](syllabus.qmd)

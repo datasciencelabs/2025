@@ -1,14 +1,10 @@
 project:
   type: website
   output-dir: docs
-  # This section explicitly tells Quarto to copy these files to the output directory
-  resources: 
-    - "style.css"
-    - "images/" # Also good practice to list other resource folders
 
 website:
   title: "BST 260: Introduction to Data Science"
-  site-url: "https://datasciencelabs.github.io/2025/" # Use https and trailing slash
+  site-url: "https://datasciencelabs.github.io/2025/"
   repo-url: "https://github.com/datasciencelabs/2025"
   repo-branch: main
   repo-actions: [source]
@@ -36,7 +32,8 @@ website:
     
 format:
   html:
-    css: style.scss 
+    theme: none  # ← NO THEME, just our CSS
+    css: style.css
     toc: true
 
 editor: source
