@@ -586,7 +586,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-21 13:10:07 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-21 17:10:07 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-21 13:59:36 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-21 17:59:36 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -600,7 +600,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 13\n\nnow() |&gt; minute() \n\n[1] 10\n\nnow() |&gt; second() \n\n[1] 7.637107"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 13\n\nnow() |&gt; minute() \n\n[1] 59\n\nnow() |&gt; second() \n\n[1] 36.31141"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1006,7 +1006,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.02647 61.95797 65.97287 70.01578 69.86152 73.14187 66.89994 72.92561\n [9] 67.10663 70.06196"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.86499 62.06990 66.11694 69.98581 70.11603 73.01727 66.99362 73.15398\n [9] 66.99263 69.90289"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -2665,14 +2665,14 @@
     "href": "slides/ml/40-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.86 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-1",
     "href": "slides/ml/40-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.996\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.995\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-2",
@@ -3484,7 +3484,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4310993 0.4929007\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4072489 0.4687511\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4251299 0.4868701\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4211528 0.4828472\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3526,7 +3526,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9467"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9483"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -6712,7 +6712,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498997\n\nsd(x_hat) \n\n[1] 0.0156665"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499314\n\nsd(x_hat) \n\n[1] 0.01550469"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10184,7 +10184,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 545630 0.827\n 2  11967 0.799\n 3 301989 0.796\n 4 853737 0.789\n 5 393290 0.780\n 6 911150 0.778\n 7 784853 0.774\n 8 452903 0.764\n 9 967884 0.764\n10 902285 0.760\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.827."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 363410 0.804\n 2 157465 0.779\n 3 667889 0.767\n 4 308989 0.767\n 5 305928 0.764\n 6 724507 0.755\n 7 155705 0.755\n 8 230260 0.752\n 9 123111 0.748\n10 550450 0.745\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.804."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10219,7 +10219,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x         1.08     0.153      7.05 0.000000352"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x         1.02     0.157      6.49 0.00000127"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11423,7 +11423,7 @@
     "href": "slides/R/05-r-basics.html#factors-3",
     "title": "R Basics",
     "section": "Factors",
-    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.00    0.01"
+    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.02    0.02"
   },
   {
     "objectID": "slides/R/05-r-basics.html#factors-can-be-confusing",
