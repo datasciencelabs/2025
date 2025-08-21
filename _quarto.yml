@@ -32,10 +32,8 @@ website:
     
 format:
   html:
-    theme: 
-     - journal
-     - style.css
+    theme: journal
+    css: style.css
     toc: true
-
 
 editor: source
