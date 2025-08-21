@@ -36,9 +36,7 @@ website:
     
 format:
   html:
-    theme: journal
-    # Use the 'css' key, which is more direct than the theme array
-    css: style.css 
+    css: style.scss 
     toc: true
 
 editor: source
