@@ -252,21 +252,21 @@
 <pre><code># A tibble: 1,000,000 × 2
     group     r
     &lt;int&gt; &lt;dbl&gt;
- 1 363410 0.804
- 2 157465 0.779
- 3 667889 0.767
- 4 308989 0.767
- 5 305928 0.764
- 6 724507 0.755
- 7 155705 0.755
- 8 230260 0.752
- 9 123111 0.748
-10 550450 0.745
+ 1 881113 0.782
+ 2  48564 0.769
+ 3 614392 0.756
+ 4 944238 0.750
+ 5 194652 0.747
+ 6 931744 0.747
+ 7 334893 0.746
+ 8 787153 0.746
+ 9  37846 0.740
+10 336268 0.740
 # ℹ 999,990 more rows</code></pre>
 </div>
 </div>
 <ul>
-<li>We see a maximum correlation of 0.804.</li>
+<li>We see a maximum correlation of 0.782.</li>
 </ul>
 </section>
 <section id="spurious-correlation-4" class="slide level2">
@@ -307,7 +307,7 @@
 <pre><code># A tibble: 1 × 5
   term  estimate std.error statistic    p.value
   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 x         1.02     0.157      6.49 0.00000127</code></pre>
+1 x        0.776     0.129      6.02 0.00000387</code></pre>
 </div>
 </div>
 </section>
@@ -968,7 +968,7 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("http:\/\/datasciencelabs\.github\.io\/2025");
+            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

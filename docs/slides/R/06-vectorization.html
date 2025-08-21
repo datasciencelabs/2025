@@ -270,8 +270,8 @@
 <span id="cb8-2"><a></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(heights), <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
 <span id="cb8-3"><a></a>heights <span class="sc">+</span> error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 68.86499 62.06990 66.11694 69.98581 70.11603 73.01727 66.99362 73.15398
- [9] 66.99263 69.90289</code></pre>
+<pre><code> [1] 68.94553 61.92577 65.85240 70.00335 70.05223 73.02973 66.96114 73.00921
+ [9] 66.95849 70.00739</code></pre>
 </div>
 </div>
 </section>
@@ -908,7 +908,7 @@ attr(,"scaled:scale")
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("http:\/\/datasciencelabs\.github\.io\/2025");
+            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

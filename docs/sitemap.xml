@@ -1,251 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://datasciencelabs.github.io/2025/syllabus.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/syllabus.html</loc>
     <lastmod>2025-08-21T05:43:50.598Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/16-joining-tables.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/16-joining-tables.html</loc>
     <lastmod>2025-08-21T05:43:50.595Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/14-data-apis.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/14-data-apis.html</loc>
     <lastmod>2025-08-21T15:53:40.727Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/12-dates-and-times.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/12-dates-and-times.html</loc>
     <lastmod>2025-08-21T05:43:50.591Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/10-intro-to-wrangling.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/10-intro-to-wrangling.html</loc>
     <lastmod>2025-08-21T05:43:50.588Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/R/08-ggplot2.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/R/08-ggplot2.html</loc>
     <lastmod>2025-08-21T05:43:49.827Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/R/06-vectorization.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/R/06-vectorization.html</loc>
     <lastmod>2025-08-21T05:43:49.823Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/productivity/04-git.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/productivity/04-git.html</loc>
     <lastmod>2025-08-21T05:43:50.586Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/productivity/02-rstudio.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/productivity/02-rstudio.html</loc>
     <lastmod>2025-08-21T05:43:50.583Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/prob/21-inference-foundations.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/prob/21-inference-foundations.html</loc>
     <lastmod>2025-08-21T05:43:50.506Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/other-topics/46-shiny.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/other-topics/46-shiny.html</loc>
     <lastmod>2025-08-21T05:43:50.495Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/44-ml-in-practice.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/44-ml-in-practice.html</loc>
     <lastmod>2025-08-21T06:42:07.125Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/42-caret.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/42-caret.html</loc>
     <lastmod>2025-08-21T06:42:08.923Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/40-knn.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/40-knn.html</loc>
     <lastmod>2025-08-21T07:06:54.670Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/38-conditionals.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/38-conditionals.html</loc>
     <lastmod>2025-08-21T05:43:50.449Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/36-intro-ml.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/36-intro-ml.html</loc>
     <lastmod>2025-08-21T05:43:50.433Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/linear-models/30-multivariate-regression.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/linear-models/30-multivariate-regression.html</loc>
     <lastmod>2025-08-21T05:43:50.428Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/linear-models/28-intro-to-linear-models.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/linear-models/28-intro-to-linear-models.html</loc>
     <lastmod>2025-08-21T05:43:50.423Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/26-bayes.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/26-bayes.html</loc>
     <lastmod>2025-08-21T05:43:50.361Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/24-confidence-intervals.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/24-confidence-intervals.html</loc>
     <lastmod>2025-08-21T05:43:50.358Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/22-intro-inference.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/22-intro-inference.html</loc>
     <lastmod>2025-08-21T05:43:50.356Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/highdim/34-distance.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/highdim/34-distance.html</loc>
     <lastmod>2025-08-21T06:42:10.479Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/highdim/32-linear-algebra-intro.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/highdim/32-linear-algebra-intro.html</loc>
     <lastmod>2025-08-21T05:43:49.948Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/dataviz/18-distributions.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/dataviz/18-distributions.html</loc>
     <lastmod>2025-08-21T05:43:49.835Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/00-intro.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/00-intro.html</loc>
     <lastmod>2025-08-21T05:43:49.819Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-10-ml.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-10-ml.html</loc>
     <lastmod>2025-08-21T05:43:49.807Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-08-linear-models.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-08-linear-models.html</loc>
     <lastmod>2025-08-21T05:43:49.802Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-06-prob.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-06-prob.html</loc>
     <lastmod>2025-08-21T05:43:49.799Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-04-wrangling.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-04-wrangling.html</loc>
     <lastmod>2025-08-21T05:43:49.795Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-02-r-vectorization.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-02-r-vectorization.html</loc>
     <lastmod>2025-08-21T05:43:49.792Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/index.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/index.html</loc>
     <lastmod>2025-08-21T16:19:32.396Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/final-project.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/final-project.html</loc>
     <lastmod>2025-08-21T05:43:49.778Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-01-unix-quarto.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-01-unix-quarto.html</loc>
     <lastmod>2025-08-21T05:43:49.790Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-03-tidyverse.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-03-tidyverse.html</loc>
     <lastmod>2025-08-21T05:43:49.794Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-05-dataviz.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-05-dataviz.html</loc>
     <lastmod>2025-08-21T05:43:49.797Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-07-election.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-07-election.html</loc>
     <lastmod>2025-08-21T05:43:49.800Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets/pset-09-matrices.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets/pset-09-matrices.html</loc>
     <lastmod>2025-08-21T05:43:49.805Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/psets.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/psets.html</loc>
     <lastmod>2025-08-21T05:43:49.787Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/dataviz/17-dataviz-principles.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/dataviz/17-dataviz-principles.html</loc>
     <lastmod>2025-08-21T05:43:49.832Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/dataviz/19-dataviz-in-practice.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/dataviz/19-dataviz-in-practice.html</loc>
     <lastmod>2025-08-21T05:43:49.837Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/highdim/33-matrices-in-R.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/highdim/33-matrices-in-R.html</loc>
     <lastmod>2025-08-21T06:36:56.632Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/highdim/35-dimension-reduction.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/highdim/35-dimension-reduction.html</loc>
     <lastmod>2025-08-21T06:32:47.926Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/23-parameters-estimates.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/23-parameters-estimates.html</loc>
     <lastmod>2025-08-21T05:43:50.357Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/25-models.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/25-models.html</loc>
     <lastmod>2025-08-21T05:43:50.360Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/inference/27-hierarchical-models.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/inference/27-hierarchical-models.html</loc>
     <lastmod>2025-08-21T05:43:50.362Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/linear-models/29-regression.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/linear-models/29-regression.html</loc>
     <lastmod>2025-08-21T05:43:50.425Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/linear-models/31-treatment-effect-models.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/linear-models/31-treatment-effect-models.html</loc>
     <lastmod>2025-08-21T05:43:50.430Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/37-evaluation-metrics.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/37-evaluation-metrics.html</loc>
     <lastmod>2025-08-21T05:43:50.434Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/39-smoothing.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/39-smoothing.html</loc>
     <lastmod>2025-08-21T05:43:50.450Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/41-resampling-methods.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/41-resampling-methods.html</loc>
     <lastmod>2025-08-21T05:43:50.454Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/ml/43-algorithms.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/ml/43-algorithms.html</loc>
     <lastmod>2025-08-21T05:43:50.476Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/other-topics/45-association-not-causation.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/other-topics/45-association-not-causation.html</loc>
     <lastmod>2025-08-21T05:43:50.493Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/prob/20-intro-to-prob.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/prob/20-intro-to-prob.html</loc>
     <lastmod>2025-08-21T05:43:50.503Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/productivity/01-unix.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/productivity/01-unix.html</loc>
     <lastmod>2025-08-21T05:43:50.582Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/productivity/03-quarto.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/productivity/03-quarto.html</loc>
     <lastmod>2025-08-21T05:43:50.584Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/R/05-r-basics.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/R/05-r-basics.html</loc>
     <lastmod>2025-08-21T05:43:49.822Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/R/07-tidyverse.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/R/07-tidyverse.html</loc>
     <lastmod>2025-08-21T05:43:49.826Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/R/09-tidyr.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/R/09-tidyr.html</loc>
     <lastmod>2025-08-21T05:43:49.829Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/11-importing-files.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/11-importing-files.html</loc>
     <lastmod>2025-08-21T05:43:50.589Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/13-locales.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/13-locales.html</loc>
     <lastmod>2025-08-21T05:43:50.592Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides/wrangling/15-web-scraping.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides/wrangling/15-web-scraping.html</loc>
     <lastmod>2025-08-21T05:43:50.594Z</lastmod>
   </url>
   <url>
-    <loc>http://datasciencelabs.github.io/2025/slides.html</loc>
+    <loc>https://datasciencelabs.github.io/2025/slides.html</loc>
     <lastmod>2025-08-21T05:43:49.816Z</lastmod>
   </url>
 </urlset>
