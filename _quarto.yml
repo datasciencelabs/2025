@@ -32,8 +32,10 @@ website:
     
 format:
   html:
-    theme: none  # ← NO THEME, just our CSS
-    css: style.css
+    theme: 
+     - journal
+     - style.css
     toc: true
+
 
 editor: source

@@ -1,5 +1,125 @@
 [
   {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "BST 260 Introduction to Data Science\nKresge 202A and 202B (HSPH)\nMonday 09:45 AM - 11:15 AM; Wednesday 09:45 AM - 11:15 AM\nLecture notes: https://datasciencelabs.github.io/2024/\nSlack workspace: https://bst260fall2024.slack.com/\nCanvas: https://canvas.harvard.edu/courses/143922",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#general-information",
+    "href": "syllabus.html#general-information",
+    "title": "Syllabus",
+    "section": "",
+    "text": "BST 260 Introduction to Data Science\nKresge 202A and 202B (HSPH)\nMonday 09:45 AM - 11:15 AM; Wednesday 09:45 AM - 11:15 AM\nLecture notes: https://datasciencelabs.github.io/2024/\nSlack workspace: https://bst260fall2024.slack.com/\nCanvas: https://canvas.harvard.edu/courses/143922",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#prerequisites",
+    "href": "syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nWe assume students have taken or are taking a probability and statistics course and have basic programming skills.\nStudents not matriculated in an HSPH Biostatistics graduate program (HDS SM60, BIO SM80 / SM60 / SM1, and CBQG SM80) will be required to score at least 90% on a basic math and programming diagnostic test to enroll in the course. If you are in a HSPH Biostatistics graduate program and you score less than 90% we will contact you to offer supplementary resource to help you be prepared for the course.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#textbooks",
+    "href": "syllabus.html#textbooks",
+    "title": "Syllabus",
+    "section": "Textbooks",
+    "text": "Textbooks\n\nIntroduction to Data Science: Data Wrangling and Visualization with R\nIntroduction to Data Science: Statistics and Prediction Algorithms Through Case Studies",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nThis course introduces the following:\n\nUNIX/Linux shell\nReproducible document preparation with RStudio, knitr, and markdown\nVersion control with git and GitHub\nR programming\nData wrangling with dplyr and data.table\nData visualization with ggplot2\n\nWe also demonstrate how the following concepts are applied in data analysis:\n\nProbability theory\nStatistical inference and modeling\nHigh-dimensional data techniques\nMachine learning\n\nWe do not cover the theory and details of these methods as they are covered in other courses.\nThroughout the course, we use motivating case studies and data analysis problem sets based on challenges similar to those you encounter in scientific research.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#weekly-course-structure",
+    "href": "syllabus.html#weekly-course-structure",
+    "title": "Syllabus",
+    "section": "Weekly Course Structure",
+    "text": "Weekly Course Structure\n\nMonday lectures: We describe the concerts, methods, and skills needed for problem sets.\nWednesday labs: We work together on problem sets.\nFriday: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#grade-distribution",
+    "href": "syllabus.html#grade-distribution",
+    "title": "Syllabus",
+    "section": "Grade Distribution",
+    "text": "Grade Distribution\n\n\n\nComponent\nWeight\n\n\n\n\n10 problem sets\n50%\n\n\nMidterm 1\n10%\n\n\nMidterm 2\n20%\n\n\nFinal project\n20%",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#problem-sets",
+    "href": "syllabus.html#problem-sets",
+    "title": "Syllabus",
+    "section": "Problem Sets",
+    "text": "Problem Sets\nProblem sets will be due every week or every other week, depending on difficulty. They will be due at 11:59 PM on the day denoted on the Problem Sets page.\nSome problem sets include open ended questions that will be difficult to answer on your own. We will be working on these together during Wednesday labs. We also offer office hours where you can get help with unanswered questions.\nProblem sets must be submitted via GitHub. Students are required to have a GitHub account and create a repository for the course. We will be providing further instructions during the first lab.\n10% of the total points for the problem sets will be deducted for every late day. Students can have a total of 4 late days without penalty during the entire semester. No need to provide a written excuse. Providing an excuse does not give you more days unless an accommodation is requested and approved by the Office of Student Affairs (this includes COVID).\nProblem set submissions need to be completely reproducible Quarto documents. If your Quarto file does not compile it will be considered a late day, and you will be notified and will need to resubmit a Quarto file that does compile. You will be deducted further late days for every day it takes for you to turn in a Quarto file that does knit. You are required to check emails that come through the Canvas system, as this the only way we will communicate problems with your problem sets.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#midterm-policy",
+    "href": "syllabus.html#midterm-policy",
+    "title": "Syllabus",
+    "section": "Midterm Policy",
+    "text": "Midterm Policy\nBoth midterms are closed book, no internet, and in-class. You are expected to complete them in 1 hour.\nQuestions will be drawn mostly or entirely from the problem sets.\nPlease make sure you can come to class on the midterm dates provided in the Key Dates table below. If you miss the exam, you will need approval from the Office of Student Affairs to receive a makeup. All make-up exams will be completely different from the in-class ones.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#final-project",
+    "href": "syllabus.html#final-project",
+    "title": "Syllabus",
+    "section": "Final Project",
+    "text": "Final Project\nFor your final project we ask that you turn in a 4-6 page report using data to answer a public health related question. You can chose from one of the following:\n\nBased on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.\nWhat was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?\n\nOptionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 25.\nYet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).\nNote: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#chatgpt-policy",
+    "href": "syllabus.html#chatgpt-policy",
+    "title": "Syllabus",
+    "section": "ChatGPT Policy",
+    "text": "ChatGPT Policy\nYou can use ChatGPT however you want. Do remember you won’t be able to use it during the midterms.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "syllabus.html#key-dates",
+    "href": "syllabus.html#key-dates",
+    "title": "Syllabus",
+    "section": "Key Dates",
+    "text": "Key Dates\n\n\n\n\n\n\n\nDate\nEvent\n\n\n\n\nSep 10\nPset 1 due\n\n\nSep 13\nPset 2 due\n\n\nOct 14\nNo class: Indigenous Peoples’ Day\n\n\nOct 16\nMidterm 1: covers material from Sep 04-Oct 11\n\n\nOct 23\nStart final project. Obtain approval if you want to do a personal project instead.\n\n\nNov 11\nNo class: Veterans’ Day\n\n\nNov 25\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nNov 27\nNo class: Thanksgiving Recess Begins\n\n\nDec 20\nFinal Project due",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
     "objectID": "slides/wrangling/16-joining-tables.html#joining-tables",
     "href": "slides/wrangling/16-joining-tables.html#joining-tables",
     "title": "Joining Tables",
@@ -466,7 +586,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-21 15:15:30 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-21 19:15:30 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-21 15:34:54 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-21 19:34:54 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -480,7 +600,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 15\n\nnow() |&gt; minute() \n\n[1] 15\n\nnow() |&gt; second() \n\n[1] 30.42003"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 15\n\nnow() |&gt; minute() \n\n[1] 34\n\nnow() |&gt; second() \n\n[1] 54.65021"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -886,7 +1006,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.14231 61.99634 66.18279 69.96836 70.03037 72.91307 66.99579 72.99006\n [9] 66.99830 69.96162"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.96207 62.10863 65.97074 69.90901 70.09274 73.03091 67.17222 72.94467\n [9] 67.01222 70.02510"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -2552,7 +2672,7 @@
     "href": "slides/ml/40-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.994\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.993\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-2",
@@ -3364,7 +3484,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.419165 0.480835\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4201589 0.4818411\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4370732 0.4989268\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4310993 0.4929007\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3406,7 +3526,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9468"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9481"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4030,6 +4150,301 @@
     "title": "Introduction",
     "section": "Let’s get started",
     "text": "Let’s get started\n\nInstall R.\nInstall RStudio.\nMake sure you have access to a terminal."
+  },
+  {
+    "objectID": "psets/pset-10-ml.html",
+    "href": "psets/pset-10-ml.html",
+    "title": "Problem set 10",
+    "section": "",
+    "text": "The data for this problem set is provided by this link: https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/pset-10-mnist.rds\nRead this object into R. For example, you can use:\n\nfn &lt;- tempfile()\ndownload.file(\"https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/pset-10-mnist.rds\", fn)\ndat &lt;- readRDS(fn)\nfile.remove(fn)\n\nThe object is a list with two components dat$train and dat$test. Use the data in dat$train to develop a machine learning algorithms to predict the labels for the images in the dat$test$images component.\nSave the your predicted labels in an object called digit_predictions. This should be a vector of integers with length nrow(dat$test$images). It is important that the digit_predictions is ordered to match the rows of dat$test$images.\nSave the object to a file called digit_predictions.rds using:\n\nsaveRDS(digit_predictions, file = \"digit_predictions.rds\")\n\nYou will submit:\n\nThe file digit_predictions.rds\nA quarto file that reproduces your analysis and provides brief explanations for your choices.\n\nIf your code reproduces the result, your grade will be your accuracy rounded up the closest integer. So,for example, if your accuracy is .993 your grade will be 100%.\nYou will have two opportunities to submit your predictions and see your accuracy before your submitting your final predictions."
+  },
+  {
+    "objectID": "psets/pset-08-linear-models.html",
+    "href": "psets/pset-08-linear-models.html",
+    "title": "Problem set 8",
+    "section": "",
+    "text": "Load the HistData package. Create a galton_height data with the father’s height and one randomly selected daughter from each family. Exclude families with no female children. Set the seed at 2007 and use the function sample_n to select the random child. You should end up with a heights dataset with two columns: father and daughter.\n\n\nlibrary(HistData)\nnames(GaltonFamilies)\nset.seed(2007)\nheights &lt;- GaltonFamilies |&gt; ## your code here\n\n\nEstimate the intercept and slope of the regression line for predicting daughter height \\(Y\\) using father height \\(X\\). Use the following regression line formula:\n\n\\[\n\\frac{\\hat{Y} - \\mu_Y}{\\sigma_Y} = \\rho \\frac{x - \\mu_x}{\\sigma_x}\n\\]\n\n## your code here\n\n\nMake a plot to confirm the regression line goes through the data.\n\n\nheights |&gt; ggplot(aes(father, daughter)) + ## your code here\n\n\nRecompute the slope and intercept coefficients, this time using lm and confirm you get the same answer as with the formula used in problem 2.\n\n\n## your code here\n\n\nNote that the interpretation of the intercept is: the height prediction for the daughter whose father is 0 inches tall. This is not a very useful interpretation. Re-run the regression but instead of father height use inches above average for each father: instead of using the \\(x_i\\)s use \\(x_i - \\bar{x}\\). What is the interpretation of the intercept now? Does the slope estimate change?\n\n\n##your code here\n\n\nWhen using the centered father heights as a predictor, is the intercept the same as the average daughter height? Check if this is the case with the values you computed and then show that mathematically this has to be the case.\n\n\n##your code here\n\nFor the next exercises install the excessmort package. For the latest version use\n\nlibrary(devtools)\ninstall_github(\"rafalab/excessmort\")\n\n\nDefine an object counts by wrangling puerto_rico_counts to 1) include data only from 2002-2017 and counts for people 60 or over. We will focus in this older subset throughout the rest of the problem set.\n\n\nlibrary(excessmort) \n\n\nUse R to determine what day of the week María made landfall in PR (September 20, 2017).\n\n\n##your code here\n\n\nRedefine the date column to be the start of the week that date is part of: in other words, round the date down to the nearest week. Use the day of the week María made landfall as the first day. So, for example, 2017-09-20, 2017-09-21, 2017-09-22 should all be rounded down to 2017-09-20, while 2017-09-19 should be rounded down to 2017-09-13. Save the resulting table in weekly_counts.\n\n\n##your code here\n\n\nNow collapse the weekly_count data frame to store only one mortality value for each week, for each sex and agegroup. To this by by redefining outcome to have the total deaths that week for each sex and agegroup. Remove weeks that have less the 7 days of data. Finally, add a column with the MMWR week. Name the resulting data frame weekly_counts.\n\n\n##your code here\n\n\nComparing mortality totals is often unfair because the two groups begin compared have different population sizes. It is particularly important we consider rates rather than totals in this dataset because the demographics in Puerto Rico changed dramatically in the last 20 years. To see this use puerto_rico_counts to plot the population sizes by age group and gender. Provide a two sentence description of what you see.\n\n\npuerto_rico_counts |&gt; ## your code here\n\n\nMake a boxplot for each MMWR week’s mortality rate based on the 2002-2016 data. Each week has 15 data points, one for each year. Then add the 2017 data as red points.\n\n\n###your code here\n\n\nNote twp things: 1) there is a strong week effect and 2) 2017 is lower than expected. Plot the yearly rates (per 1,000) for 2002-2016:\n\n\nweekly_counts |&gt; \n  filter(year(date) &lt; 2017) |&gt;\n ## your code here\n\n\nThe plot made in 14 explains why 2017 is below what is expected: there appears to be a general decrease in mortality with time. A possible explanation is that medical care is improving and people are living more healthy lives.\n\nFit a linear model to the weekly data for the 65 and older to the 2002-2016 data that accounts for:\n\nA changing population.\nThe trend observed in 12.\nThe week effect.\nAge effect.\nA sex effect.\n\nUse rate as the outcome in the model.\n\n##your code here\n\n\nNow obtain expected counts for the entire dataset, including 2017. Compute the difference between the observed count and expected count and plot the total excess death for each week. Construct a confidence interval for the excess mortality estimate for each week. Hint: use the predict function.\n\n\n##your code here\n\n\nFinally, plot the observed rates and predicted rates from the model for each agegroup and sex. Comment on how well the model fits and what you might do differently.\n\n\n##your code here"
+  },
+  {
+    "objectID": "psets/pset-06-prob.html",
+    "href": "psets/pset-06-prob.html",
+    "title": "Problem set 6",
+    "section": "",
+    "text": "Please answer each of the exercises below. For those asking for a mathematical calculation please use LaTeX to show your work.\nImportant: Make sure that your document renders in less than 5 minutes.\n\nWrite a function called same_birthday that takes a number n as an argument, randomly generates n birthdays and returns TRUE if two or more birthdays are the same. You can assume nobody is born on February 29.\n\nHint: use the functions sample, duplicated, and any.\n\nsame_birthday &lt;- function(n){ \n  ## Your code here\n} \n\n\nSuppose you are in a classroom with 50 people. If we assume this is a randomly selected group of 50 people, what is the chance that at least two people have the same birthday? Use a Monte Carlo simulation with $B=$1,000 trials based on the function same_birthday from the previous exercises.\n\n\nB &lt;- 10^3\n## Your code here\n\n\nRedo the previous exercises for several values on n to determine at what group size do the chances become greater than 50%. Set the seed at 1997.\n\n\nset.seed(1997)\ncompute_prob &lt;- function(n, B = 10^3){ \n ## Your code here\n} \n## Your code here\n\n\nThese probabilities can be computed exactly instead of relying on Monte Carlo approximations. We use the multiplication rule:\n\n\\[\n\\mbox{Pr}(n\\mbox{ different birthdays}) = 1 \\times \\frac{364}{365}\\times\\frac{363}{365} \\dots \\frac{365-n + 1}{365}\n\\]\nPlot the probabilities you obtained using Monte Carlos as a points and the exact probabilities with a red line.\nHint: use the function prod to compute the exact probabilities.\n\nexact_prob &lt;- function(n){ \n ## Your code here\n} \n## Your code here\n\n\nNote that the points don’t quite match the red line. This is because our Monte Carlos simulation was based on only 1,000 iterations. Repeat exercise 2 but for n = 23 and try B &lt;- seq(10, 250, 5)^2 number iterations. Plot the estimated probability against sqrt(b). Describe when it starts to stabilize in that the estimates are within 0.005 for the exact probability. Add horizontal lines around the exact probability \\(\\pm\\) 0.005. Note this could take several seconds to run. Set the seed to 1998.\n\n\nset.seed(1998)\nB &lt;- seq(10, 250, 5)^2\n## Your code here\n\n\nRepeat exercise 4 but use the the results of exercise 5 to select the number of iterations so that the points practically fall on the red curve.\n\nHint: If the number of iterations you chose is too large, you will achieve the correct plot but your document might not render in less than five minutes.\n\nn &lt;- seq(1,60) \n## Your code here\n\n\nIn American Roulette, with 18 red slots, 18 black slots, and 2 green slots (0 and 00), what is the probability of landing on a green slot?\n\n\\[\n\\mbox{Derivation here}\n\\]\n\nThe payout for winning on green is $17 dollars. This means that if you bet a dollar and it lands on green, you get $17. If it lands on red or black you lose your dollar. Create a sampling model using sample to simulate the random variable \\(X\\) for the Casino’s winnings.\n\n\nn &lt;- 1\n## Your code here\n\n\nNow create a random variable \\(S\\) of the Casino’s total winnings if $n = $1,000 people bet on green. Use Monte Carlo simulation to estimate the probability that the Casino loses money.\n\n\nn &lt;- 1000\n## Your code here\n\n\nWhat is the expected value of \\(X\\)?\n\n\\[\n\\mbox{Your derivation here.}\n\\]\n\nWhat is the standard error of \\(X\\)?\n\n\\[\n\\mbox{Your derivation here.}\n\\]\n\nWhat is the expected value of \\(S\\)? Does the Monte Carlo simulation confirm this?\n\n\\[\n\\mbox{Your dereviation here}\n\\]\n\n## Your code here\n\n\nWhat is the standard error of \\(S\\)? Does the Monte Carlos simulation confirm this?\n\n\\[\n\\mbox{Your derivation here.}\n\\]\n\n## Your code here\n\n\nUse data visualization to convince yourself that the distribution of \\(S\\) is approximately normal. Make a histogram and a QQ-plot of standardized values of \\(S\\). The QQ-plot should be on the identity line.\n\n\n## Your code here\n\n\nNotice that the normal approximation is slightly off for the tails of the distribution. What would make this better? Increasing the number of people playing \\(n\\) or the number of Monte Carlo iterations \\(B\\)?\n\nAnswer here\n\nNow approximate the probability estimated using CLT. Does it agree with the Monte Carlo simulation?\n\n\\[\n\\mbox{Your derivation here.}\n\\]\n\n## Your code here\n\n\nHow many people \\(n\\) must bet on green for the Casino to reduce the probability of losing money to 1%. Check your answer with a Monte Carlo simulation.\n\n\\[\n\\mbox{Your derivation here.}\n\\]\n\n## Your code here"
+  },
+  {
+    "objectID": "psets/pset-04-wrangling.html",
+    "href": "psets/pset-04-wrangling.html",
+    "title": "Problem set 4",
+    "section": "",
+    "text": "In the next problem set, we plan to explore the relationship between COVID-19 death rates and vaccination rates across US states by visually examining their correlation. This analysis will involve gathering COVID-19 related data from the CDC’s API and then extensively processing it to merge the various datasets. Since the population sizes of states vary significantly, we will focus on comparing rates rather than absolute numbers. To facilitate this, we will also source population data from the US Census to accurately calculate these rates.\nIn this problem set we will learn how to extract and wrangle data from the data US Census and CDC APIs.\n\nGet an API key from the US Census at https://api.census.gov/data/key_signup.html. You can’t share this public key. But your code has to run on a TFs computer. Assume the TF will have a file in their working directory named census-key.R with the following one line of code:\n\ncensus_key &lt;- \"A_CENSUS_KEY_THAT_WORKS\"\nWrite a first line of code for your problem set that defines census_key by running the code in the file census-key.R.\n\n## Your code here\n\n\nThe US Census API User Guide provides details on how to leverage this valuable resource. We are interested in vintage population estimates for years 2021 and 2022. From the documentation we find that the endpoint is:\n\n\nurl &lt;- \"https://api.census.gov/data/2021/pep/population\"\n\nUse the httr2 package to construct the following GET request.\nhttps://api.census.gov/data/2021/pep/population?get=POP_2020,POP_2021,NAME&for=state:*&key=YOURKEYHERE\nCreate an object called request of class httr2_request with this URL as an endpoint. Hint: Print out request to check that the URL matches what we want.\n\nlibrary(httr2)\n#request &lt;- \n\n\nMake a request to the US Census API using the request object. Save the response to and object named response. Check the response status of your request and make sure it was successful. You can learn about status codes here.\n\n\n#response &lt;- \n\n\nUse a function from the httr2 package to determine the content type of your response.\n\n\n# Your code here\n\n\nUse just one line of code and one function to extract the data into a matrix. Hints: 1) Use the resp_body_json function. 2) The first row of the matrix will be the variable names and this OK as we will fix in the next exercise.\n\n\n#population &lt;- \n\n\nExamine the population matrix you just created. Notice that 1) it is not tidy, 2) the column types are not what we want, and 3) the first row is a header. Convert population to a tidy dataset. Remove the state ID column and change the name of the column with state names to state_name. Add a column with state abbreviations called state. Make sure you assign the abbreviations for DC and PR correctly. Hint: Use the janitor package to make the first row the header.\n\n\nlibrary(tidyverse)\nlibrary(janitor)\n#population &lt;- population |&gt; ## Use janitor row to names function\n  # convert to tibble\n  # remove stat column\n  # rename state column to state_name\n  # use pivot_longer to tidy\n  # remove POP_ from year\n  # parese all relevant colunns to numeric\n  # add state abbreviations using state.abb variable\n  # use case_when to add abbreviations for DC and PR\n\n\nAs a check, make a barplot of states’ 2021 and 2022 populations. Show the state names in the y-axis ordered by population size. Hint: You will need to use reorder and use facet_wrap.\n\n\n# population |&gt; \n  # reorder state\n  # assign aesthetic mapping\n  # use geom_col to plot barplot\n  # flip coordinates\n  # facet by year\n\n\nThe following URL:\n\n\nurl &lt;- \"https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json\"\n\npoints to a JSON file that lists the states in the 10 Public Health Service (PHS) defined by CDC. We want to add these regions to the population dataset. To facilitate this create a data frame called regions that has two columns state_name, region, region_name. One of the regions has a long name. Change it to something shorter.\n\nlibrary(jsonlite)\nlibrary(purrr)\nurl &lt;- \"https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json\"\n# regions &lt;- use jsonlit JSON parser \n# regions &lt;- convert list to data frame. You can use map_df in purrr package \n\n\nAdd a region and region name columns to the population data frame.\n\n\n# population &lt;- \n\n\nFrom reading https://data.cdc.gov/ we learn the endpoint https://data.cdc.gov/resource/pwn4-m3yp.json provides state level data from SARS-COV2 cases. Use the httr2 tools you have learned to download this into a data frame. Is all the data there? If not, comment on why.\n\n\napi &lt;- \"https://data.cdc.gov/resource/pwn4-m3yp.json\"\n# cases_raw &lt;- \n\nWe see exactly 1,000 rows. We should be seeing over \\(52 \\times 3\\) rows per state.\n\nThe reason you see exactly 1,000 rows is because CDC has a default limit. You can change this limit by adding $limit=10000000000 to the request. Rewrite the previous request to ensure that you receive all the data. Then wrangle the resulting data frame to produce a data frame with columns state, date (should be the end date) and cases. Make sure the cases are numeric and the dates are in Date ISO-8601 format.\n\n\napi &lt;- \"https://data.cdc.gov/resource/pwn4-m3yp.json\"\n# cases_raw &lt;- \n\n\nFor 2020 and 2021, make a time series plot of cases per 100,000 versus time for each state. Stratify the plot by region name. Make sure to label you graph appropriately.\n\n\n#cases |&gt;"
+  },
+  {
+    "objectID": "psets/pset-02-r-vectorization.html",
+    "href": "psets/pset-02-r-vectorization.html",
+    "title": "Problem set 2",
+    "section": "",
+    "text": "For these exercises, do not load any packages other than dslabs.\nMake sure to use vectorization whenever possible.\n\nWhat is the sum of the first 100 positive integers? Use the functions seq and sum to compute the sum with R for any n.\n\n\n# Your code here\n\n\nLoad the US murders dataset from the dslabs package. Use the function str to examine the structure of the murders object. What are the column names used by the data frame for these five variables? Show the subset of murders showing states with less than 1 per 100,000 deaths. Show all variables.\n\n\nlibrary(dslabs)\n\nWarning: package 'dslabs' was built under R version 4.4.3\n\nstr(murders)\n\n'data.frame':   51 obs. of  5 variables:\n $ state     : chr  \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ abb       : chr  \"AL\" \"AK\" \"AZ\" \"AR\" ...\n $ region    : Factor w/ 4 levels \"Northeast\",\"South\",..: 2 4 4 2 4 4 1 2 2 2 ...\n $ population: num  4779736 710231 6392017 2915918 37253956 ...\n $ total     : num  135 19 232 93 1257 ...\n\n\n\n# Your code here\n\n\nShow the subset of murders showing states with less than 1 per 100,000 deaths and in the West of the US. Don’t show the region variable.\n\n\n# Your code here\n\n\nShow the largest state with a rate less than 1 per 100,000.\n\n\n# Your code here\n\n\nShow the state with a population of more than 10 million with the lowest rate.\n\n\n# Your code here\n\n\nCompute the rate for each region of the US.\n\n\n# Your code here\n\n\nCreate a vector of numbers that starts at 6, does not pass 55, and adds numbers in increments of 4/7: 6, 6 + 4/7, 6 + 8/7, and so on. How many numbers does the list have? Hint: use seq and length.\n\n\n# Your code here\n\n\nMake this data frame:\n\n\ntemp &lt;- c(35, 88, 42, 84, 81, 30)\ncity &lt;- c(\"Beijing\", \"Lagos\", \"Paris\", \"Rio de Janeiro\", \n          \"San Juan\", \"Toronto\")\ncity_temps &lt;- data.frame(name = city, temperature = temp)\n\nConvert the temperatures to Celsius.\n\n# Your code here\n\n\nWrite a function euler that compute the following sum for any \\(n\\):\n\n\\[\nS_n = 1+1/2^2 + 1/3^2 + \\dots 1/n^2\n\\]\n\n# Your code here\n\n\nShow that as \\(n\\) gets bigger we get closer \\(\\pi^2/6\\) by plotting \\(S_n\\) versus \\(n\\) with a horizontal dashed line at \\(\\pi^2/6\\).\n\n\n# Your code here\n\n\nUse the %in% operator and the predefined object state.abb to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU?\n\n\n# Your code here\n\n\nExtend the code you used in the previous exercise to report the one entry that is not an actual abbreviation. Hint: use the ! operator, which turns FALSE into TRUE and vice versa, then which to obtain an index.\n\n\n# Your code here\n\n\nIn the murders dataset, use %in% to show all variables for New York, California, and Texas, in that order.\n\n\n# Your code here\n\n\nWrite a function called vandermonde_helper that for any \\(x\\) and \\(n\\), returns the vector \\((1, x, x^2, x^3, \\dots, x^n)\\). Show the results for \\(x=3\\) and \\(n=5\\).\n\n\n# Your code here\n\n\nCreate a vector using:\n\n\nn &lt;- 10000\np &lt;- 0.5\nset.seed(2024-9-6)\nx &lt;- sample(c(0,1), n, prob = c(1 - p, p), replace = TRUE)\n\nCompute the length of each stretch of 1s and then plot the distribution of these values. Check to see if the distribution follows a geometric distribution as the theory predicts. Do not use a loop!\n\n# Your code here"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "",
+    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Ava Harrington, Angela Wang, Emma Crenshaw, Jing Li\nLocation: Kresge G1, Harvard School of Public Health\nDate and time: Mon & Wed 9.45 - 11:15am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: https://bst-260-f25-7j2.slack.com/\nCanvas: https://canvas.harvard.edu/courses/158943\nGitHub repo: https://github.com/datasciencelabs/2025\nRemember to read the syllabus",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "",
+    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Ava Harrington, Angela Wang, Emma Crenshaw, Jing Li\nLocation: Kresge G1, Harvard School of Public Health\nDate and time: Mon & Wed 9.45 - 11:15am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: https://bst-260-f25-7j2.slack.com/\nCanvas: https://canvas.harvard.edu/courses/158943\nGitHub repo: https://github.com/datasciencelabs/2025\nRemember to read the syllabus",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#lectures",
+    "href": "index.html#lectures",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Lectures",
+    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\nDates\nTopic\nSlides\nReading\n\n\n\n\nSep 04\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\n\n\nSep 09, Sep 11\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git\n\n\nSep 16, Sep 19\nR\nR basics, Vectorization\nR Basics, Vectorization\n\n\nSep 23\nR\nTidyverse, ggplot2\ndplyr, ggplot2\n\n\nSep 25\nR\nTyding data\nReshaping Data\n\n\nSep 30, Oct 02\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web scraping, Joining tables\nImporting data, dates and times, Locales, Joining Tables, Extracting data from the web\n\n\nOct 07, Oct 09\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\n\n\nOct 16\nMidterm 1\n\nCovers material from Sep 04-Oct 11\n\n\nOct 21\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables & CLT\n\n\nOct 23\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\n\n\nOct 28, Oct 30\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\n\n\nNov 04, Nov 06\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\n\n\nNov 13, Nov 18\nLinear models\nMultivariate regression, Treatment effect models\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association Not Causation\n\n\nNov 20\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R\nMatrices in R, Applied Linear Algebra,\n\n\nNov 25\nMidterm 2\n\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nDec 02\nHigh dimensional data\nDistance, Dimension reduction\nDimension Reduction\n\n\nDec 04\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and terminology, Evaluation Metrics, conditional probabilities, smoothing\n\n\nDec 09, Dec 11\nMachine Learning\nkNN, Resampling methods, caret package, Algorithms, ML in practice\nResampling methods, ML algorithms, ML in practice\n\n\nDec 16, Dec 18\nOther topics\nAssociation is not causation, Shiny, Shiny example code\nAssociation is not causation",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#problem-sets",
+    "href": "index.html#problem-sets",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Problem sets",
+    "text": "Problem sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\n01\nUnix, Quarto\nSep 11\neasy\n\n\n02\nR\nSep 19\neasy\n\n\n03\nTidyverse\nSep 27\nmedium\n\n\n04\nWrangling\nOct 4\nmedium\n\n\n05\nCovid 19 data visualization\nOct 11\nmedium\n\n\n06\nProbability\nOct 25\neasy\n\n\n07\nPredict the election\nNov 04\nhard\n\n\n08\nExcess mortality after Hurricane María\nNov 15\nmedium\n\n\n09\nMatrices\nNov 22\neasy\n\n\n10\nDigit reading\nDec 16\nhard\n\n\nFinal Project\nYour choice\nDec 20\nhard",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#office-hour-times",
+    "href": "index.html#office-hour-times",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Office hour times",
+    "text": "Office hour times\n\n\n\nMeeting\nTime\nLocation\n\n\n\n\nRobert Gentleman\nTBD\nTBD\n\n\nAnthony Christidis\nTBD\nTBD\n\n\nCorri Sept\nTBD\nTBD\n\n\nNikhil Vytla\nTBD\nTBD\n\n\nYuan Wang\nTBD\nTBD",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nWe thank Maria Tackett and Mine Çetinkaya-Rundel for sharing their web page template, which we used in creating this website.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "final-project.html",
+    "href": "final-project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "For the final project you will choose one of these topics:\n\nCOVID-19 pandemic in the US\nExcess mortality in Puerto Rico after Hurricane María.\nTopic of your choice (needs instructor approval).\nElection results dashboard.\n\nYou will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nYou can work alone or in groups of at most three people.\nIf you select option 4 you can skip to Election Dashboard.\n\n\nFor the first three options, you will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.\n\n\n\n\nYou can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.\n\n\n\n\nHere are two examples or papers related to the two first topics:\n\nA Flexible Statistical Framework for Estimating Excess Mortality\nExcess deaths associated with covid-19 pandemic in 2020: age and sex disaggregated time series analysis in 29 high income countries\n\n\n\n\nWe recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#sections",
+    "href": "final-project.html#sections",
+    "title": "Final Project",
+    "section": "",
+    "text": "For the first three options, you will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#supplementary-methods-no-limit",
+    "href": "final-project.html#supplementary-methods-no-limit",
+    "title": "Final Project",
+    "section": "",
+    "text": "You can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#examples",
+    "href": "final-project.html#examples",
+    "title": "Final Project",
+    "section": "",
+    "text": "Here are two examples or papers related to the two first topics:\n\nA Flexible Statistical Framework for Estimating Excess Mortality\nExcess deaths associated with covid-19 pandemic in 2020: age and sex disaggregated time series analysis in 29 high income countries",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#githut-repository",
+    "href": "final-project.html#githut-repository",
+    "title": "Final Project",
+    "section": "",
+    "text": "We recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#data",
+    "href": "final-project.html#data",
+    "title": "Final Project",
+    "section": "Data",
+    "text": "Data\nYou can use the data we downloaded in problem set 4.\nWe want you to examine the entire pandemic, until at least December 1, 2024 which means you will need to obtain population estimates for 2023 and 2024.\nFor those working in groups we want you to obtain daily or weekly mortality data for each state.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#tasks-and-questions",
+    "href": "final-project.html#tasks-and-questions",
+    "title": "Final Project",
+    "section": "Tasks and questions",
+    "text": "Tasks and questions\n\nDivide the pandemic period, January 2020 to December 2024 into waves. Justify your choice with data visualization.\nFor each period compute the deaths rates by state. Describe which states did better or worse during the different periods.\nDescribe if COVID-19 became less or more virulent across the different periods.\nFor those working in groups: Estimate excess mortality for each week for each state. Do COVID-19 deaths explain the excess mortality?\nFor those working in groups: Repeat 2 but for excess mortality instead of COVID-19 deaths.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#data-1",
+    "href": "final-project.html#data-1",
+    "title": "Final Project",
+    "section": "Data",
+    "text": "Data\nYou can use puerto_rico_counts in the excessmort package.\nFor those working in groups we want you to wrangle the data from the pdf report shared by the New York Times. https://github.com/c2-d2/pr_mort_official/raw/master/data/Mortalidad-RegDem-2015-17-NYT-part1.pdf",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#tasks-and-questions-1",
+    "href": "final-project.html#tasks-and-questions-1",
+    "title": "Final Project",
+    "section": "Tasks and questions",
+    "text": "Tasks and questions\n\nExamine the population sizes by age group and sex. Describe any interesting patterns.\nUse data from before 2017 to estimate expected mortality and a standard deviation for each week. Do this by age group and sex. Describe tendencies you observe. You can combine data into bigger age groups if the data show they have similar death rates.\nExplore the data to see if there are periods during or before 2017 that appear to have excess mortality. If so, explain and recompute expected death rates removing these periods.\nEstimate excess deaths for each week of 2017-2018. Make sure you define the weeks so that one of the weeks starts the day María made landfall. Comment on excess mortality. Which age groups were affected? Were men and women affected differently?\nFor those working in groups: Extract the data from the PDF shared with NY Times. Comment on how it matches with excessmort package data.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#data-2",
+    "href": "final-project.html#data-2",
+    "title": "Final Project",
+    "section": "Data",
+    "text": "Data\nObtain pollster data for 2016, 2018, 2020, 2022 elections. We already provided data from the 2024 election.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#tasks-and-questions-2",
+    "href": "final-project.html#tasks-and-questions-2",
+    "title": "Final Project",
+    "section": "Tasks and questions",
+    "text": "Tasks and questions\n\nWe want you to build a shiny dashboard to be ready to predict the 2026 senate election. To do this you will prepare a dashboard for the 2024 senate election.\nThe dashboard should show your prediction for each senate race based on a Bayesian analysis.\nThe dashboard should also show a prediction for the number of seats the democrats will hold. It should display a histogram with your estimate of the probability distribution for each possible outcome.\nUse data from previous years to motivate the choice of priors.\nFor those working in groups: Use the previous 4 elections to estimate correlations between states in the polling bias. Use it to improve your model.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#github",
+    "href": "final-project.html#github",
+    "title": "Final Project",
+    "section": "GitHub",
+    "text": "GitHub\nAll the code needed to construct the shiny app should be included in a GitHub repository, including whatever wrangling you performed for your data analysis.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "psets/pset-01-unix-quarto.html",
+    "href": "psets/pset-01-unix-quarto.html",
+    "title": "Problem set 1",
+    "section": "",
+    "text": "After finishing the homework, you are to turn in all the code to GitHub using git.\n\nStart an RStudio project. Pick a good name following a naming convention. Start a Quarto document called beginning.qmd.\nCreate a directory called img and save a screen shot of your RStudio session for the project. Include your screenshot in the Quarto document.\nNext, in your Quarto document, define variables \\(a=1, b=-1, c=-2\\) and print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nInclude a graph of \\(f(x)\\) versus \\(x\\) for \\(x \\in (-5,5)\\).\n\n\nx &lt;- seq(-5, 5, length = 100)\n# Hint: Use the plot function\n\n\nCreate a directory called docs. Use the command quarto render to create a PDF and save it to the docs directory. Show us the command you typed:\n\n# Your code here\n\nUse Unix to create a directory called data in the project home directory. Include the Unix command you used to create the directory.\n\n# Your code here\n\nUse a terminal-based text editor to create a file coefs.txt in the data directory and save three coefficients, 1 -1 -2 for example. Show us the Unix commands you used to achieve this:\n\n# Your code here\n\nMake a directory called code. Use Unix to copy the file beginning.qmd to a file called quadratic.qmd in the code directory. Show us the Unix commands you used.\n\n# Your code here\n\nEdit the quadratic.qmd file to read in a, b, and c from the file coefs.txt. Make sure to use a relative path when reading the file. As before, print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nChange the path of the file you are reading to the full path you get when you type file.path(getwd(), \"data/coefs.txt\"). Confirm that the file still renders. Then move the entire pset-01-rmarkdown project to a directory called RtmpyDknq4. Does the file render? Change the path back to a relative path and see if it renders."
+  },
+  {
+    "objectID": "psets/pset-03-tidyverse.html",
+    "href": "psets/pset-03-tidyverse.html",
+    "title": "Problem set 3",
+    "section": "",
+    "text": "In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race.\n\nInstructions\n\nFor each exercise, we want you to write a single line of code using the pipe (|&gt;) to chain together multiple operations. This doesn’t mean the code must fit within 80 characters or be written on a single physical line, but rather that the entire sequence of operations can be executed as one continuous line of code without needing to assign intermediate values or create new variables.\nFor example, these are three separate lines of code:\n\n\nx &lt;- 100; x &lt;- sqrt(x); log10(x)\n\nWhereas this is considered one line of code using the pipe:\n\n100 |&gt; \n  sqrt() |&gt; \n  log10()\n\n\nGenerate an html document that shows the code for each exercise.\nFor the exercises that ask to generate a graph, show the graph as well.\nFor exercises that require you to display tabular results, use the kable function to format the output as a clean, readable table. Do not display the raw dataframe directly—only show the nicely formatted table using kable.\nUse only two significant digits for the numbers displayed in the tables.\nSubmit both the html and the qmd files using Git.\nYou will need the following libraries:\n\n\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(forcats)\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.4.3\n\nlibrary(knitr)\n\nWarning: package 'knitr' was built under R version 4.4.3\n\nlibrary(NHANES)\n\nWarning: package 'NHANES' was built under R version 4.4.3\n\noptions(digits = 2)\n\n\nThe .qmd file must be able to render properly on the TFs’ computers. They will already have the necessary packages installed, so there is no need to include code for installing packages. Just focus on writing the code that uses these packages.\n\n\n\nExercises\n\nFilter the NHANES data to only include survey year 2011-2012. Save the resulting table in dat. This table should have 5,000 rows and 76 columns.\n\n\n## code here\n\n\nCompute the average and standard deviation (SD) for the combined systolic blood pressure (SBP) reading for males and females separately. Show us a data frame with two rows (female and male) and two columns (average and SD).\n\n\n## code here\n\n\nBecause of the large difference in the average between males and females, we will perform the rest of the analysis separately for males and females.\n\nCompute the average and SD for SBP for each race variable in column Race3 for females and males separately. The resulting table should have four columns for sex, race, average, and SD, respectively, and 12 rows (one for each strata). Arrange the result from highest to lowest average.\n\n## code here\n\n\nRepeat the previous exercise but add two columns to the final table to show a 95% confidence interval. Specifically, add columns with the lower and upper bounds of the interval with names lower and upper, respectively. The formula for these values is\n\n\\[\n\\bar{X} \\pm 1.96 \\, s / \\sqrt{n}\n\\] with \\(\\bar{X}\\) the sample average and \\(s\\) the sample standard deviation. This table will simply add two more columns to the table generated in the previous exercise: one column for the lower and upper bound, respectively.\n\n## code here\n\n\nMake a graph of showing the results from the previous exercise. Specifically, plot the averages for each group as points and confidence intervals as error bars (use the geometry geom_errorbar). Order the groups from lowest to highest average (the average of the males and females averages). Use facet_wrap to make a separate plot for females and males. Label your axes with Race and Average respectively, add the title Comparing systolic blood pressure across groups, and the caption Bars represent 95% confidence intervals.\n\n\n## code here\n\n\nIn the plot above we see that the confidence intervals don’t overlap when comparing the White and Mexican groups. We also see a substantial difference between Mexican and Hispnanic. Before concluding that there is a difference between groups, we will explore if differences in age, a very common confounder, explain the differences.\n\nCreate table like the one in the previous exercise but show the average SBP by sex and age group (AgeDecade). The the groups are order chronologically. As before make a separate plot for males and females. Make sure to filter our observations with no AgeDecade listed.\n\n## code here\n\n\nWe note that for both males and females the SBP increases with age. To explore if age is indeed a confounder we need to check if the groups have different age distributions.\n\nExplore the age distributions of each Race3 group to determine if the groups are comparable. Make a histogram of Age for each Race3 group and stack them vertically. Generate two columns of graphs for males and females, respectively. In the histograms, create bins increments of 5 years up to 80.\nBelow the graph, comment on what notice about the age distributions and how this can explain the difference between the White and Mexican groups.\n\n## code here\n\n\nSummarize the results shown in the graph by compute the median age for each Race3 group and the percent of individuals that are younger than 18. Order the rows by median age. The resulting data frame should have 6 rows (one for each group) and three columns to denote group, median age, and children respectively.\n\n\n## code here\n\nGiven these results provide an explanation for the difference in systolic pressure is lower when comparing the White and Mexican groups.\n\nWhen the age distribution between two populations we can’t conclude that there are differences in SBP based just on the population averages. The observed differences are likely due to age differences rather than genetic differences. We will therefore stratify by group and then compare SBP. But before we do this, we might need redefine dat to avoid small groups.\n\nWrite a function that computes the number of observations in each gender, age group and race combination. Show the groups with less than five observations. Make sure to remove the rows with no BPSysAve measurments before calculating the number of observations. Show a table with four columns representing gender, age strate, group, and the number of individuals in that group. Make sure to include combinations with 0 individuals (hint: use complete).\n\n## code here\n\n\nBased on the observations made in the previous exercise, we will redefine dat but with the following:\n\nAs before, include only survey year 2011-2012.\nRemove the observations with no age group reported.\nRemove the 0-9 age group.\nCombine the 60-69 and 70+ ageroups into a 60+ group.\nRemove observations reporting Other in Race3.\nRename the variable Race3 to Race.\n\nHints:\n\nNote that the levels in AgeDecade start with a space.\nYou can use the fct_collapse function in the forcats to combine factors.\n\n\n\n## code here\n\n\nCrete a plot that shows the averege BPS for each age decade. Show the different race groups with color and lines joining them. Generate a two plots, one for males and one for females.\n\n\n## code here\n\n\nBased on the plot above pick two groups that you think are consistently different and remake the plot from the previous exercise but just for these two groups, add confidence intervals, and remove the lines. Put the confidence intervals for each age strata next to each other and use color to represent the two groups. Comment on your finding.\n\n\n## code here\n\n\nFor the two groups that you selected above compute the difference in average BPS between the two groups for each age strata. Show a table with three columns representing age strata, difference for females, difference for males.\n\n\n## code here"
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html",
+    "href": "psets/pset-05-dataviz.html",
+    "title": "Problem set 5",
+    "section": "",
+    "text": "In this problem set, we aim to use data visualization to explore the following questions:\n\nBased on SARS-Cov-2 cases, COVID-19 deaths and hospitalizations what periods defined the worst two waves of 2020-2021?\nDid states with higher vaccination rates experience lower COVID-19 death rates?\nWere there regional differences in vaccination rates?\n\nWe are not providing definitive answers to these questions but rather generating visualizations that may offer insights.\n\n\nWe will create a single data frame that contains relevant observations for each jurisdiction, for each Morbidity and Mortality Weekly Report (MMWR) period in 2020 and 2021. The key outcomes of interest are:\n\nSARS-CoV-2 cases\nCOVID-19 hospitalizations\nCOVID-19 deaths\nIndividuals receiving their first COVID-19 vaccine dose\nIndividuals receiving a booster dose\n\n\n\n\nYour task is divided into three parts:\n\nDownload the data: Retrieve population data from the US Census API and COVID-19 statistics from the CDC API.\nWrangle the data: Clean and join the datasets to create a final table containing all the necessary information.\nCreate visualizations: Generate graphs to explore potential insights into the questions posed above."
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html#introduction",
+    "href": "psets/pset-05-dataviz.html#introduction",
+    "title": "Problem set 5",
+    "section": "",
+    "text": "In this problem set, we aim to use data visualization to explore the following questions:\n\nBased on SARS-Cov-2 cases, COVID-19 deaths and hospitalizations what periods defined the worst two waves of 2020-2021?\nDid states with higher vaccination rates experience lower COVID-19 death rates?\nWere there regional differences in vaccination rates?\n\nWe are not providing definitive answers to these questions but rather generating visualizations that may offer insights.\n\n\nWe will create a single data frame that contains relevant observations for each jurisdiction, for each Morbidity and Mortality Weekly Report (MMWR) period in 2020 and 2021. The key outcomes of interest are:\n\nSARS-CoV-2 cases\nCOVID-19 hospitalizations\nCOVID-19 deaths\nIndividuals receiving their first COVID-19 vaccine dose\nIndividuals receiving a booster dose\n\n\n\n\nYour task is divided into three parts:\n\nDownload the data: Retrieve population data from the US Census API and COVID-19 statistics from the CDC API.\nWrangle the data: Clean and join the datasets to create a final table containing all the necessary information.\nCreate visualizations: Generate graphs to explore potential insights into the questions posed above."
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html#instructions",
+    "href": "psets/pset-05-dataviz.html#instructions",
+    "title": "Problem set 5",
+    "section": "Instructions",
+    "text": "Instructions\n\nCreate a Git repository that includes the following directories:\n\ndata\ncode\nfigs\n\nInside the code directory, include the following files:\n\nfuncs.R\nwrangle.R\nanalysis.qmd\n\nThe figs directory should contain three PNG files, with each file corresponding to one of the figures you are asked to create.\n\nDetailed instructions follow for each of the tasks."
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html#download-data",
+    "href": "psets/pset-05-dataviz.html#download-data",
+    "title": "Problem set 5",
+    "section": "Download data",
+    "text": "Download data\nFor this part we want the following:\n\nSave all your code in a file called wrangle.R that produces the final data frame.\nWhen executed, this code should save the final data frame in an RDA file in the data directory.\n\n\nCopy the relevant code from the previous homework to create the population data frame. Put this code in the the wrangle.R file in the code directory. Comment the code so we know where the population is create, where the regions are read in, and where we combine these.\nIn the previous problem set we wrote the following script to download cases data:\n\n\napi &lt;- \"https://data.cdc.gov/resource/pwn4-m3yp.json\"\ncases_raw &lt;- request(api) |&gt; \n  req_url_query(\"$limit\" = 10000000) |&gt;\n  req_perform() |&gt; \n  resp_body_json(simplifyVector = TRUE)\n\nWe are now going to download three other datasets from CDC that provide hospitalization, provisional COVID deaths, and vaccine data. A different endpoint is provided for each one, but the requests are the same otherwise. To avoid rewriting the same code more than once, write a function called get_cdc_data that receives and endpoint and returns a data frame. Save this code in a file called functions.R.\n\nUse the get_cdc Download the cases, hospitalization, deaths, and vaccination data and save the data frames. We recommend saving them into objects called: cases_raw, hosp_raw, deaths_raw, and vax_raw.\n\n\ncases - https://data.cdc.gov/resource/pwn4-m3yp.json\nhospitalizations - https://data.cdc.gov/resource/39z2-9zu6.json\ndeaths - https://data.cdc.gov/resource/r8kw-7aab.json\nvaccinations https://data.cdc.gov/resource/rh2h-3yt2.json\n\nWe recommend saving them into objects called: cases_raw, hosp_raw, deaths_raw, and vax_raw. Add the code to the wranling.R file. Add comments to describe we read in data here."
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html#wrangling-challenge",
+    "href": "psets/pset-05-dataviz.html#wrangling-challenge",
+    "title": "Problem set 5",
+    "section": "Wrangling Challenge",
+    "text": "Wrangling Challenge\nIn this section, you will wrangle the files downloaded in the previous step into a single data frame containing all the necessary information. We recommend using the following column names: date, state, cases, hosp, deaths, vax, booster, and population.\n\nKey Considerations\n\nAlign reporting periods: Ensure that the time periods for which each outcome is reported are consistent. Specifically, calculate the totals for each Morbidity and Mortality Weekly Report (MMWR) period.\nHarmonize variable names: To facilitate the joining of datasets, rename variables so that they match across all datasets.\n\n\nOne challenge is data frames use different column names to represent the same variable. Examine each data frame and report back 1) the name of the column with state abbreviations, 2) if the it’s yearly, monthly, or weekly, daily data, 3) all the column names that provide date information.\n\n\n\n\nOutcome\nJurisdiction variable name\nRate\ntime variable names\n\n\n\n\ncases\n\n\n\n\n\nhospitalizations\n\n\n\n\n\ndeaths\n\n\n\n\n\nvaccines\n\n\n\n\n\n\n\nWrangle the cases data frame to keep state MMWR year, MMWR week, and the total number of cases for that week in that state. Keep only states for which we have population estimates. Hint: Use as_date, ymd_hms, epiweek and epiyear functions in the lubridate package. Comment appropriately.\nNow repeat the same exercise for hospitalizations. Note that you will have to collapse the data into weekly data and keep the same columns as in the cases dataset, except keep total weekly hospitalizations instead of cases. Remove weeks with less than 7 days reporting. Add this code to wrangle.R and comment appropriately.\nRepeat what you did in the previous two exercises for provisional COVID-19 deaths. Add this code to wrangle.R and comment appropriately.\nRepeat this now for vaccination data. Keep the variables series_complete and booster along with state and date. Add this code to wrangle.R and comment appropriately.\nNow we are ready to join the tables. We will only consider 2020 and 2021 as we don’t have population sizes for 2022. However, because we want to guarantee that all dates are included we will create a data frame with all possible weeks. Add this code to your wrangle.R file. We can use this:\n\n\n## Make dates data frame\nall_dates &lt;- data.frame(date = seq(make_date(2020, 1, 25),\n                                   make_date(2021, 12, 31), \n                                   by = \"week\")) |&gt;\n  mutate(date = ceiling_date(date, unit = \"week\", week_start = 7) - days(1)) |&gt;\n  mutate(mmwr_year = epiyear(date), mmwr_week = epiweek(date)) \n\ndates_and_pop &lt;- cross_join(all_dates, data.frame(state = unique(population$state))) |&gt; left_join(population, by = c(\"state\", \"mmwr_year\" = \"year\"))\n\nNow join all the table to create your final table. Make sure it is ordered by date within each state. Call it dat and save an RDS file to the data directory. Add this code to wrangle.R and comment appropriately."
+  },
+  {
+    "objectID": "psets/pset-05-dataviz.html#data-visualization-generate-some-plots",
+    "href": "psets/pset-05-dataviz.html#data-visualization-generate-some-plots",
+    "title": "Problem set 5",
+    "section": "Data visualization generate some plots",
+    "text": "Data visualization generate some plots\nWe are now ready to create some figures. In the analysis.qmd file create a section for each figure. You should load the dat object stored in the RDS file in the dat directory.\nYou can call these sections Figure 1, Figure 2, and so on. Inlcude a short description of what the figure is before the code chunk. The rendered file should show both the code and figure.\n\nPlot a trend plot for cases, hospitalizations and deaths. Plot rates per \\(100,000\\) people. Place the plots on top of each other. Hint: Use pivot_longer and facet_wrap.\nTo determine when vaccination started and when most of the population was vaccinated, compute the percent of the US population (including DC and Puerto Rico) were vaccinated by date. Do the same for the booster. Then plot both percentages.\nDescribe the distribution of vaccination rates on July 1, 2021.\nIs there a difference across region? Discuss what the plot shows?\nUsing the two previous figures, identify two time periods that meet the following criteria:\n\n\nA significant COVID-19 wave occurred across the United States.\nA sufficient number of people had been vaccinated.\n\nNext, follow these steps:\n\nFor each state, calculate the COVID-19 deaths per day per 100,000 people during the selected time period.\nDetermine the vaccination rate (primary series) in each state as of the last day of the period.\nCreate a scatter plot to visualize the relationship between these two variables:\n\nThe x-axis should represent the vaccination rate.\nThe y-axis should represent the deaths per day per 100,000 people.\n\n\n\nRepeat the exercise for the booster."
+  },
+  {
+    "objectID": "psets/pset-07-election.html",
+    "href": "psets/pset-07-election.html",
+    "title": "Problem set 7",
+    "section": "",
+    "text": "For this problem set we want you to predict the election. You will enter you predictions to this form. You you will report a prediction of the number of electoral votes for Harris and an interval. You will do the same for the popular vote. We will give prizes for those that report the shortest interval but with the true result inside the interval.\n\nRead in the data provided here:\n\n\nurl &lt;- \"https://projects.fivethirtyeight.com/polls/data/president_polls.csv\"\n\nExamine the data frame paying particular attention to the poll_id question_id, population, and candidate. Note that some polls have more than one question based on different population types.\n\nlibrary(tidyverse)\nlibrary(rvest)\nraw_dat &lt;- ### Your code here\n\n\nPolls are based on either likely voters (lv), registered voters (rv), all voters (a), or voters (v). Polls based on ‘voters’ are exit polls. We want to remove these because exit polls are too old or might be biased due to differences in the likelihood of early voter by party. We prefer likely voter (lv) polls because they are more predictive. Registered voter polls are more predictive than all voter (a) polls. Remove the exit poll (v) polls and then redefine population to be a factor ordered from best to worse predictive power: (lv, rv, a). You should also remove hypothetical polls and make the date columns into date objects. Name the resulting data frame dat.\n\n\ndat &lt;- raw_dat |&gt; \n  ## Your code here\n\n\nSome polls asked more than one questions. So if you filter to one poll ID in our dataset, you might see more than one question ID associated with the same poll. The most common reason for this is that they asked a head-to-head question (Harris versus Trump) and, in the same poll, a question about all candidates. We want to prioritize the head-to-head questions.\n\nAdd a column that tells us, for each question, how many candidates where mentioned in that question.\nAdd a new column n to dat that provides the number of candidates mentioned for each question. For example the relevant column of your final table will looks something like this:\n\n\n\npoll_id\nquestion_id\ncandidate\nn\n\n\n\n\n1\n1\nHarris\n2\n\n\n1\n1\nTrump\n2\n\n\n1\n2\nHarris\n3\n\n\n1\n2\nTrump\n3\n\n\n1\n2\nStein\n3\n\n\n\n\ndat &lt;- dat |&gt; \n    ## Your code here\n\n\nWe are going to focus on the Harris versus Trump comparison. Redefine dat to only include the rows providing information for Harris and Trump. Then pivot the dataset so that the percentages for Harris and Trump are in their own columns. Note that for pivot to work you will have to remove some columns. To avoid this keep only the columns you are pivoting and along with poll_id, question_id, state, pollster, start_date, end_date, numeric_grade, sample_size. Once you accomplish the pivot, add a column called spread with the difference between Harris and Trump.\n\nNote that the values stored in spread are estimates of the popular vote difference that we will use to predict for the competition:\nspread = % of the popular vote for Harris - % of the popular vote for Trump\nHowever, for the calculations in the rest of problem set to be consistent with the sampling model we have been discussing in class, save spread as a proportion, not a percentage. But remember to turn it back to a percentage when submitting your entry to the competition.\n\ndat &lt;- dat |&gt;\n  ## Your code here\n\n\nNote that some polls have multiple questions. We want to keep only one question per poll. We will keep likely voter (lv) polls when available, and prefer register voter (rv) over all voter polls (a). If more than one question was asked in one poll, take the most targeted question (smallest n). Save the resulting tabledat. Note that now each after you do this each row will represents exactly one poll/question, so can remove n, poll_id and question_id.\n\n\ndat &lt;- dat |&gt;\n  ## Your code here\n\n\nSeparate dat into two data frames: one with popular vote polls and one with state level polls. Call them popular_vote and polls respectively.\n\n\npopular_vote &lt;- ## Your code here\npolls &lt;- ## Your code here\n\n\nFor the popular vote, plot the spread reported by each poll against start date for polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during this period as Other. Use color to denote pollster. Make separate plots for likely voters and registered voters. Do not use all voter polls (a). Use geom_smooth with method loess to show a curve going through the points. You can change how adaptive the curve is to that through the span argument.\n\n\npopular_vote |&gt; \n  filter(start_date &gt; make_date(2024, 7, 21) & population != \"a\") |&gt;\n  ### Your code here\n\n\nTo show the pollster effect, make boxplots for the the spread for each popular vote poll. Include only likely voter polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during that time period as Other.\n\n\npopular_vote |&gt; \n  filter(start_date &gt; make_date(2024, 7, 21) & population == \"lv\") |&gt;\n  ## Your code here\n\n\nCompute a prediction and an interval for the competition and submit here Include the code you used to create your confidence interval for the popular vote here:\n\n\n## Your code here\n\nWe now move on to predicting the electoral votes.\n\nTo obtain the number of electoral votes for each state we will visit this website:\n\n\nurl &lt;- \"https://state.1keydata.com/state-electoral-votes.php\"\n\nWe can use the rvest package to download and extract the relevant table:\n\nlibrary(rvest)\nh &lt;- read_html(url) |&gt;\n  html_table() \n\nev &lt;- h[[4]]\n\nWrangle the data in ev to only have two columns state and electoral_votes. Make sure the electoral vote column is numeric. Add the electoral votes for Maine CD-1 (1), Maine CD-2 (1), Nebraska CD-2 (1), and District of Columbia (3) by hand.\n\n### Your code here\n\n\nThe presidential race in some states is a forgone conclusion. Because their is practically no uncertainty in who will win, polls are not taken. We will therefore assume that the party that won in 2020 will win again in 2024 if no polls are being collected for a state.\n\nDownload the following sheet:\n\nlibrary(gsheet)\nsheet_url &lt;- \"https://docs.google.com/spreadsheets/d/1D-edaVHTnZNhVU840EPUhz3Cgd7m39Urx7HM8Pq6Pus/edit?gid=29622862\"\nraw_res_2020 &lt;- gsheet2tbl(sheet_url) \n\nTidy the raw_res_2020 dataset so that you have two columns state and party, with D and R in the party column to indicate who won in 2020. Add Maine CD-1 (D), Maine CD-2 (R), Nebraska CD-2 (D), and District of Columbia (D) by hand. Save the result to res_2020. Hint use the janitor row_to_names function.\n\nlibrary(janitor)\nres_2020 &lt;- raw_res_2020[,c(1,4)] |&gt;  \n ### Your code here\n\n\nDecide on a period that you will use to compute your prediction. We will use spread as the outcome. Make sure the the outcomes is saved as a proportion not percentage. Create a results data frame with columns state, avg, sd, n and electoral_votes, with one row per state.\n\nSome ideas and recommendations:\n\nIf a state has enough polls, consider a short period, such as a week. For states with few polls you might need to increase the interval to increase the number of polls.\nDecide which polls to prioritize based on the population and numeric_grade columns.\nYou might want to weigh them differently, in which you might also consider using sample_size.\nIf you use fewer than 5 polls to calculate an average, your estimate of the standard deviation (SD) may be unreliable. With only one poll, you wont be able to estimate the SD at all. In these cases, consider using the SD from similar states to avoid unusual or inaccurate estimates.\n\n\nresults &lt;- polls |&gt; \n  ### Your code here\n\n\nNote you will not have polls for all states. Assume that lack of polls implies the state is not in play. Use the res_2020 data frame to compute the electoral votes Harris is practically guaranteed to have.\n\n\nharris_start &lt;- ## Your code here\n\n\nUse a Bayesian approach to compute posterior means and standard deviations for each state in results. Plot the posterior mean versus the observed average with the size of the point proportional to the number of polls.\n\n\n### Your code heer\n\n\nCompute a prediction and an interval for Harris’ electoral votes and submit to the competition here. Include the code you used to create your estimate and interval below.\n\n\n### Your code here"
+  },
+  {
+    "objectID": "psets/pset-09-matrices.html",
+    "href": "psets/pset-09-matrices.html",
+    "title": "Problem set 9",
+    "section": "",
+    "text": "You are not allowed to load any package or use for-loop. For exercises 1 and 3-6 you only get to write one line of code for the solution.\nFor better preparation for midterm, we recommend not using chatGPT for this homework.\n\nCreate a 100 by 10 matrix of randomly generated normal numbers. Put the result in x.\nApply the three R functions that give you the dimension of x, the number of rows of x, and the number of columns of x, respectively.\nAdd the scalar 1 to row 1, the scalar 2 to row 2, and so on, to the matrix x.\nAdd the scalar 1 to column 1, the scalar 2 to column 2, and so on, to the matrix x. Hint: Use sweep with FUN = \"+\".\nCompute the average of each row of x.\nCompute the average of each column of x.\nFor each digit in the MNIST training data, compute the proportion of pixels that are in a grey area, defined as values between 50 and 205. Make a boxplot by digit class. Hint: Use logical operators and rowMeans.\nUse the function solve to solve the following system of equations. Hint: use the function solve.\n\n\\[\n\\begin{align}\nx+2y−2z &=−15\\\\\n2x+y−5z&=−21\\\\\nx−4y+z&=18\n\\end{align}\n\\]\n\nUse matrix multiplication to compute the average of each column of x and store in a single row matrix. Hint define a \\(1\\times n\\) matrix \\((1/n, \\dots, 1/n)\\) with \\(n\\) the nrow(x).\nUse matrix multiplication and other matrix operations to compute the standard deviation of each column. Do not use sweep or apply."
+  },
+  {
+    "objectID": "psets.html",
+    "href": "psets.html",
+    "title": "Problem Sets",
+    "section": "",
+    "text": "Topic\n\n\n\nDue date (at 11:59 PM)\n\n\n\n\n\n\n\n\nProblem set 1\n\n\nWed, Sep 11\n\n\n\n\n\n\nProblem set 2\n\n\nThu, Sep 19\n\n\n\n\n\n\nProblem set 3\n\n\nFri, Sep 27\n\n\n\n\n\n\nProblem set 4\n\n\nFri, Oct 04\n\n\n\n\n\n\nProblem set 5\n\n\nFri, Oct 11\n\n\n\n\n\n\nProblem set 6\n\n\nFri, Oct 25\n\n\n\n\n\n\nProblem set 7\n\n\nMon, Nov 04\n\n\n\n\n\n\nProblem set 8\n\n\nFri, Nov 15\n\n\n\n\n\n\nProblem set 9\n\n\nFri, Nov 22\n\n\n\n\n\n\nProblem set 10\n\n\nMon, Dec 16\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Problem Sets"
+    ]
   },
   {
     "objectID": "slides/dataviz/17-dataviz-principles.html#some-motivation",
@@ -6297,7 +6712,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.450211\n\nsd(x_hat) \n\n[1] 0.01573378"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499055\n\nsd(x_hat) \n\n[1] 0.01592358"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -9769,7 +10184,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 191020 0.855\n 2 330905 0.796\n 3 575299 0.785\n 4 397075 0.784\n 5 762832 0.778\n 6  98826 0.775\n 7 114166 0.773\n 8 561035 0.767\n 9 727555 0.764\n10 548617 0.757\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.855."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 809470 0.843\n 2 906801 0.813\n 3 501445 0.796\n 4  82321 0.768\n 5 403190 0.764\n 6 584571 0.760\n 7 522973 0.755\n 8 411762 0.753\n 9 464673 0.747\n10 413131 0.747\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.843."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -9804,7 +10219,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic      p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 x        0.549    0.0695      7.91 0.0000000524"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x         1.20     0.159      7.52 0.000000121"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11008,7 +11423,7 @@
     "href": "slides/R/05-r-basics.html#factors-3",
     "title": "R Basics",
     "section": "Factors",
-    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.00    0.02"
+    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.05    0.03"
   },
   {
     "objectID": "slides/R/05-r-basics.html#factors-can-be-confusing",
@@ -11989,5 +12404,15 @@
     "title": "Web Scraping",
     "section": "CSS selectors",
     "text": "CSS selectors\n\nhttps://rvest.tidyverse.org/articles/selectorgadget.html]\nhttps://www.analyticsvidhya.com/blog/2017/03/beginners-guide-on-web-scraping-in-r-using-rvest-with-hands-on-knowledge/"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 09\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nMon, Sep 09\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 16\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 18\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 23\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 23\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 25\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 30\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 07\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 09\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 09\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 21\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 21\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 28\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nWed, Oct 30\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 30\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 05\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 05\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 12\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 02\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 02\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 02\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 11\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 09\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Dec 16\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 16\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Slides"
+    ]
   }
 ]

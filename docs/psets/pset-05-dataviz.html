@@ -21,7 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 /* CSS for syntax highlighting */
 html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -60,48 +59,204 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html-435ba6093e6f0817aa7405139811e7b1.min.css" rel="stylesheet" append-hash="true" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4fbee0b5b8779342491ad66aa5dc7133.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../style.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
-<body>
+<body class="nav-sidebar docked quarto-light">
 
-
-<header id="title-block-header">
-<h1 class="title">Problem set 5</h1>
-
-<p class="date">2024-10-11</p>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem set 5</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
-
-<nav id="TOC" role="doc-toc">
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/datasciencelabs/2025" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Sets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../final-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction">Introduction</a>
-  <ul>
-  <li><a href="#objective" id="toc-objective">Objective</a></li>
-  <li><a href="#task-breakdown" id="toc-task-breakdown">Task Breakdown</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#task-breakdown" id="toc-task-breakdown" class="nav-link" data-scroll-target="#task-breakdown">Task Breakdown</a></li>
   </ul></li>
-  <li><a href="#instructions" id="toc-instructions">Instructions</a></li>
-  <li><a href="#download-data" id="toc-download-data">Download data</a></li>
-  <li><a href="#wrangling-challenge" id="toc-wrangling-challenge">Wrangling Challenge</a>
-  <ul>
-  <li><a href="#key-considerations" id="toc-key-considerations">Key Considerations</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#download-data" id="toc-download-data" class="nav-link" data-scroll-target="#download-data">Download data</a></li>
+  <li><a href="#wrangling-challenge" id="toc-wrangling-challenge" class="nav-link" data-scroll-target="#wrangling-challenge">Wrangling Challenge</a>
+  <ul class="collapse">
+  <li><a href="#key-considerations" id="toc-key-considerations" class="nav-link" data-scroll-target="#key-considerations">Key Considerations</a></li>
   </ul></li>
-  <li><a href="#data-visualization-generate-some-plots" id="toc-data-visualization-generate-some-plots">Data visualization generate some plots</a></li>
+  <li><a href="#data-visualization-generate-some-plots" id="toc-data-visualization-generate-some-plots" class="nav-link" data-scroll-target="#data-visualization-generate-some-plots">Data visualization generate some plots</a></li>
   </ul>
-</nav>
-<h2 id="introduction" class="anchored">Introduction</h2>
+<div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-05-dataviz.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Problem set 5</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 11, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this problem set, we aim to use data visualization to explore the following questions:</p>
 <ol type="1">
 <li>Based on SARS-Cov-2 cases, COVID-19 deaths and hospitalizations what periods defined the worst two waves of 2020-2021?</li>
@@ -109,7 +264,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Were there regional differences in vaccination rates?</li>
 </ol>
 <p>We are not providing definitive answers to these questions but rather generating visualizations that may offer insights.</p>
-<h3 id="objective" class="anchored">Objective</h3>
+<section id="objective" class="level3">
+<h3 class="anchored" data-anchor-id="objective">Objective</h3>
 <p>We will create a single data frame that contains relevant observations for each jurisdiction, for each Morbidity and Mortality Weekly Report (MMWR) period in 2020 and 2021. The key outcomes of interest are:</p>
 <ul>
 <li>SARS-CoV-2 cases</li>
@@ -118,14 +274,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Individuals receiving their first COVID-19 vaccine dose</li>
 <li>Individuals receiving a booster dose</li>
 </ul>
-<h3 id="task-breakdown" class="anchored">Task Breakdown</h3>
+</section>
+<section id="task-breakdown" class="level3">
+<h3 class="anchored" data-anchor-id="task-breakdown">Task Breakdown</h3>
 <p>Your task is divided into three parts:</p>
 <ol type="1">
 <li><strong>Download the data</strong>: Retrieve population data from the US Census API and COVID-19 statistics from the CDC API.</li>
 <li><strong>Wrangle the data</strong>: Clean and join the datasets to create a final table containing all the necessary information.</li>
 <li><strong>Create visualizations</strong>: Generate graphs to explore potential insights into the questions posed above.</li>
 </ol>
-<h2 class="unnumbered anchored" id="instructions">Instructions</h2>
+</section>
+</section>
+<section id="instructions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="instructions">Instructions</h2>
 <ul>
 <li><strong>Create a Git repository</strong> that includes the following directories:
 <ul>
@@ -142,7 +303,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The <code>figs</code> directory should contain three PNG files, with each file corresponding to one of the figures you are asked to create.</li>
 </ul>
 <p>Detailed instructions follow for each of the tasks.</p>
-<h2 id="download-data" class="anchored">Download data</h2>
+</section>
+<section id="download-data" class="level2">
+<h2 class="anchored" data-anchor-id="download-data">Download data</h2>
 <p>For this part we want the following:</p>
 <ul>
 <li>Save all your code in a file called <code>wrangle.R</code> that produces the final data frame.</li>
@@ -170,9 +333,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>vaccinations <code>https://data.cdc.gov/resource/rh2h-3yt2.json</code></li>
 </ul>
 <p>We recommend saving them into objects called: <code>cases_raw</code>, <code>hosp_raw</code>, <code>deaths_raw</code>, and <code>vax_raw</code>. Add the code to the <code>wranling.R</code> file. Add comments to describe we read in data here.</p>
-<h2 id="wrangling-challenge" class="anchored">Wrangling Challenge</h2>
+</section>
+<section id="wrangling-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="wrangling-challenge">Wrangling Challenge</h2>
 <p>In this section, you will wrangle the files downloaded in the previous step into a single data frame containing all the necessary information. We recommend using the following column names: <code>date</code>, <code>state</code>, <code>cases</code>, <code>hosp</code>, <code>deaths</code>, <code>vax</code>, <code>booster</code>, and <code>population</code>.</p>
-<h3 class="unnumbered anchored" id="key-considerations">Key Considerations</h3>
+<section id="key-considerations" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-considerations">Key Considerations</h3>
 <ul>
 <li><p><strong>Align reporting periods</strong>: Ensure that the time periods for which each outcome is reported are consistent. Specifically, calculate the totals for each Morbidity and Mortality Weekly Report (MMWR) period.</p></li>
 <li><p><strong>Harmonize variable names</strong>: To facilitate the joining of datasets, rename variables so that they match across all datasets.</p></li>
@@ -180,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="4" type="1">
 <li>One challenge is data frames use different column names to represent the same variable. Examine each data frame and report back 1) the name of the column with state abbreviations, 2) if the it’s yearly, monthly, or weekly, daily data, 3) all the column names that provide date information.</li>
 </ol>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Outcome</th>
@@ -234,11 +400,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>dates_and_pop <span class="ot">&lt;-</span> <span class="fu">cross_join</span>(all_dates, <span class="fu">data.frame</span>(<span class="at">state =</span> <span class="fu">unique</span>(population<span class="sc">$</span>state))) <span class="sc">|&gt;</span> <span class="fu">left_join</span>(population, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"state"</span>, <span class="st">"mmwr_year"</span> <span class="ot">=</span> <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now join all the table to create your final table. Make sure it is ordered by date within each state. Call it <code>dat</code> and save an RDS file to the <code>data</code> directory. Add this code to <code>wrangle.R</code> and comment appropriately.</p>
-<h2 id="data-visualization-generate-some-plots" class="anchored">Data visualization generate some plots</h2>
+</section>
+</section>
+<section id="data-visualization-generate-some-plots" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization-generate-some-plots">Data visualization generate some plots</h2>
 <p>We are now ready to create some figures. In the <code>analysis.qmd</code> file create a section for each figure. You should load the <code>dat</code> object stored in the RDS file in the <code>dat</code> directory.</p>
 <p>You can call these sections Figure 1, Figure 2, and so on. Inlcude a short description of what the figure is before the code chunk. The rendered file should show both the code and figure.</p>
 <ol start="10" type="1">
-<li><p>Plot a trend plot for cases, hospitalizations and deaths. Plot rates per <span class="math inline">100, 000</span> people. Place the plots on top of each other. Hint: Use <code>pivot_longer</code> and <code>facet_wrap</code>.</p></li>
+<li><p>Plot a trend plot for cases, hospitalizations and deaths. Plot rates per <span class="math inline">\(100,000\)</span> people. Place the plots on top of each other. Hint: Use <code>pivot_longer</code> and <code>facet_wrap</code>.</p></li>
 <li><p>To determine when vaccination started and when most of the population was vaccinated, compute the percent of the US population (including DC and Puerto Rico) were vaccinated by date. Do the same for the booster. Then plot both percentages.</p></li>
 <li><p>Describe the distribution of vaccination rates on July 1, 2021.</p></li>
 <li><p>Is there a difference across region? Discuss what the plot shows?</p></li>
@@ -263,12 +432,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 
 
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-    tabsets.forEach(function(tabset) {
-      const tabby = new Tabby('#' + tabset.id);
-    });
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -366,7 +534,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         },
         interactive: true,
         interactiveBorder: 10,
-        theme: 'light-border',
+        theme: 'quarto',
         placement: 'bottom-start',
       };
       if (contentFn) {
@@ -666,8 +834,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+</div> <!-- /content -->
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-05-dataviz.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
