@@ -556,3 +556,48 @@ html, body {
         min-width: 60px;
     }
 }
+
+/* --- NUCLEAR OPTION: Override ALL possible orange elements --- */
+
+/* Kill any orange/primary colors that might sneak through */
+.btn-warning,
+.alert-warning,
+.badge-warning,
+.text-warning,
+.border-warning,
+.bg-warning {
+    background-color: #2980b9 !important;
+    border-color: #2980b9 !important;
+    color: white !important;
+}
+
+/* Nuclear search fix - every possible selector */
+#quarto-search .aa-dropdown-menu .aa-suggestion.aa-cursor,
+#quarto-search .aa-suggestion.aa-cursor,
+#quarto-search .search-result-item.active,
+#quarto-search .search-result-item.selected,
+#quarto-search .search-result-item:focus,
+.aa-Item[aria-selected="true"],
+.aa-Item[aria-selected="true"] .aa-ItemContent,
+.algolia-autocomplete .aa-cursor,
+.algolia-autocomplete .aa-suggestion.aa-cursor {
+    background-color: rgba(41, 128, 185, 0.2) !important;
+    background-image: none !important;
+    color: #2c3e50 !important;
+    border-left: 3px solid #2980b9 !important;
+}
+
+/* Override any orange accent colors */
+:root {
+    --bs-primary: #2980b9 !important;
+    --bs-warning: #2980b9 !important;
+    --bs-orange: #2980b9 !important;
+}
+
+/* Override Quarto's orange variables if they exist */
+.quarto-color-accent,
+.accent-color,
+[data-bs-theme] {
+    --quarto-color-accent: #2980b9 !important;
+    --accent-color: #2980b9 !important;
+}
