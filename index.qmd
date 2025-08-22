@@ -68,5 +68,6 @@ Oct 07, Oct 09 | Data visualization  | [Data Viz Principles](slides/dataviz/17-d
 
 ## Acknowledgments
 
-We thank [Maria Tackett](https://github.com/matackett) and [Mine Çetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel) for sharing their [web page template](https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main), which we used in creating this website.
+
+For the Fall 2025 iteration of BST 260, the course website was modified by [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis), building on the [Fall 2024](https://datasciencelabs.github.io/2024/) course template. We thank [Maria Tackett](https://github.com/matackett) and [Mine Çetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel) for sharing their [web page template](https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main), which we used in creating this website.
 
