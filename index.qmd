@@ -44,16 +44,16 @@ Oct 06, Oct 08 | Data visualization  | [Data Viz Principles](slides/dataviz/17-d
 
 | Problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
-| [01](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|Sep 10   | easy | 
-| [02](psets/pset-02-r-vectorization.qmd) |  R | Sep 18   |easy | 
-| [03](psets/pset-03-tidyverse.qmd)          |  Tidyverse | Sep 26   |medium | 
-| [04](psets/pset-04-wrangling.qmd)          | Wrangling | Oct 3   | medium | 
-| [05](psets/pset-05-dataviz.qmd) |  Covid 19 data visualization | Oct 10   |medium | 
-| [06](psets/pset-06-prob.qmd)          | Probability | Oct 24   | easy | 
-| [07](psets/pset-07-election.qmd)          | Predict the election |Nov 03   |  hard | 
-| [08](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María |Nov 14   |  medium | 
-| [09](psets/pset-09-matrices.qmd)          | Matrices | Nov 21   | easy | 
-| [10](psets/pset-10-ml.qmd)          | Digit reading | Dec 15   | hard | 
+| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|Sep 10   | easy | 
+| Problem Set 2 |  R | Sep 18   |easy | 
+| Problem Set 3          |  Tidyverse | Sep 26   |medium | 
+| Problem Set 4          | Wrangling | Oct 3   | medium | 
+| Problem Set 5 |  Covid 19 data visualization | Oct 10   |medium | 
+| Problem Set 6         | Probability | Oct 24   | easy | 
+| Problem Set 7          | Predict the election |Nov 03   |  hard | 
+| Problem Set 8          | Excess mortality after Hurricane María |Nov 14   |  medium | 
+| Problem Set 9          | Matrices | Nov 21   | easy | 
+| Problem Set 10         | Digit reading | Dec 15   | hard | 
 |Final Project| Your choice | Dec 19   | hard  |
 
 ## Office hour times

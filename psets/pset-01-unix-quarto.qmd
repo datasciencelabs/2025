@@ -1,6 +1,6 @@
 ---
 title: Problem set 1 
-date: 2024-09-11
+date: 2025-09-10
 ---
 
 After finishing the homework, you are to turn in all the code to GitHub using git.

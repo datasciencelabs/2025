@@ -1,6 +1,6 @@
 ---
 title: Problem set 9
-date: 2024-11-22
+date: 2025-11-21
 ---
 
 You are not allowed to load any package or use for-loop. For exercises 1 and 3-6 you only get to write one line of code for the solution.

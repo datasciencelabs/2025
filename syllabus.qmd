@@ -8,8 +8,8 @@ title: "Syllabus"
 - Kresge G1 (HSPH)
 - Monday 09:45 AM - 11:15 AM; Wednesday 09:45 AM - 11:15 AM
 - Lecture notes: [https://datasciencelabs.github.io/2025/](https://datasciencelabs.github.io/2025/)
-- Slack workspace: <https://bst-260-f25-7j2.slack.com/>
-- Canvas: <https://canvas.harvard.edu/courses/158943>
+- Slack: [BST 260 Slack Workspace](https://bst-260-f25-7j2.slack.com/)
+- Canvas: [Home Page](https://canvas.harvard.edu/courses/158943)
 
 ## Prerequisites
 
@@ -109,8 +109,6 @@ You can use ChatGPT however you want. Do remember **you won't be able to use it 
 
 | Date | Event |
 |------|-------|
-| Sep 9 | Pset 1 due |
-| Sep 12 | Pset 2 due |
 | Oct 13 | No class: Indigenous Peoples' Day |
 | Oct 15 | Midterm 1: covers material from Sep 04-Oct 11 |
 | Oct 22 | Start final project. Obtain approval if you want to do a personal project instead. |

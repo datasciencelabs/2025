@@ -1,6 +1,6 @@
 ---
 title: Problem set 7 
-date: 2024-11-4
+date: 2025-11-03
 execute: 
   eval: false
 ---
