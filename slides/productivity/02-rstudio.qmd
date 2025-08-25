@@ -1,55 +1,67 @@
 ---
-title: RStudio
+title: RStudio IDE
 keywords: "Productivity Tools"
-date: 2025-09-03
+date: 2024-09-04
 format:
    revealjs:
      theme: night
 ---
 
+## Integrated Development Environment (IDE)
+
+-   Posit provides a free IDE for R with RStudio
+-   those with more programming experience may want to experiment with Positron (newer and adapted to LLMs)
+-   IDEs provide a framework for developing software, carrying out analyses and integrating code, with analysis
+-   they can help with creating packages, documenting functions and using external tools such as `gitHub`
 
 ## The panes
 
 ![](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/img/rstudio.png)
 
----
+------------------------------------------------------------------------
 
 ## The Basics
 
 Let's try a few things together:
 
-* Open a new R script file.
-* Learn tab complete.
-* Run commands while editing scripts.
-* Run the entire script.
-* Make a plot.
-* Change options to never save workspace.
-* Change IDE appearance.
+-   Open a new R script file.
+-   Learn tab complete.
+-   Run commands while editing scripts.
+-   Run the entire script.
+-   Make a plot.
+-   Change options to never save workspace.
+-   Change IDE appearance.
 
----
+------------------------------------------------------------------------
 
 ## Projects
 
 Let's try this together:
 
-* Start new project in new directory.
-* Start new project in existing directory.
-* Change projects.
+-   Start new project in new directory.
+-   Start new project in existing directory.
+-   Change projects.
+-   Use the `File` menu to create a new Quarto document
 
---- 
- 
-## Type of editor
- 
-Let's examine the two types of editors available:
+------------------------------------------------------------------------
 
-* Source - See the actual code (WYSIWYG)
-* Visual - Partial preview of final document.
+## Type of editor{.smaller}
+
+- the editor you use will depend on what kind of document you are editing
+- they can be customized in many ways and often have language specific settings
+- we will be creating and editing markdown documents - mostly using the Quarto paradigm
+
+- for Quarto you can use either a source view or a visual view:
+    -   Source - See the actual code (WYSIWYG)
+    -   Visual - Partial preview of final document.
 
 Note: You can state your preference in a the header:
 
 ```yaml
+title: RStudio IDE
+keywords: "Productivity Tools"
+
 editor: source
 ```
 
-* We learn about headers in the Quarto lecture.
-
+-   We learn more about Quarto soon

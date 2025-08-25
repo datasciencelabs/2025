@@ -1,7 +1,7 @@
 ---
 title: "Unix"
 keywords: "Productivity Tools"
-date: 2025-09-03
+date: "2025-09-03"
 format:
   revealjs:
     theme: night
@@ -15,7 +15,7 @@ format:
 
 --- 
 
-## Five precepts of file naming and organization
+## Five precepts of file naming and organization{.smaller}
 
 * Have a distinctive, human-readable name that gives an indication of the content.
 * Follow a consistent pattern that is machine-friendly.
@@ -27,11 +27,21 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 --- 
 
-## The terminal
+## The System{.smaller}
 
 - Instead of clicking, dragging, and dropping to organize our files and folders, we will be typing Unix commands into the terminal. 
 
 - The way we do this is similar to how we type commands into the R console, but instead of generating plots and statistical summaries, we will be organizing files on our system.
+
+- The file system is hierarchical, you create directories (folders) in other folders
+
+- When you log in to a Unix computer you are in your **home** directory
+
+- the command line has a *prompt* that is configurable and is printed on screen to let you know that the terminal is ready for input
+
+- **Environment variables** control your computing environment and many are customizable by users 
+
+- LLMs are really useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on
 
 ---
 
@@ -50,7 +60,8 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 ---
 
-## The home directory
+## The home directory{visibility="hidden"}
+
 
 ::: {layout-ncol=2}
 
@@ -62,7 +73,7 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 --- 
 
-## Windows
+## Windows{visibility="hidden"}
 
 The structure on Windows looks something like this:
 
@@ -70,7 +81,7 @@ The structure on Windows looks something like this:
 
 ---
  
-## Mac
+## Mac{visibility="hidden"}
  
  And on MacOS something like this:
 
@@ -78,21 +89,44 @@ The structure on Windows looks something like this:
 
 ---
 
+## Files and permissions
+
+* within each directory you can create files and other directories
+
+* files whose names start with a period `.` are *hidden* by default; use `ls -a` to view them
+
+* files have permissions: use `ls -lh` to view details
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+drwxr-xr-x    4 robert  staff   128B Aug  8 10:03 bin
+-rw-r--r--@   1 robert  staff    20M Jun 24 09:11 boots.png
+-rw-r--r--@   1 robert  staff    26M Jun 23 15:23 boots1.pdf
+```
+
+* you can **r**ead, **w**rite, or e**x**ecute files and control who can see or use them by changing permissions
+
 ## Working directory
 
-- The working directory is the directly you are currently *in*. Later we will see that we can move to other directories using the command line.
-- It's similar to clicking on folders.
+- The working directory is the directly you are currently *in*. 
+
+- Commands that you issue will generally take effect in this directory
 
 - You can see your working directory using the Unix command `pwd`
 
-In R we can use `getwd()`
+- You can list the contents of the directory (files and other directories) using `ls`
+
+- You can find out about how `ls` works by issuing the command: `man ls`
 
 
 ---
 
 ## Paths 
 
-- This string returned in previous command is *full path* to working directory.
+- This string returned by `pwd` command is the *full path* to the working directory.
 
 - The full path to your home directory is stored in an *environment* variable. 
 
@@ -107,9 +141,15 @@ In R we can use `getwd()`
 
 - Example: the full path for *docs* (in image above) can be written like this `~/docs`.
 
-- Most terminals will show the path to your working directory right on the command line. 
+- A common default for the prompt is to show the path to the working directory (but that might be long and you can change it)
 
-- Let's open a terminal window and see if the working directory is listed.
+- Let's open a terminal window and see what the prompt is.
+
+- you have an environment variable called `PATH` which you can display using `echo`
+
+- that variable is a set of individual paths, separated by `:` (colon) and it tells your Unix shell where to look for commands
+
+- you can modify that path, so that you can have it look for commands in other, non-standard places (eg make your own `bin` directory)
 
 ---
 
@@ -129,7 +169,7 @@ In R we can use `getwd()`
 
 - `rm`: removing files
 
-- `less`: looking at a file
+-  `more` and `less`: display the contents of a file
 
 ---
 
@@ -155,23 +195,34 @@ Command-line text editors are essential tools, especially for system administrat
 * Emacs 
 
 
-## Other very useful commands you should learn
+## Other useful commands
 
+* `curl` - download data from the internet.
 
-* curl - download data from the internet.
+* `tar` - archive files and directories into one file.
 
-* tar - archive files and subdirectories of a directory into one file.
+* `gzip` - and other compression tools - make big files small
 
-* ssh - connect to another computer.
+* `ssh` - connect to another computer.
 
-* find - search for files by filename in your system.
+* `find` - search for files by filename in your system.
 
-* grep - search for patterns in a file.
+* `grep` - search for patterns in a file.
 
-* awk/sed - These are two very powerful commands that permit you to find specific strings in files and change them.
+* `awk/sed` - These are two very powerful commands that permit you to find specific strings in files and change them.
 
 
 ---
+
+## A deeper dive
+
+* The shell you use helps to organize and facilitate your interactions with the operating system
+
+* `echo $SHELL` will display the shell you are using
+
+* many software tools use hidden files and directories to provide customization e.g. `.gitconfig` or `.ssh`
+
+* most shells have two files that are commonly used to provide user level customization `.zsh`, and `.zprofile`
 
 ## Resources
 
