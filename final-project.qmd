@@ -6,20 +6,17 @@ title: "Final Project"
 
 For the final project you will choose one of these topics:
  
-1. COVID-19 pandemic in the US 
-2. Excess mortality in Puerto Rico after Hurricane María.
+1. TBD...
+2. TBD...
 3. Topic of your choice (needs instructor approval).
-4. Election results dashboard.
 
 You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.  
 
 You can work alone or in groups of at most three people.
 
-If you select option 4 you can skip to [Election Dashboard](#sec-dashboard).
-
 ## Sections 
 
-For the first three options, you will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.
+You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.
 
 ### Abstract (150-200 words) {.nonumber}
 
@@ -62,12 +59,9 @@ You can include a **separate document** titled Supplementary Methods.
 
 ## Examples
 
-Here are two examples or papers related to the two first topics:
+TBD...
 
-* [A Flexible Statistical Framework for Estimating Excess Mortality](https://pmc.ncbi.nlm.nih.gov/articles/PMC10200579/)
-* [Excess deaths associated with covid-19 pandemic in 2020: age and sex disaggregated time series analysis in 29 high income countries](https://www.bmj.com/content/373/bmj.n1137)
-
-## GitHut Repository {.nonumber}
+## GitHub Repository {.nonumber}
 
 We recommend your repository include:
 
@@ -79,68 +73,6 @@ We recommend your repository include:
 
 We expect to see at least five commits by each person. 
 
-# Covid-19 
+# Project Details
 
-## Data
-
-You can use the data we downloaded in problem set 4. 
-
-We want you to examine the entire pandemic, until at least December 1, 2024 which means you will need to obtain population estimates for 2023 and 2024.
-
-**For those working in groups** we want you to obtain daily or weekly mortality data for each state.
-
-## Tasks and questions
-
-1. Divide the pandemic period, January 2020 to December 2024 into _waves_. Justify your choice with data visualization. 
-
-2. For each period compute the deaths rates by state. Describe which states did better or worse during the different periods.
-
-3. Describe if COVID-19 became less or more virulent across the different periods.
-
-4. **For those working in groups**: Estimate excess mortality for each week for each state. Do COVID-19 deaths explain the excess mortality? 
-
-5. **For those working in groups**: Repeat 2 but for excess mortality instead of COVID-19 deaths.
-
-
-# Excess mortality
-
-## Data
-
-You can use `puerto_rico_counts` in the **excessmort** package. 
-
-**For those working in groups** we want you to wrangle the data from the pdf report shared by the New York Times. `https://github.com/c2-d2/pr_mort_official/raw/master/data/Mortalidad-RegDem-2015-17-NYT-part1.pdf` 
-
-## Tasks and questions
-
-1. Examine the population sizes by age group and sex. Describe any interesting patterns.
-
-2. Use data from before 2017 to estimate expected mortality and a standard deviation for each week. Do this by age group and sex. Describe tendencies you observe. You can combine data into bigger age groups if the data show they have similar death rates.
-
-3. Explore the data to see if there are periods during or before 2017 that appear to have excess mortality. If so, explain and recompute expected death rates removing these periods.
-
-4. Estimate excess deaths for each week of 2017-2018. Make sure you define the weeks so that one of the weeks starts the day  María made landfall. Comment on excess mortality. Which age groups were affected? Were men and women affected differently?
-
-5. **For those working in groups**: Extract the data from the PDF shared with NY Times. Comment on how it matches with **excessmort** package data.
-
-# Election Dashboard {#sec-dashboard}
-
-## Data
-
-Obtain pollster data for 2016, 2018, 2020, 2022 elections. We already provided data from the 2024 election.
-
-## Tasks and questions
-
-1. We want you to build a shiny dashboard to be ready to predict the 2026 senate election. To do this you will prepare a dashboard for the 2024 senate election. 
-
-2. The dashboard should show your prediction for each senate race based on a Bayesian analysis.
-
-3. The dashboard should also show a prediction for the number of seats the democrats will hold. It should display a histogram with your estimate of the probability distribution for each possible outcome.
-
-4. Use data from previous years to motivate the choice of priors.
-
-
-5. **For those working in groups**: Use the previous 4 elections to estimate correlations between states in the polling bias. Use it to improve your model.
-
-## GitHub
-
-All the code needed to construct the shiny app should be included in a GitHub repository, including whatever wrangling you performed for your data analysis.
+TBD...
