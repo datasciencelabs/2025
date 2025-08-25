@@ -2,7 +2,7 @@
 title: "Conditionals"
 author: "Rafael A. Irizarry"
 keywords: "Machine Learning"
-date: "2024-12-04"
+date: "2025-12-03"
 format:
   revealjs:
     theme: night

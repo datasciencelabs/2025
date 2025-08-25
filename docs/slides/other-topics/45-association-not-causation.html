@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2024-12-16">
+  <meta name="dcterms.date" content="2025-12-15">
   <meta name="keywords" content="Other topics">
   <title>BST 260: Introduction to Data Science – Association Not Causation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,7 +199,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-12-16</p>
+  <p class="date">2025-12-15</p>
 </section>
 <section id="association-is-not-causation" class="slide level2">
 <h2>Association is not causation</h2>
@@ -252,21 +252,21 @@
 <pre><code># A tibble: 1,000,000 × 2
     group     r
     &lt;int&gt; &lt;dbl&gt;
- 1 670361 0.829
- 2 429629 0.815
- 3 401750 0.759
- 4 512285 0.758
- 5 442340 0.755
- 6 862075 0.748
- 7 145652 0.745
- 8  17737 0.742
- 9  91347 0.737
-10  55117 0.737
+ 1 209533 0.799
+ 2 810410 0.779
+ 3 396065 0.777
+ 4  60859 0.776
+ 5 759539 0.769
+ 6 394885 0.769
+ 7 209077 0.767
+ 8 137242 0.765
+ 9 697468 0.760
+10 156736 0.759
 # ℹ 999,990 more rows</code></pre>
 </div>
 </div>
 <ul>
-<li>We see a maximum correlation of 0.829.</li>
+<li>We see a maximum correlation of 0.799.</li>
 </ul>
 </section>
 <section id="spurious-correlation-4" class="slide level2">
@@ -305,9 +305,9 @@
 <span id="cb5-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-  term  estimate std.error statistic     p.value
-  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
-1 x        0.794     0.112      7.12 0.000000297</code></pre>
+  term  estimate std.error statistic    p.value
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 x         1.11     0.175      6.37 0.00000169</code></pre>
 </div>
 </div>
 </section>

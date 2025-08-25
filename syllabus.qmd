@@ -47,7 +47,7 @@ Throughout the course, **we use motivating case studies and data analysis proble
 
 ## Weekly Course Structure
 
-* Monday lectures: We describe the concerts, methods, and skills needed for problem sets.
+* Monday lectures: We describe the concepts, methods, and skills needed for problem sets.
 * Wednesday labs: We work together on problem sets.
 * Friday: Problem sets due (see Key Dates and Problem Sets).
 
@@ -95,7 +95,7 @@ For your final project we ask that you turn in a 4-6 page report using data to a
 * Based on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.
 * What was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?
  
-Optionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 25.
+Optionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 24.
 
 Yet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).
 
@@ -109,13 +109,13 @@ You can use ChatGPT however you want. Do remember **you won't be able to use it 
 
 | Date | Event |
 |------|-------|
-| Sep 10 | Pset 1 due |
-| Sep 13 | Pset 2 due |
-| Oct 14 | No class: Indigenous Peoples' Day |
-| Oct 16 | Midterm 1: covers material from Sep 04-Oct 11 |
-| Oct 23 | Start final project. Obtain approval if you want to do a personal project instead. |
-| Nov 11 | No class: Veterans' Day |
-| Nov 25 | Midterm 2: cover material from Sep 04-Nov 22 | 
-| Nov 27 | No class: Thanksgiving Recess Begins |
-| Dec 20 | Final Project due | 
+| Sep 9 | Pset 1 due |
+| Sep 12 | Pset 2 due |
+| Oct 13 | No class: Indigenous Peoples' Day |
+| Oct 15 | Midterm 1: covers material from Sep 04-Oct 11 |
+| Oct 22 | Start final project. Obtain approval if you want to do a personal project instead. |
+| Nov 10 | No class: Veterans' Day |
+| Nov 24 | Midterm 2: cover material from Sep 04-Nov 22 | 
+| Nov 26 | No class: Thanksgiving Recess Begins |
+| Dec 19 | Final Project due | 
 

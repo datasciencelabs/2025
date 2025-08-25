@@ -54,7 +54,7 @@
     "href": "syllabus.html#weekly-course-structure",
     "title": "Syllabus",
     "section": "Weekly Course Structure",
-    "text": "Weekly Course Structure\n\nMonday lectures: We describe the concerts, methods, and skills needed for problem sets.\nWednesday labs: We work together on problem sets.\nFriday: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class.",
+    "text": "Weekly Course Structure\n\nMonday lectures: We describe the concepts, methods, and skills needed for problem sets.\nWednesday labs: We work together on problem sets.\nFriday: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class.",
     "crumbs": [
       "Syllabus"
     ]
@@ -94,7 +94,7 @@
     "href": "syllabus.html#final-project",
     "title": "Syllabus",
     "section": "Final Project",
-    "text": "Final Project\nFor your final project we ask that you turn in a 4-6 page report using data to answer a public health related question. You can chose from one of the following:\n\nBased on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.\nWhat was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?\n\nOptionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 25.\nYet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).\nNote: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours.",
+    "text": "Final Project\nFor your final project we ask that you turn in a 4-6 page report using data to answer a public health related question. You can chose from one of the following:\n\nBased on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.\nWhat was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?\n\nOptionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 24.\nYet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).\nNote: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours.",
     "crumbs": [
       "Syllabus"
     ]
@@ -114,7 +114,7 @@
     "href": "syllabus.html#key-dates",
     "title": "Syllabus",
     "section": "Key Dates",
-    "text": "Key Dates\n\n\n\n\n\n\n\nDate\nEvent\n\n\n\n\nSep 10\nPset 1 due\n\n\nSep 13\nPset 2 due\n\n\nOct 14\nNo class: Indigenous Peoples’ Day\n\n\nOct 16\nMidterm 1: covers material from Sep 04-Oct 11\n\n\nOct 23\nStart final project. Obtain approval if you want to do a personal project instead.\n\n\nNov 11\nNo class: Veterans’ Day\n\n\nNov 25\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nNov 27\nNo class: Thanksgiving Recess Begins\n\n\nDec 20\nFinal Project due",
+    "text": "Key Dates\n\n\n\n\n\n\n\nDate\nEvent\n\n\n\n\nSep 9\nPset 1 due\n\n\nSep 12\nPset 2 due\n\n\nOct 13\nNo class: Indigenous Peoples’ Day\n\n\nOct 15\nMidterm 1: covers material from Sep 04-Oct 11\n\n\nOct 22\nStart final project. Obtain approval if you want to do a personal project instead.\n\n\nNov 10\nNo class: Veterans’ Day\n\n\nNov 24\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nNov 26\nNo class: Thanksgiving Recess Begins\n\n\nDec 19\nFinal Project due",
     "crumbs": [
       "Syllabus"
     ]
@@ -586,7 +586,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-22 15:24:28 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-22 19:24:28 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-25 01:57:21 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-25 05:57:21 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -600,7 +600,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 15\n\nnow() |&gt; minute() \n\n[1] 24\n\nnow() |&gt; second() \n\n[1] 28.79947"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 1\n\nnow() |&gt; minute() \n\n[1] 57\n\nnow() |&gt; second() \n\n[1] 21.65475"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1006,7 +1006,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.89038 62.02416 65.99653 69.91428 70.02895 73.12333 66.88367 73.02362\n [9] 66.95725 69.92905"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.92004 61.91624 66.14667 69.97534 69.92635 73.13510 67.01011 72.90134\n [9] 67.05080 69.92382"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -2672,7 +2672,7 @@
     "href": "slides/ml/40-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.996\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.993\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-2",
@@ -3484,7 +3484,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4301041 0.4918959\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4271192 0.4888808\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4340857 0.4959143\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4510298 0.5129702\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3526,7 +3526,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9458"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9498"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4121,21 +4121,21 @@
     "href": "slides/00-intro.html#general-information",
     "title": "Introduction",
     "section": "General Information",
-    "text": "General Information\n\nBST 260 Introduction to Data Science\nInstructor: Rafael A. Irizarry\nTFs: Corri Sept, Nikhil Vytla, Yuan Wang\nMondays we have lectures, Wednesday we have labs.\nWe work on problem sets together, in lab."
+    "text": "General Information\n\nBST 260 Introduction to Data Science\nInstructors: Robert Gentleman, Anthony Christidis\nTFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nMondays we have lectures, Wednesday we have labs.\nWe work on problem sets together, in lab."
   },
   {
     "objectID": "slides/00-intro.html#course-description",
     "href": "slides/00-intro.html#course-description",
     "title": "Introduction",
     "section": "Course Description",
-    "text": "Course Description\nLecture notes: https://datasciencelabs.github.io/2024/\n\nPlease read the syllabus!"
+    "text": "Course Description\nLecture notes: https://datasciencelabs.github.io/2025/\n\nPlease read the syllabus!"
   },
   {
     "objectID": "slides/00-intro.html#important-details",
     "href": "slides/00-intro.html#important-details",
     "title": "Introduction",
     "section": "Important details",
-    "text": "Important details\n\nComplete readings before class.\nMidterms are in person. There are no makeups.\nMake sure you read messages sent via Canvas\nYou can select your own final project, but need approval.\nYou should start final project by October 23.\nHelp us pick office hours: https://forms.gle/GiQXqDTaeYVxaXd78"
+    "text": "Important details\n\nComplete readings before class.\nMidterms are in person. There are no makeups.\nMake sure you read messages sent via Canvas\nYou can select your own final project, but need approval.\nYou should start final project by October 22.\nHelp us pick office hours: https://forms.gle/GiQXqDTaeYVxaXd78"
   },
   {
     "objectID": "slides/00-intro.html#whats-coming",
@@ -4211,7 +4211,7 @@
     "href": "index.html#lectures",
     "title": "BST 260 Introduction to Data Science",
     "section": "Lectures",
-    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\nDates\nTopic\nSlides\nReading\n\n\n\n\nSep 04\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\n\n\nSep 09, Sep 11\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git\n\n\nSep 16, Sep 19\nR\nR basics, Vectorization\nR Basics, Vectorization\n\n\nSep 23\nR\nTidyverse, ggplot2\ndplyr, ggplot2\n\n\nSep 25\nR\nTyding data\nReshaping Data\n\n\nSep 30, Oct 02\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web scraping, Joining tables\nImporting data, dates and times, Locales, Joining Tables, Extracting data from the web\n\n\nOct 07, Oct 09\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\n\n\nOct 16\nMidterm 1\n\nCovers material from Sep 04-Oct 11\n\n\nOct 21\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables & CLT\n\n\nOct 23\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\n\n\nOct 28, Oct 30\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\n\n\nNov 04, Nov 06\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\n\n\nNov 13, Nov 18\nLinear models\nMultivariate regression, Treatment effect models\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association Not Causation\n\n\nNov 20\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R\nMatrices in R, Applied Linear Algebra,\n\n\nNov 25\nMidterm 2\n\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nDec 02\nHigh dimensional data\nDistance, Dimension reduction\nDimension Reduction\n\n\nDec 04\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and terminology, Evaluation Metrics, conditional probabilities, smoothing\n\n\nDec 09, Dec 11\nMachine Learning\nkNN, Resampling methods, caret package, Algorithms, ML in practice\nResampling methods, ML algorithms, ML in practice\n\n\nDec 16, Dec 18\nOther topics\nAssociation is not causation, Shiny, Shiny example code\nAssociation is not causation",
+    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\nDates\nTopic\nSlides\nReading\n\n\n\n\nSep 03\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\n\n\nSep 08, Sep 10\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git\n\n\nSep 15, Sep 18\nR\nR basics, Vectorization\nR Basics, Vectorization\n\n\nSep 22\nR\nTidyverse, ggplot2\ndplyr, ggplot2\n\n\nSep 24\nR\nTyding data\nReshaping Data\n\n\nSep 29, Oct 01\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web scraping, Joining tables\nImporting data, dates and times, Locales, Joining Tables, Extracting data from the web\n\n\nOct 06, Oct 08\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\n\n\nOct 15\nMidterm 1\n\nCovers material from Sep 04-Oct 11\n\n\nOct 20\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables & CLT\n\n\nOct 22\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\n\n\nOct 27, Oct 29\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\n\n\nNov 03, Nov 05\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\n\n\nNov 12, Nov 17\nLinear models\nMultivariate regression, Treatment effect models\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association Not Causation\n\n\nNov 19\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R\nMatrices in R, Applied Linear Algebra,\n\n\nNov 24\nMidterm 2\n\nMidterm 2: cover material from Sep 04-Nov 22\n\n\nDec 01\nHigh dimensional data\nDistance, Dimension reduction\nDimension Reduction\n\n\nDec 03\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and terminology, Evaluation Metrics, conditional probabilities, smoothing\n\n\nDec 08, Dec 10\nMachine Learning\nkNN, Resampling methods, caret package, Algorithms, ML in practice\nResampling methods, ML algorithms, ML in practice\n\n\nDec 15, Dec 17\nOther topics\nAssociation is not causation, Shiny, Shiny example code\nAssociation is not causation",
     "crumbs": [
       "Home"
     ]
@@ -4221,7 +4221,7 @@
     "href": "index.html#problem-sets",
     "title": "BST 260 Introduction to Data Science",
     "section": "Problem sets",
-    "text": "Problem sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\n01\nUnix, Quarto\nSep 11\neasy\n\n\n02\nR\nSep 19\neasy\n\n\n03\nTidyverse\nSep 27\nmedium\n\n\n04\nWrangling\nOct 4\nmedium\n\n\n05\nCovid 19 data visualization\nOct 11\nmedium\n\n\n06\nProbability\nOct 25\neasy\n\n\n07\nPredict the election\nNov 04\nhard\n\n\n08\nExcess mortality after Hurricane María\nNov 15\nmedium\n\n\n09\nMatrices\nNov 22\neasy\n\n\n10\nDigit reading\nDec 16\nhard\n\n\nFinal Project\nYour choice\nDec 20\nhard",
+    "text": "Problem sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\n01\nUnix, Quarto\nSep 10\neasy\n\n\n02\nR\nSep 18\neasy\n\n\n03\nTidyverse\nSep 26\nmedium\n\n\n04\nWrangling\nOct 3\nmedium\n\n\n05\nCovid 19 data visualization\nOct 10\nmedium\n\n\n06\nProbability\nOct 24\neasy\n\n\n07\nPredict the election\nNov 03\nhard\n\n\n08\nExcess mortality after Hurricane María\nNov 14\nmedium\n\n\n09\nMatrices\nNov 21\neasy\n\n\n10\nDigit reading\nDec 15\nhard\n\n\nFinal Project\nYour choice\nDec 19\nhard",
     "crumbs": [
       "Home"
     ]
@@ -6712,7 +6712,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499961\n\nsd(x_hat) \n\n[1] 0.01574379"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498767\n\nsd(x_hat) \n\n[1] 0.01570393"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10184,7 +10184,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 670361 0.829\n 2 429629 0.815\n 3 401750 0.759\n 4 512285 0.758\n 5 442340 0.755\n 6 862075 0.748\n 7 145652 0.745\n 8  17737 0.742\n 9  91347 0.737\n10  55117 0.737\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.829."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 209533 0.799\n 2 810410 0.779\n 3 396065 0.777\n 4  60859 0.776\n 5 759539 0.769\n 6 394885 0.769\n 7 209077 0.767\n 8 137242 0.765\n 9 697468 0.760\n10 156736 0.759\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.799."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10219,7 +10219,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.794     0.112      7.12 0.000000297"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x         1.11     0.175      6.37 0.00000169"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11423,7 +11423,7 @@
     "href": "slides/R/05-r-basics.html#factors-3",
     "title": "R Basics",
     "section": "Factors",
-    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.00    0.02"
+    "text": "Factors\nExercise: How can we make this go much faster?\n\nsystem.time({levels(y) &lt;- tolower(levels(y))})\n\n   user  system elapsed \n   0.00    0.01    0.04"
   },
   {
     "objectID": "slides/R/05-r-basics.html#factors-can-be-confusing",
@@ -12410,7 +12410,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio\n\n\nWed, Sep 04\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 09\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nMon, Sep 09\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 16\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 18\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 23\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 23\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 25\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 30\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 30\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 07\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 09\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 09\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 21\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 21\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 23\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 28\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nWed, Oct 30\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 30\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 05\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 05\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 12\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 02\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 02\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 02\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 04\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 11\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 09\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Dec 16\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 16\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nMon, Sep 08\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 17\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 11\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 01\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 08\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Dec 15\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 15\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
     ]

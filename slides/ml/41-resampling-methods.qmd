@@ -1,7 +1,7 @@
 ---
 title: "Resampling Methods"
 keywords: "Machine Learning"
-date: "2024-12-09"
+date: "2025-12-08"
 format:
   revealjs:
     theme: night
