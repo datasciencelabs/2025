@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2025-09-17">
+  <meta name="dcterms.date" content="2024-09-18">
   <meta name="keywords" content="R">
   <title>BST 260: Introduction to Data Science – Vectorization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,7 +199,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2025-09-17</p>
+  <p class="date">2024-09-18</p>
 </section>
 <section id="vectorization" class="slide level2">
 <h2>Vectorization</h2>
@@ -270,8 +270,8 @@
 <span id="cb8-2"><a></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(heights), <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
 <span id="cb8-3"><a></a>heights <span class="sc">+</span> error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 69.23641 61.88240 65.87004 69.93944 70.03817 72.94780 67.07246 72.95398
- [9] 66.98820 70.03747</code></pre>
+<pre><code> [1] 69.04050 61.97578 65.88230 70.15813 69.96547 72.97125 67.00052 73.02152
+ [9] 67.07340 70.07949</code></pre>
 </div>
 </div>
 </section>
@@ -348,11 +348,10 @@ attr(,"scaled:scale")
 </div>
 </div>
 </section>
-<section id="functions-that-vectorize-3" class="slide level2">
-<h2>Functions that vectorize</h2>
+<section id="most-functions-vectorize" class="slide level2">
+<h2>Most functions vectorize</h2>
 <ul>
-<li><p>The conditional function <code>if</code>-<code>else</code> does not vectorize.</p></li>
-<li><p>Functions such as <code>any</code> and <code>all</code>, covert vectors to logicals of lenght one needed for <code>if</code>-<code>else</code>.</p></li>
+<li><p>Functions such as <code>any</code> and <code>all</code>, covert vectors to logicals of length one needed for <code>if</code>-<code>else</code>.</p></li>
 <li><p>A particularly useful function is a vectorized version <code>ifelse</code>.</p></li>
 <li><p>Here is an example:</p></li>
 </ul>
@@ -364,10 +363,10 @@ attr(,"scaled:scale")
 </div>
 </div>
 </section>
-<section id="indexing" class="slide level2">
-<h2>Indexing</h2>
+<section id="subsetting" class="slide level2">
+<h2>Subsetting</h2>
 <ul>
-<li>Vectorization also works for logical relationships:</li>
+<li>Indexing with a logical vector subsets to the set corresponding to the <code>TRUE</code> values</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">library</span>(dslabs)</span>
@@ -385,7 +384,7 @@ attr(,"scaled:scale")
 </div>
 </div>
 </section>
-<section id="indexing-1" class="slide level2">
+<section id="indexing" class="slide level2">
 <h2>Indexing</h2>
 <ul>
 <li>You can also use vectorization to apply logical operators:</li>
@@ -499,52 +498,51 @@ attr(,"scaled:scale")
 <section id="the-apply-functions" class="slide level2">
 <h2>The apply functions</h2>
 <ul>
-<li><p>The apply functions let use the concept of vectorization with functions that don’t vectorize.</p></li>
-<li><p>Here is an example of a function that won’t vectorize in a convenient way:</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>s <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb49-2"><a></a>   <span class="fu">return</span>(<span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span>n))</span>
-<span id="cb49-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>Try it on a vector:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>ns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
-<span id="cb50-2"><a></a><span class="fu">s</span>(ns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 325</code></pre>
-</div>
-</div>
-</section>
-<section id="the-apply-functions-1" class="slide level2">
-<h2>The apply functions</h2>
-<ul>
-<li>We can use <code>sapply</code>, one of the apply functions:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="fu">sapply</span>(ns, s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]    325   5050 500500</code></pre>
-</div>
-</div>
-<ul>
-<li><code>sapply</code> will work on any vector, including lists.</li>
-</ul>
-</section>
-<section id="the-apply-functions-2" class="slide level2">
-<h2>The apply functions</h2>
-<ul>
-<li><p>There are other apply functions:</p>
-<ul>
+<li><p><code>sapply</code> - apply the function and simplify if possible</p></li>
+<li><p><code>apply</code> - applies function to rows or columns o matrix.</p></li>
 <li><p><code>lapply</code> - returns a list. Convenient when the function returns something other than a number.</p></li>
 <li><p><code>tapply</code> - can apply to subsets defined by second variable.</p></li>
-<li><p><code>mapply</code> - multivariate version of <code>sapply</code>.</p></li>
-<li><p><code>apply</code> - applies function to rows or columns o matrix.</p></li>
-</ul></li>
-<li><p>We will learn some of these as we go.</p></li>
+<li><p><code>mapply</code> - multivector version of <code>sapply</code>.</p></li>
 </ul>
+</section>
+<section id="apply-examples" class="slide level2">
+<h2>Apply Examples</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a> mm <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">nc=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb49-2"><a></a> <span class="fu">apply</span>(mm, <span class="dv">1</span>, sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  7 11 15 19</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a> <span class="fu">apply</span>(mm, <span class="dv">2</span>, \(x) x<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    4
+[2,]    9   16
+[3,]   25   36
+[4,]   49   64
+[5,]   81  100</code></pre>
+</div>
+</div>
+</section>
+<section id="split-example" class="slide level2">
+<h2>Split Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>sp1 <span class="ot">=</span> <span class="fu">split</span>(murders<span class="sc">$</span>population, murders<span class="sc">$</span>region)</span>
+<span id="cb53-2"><a></a><span class="fu">lapply</span>(sp1, sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$Northeast
+[1] 55317240
+
+$South
+[1] 115674434
+
+$`North Central`
+[1] 66927001
+
+$West
+[1] 71945553</code></pre>
+</div>
+</div>
 
 
 </section>
