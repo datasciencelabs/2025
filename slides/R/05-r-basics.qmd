@@ -1,7 +1,7 @@
 ---
 title: "R Basics"
 keywords: "R"
-date: 2025-09-15
+date: 2024-09-16
 format:
   revealjs:
     theme: night
@@ -12,7 +12,9 @@ execute:
 
 ## Packages
 
-* Use `install.packages` to install the **dslabs** package.
+* R has a *base* installation and then tens of thousands of add-on software packages that can be obtained from CRAN
+
+* Use `install.packages` to install the **dslabs** package from CRAN
 
 * Tryout the following functions: `sessionInfo`, `installed.packages`
 
@@ -20,13 +22,15 @@ execute:
 
 ## Prebuilt functions
 
-* Much of what we do in R is based on prebuilt functions. 
+* Much of what we do in R uses functions from either base R or installed packages.
 
 * Many are included in automatically loaded packages: `stats`, `graphics`, `grDevices`, `utils`, `datasets`, `methods`.
 
 * This subset of the R universe is refereed to as _R base_.
 
 * Very popular packages not included in R base: `ggplot2`, `dplyr`, `tidyr`, and `data.table`.
+
+* It is easy to write your own functions and packages
 
 ---
 
@@ -37,11 +41,11 @@ For problem set 2 you can only use R base.
 ---
 
 
-## Prebuilt functions
+## Base R functions
 
-* Example of prebuilt functions that we will use today: `ls`, `rm`, `library`, `search`, `factor`, `list`, `exists`, `str`, `typeof`, and `class`.
+* Example functions that we will use today: `ls`, `rm`, `library`, `search`, `factor`, `list`, `exists`, `str`, `typeof`, and `class`.
 
-* You can see the raw code for a function by typing it without the parenthesis: type `ls` on your console to see an example.
+* You can see the raw code for a function by typing its name without the parentheses: type `ls` on your console to see an example.
 
 ---
 
@@ -60,6 +64,7 @@ or
 ```r
 ?ls
 ```
+* many packages provide *vignettes* that are like how-to manuals that can show how the functions in the package are meant to be used to create different analyses
 
 ---
 
@@ -85,19 +90,43 @@ rm(a)
 
 ---
 
+## The workspace{.smaller}
+
+* each time you start R you will get a new workspace that does not have any variables or libraries loaded
+
+* when you quit R you will be asked if you want to save the workspace, you probably will always be better off saying **NO**
+
+* if you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a save workspace then that workspace will be re-instantiated and used
+
+* this might be helpful if you are working on a long complex analysis with large data, but mostly it is much easier to just use a markdown document to detail your steps and rerun that on a clean workspace - this can help find errors in your analysis
+
+* just like Unix R uses a search path to find functions that you can evaluate
+
+```{r search}
+search()
+```
+---
+
 ## Variable name convention
 
 * A nice convention to follow is to use meaningful words that describe what is stored, use only lower case, and use underscores as a substitute for spaces. 
+
+* R and RStudio both provide autocomplete capabilities so you don't need to type the whole name - that makes it easier to use longer more descriptive variable names
+
+* It is highly recommended that you not use the period `.` in variable names, there are situations where R treats it differently and those
+can cause unintended actions
 
 * For more we recommend [this guide](http://adv-r.had.co.nz/Style.html).
 
 --- 
 
-## Data types
+## Data types{.smaller}
 
 The main data types in R are:
 
-* One dimensional vectors: numeric, integer, logical, complex, characters.
+* One dimensional vectors: double, integer, logical, complex, characters.
+
+* integer and double are both numeric
 
 * Factors
 
@@ -125,7 +154,7 @@ The main data types in R are:
 
 ---
 
-## Data types
+## Data types{.smaller}
 
 Let's see some example:
 
@@ -134,17 +163,20 @@ library(dslabs)
 typeof(murders)
 class(murders)
 str(murders)
+dim(murders)
 ```
 
 ---
 
-## Data frames
+## Data frames{.smaller}
 
-* Date frames are the most common class used in data analysis. It is like a spreadsheet. 
+* Date frames are the most common class used in data analysis. 
+
+* Data frames are like a matrix, but where the columns can have different types.
 
 * Usually, rows represents observations and columns variables. 
 
-* Each variable can be a different data type.
+* you can index them like you would a matrix,  `x[i, j]` refers to the element in row `i` column `j`
 
 * You can see part of the content like this
 
@@ -157,18 +189,18 @@ head(murders)
 
 ## Data frames
 
-* and all of the content like this:
+* and you can use `View` to open a spreadsheet-like interface to see the entire data.frame.
 
 ```{r}
 #| eval: false
 View(murders)
 ```
 
-* Type the above in RStudio.
+* This is more effective in RStudio that has an integrated viewer. 
 
 ---
 
-## Data frames
+## Data frames{.smaller}
 
 * A very common operation is adding columns like this:
 
@@ -182,15 +214,15 @@ head(murders)
 
 ## Data frames
 
-* Note that we used `$`.
+* Note that we used the `$`.
 
-* This is called the `accessor` because it lets us access columns.
+* This is called an `accessor` because it lets us access columns.
 
 ```{r}
 murders$population
 ```
 
-* More generally: used to access components of a list.
+* More generally: `$` can be used to access named components of a list.
 
 ---
 
@@ -205,18 +237,18 @@ murders$population
 
 murders$population
 murders[, "population"]
-murders[["population"]]
 murders[, 4]
+murders[["population"]]
 murders[[4]]
 ```
 
-* In general, we recommend using the name rather than the number as it is less likely to change.
+* In general, we recommend using the name rather than the number as adding or removing columns will change index values, but not names.
 
 ---
 
 ## with
 
-*  `with` let's us use the column names as objects.
+*  `with` let's us use the column names as symbols to access the data.
 
 
 * This is convenient to avoid typing the data frame name over and over:
@@ -245,14 +277,17 @@ with(murders, {
 
 * The columns of data frames are an example of one dimensional (atomic) vectors.
 
+* An atomic vector is a vector where every element must be the same type.
+
 
 ```{r}
 length(murders$population)
+typeof(murders$population)
 ```
 
 ---
 
-## Vectors
+## Vectors{.smaller}
 
 
 * Often we have to create vectors.  
@@ -263,6 +298,15 @@ length(murders$population)
 x <- c("b", "s", "t", " ", "2", "6", "0")
 ```
 
+* We access the elements using `[]`
+
+```{r}
+x[5]
+typeof(x[5])
+x[12]
+```
+* **NOTE** R does not do array bounds checking...it silently pads with missing values
+
 ___
 
 ## Sequences
@@ -271,20 +315,22 @@ ___
 
 ```{r}
 seq(1, 10)
-seq(1, 9, 2)
+seq(1, 9, by=2)
 ```
 
-* When increasing by 1 you can use  `:`
+* When you want a sequence that increases by 1 you can use the colon `:`
 
 ```{r}
 1:10
+3.3:7.8
+4:-1
 ```
 
 ___
 
-## Sequences
+## Sequences{.smaller}
 
-* A useful function to quickly generate the sequence `1:length(x)` is `seq_along`:
+* A useful function to quickly generate the sequence  the same length as a vector `x` is `seq_along(x)` and **NOT** `1:length(x)`
 
 ```{r}
 x <- c("b", "s", "t", " ", "2", "6", "0")
@@ -299,7 +345,128 @@ for (i in seq_along(x)) {
 }
 ```
 
+* But if the length of `x` is zero, then using `1:length(x)` does not work for this loop
+```{r}
+w = x[x=="W"]
+1:length(w)
+seq_along(w)
+```
+
 ---  
+
+## Vector Types and Coercion{.smaller}
+
+* One dimensional vectors: double, integer, logical, complex, characters and numeric
+
+* Each basic type has its own version of NA (a missing value)
+
+* testing for types: `is.TYPE`, 
+* coercing :   `as.TYPE`, will result in NA if it is not possible
+
+```{r coercion}
+is.numeric("a")
+is.double(1L)
+as.double("6")
+as.numeric(x) + 3
+typeof(1:10)
+```
+
+---
+
+## Coercing
+
+* When you do something inconsistent with data types, R tries to figure out what you mean and change it accordingly.
+
+* We call this _coercing_.
+
+* R does not return an error and in some cases does not return a warning either.
+
+* This can cause confusion and unnoticed errors. 
+
+*  So it's important to understand how and when it happens. 
+
+--- 
+
+## Vector Types and Coercion{.smaller}
+
+* coercion is automatically performed when it is possible
+
+* `TRUE` coerces to 1 and `FALSE` to 0 
+*  but any non-zero integer coerces to TRUE, only 0 coerces to FALSE
+* `as.logical` converts 0 and only 0 to `FALSE`, everything else to `TRUE`
+* the character string "NA" is not a missing value
+
+```{r}
+typeof(1:10 + 0.1)
+typeof(TRUE+1)
+as.character(TRUE)
+as.numeric(TRUE)
+as.logical(1)
+as.logical(.5)
+```
+
+---
+
+## Coercing
+
+* Here are some examples:
+
+```{r}
+typeof(1L)
+typeof(1)
+typeof(1 + 1L)
+c("a", 1, 2)
+TRUE + FALSE
+factor("a") == "a"
+identical(factor("a"), "a")
+```
+
+--- 
+
+## Coercing 
+
+* When R can't figure out how to coerce, rather an error it returns an NA:
+
+```{r}
+as.numeric("a")
+```
+
+* Note that including `NA`s in arithmetical operations usually returns an `NA`.
+
+```{r}
+1 + 2 + NA
+```
+
+--- 
+
+## Coercing
+
+* You can coerce explicitly 
+
+* Most coercion functions start with `as.`
+
+* Here is an example.
+
+```{r}
+x <- factor(c("a","b","b","c"))
+as.character(x)
+as.numeric(x)
+```
+
+--- 
+
+## Coercing
+
+* The `readr` package provides some tools for trying to par 
+```{r}
+x <- c("12323", "12,323")
+as.numeric(x)
+
+library(readr)
+parse_guess(x)
+```
+
+--- 
 
 ## Factors
 
@@ -318,23 +485,48 @@ class(murders$region)
 
 ## Factors
 
-* Factors store levels and the label of each level.
+* A factor is a good representation for a variable, like Sex that has a fixed set of non-numeric values, like `Male` and `Female`
 
-* This is useful for categorical data.
+* It is usually not a good representation for variables (like state names in the murders dataset) that have lots of levels
+
+* Internally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to `length(levels)` if the `i`th entry is `k` than that corresponds to the `k`th element of the levels
+
+* In statistics we refer to this as categorical data, where all of the individuals are mapped into a relatively small number of categories.
+
+* Usually order does not matter, but if it does you can also have ordered factors.
 
 ```{r}
 x <- murders$region
 levels(x)
 ```
 
+---
 
+## Setting Levels
+
+* you can set up the levels as you would like, when creating a factor
+
+* if you do not set them up, then they will be created in lexicographic order (in the locale you are using)
+
+```{r}
+#| code-line-numbers: false
+
+x = sample(c("Male", "Female"), 50, replace =TRUE)
+y1 = factor(x, levels=c("Male", "Female"))
+y2 = factor(x, levels = c("Female", "Male"))
+y1[1:10]
+y2[1:10]
+
+```
 ---  
 
 ## Categories based on strata
 
-* In data analysis we often have to stratify continuous variables into categories.
+* In data analysis we often want to stratify continuous variables into categories.
 
 * The function `cut` helps us do this:
+
+* In this case there may be a reason to think of using ordered factors.
 
 
 ```{r}
@@ -347,7 +539,7 @@ cut(age, c(0, 11, 27, 43, 59, 78, 96, Inf))
 
 ## Categories based on strata
 
-* We can assign it more meaningful level names:
+* We can assign more meaningful level names:
 
 ```{r}
 age <- c(5, 93, 18, 102, 14, 22, 45, 65, 67, 25, 30, 16, 21)
@@ -359,7 +551,9 @@ cut(age, c(0, 11, 27, 43, 59, 78, 96, Inf),
 
 ## Changing levels
 
-* This is often needed for ordinal data because R defaults to alphabetical order:
+* This is often needed for ordinal data because R defaults to alphabetical order
+
+* Or as noted you may want to make use of `ordered` factors
 
 ```{r}
 gen <- factor(c("Alpha", "Zoomer", "Millennial"))
@@ -378,7 +572,7 @@ levels(gen)
 
 ## Changing levels
 
-* A common reason we need to change levels is to assure R is aware which is the reference strata.
+* A common reason we want to change levels is to assure R is aware which is the reference strata.
 
 * This is important for linear models because the first level is assumed to be the reference.
 
@@ -408,7 +602,7 @@ x <- reorder(murders$region, murders$population, sum)
 
 ## Factors
 
-* Another reason we used factors is because they  more efficient:
+* Another reason we used factors is because they are stored more efficiently:
 
 ```{r}
 x <- sample(murders$state[c(5,33,44)], 10^7, replace = TRUE)
@@ -417,15 +611,18 @@ object.size(x)
 object.size(y)
 ```
 
-* An integer is easier to store than a character string.
+* An integer uses less memory than a character string (but it is a bit more complicated)
 
 --- 
 
-## Factors
+## Factors{visibility="hidden"}
+
+
 
 Exercise: How can we make this go much faster?
 
 ```{r}
+##FIXME:RG - not sure what this is supposed to show
 system.time({levels(y) <- tolower(levels(y))})
 ```
 
@@ -467,9 +664,13 @@ z
 
 ## NAs
 
-* NA stands for not available. 
+* NA stands for not available and represents data that are *missing*. 
 
 * Data analysts have to deal with NAs often.
+
+* In R there is a different kind of NA for each of the basic vector data types.
+
+* There is also the concept of NULL, which represents a zero length list and is often returned by functions or expressions that do not have a specified return value 
 
 --- 
 
@@ -495,123 +696,41 @@ is.na("NA")
 
 --- 
 
-## NAs
+## NAs{.smaller}
 
-* Technically NA is a logical
-
-```{r}
-class(NA)
-```
-
-* When used with ands and ors, NAs behaves like FALSE
+* *Caution* logical operators like  and (`&`) and or (`|`) coerce their arguments when needed and possible
+* the logical operators evaluate arguments in a "lazy" fashion, and left to right
 
 ```{r}
 TRUE & NA
+TRUE & 0
 TRUE | NA
-```
-
-* But NA is not FALSE. Try this:
-
-```{r}
-#| eval: false
-if (NA) print(1) else print(0)
 ```
 
 --- 
 
-## NaNs
+## NaNs and Inf{.smaller}
 
-* A related constant is `NaN`.
+* A related constant is `NaN` which stands for Not a Number
 
-* Unlike `NA`, which is a logical, `NaN` is a number.
+* `NaN` is a double, coercing it to integer yields an NA
 
-* It is a `numeric` that is _Not a Number_. 
+* Inf and -Inf represent values of infinity and minus infinity (RStudio makes using these really annoying)
 
-* Here are some examples:
 
 ```{r}
+#| code-line-numbers: false
+
 0/0
 class(0/0)
 sqrt(-1)
 log(-1)
+1/Inf
+Inf-Inf
 ```
 
 --- 
 
-## Coercing
-
-* When you do something inconsistent with data types, R tries to figure out what you mean and change it accordingly.
-
-* We call this _coercing_.
-
-* R does not return an error and in some cases does not return a warning either.
-
-* This can cause confusion and unnoticed errors. 
-
-*  So it's important to understand how and when it happens. 
-
---- 
-
-## Coercing
-
-* Here are some examples:
-
-```{r}
-typeof(1L)
-typeof(1)
-typeof(1 + 1L)
-c("a", 1, 2)
-TRUE + FALSE
-factor("a") == "a"
-identical(factor("a"), "a")
-```
-
---- 
-
-## Coercing 
-
-* When R can't figure out how to coerce, rather an error it returns an NA:
-
-```{r}
-as.numeric("a")
-```
-
-* Note that including `NA`s in arithmetical operations usually returns an `NA`.
-
-```{r}
-1 + 2 + NA
-```
-
---- 
-
-## Coercing
-
-* You want to avoid automatic coercion and instead explicitly do it. 
-
-* Most coercion functions start with `as.`
-
-* Here is an example.
-
-```{r}
-x <- factor(c("a","b","b","c"))
-as.character(x)
-as.numeric(x)
-```
-
---- 
-
-## Coercing
-
-* More examples: 
-```{r}
-x <- c("12323", "12,323")
-as.numeric(x)
-
-library(readr)
-parse_guess(x)
-```
-
---- 
 
 ## Lists
 
@@ -637,13 +756,13 @@ x[[1]]
 x[["name"]]
 ```
 
-## Matrics
+## Matrices
 
 * Matrices are another widely used data type. 
 
 * They are similar to data frames except all entries need to be of the same type.
 
-* We will learn more about matrices in the High Dimensional data Analysis part of the class.
+* We will learn more about matrices in the High Dimensional Data Analysis part of the class.
 
 ---
 
@@ -655,15 +774,24 @@ x[["name"]]
 #| eval: false
 f <- function(x, y, z = 0){
   ### do calculations with x, y, z to compute object
-  ## return(object)
+  return(object)
 }
 ```
 
+* the values you pass to the function are called the arguments and they can have default values (e.g above z is 0 unless provided)
+
+* arguments are matched by either name (which takes precedence) or position
+
+* the value returned by a function is either the value specified in a call to `return` or the value of the last statement evaluated
 ---
 
 ## Functions
  
 * Here is an example of a function that sums $1,2,\dots,n$
+
+* within the body of a function the arguments are referred to by their symbols and they take the value supplied at the time of invocation
+
+* any symbol found in the body of the function that does not match an argument has to be matched to a value by a process called scoping
 
 ```{r}
 s <- function(n){
@@ -673,10 +801,93 @@ s <- function(n){
 
 ---
 
+## Flow-control and operators
 
-## Lexical scope
+* R has all the standard flow control constructs that most computer langagues do
+* if/else; while; repeat; for; break; next
+* you can read the manual pages by calling `help` or using `?` (but for the latter you must quote the argument)
 
-* Study what happens here:
+```{r}
+#| eval: false
+ help("for")
+ ?"break"
+ ?"&"
+ ?"/"
+```
+
+## Logical Operators
+
+* the short forms `&` and `|` perform element-wise comparisons (vectorized)
+* the long forms `&&` and `||` evaluate the first element only, move left to right and return when the result is determined
+* errors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn when it thinks there is a mistake)
+
+## Arithmetic Operators{.smaller}
+
+* these are operators like `^` or `+`
+* `?Syntax` will get you the manual page for operator precedence
+* always use parentheses when in doubt - and it is much clearer to the reader
+
+```{r}
+
+2^1+1
+2^(1+1)
+TRUE || TRUE && FALSE   # is the same as
+TRUE || (TRUE && FALSE) # and different from
+(TRUE || TRUE) && FALSE
+
+
+```
+
+## Functions
+
+* in R functions are *first class* objects - this means they can be passed as arguments, assigned to symbols, stored in other data structures
+
+* in particular they can be passed as arguments to a function and returned as values
+
+* in some languages (e.g. C or Java) functions are not first class objects and they cannot be passed as arguments
+
+* Python uses a fairly similar strategy for functions to the one used in R (as do many other languages)
+
+## Scope{.smaller}
+
+* most of what computer languages do is to map symbols (syntax) to values (semantics) and then create an executable program
+
+* when a computer comes upon an expression it parses it and that identifies the symbols that will need to be looked up
+
+```{r parsing}
+#| code-line-numbers: false
+expr <- parse(text = "a + b * c")
+expr[[1]][1]
+expr[[1]][2]
+expr[[1]][3]
+```
+
+* the third part itself is a compound expression that can be decomposed into its parts, `*`, `b` and `c`
+* in order to evaluate this the evaluator must find bindings for each of the symbols
+* here we expect it wants numbers for `a`, `b` and `c` and functions for `+` and `*`
+
+##Scope
+
+* all computer languages have a set of rules that are used to match these symbols to values
+* one commonly used rule is to use lexical scope, but there are lots of different ways this is done
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+
+fun1 = function(x)  x + y
+fun1(4)
+```
+
+* in `fun1(4)` we probably all agree that the value that should be used for `x` is 4, we probably expect that `+` is a system function
+
+* but what about `y` - where should it's value come from?
+
+## Scope
+
+
+* Read the function below and try to understand what happens when it is evaluated:
 
 ```{r}
 f <- function(x){
@@ -687,16 +898,63 @@ f <- function(x){
 }
 y <- 2
 f(3)
-y <- f(3)
-y
+
 ```
 
 ---
 
-## Namespaces 
+## Lexical Scope
+
+- lexical scope says that for any function with unbound values you should use the environment at the time the function was created to first look for bindings, in R (and Python) after that you look in the global environment (your workspace) and then in attached packages and system functions.
+
+- why is this useful?
+
+---
+
+## Lexical Scope{.smaller}
+
+* we can write some interesting functions - like a function that evaluates the log likelihood for any given set of data
+
+* here we use `rexp` to generate values from an Exponential distribution
+
+* notice that a function is returned and that R notes that it is a `closure`
+
+```{r mle}
+x = rexp(100, rate = 4)
+
+llExp = function(DATA) {
+   n = length(DATA)
+   sumx = sum(DATA)
+   return(function(mu) {n * log(mu) - mu * sumx})
+}
+
+myLL = llExp(x)
+myLL
+```
+
+---
+
+## Lexical Scope Example{.smaller} 
 
 
-* Look at how this function changes by typing the following:
+* here we generate different potential values for the rate parameter and plot the log likelihood - the MLE is the maximum of this
+
+```{r}
+
+##possible values for mu
+y = seq(3,5,by = 0.1)
+
+plot(y, myLL(y), type="l", xlab="mu", ylab="log likelihood")
+```
+
+---
+
+
+## Name collisions{.smaller}
+
+* what happens when authors of two different packages choose the same name for their functions?
+
+* Look at how this function associated with the symbol `filter` changes in the following code segment:
 
 
 ```{r}
@@ -707,24 +965,31 @@ library(dplyr)
 filter
 ```
 
+* by calling `library(dplyr)` a new package has been put on the search list. You can call `search()` before and after the call to `library`
+
+* one implication of this observation is that users could inadvertently alter computations - and we will want to protect against that
+
+---
+
+## Evaluation and the process used to find bindings{.smaller}
+
+* when evaluating a function R first establishes an *evaluation environment* that contains the formal arguments matched to the supplied arguments
+
+* if the function is in a package, then the Namespace directives of the package are used to augment this evaluation environment
+
+* any symbol not found in that evaluation environment will be searched for in _Global Environment_ (your workspace).
+
+* And after that the search path (`search()`) in order.
+
+* The evaluator will take the first match it finds and try to use that (sort of - it does know when it is looking for a function)
 
 ---
 
 ## Namespaces 
 
+* when authoring a package you will want to use Namespaces - the details will not be discussed here
 
-* Note what R searches the _Global Environment_ first.
-
-* Use `search` to see other environments R searches.
-
-* Note many prebuilt functions are in `stats`.
-
----
-
-## Namespaces 
-
-
-* You can explicitly say which `filter` you want using namespaces:
+* If a package uses a Namespace then you can explicitly say which `filter` you want using <pkgname>::<functionname>:
 
 ```{r}
 #| eval: false
@@ -734,9 +999,9 @@ dplyr::filter
 
 ---
 
-## Namespaces 
+## Examples 
 
-* Restart yoru R Consuole and study this example:
+* Restart your R Console and study this example:
 
 ```{r}
 library(dslabs)
@@ -756,11 +1021,13 @@ exists("murders2")
 
 * R uses object oriented programming (OOP). 
 
-* It uses two approaches referred to as S3 and S4, respectively. 
+* Base R uses two approaches referred to as S3 and S4, respectively. 
 
-* S3, the original approach, is more common.
+* S3, the original approach, is more common, but has some severe limitations
 
-* The S4 approach is more similar to the conventions used by modern OOP languages.
+* The S4 approach is more similar to the conventions used by the Lisp family of languages.
+
+* In S4 there are classes that are used to describe data structures and generic functions, that have methods associated with them
 
 --- 
 
@@ -800,7 +1067,7 @@ plot(as.numeric(co2))
 class(co2)
 ```
 
-* The plots are different because `plot` behaves different with different classes.
+* The plots are different because `plot` behaves differently with different classes.
 
 --- 
 

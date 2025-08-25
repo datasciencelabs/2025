@@ -1,7 +1,7 @@
 ---
 title: "Vectorization"
 keywords: "R"
-date: 2025-09-17
+date: 2024-09-18
 format:
   revealjs:
     theme: night
@@ -125,11 +125,9 @@ class(scale(heights))
 
 ---
 
-## Functions that vectorize
+## Most functions vectorize
 
-* The conditional function `if`-`else` does not vectorize. 
-
-* Functions such as `any` and `all`, covert vectors to logicals of lenght one needed for `if`-`else`.
+* Functions such as `any` and `all`, covert vectors to logicals of length one needed for `if`-`else`.
 
 * A particularly useful function is a  vectorized version `ifelse`. 
 
@@ -142,9 +140,9 @@ ifelse(a > 0, 1/a, NA)
 
 ---
 
-## Indexing
+## Subsetting
 
-* Vectorization also works for logical relationships:
+* Indexing with a logical vector subsets to the set corresponding to the `TRUE` values
 
 ```{r}
 library(dslabs)
@@ -212,7 +210,7 @@ murders[ind,]
 
 ---
 
-## %in%
+##  %in%
 
 
 ```{r}
@@ -241,49 +239,31 @@ match(c("Boston", "Dakota", "Washington"), murders$state)
 match(murders$state, c("Boston", "Dakota", "Washington"))
 ```
 
-## The apply functions
-
-* The apply functions let use the concept of vectorization with functions that don't vectorize.
-
-* Here is an example of a function that won't vectorize in a convenient way:
-
-```{r}
-s <- function(n){
-   return(sum(1:n))
-}
-```
-
-* Try it on a vector:
-
-```{r}
-ns <- c(25, 100, 1000)
-s(ns)
-```
 
 ## The apply functions
 
-* We can use `sapply`, one of the apply functions:
+* `sapply` - apply the function and simplify if possible
+
+* `apply` - applies function to rows or columns o matrix.
+    
+* `lapply` - returns a list. Convenient when the function returns something other than a number.
+    
+* `tapply` - can apply to subsets defined by second variable.
+    
+* `mapply` - multivector version of `sapply`.
+
+## Apply Examples
 
 ```{r}
-sapply(ns, s)
+ mm = matrix(1:10, nc=2, byrow=T)
+ apply(mm, 1, sum)
+ apply(mm, 2, \(x) x^2)
+ 
 ```
 
-* `sapply` will work on any vector, including lists.
-
-## The apply functions
-
-* There are other apply functions:
-    
-    - `lapply` - returns a list. Convenient when the function returns something other than a number.
-    
-    - `tapply` - can apply to subsets defined by second variable.
-    
-    - `mapply` - multivariate version of `sapply`.
-    
-    - `apply` - applies function to rows or columns o matrix.
-  
-  
-* We will learn some of these as we go.
-
-
-
+## Split Example
+ 
+```{r }
+sp1 = split(murders$population, murders$region)
+lapply(sp1, sum)
+```
