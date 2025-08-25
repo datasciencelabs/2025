@@ -9,9 +9,9 @@ title: "BST 260 Introduction to Data Science"
 * Location: Kresge G1,	HSPH
 * Date and time: Mon & Wed 9.45 - 11:15am
 * Textbooks: [DS Book (Part 1)](https://rafalab.dfci.harvard.edu/dsbook-part-1/), [DS Book (Part 2)](https://rafalab.dfci.harvard.edu/dsbook-part-2/)
-* Slack: <https://bst-260-f25-7j2.slack.com/>
-* Canvas: <https://canvas.harvard.edu/courses/158943>
-* GitHub repo: <https://github.com/datasciencelabs/2025>
+* Slack: [BST 260 Slack Workspace](https://bst-260-f25-7j2.slack.com/)
+* Canvas: [Home Page](https://canvas.harvard.edu/courses/158943)
+* GitHub: [Course Repository](https://github.com/datasciencelabs/2025)
 * Remember to read the [syllabus](syllabus.qmd)
 
 ## Lectures 
@@ -60,11 +60,12 @@ Oct 06, Oct 08 | Data visualization  | [Data Viz Principles](slides/dataviz/17-d
 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
-| Robert Gentleman  | TBD  |   TBD     |
-| Anthony Christidis  | TBD  |   TBD     |
-| Corri Sept | TBD     | TBD         |
-| Nikhil Vytla   | TBD     | TBD         |
-| Yuan Wang | TBD     | TBD |
+| Robert Gentleman  | Monday: 11:30 am to 12:30 pm  |   TBD     |
+| Anthony Christidis  | Friday: 12:30 pm to 1:30pm  |   [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)     |
+| Angela Wang | TBD     | TBD         |
+| Ava Harrington   | TBD     | TBD         |
+| Emma Crenshaw | TBD     | TBD |
+| Jing Li | TBD     | TBD |
 
 ## Acknowledgments
 
