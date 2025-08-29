@@ -85,7 +85,7 @@ Oral evaluations account for **20% of your final grade**, divided into four sepa
 
 **Key Details:**
 
-- **Four evaluations** covering 2 problem sets each (e.g., PS 1-2, PS 3-4, etc.)
+- **Four evaluations** covering 2 or 3 problem sets each 
 - Students are assigned to TFs based on the **first letter of their last name**
 - You can only schedule a meeting **after completing** the problem sets included in that evaluation period
 - Meetings are conducted via **Zoom** using dedicated Slack channels for scheduling
