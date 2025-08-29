@@ -61,10 +61,11 @@ We will have a Slack workspace for you to ask questions during and after class.
 
 | Component | Weight |
 |-----------|--------|
-| 10 problem sets | 50% |
+| 10 Problem Sets | 30% |
+| 4 Oral Evaluations | 20% |
 | Midterm 1 | 10% |
 | Midterm 2 | 20% |
-| Final project | 20% |
+| Final Project | 20% |
 
 ## Problem Sets 
 
@@ -78,6 +79,27 @@ Problem sets must be submitted via GitHub. **Students are required to have a Git
 
 Problem set submissions need to be completely reproducible Quarto documents. **If your Quarto file does not compile** it will be considered a late day, and you will be notified and will need to resubmit a Quarto file that does compile. You will be deducted further late days for every day it takes for you to turn in a Quarto file that does knit. **You are required to check emails that come through the Canvas system**, as this the only way we will communicate problems with your problem sets.
 
+## Oral Evaluations
+
+Oral evaluations account for **20% of your final grade**, divided into four separate evaluations (5% each) throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code and approach.
+
+**Key Details:**
+
+- **Four evaluations** covering 2 problem sets each (e.g., PS 1-2, PS 3-4, etc.)
+- Students are assigned to TFs based on the **first letter of their last name**
+- You can only schedule a meeting **after completing** the problem sets included in that evaluation period
+- Meetings are conducted via **Zoom** using dedicated Slack channels for scheduling
+
+During each 15-minute session, your TF may ask you to:
+
+- Explain specific sections of your code
+- Walk through your problem-solving approach
+- Justify your choice of methods or functions
+- Discuss challenges you encountered and how you solved them
+
+**Grading Scale**: 0-5 points based on your demonstrated understanding, from no understanding (1/5) to excellent understanding with minimal gaps (5/5). Not scheduling a meeting results in 0/5.
+
+See the [Oral Evaluations page](https://datasciencelabs.github.io/2025/oral-evaluations.html) for complete details including scheduling instructions, TF assignments, and full grading criteria.
 
 ## Midterm Policy
 

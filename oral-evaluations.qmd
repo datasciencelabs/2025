@@ -1,0 +1,64 @@
+---
+title: "Oral Evaluations"
+---
+
+# Overview
+
+Oral evaluations account for **20% of your final grade**, divided into four separate 5% evaluations throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code.
+
+**Important**: You can only schedule an oral evaluation meeting **after** you have completed and submitted the problem sets included in that evaluation period.
+
+## Evaluation Schedule
+
+| Evaluation | Date Range | Problem Sets Included | Grade Weight |
+|:-----------|:-----------|:---------------------|:-------------|
+| Oral Eval 1 | September 15 - September 30 | Problem Sets 1-2 | 5% |
+| Oral Eval 2 | October 15 - October 31 | Problem Sets 3-5 | 5% |
+| Oral Eval 3 | November 5-20 | Problem Sets 6-7 | 5% |
+| Oral Eval 4 | December 1 - December 15 | Problem Sets 8-9 | 5% |
+
+## TF Assignments
+
+Students are assigned to Teaching Fellows based on the **first letter of their last name**:
+
+| TF Name | Last Name Starting Letter |
+|:--------|:--------------------------|
+| Angela | A-F |
+| Ava | G-K |
+| Emma | L-P |
+| Jing | Q-Z |
+
+**Scheduling Instructions**: 
+Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:
+
+- Angela: [#oral-evals-angela](https://harvard.enterprise.slack.com/archives/C09CR2E2H46)
+- Ava: [#oral-evals-ava](https://harvard.enterprise.slack.com/archives/C09CN6WSU69)
+- Emma: [#oral-evals-emma](https://harvard.enterprise.slack.com/archives/C09DJ3AV9AL)
+- Jing: [#oral-evals-jing](https://harvard.enterprise.slack.com/archives/C09CAK3N8AK)
+
+**Zoom Link for Oral Evaluations**: [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)
+
+## Evaluation Criteria
+
+Your oral evaluation will be graded on the following scale:
+
+| Score | Criteria |
+|:------|:---------|
+| 0/5 | No meeting scheduled |
+| 1/5 | No understanding of the code/answers |
+| 2/5 | Limited understanding of code/answers |
+| 3/5 | Moderate understanding of code/answers but with significant gaps in explanations |
+| 4/5 | Good understanding of code/answers but moderate gaps in explanations |
+| 5/5 | Excellent understanding of code/answers with either very little or no gaps in explanations |
+
+## What to Expect
+
+During your 15-minute meeting, your TF may ask you to:
+
+- Explain specific lines or sections of your code
+- Walk through your problem-solving approach
+- Justify your choice of methods or functions
+- Discuss any challenges you encountered and how you solved them
+- Demonstrate your understanding of key concepts covered in the problem sets
+
+Come prepared to discuss any part of your submitted work in detail.

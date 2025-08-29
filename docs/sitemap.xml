@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://datasciencelabs.github.io/2025/syllabus.html</loc>
-    <lastmod>2025-08-25T21:20:08.936Z</lastmod>
+    <lastmod>2025-08-29T17:51:29.229Z</lastmod>
   </url>
   <url>
     <loc>https://datasciencelabs.github.io/2025/slides/wrangling/16-joining-tables.html</loc>
@@ -121,12 +121,16 @@
     <lastmod>2025-08-29T05:11:52.151Z</lastmod>
   </url>
   <url>
-    <loc>https://datasciencelabs.github.io/2025/index.html</loc>
-    <lastmod>2025-08-29T05:07:03.939Z</lastmod>
+    <loc>https://datasciencelabs.github.io/2025/oral-evaluations.html</loc>
+    <lastmod>2025-08-29T17:56:18.873Z</lastmod>
   </url>
   <url>
     <loc>https://datasciencelabs.github.io/2025/final-project.html</loc>
     <lastmod>2025-08-29T07:01:58.975Z</lastmod>
+  </url>
+  <url>
+    <loc>https://datasciencelabs.github.io/2025/index.html</loc>
+    <lastmod>2025-08-29T05:07:03.939Z</lastmod>
   </url>
   <url>
     <loc>https://datasciencelabs.github.io/2025/psets/pset-01-unix-quarto.html</loc>
