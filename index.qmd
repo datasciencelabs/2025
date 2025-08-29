@@ -49,7 +49,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | Problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
 | [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|Sep 10   | easy | 
-| Problem Set 2 |  R | Sep 18   |easy | 
+| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | Sep 18   |easy | 
 | Problem Set 3          |  Tidyverse | Sep 26   |medium | 
 | Problem Set 4          | Wrangling | Oct 3   | medium | 
 | Problem Set 5 |  Covid 19 data visualization | Oct 10   |medium | 
