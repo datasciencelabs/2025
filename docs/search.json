@@ -586,7 +586,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-25 22:33:17 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-26 02:33:17 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-29 03:10:38 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-29 07:10:38 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -600,7 +600,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 22\n\nnow() |&gt; minute() \n\n[1] 33\n\nnow() |&gt; second() \n\n[1] 18.0004"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 3\n\nnow() |&gt; minute() \n\n[1] 10\n\nnow() |&gt; second() \n\n[1] 38.30465"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1006,7 +1006,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.95109 61.93744 66.15232 69.87594 70.10640 72.95678 67.02426 73.06016\n [9] 67.00179 70.07809"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.02026 61.94349 66.07050 69.96228 69.86754 72.97562 66.93934 73.06071\n [9] 67.15027 69.93103"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -2672,7 +2672,7 @@
     "href": "slides/ml/40-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.859 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-1",
@@ -3491,7 +3491,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4201589 0.4818411\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.429109 0.490891\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4151909 0.4768091\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.428114 0.489886\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3533,7 +3533,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9498"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9459"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4258,7 +4258,27 @@
     "href": "final-project.html",
     "title": "Final Project",
     "section": "",
-    "text": "For the final project you will choose one of these topics:\n\nTBD…\nTBD…\nTopic of your choice (needs instructor approval).\n\nYou will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nYou can work alone or in groups of at most three people.\n\n\nYou will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.\n\n\n\n\nYou can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.\n\n\n\n\nTBD…\n\n\n\nWe recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "text": "You will be assigned to a pre-assigned team of 4 students and a Teaching Fellow (TF) who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.\n\n\n\nTF (Project Supervisor)\nAssigned Groups\n\n\n\n\nAngela\nGroups 1-4\n\n\nAva\nGroups 5-8\n\n\nEmma\nGroups 9-12\n\n\nJing\nGroups 13-15\n\n\n\nGrading: The final project accounts for 20% of your course grade, divided as follows:\n\nFinal Project Report: 10% of course grade\nOral Presentation: 10% of course grade\n\n\n\nYour team will choose one of the following projects (possible topics will be posted here as they become available):\n\nTBD\nTBD\n…\nCustom Topic: Your team may propose your own research topic, subject to approval by your assigned TF\n\nDetailed project descriptions, datasets, and example papers will be posted here as they become available.\n\n\n\nYou will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation, where team members will answer questions about their report and analysis.\n\n\n\n\nYou will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.\n\n\n\n\nYou can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.\n\n\n\n\nWe recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nA contribution summary document detailing each team member’s specific contributions to the final report and analysis.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#available-projects",
+    "href": "final-project.html#available-projects",
+    "title": "Final Project",
+    "section": "",
+    "text": "Your team will choose one of the following projects (possible topics will be posted here as they become available):\n\nTBD\nTBD\n…\nCustom Topic: Your team may propose your own research topic, subject to approval by your assigned TF\n\nDetailed project descriptions, datasets, and example papers will be posted here as they become available.",
+    "crumbs": [
+      "Final Project"
+    ]
+  },
+  {
+    "objectID": "final-project.html#project-submission-requirements",
+    "href": "final-project.html#project-submission-requirements",
+    "title": "Final Project",
+    "section": "",
+    "text": "You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation, where team members will answer questions about their report and analysis.",
     "crumbs": [
       "Final Project"
     ]
@@ -4284,21 +4304,11 @@
     ]
   },
   {
-    "objectID": "final-project.html#examples",
-    "href": "final-project.html#examples",
-    "title": "Final Project",
-    "section": "",
-    "text": "TBD…",
-    "crumbs": [
-      "Final Project"
-    ]
-  },
-  {
     "objectID": "final-project.html#github-repository",
     "href": "final-project.html#github-repository",
     "title": "Final Project",
     "section": "",
-    "text": "We recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "text": "We recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nA contribution summary document detailing each team member’s specific contributions to the final report and analysis.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
     "crumbs": [
       "Final Project"
     ]
@@ -6649,7 +6659,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4501443\n\nsd(x_hat) \n\n[1] 0.01574604"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499497\n\nsd(x_hat) \n\n[1] 0.0159131"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10121,7 +10131,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 195945 0.796\n 2 771891 0.788\n 3 700881 0.776\n 4 277388 0.775\n 5 349728 0.774\n 6 639638 0.769\n 7 551202 0.768\n 8 464296 0.768\n 9 862581 0.767\n10 734240 0.766\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.796."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 572869 0.780\n 2 492440 0.766\n 3 280219 0.762\n 4 618132 0.761\n 5 149632 0.761\n 6 705642 0.756\n 7  90936 0.756\n 8 151725 0.752\n 9 124653 0.749\n10 942895 0.747\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.78."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10156,7 +10166,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.790     0.125      6.32 0.00000192"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.855     0.143      5.97 0.00000434"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11367,7 +11377,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Male   Male   Male   Male   Male   Male   Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Male   Male   Male   Male   Male   Male   Male   Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Female Male   Male   Female Male   Female Female Female Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Female Male   Male   Female Male   Female Female Female Male  \nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11542,7 +11552,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x0000017c19661928&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000001f381122d88&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -12270,7 +12280,7 @@
     "href": "slides/wrangling/13-locales.html#example-9",
     "title": "Locales",
     "section": "Example",
-    "text": "Example\nComputing the students’ ages is now straightforward:\n\ntime_length(today() - dat$f.n., unit = \"years\") |&gt; floor() \n\n[1] 43 45 94 56 43 84 53"
+    "text": "Example\nComputing the students’ ages is now straightforward:\n\ntime_length(today() - dat$f.n., unit = \"years\") |&gt; floor() \n\n[1] 43 45 94 56 43 84 54"
   },
   {
     "objectID": "slides/wrangling/13-locales.html#example-10",

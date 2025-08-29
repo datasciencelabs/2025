@@ -150,6 +150,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#general-instructions" id="toc-general-instructions" class="nav-link active" data-scroll-target="#general-instructions">General Instructions</a>
   <ul class="collapse">
+  <li><a href="#available-projects" id="toc-available-projects" class="nav-link" data-scroll-target="#available-projects">Available Projects</a></li>
+  <li><a href="#project-submission-requirements" id="toc-project-submission-requirements" class="nav-link" data-scroll-target="#project-submission-requirements">Project Submission Requirements</a></li>
   <li><a href="#sections" id="toc-sections" class="nav-link" data-scroll-target="#sections">Sections</a>
   <ul class="collapse">
   <li><a href="#abstract-150-200-words" id="toc-abstract-150-200-words" class="nav-link" data-scroll-target="#abstract-150-200-words">Abstract (150-200 words)</a></li>
@@ -159,10 +161,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#discussion-600-700-words" id="toc-discussion-600-700-words" class="nav-link" data-scroll-target="#discussion-600-700-words">Discussion (600-700 words)</a></li>
   </ul></li>
   <li><a href="#supplementary-methods-no-limit" id="toc-supplementary-methods-no-limit" class="nav-link" data-scroll-target="#supplementary-methods-no-limit">Supplementary Methods (no limit)</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   <li><a href="#github-repository" id="toc-github-repository" class="nav-link" data-scroll-target="#github-repository">GitHub Repository</a></li>
   </ul></li>
-  <li><a href="#project-details" id="toc-project-details" class="nav-link" data-scroll-target="#project-details">Project Details</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/final-project.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -190,14 +190,58 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="general-instructions" class="level1">
 <h1>General Instructions</h1>
-<p>For the final project you will choose one of these topics:</p>
+<p>You will be assigned to a <strong>pre-assigned team of 4 students</strong> and a <strong>Teaching Fellow (TF)</strong> who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">TF (Project Supervisor)</th>
+<th style="text-align: left;">Assigned Groups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Angela</td>
+<td style="text-align: left;">Groups 1-4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ava</td>
+<td style="text-align: left;">Groups 5-8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Emma</td>
+<td style="text-align: left;">Groups 9-12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jing</td>
+<td style="text-align: left;">Groups 13-15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Grading</strong>: The final project accounts for 20% of your course grade, divided as follows:</p>
+<ul>
+<li><strong>Final Project Report</strong>: 10% of course grade</li>
+<li><strong>Oral Presentation</strong>: 10% of course grade</li>
+</ul>
+<section id="available-projects" class="level2">
+<h2 class="anchored" data-anchor-id="available-projects">Available Projects</h2>
+<p>Your team will choose one of the following projects (possible topics will be posted here as they become available):</p>
 <ol type="1">
-<li>TBD…</li>
-<li>TBD…</li>
-<li>Topic of your choice (needs instructor approval).</li>
+<li>TBD</li>
+<li>TBD</li>
+<li>…</li>
+<li>Custom Topic: Your team may propose your own research topic, subject to approval by your assigned TF</li>
 </ol>
+<p><em>Detailed project descriptions, datasets, and example papers will be posted here as they become available.</em></p>
+</section>
+<section id="project-submission-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="project-submission-requirements">Project Submission Requirements</h2>
 <p>You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.</p>
-<p>You can work alone or in groups of at most three people.</p>
+<p><strong>Required Submissions to your TF:</strong></p>
+<ol type="1">
+<li><p><strong>GitHub Repository</strong>: Submit the link to your team’s GitHub repository</p></li>
+<li><p><strong>Oral Presentation</strong>: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between <strong>December 16-19</strong>. <strong>All team members must be present</strong> during the presentation, where team members will answer questions about their report and analysis.</p></li>
+</ol>
+</section>
 <section id="sections" class="level2">
 <h2 class="anchored" data-anchor-id="sections">Sections</h2>
 <p>You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.</p>
@@ -247,10 +291,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Guidelines</strong>: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.</p></li>
 </ul>
 </section>
-<section id="examples" class="level2">
-<h2 class="anchored" data-anchor-id="examples">Examples</h2>
-<p>TBD…</p>
-</section>
 <section id="github-repository" class="level2 nonumber">
 <h2 class="nonumber anchored" data-anchor-id="github-repository">GitHub Repository</h2>
 <p>We recommend your repository include:</p>
@@ -259,16 +299,13 @@ ul.task-list li input[type="checkbox"] {
 <li>At least one script for wrangling in the <code>code</code> directory.</li>
 <li>There should be one file called <code>final-project.qmd</code> that can be rendered to produce the final report. This can be in the <code>code</code> or home directories as long as it renders.</li>
 <li>You should include a <code>README</code> file explaining how to reproduce all the results.</li>
+<li>A <strong>contribution summary document</strong> detailing each team member’s specific contributions to the final report and analysis.</li>
 <li>If you need to share raw data include it in the <code>raw-data</code> directory. Alternatively, you can include code that downloads the necessary data from the internet.</li>
 </ul>
 <p>We expect to see at least five commits by each person.</p>
-</section>
-</section>
-<section id="project-details" class="level1">
-<h1>Project Details</h1>
-<p>TBD…</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
