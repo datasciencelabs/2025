@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2024-09-09">
+  <meta name="dcterms.date" content="2025-09-08">
   <meta name="keywords" content="Productivity Tools">
   <title>BST 260: Introduction to Data Science – Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,7 +199,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-09-09</p>
+  <p class="date">2025-09-08</p>
 </section>
 <section id="the-header" class="slide level2">
 <h2>The header</h2>
@@ -213,7 +213,7 @@
 <span id="cb1-3"><a></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <ul>
-<li><p>The things between the <code>---</code> is the <a href="https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started">YAML</a> header.</p></li>
+<li><p>The things between the <code>---</code> are the <a href="https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started">YAML</a> header.</p></li>
 <li><p>You will see it used throughout the <a href="https://quarto.org/docs/guide/">Quarto guide</a>.</p></li>
 </ul>
 </section>
@@ -327,9 +327,9 @@ $$</code></pre>
 <section id="computations" class="slide level2">
 <h2>Computations</h2>
 <ul>
-<li><p>The main reason we use Quarto is because we can include code and execute the code when compiling the document.</p></li>
-<li><p>In R we refer to them as R chunks.</p></li>
-<li><p>This applies to plots as well; the plot will be placed in that position.</p></li>
+<li><p>The main reason we use Quarto is because we can include and execute the code when compiling the document.</p></li>
+<li><p>In R we refer to the code as R chunks.</p></li>
+<li><p>This applies to plots as well; the plot will be placed in the position of the code.</p></li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -356,7 +356,7 @@ $$</code></pre>
 </section>
 <section id="computations-2" class="slide level2">
 <h2>Computations</h2>
-<p>It look slike this:</p>
+<p>It looks like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb8-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -371,7 +371,7 @@ $$</code></pre>
 <h2>Computations</h2>
 <ul>
 <li><p>By default, the code and result will show up as well.</p></li>
-<li><p>You can send arguments to control the behavior with <code>|#</code></p></li>
+<li><p>You can send arguments to control the behavior with <code>#|</code></p></li>
 <li><p>For example, to avoid showing code in the final document, you can use the argument <code>echo: FALSE</code>.</p></li>
 </ul>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a></a><span class="in">```{r}</span></span>
@@ -436,7 +436,10 @@ $$</code></pre>
 <li><p>RStudio provides the <strong>Render</strong> button that makes it easier to compile the document.</p></li>
 <li><p>You can also type <code>quarto render filename.qmd</code> on the command line. This offers many options.</p></li>
 <li><p>You can produce html, pdf, or word documents.</p></li>
-<li><p>You can specify the default in the YAML header using: <code>format: html</code>, <code>format: pdf</code>,<code>format: docx</code>, or <code>format: gfm</code> (gfm stands for GitHub flavored markdown, a convenient way to share your reports).</p></li>
+<li><p>You can specify the default in the YAML header using: <code>format: html</code>, <code>format: pdf</code>,<code>format: docx</code>, or <code>format: gfm</code></p>
+<ul>
+<li>(gfm stands for GitHub flavored markdown, a convenient way to share your reports).</li>
+</ul></li>
 </ul>
 
 

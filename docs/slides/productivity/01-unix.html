@@ -201,17 +201,17 @@
 
   <p class="date">2025-09-03</p>
 </section>
-<section id="naming-convention" class="slide level2">
-<h2>Naming convention</h2>
+<section id="naming-conventions" class="slide level2">
+<h2>Naming conventions</h2>
 <ul>
 <li><p>In general you want to name your files in a way that is related to their contents and specifies how they relate to other files.</p></li>
-<li><p>The <a href="https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf">Smithsonian Data Management Best Practices</a> has “five precepts of file naming and organization”</p></li>
+<li><p>The <a href="https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf">Smithsonian Data Management Best Practices</a> has “Five precepts of file naming and organization”</p></li>
 </ul>
 </section>
 <section id="five-precepts-of-file-naming-and-organization" class="slide level2 smaller">
 <h2>Five precepts of file naming and organization</h2>
 <ul>
-<li>Have a distinctive, human-readable name that gives an indication of the content.</li>
+<li>Have a distinctive, human-readable name that describes the content.</li>
 <li>Follow a consistent pattern that is machine-friendly.</li>
 <li>Organize files into directories (when necessary) that follow a consistent pattern.</li>
 <li>Avoid repetition of semantic elements among file and directory names.</li>
@@ -228,13 +228,14 @@
 <li><p>When you log in to a Unix computer you are in your <strong>home</strong> directory</p></li>
 <li><p>the command line has a <em>prompt</em> that is configurable and is printed on screen to let you know that the terminal is ready for input</p></li>
 <li><p><strong>Environment variables</strong> control your computing environment and many are customizable by users</p></li>
-<li><p>LLMs are really useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on</p></li>
+<li><p>LLMs are useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on</p></li>
 </ul>
 </section>
 <section id="the-terminal" class="slide level2">
 <h2>The terminal</h2>
 <ul>
-<li><p>The terminal is integrated into Mac and Linux systems, but Windows users will have to install an emulator. Once you have a terminal open, you can start typing commands.</p></li>
+<li><p>The terminal is integrated into Mac and Linux systems, but Windows users will have to install an emulator.</p></li>
+<li><p>Once you have a terminal open, you can start typing commands.</p></li>
 <li><p>You should see a blinking cursor at the spot where what you type will show up. This position is called the command line.</p></li>
 </ul>
 </section>
@@ -265,7 +266,7 @@
 <h2>Working directory</h2>
 <ul>
 <li><p>The working directory is the directly you are currently <em>in</em>.</p></li>
-<li><p>Commands that you issue will generally take effect in this directory</p></li>
+<li><p>Commands you issue will generally take effect in this directory</p></li>
 <li><p>You can see your working directory using the Unix command <code>pwd</code></p></li>
 <li><p>You can list the contents of the directory (files and other directories) using <code>ls</code></p></li>
 <li><p>You can find out about how <code>ls</code> works by issuing the command: <code>man ls</code></p></li>
@@ -274,21 +275,25 @@
 <section id="paths" class="slide level2">
 <h2>Paths</h2>
 <ul>
-<li><p>This string returned by <code>pwd</code> command is the <em>full path</em> to the working directory.</p></li>
+<li><p>The string returned by <code>pwd</code> command is the <em>full path</em> to the working directory.</p></li>
 <li><p>The full path to your home directory is stored in an <em>environment</em> variable.</p></li>
 <li><p>You can see it like this <code>echo $HOME</code></p></li>
 </ul>
 </section>
-<section id="paths-1" class="slide level2">
+<section id="paths-1" class="slide level2 smaller">
 <h2>Paths</h2>
 <ul>
-<li><p>In Unix, we use the shorthand <code>~</code> as a nickname for your home directory</p></li>
-<li><p>Example: the full path for <em>docs</em> (in image above) can be written like this <code>~/docs</code>.</p></li>
-<li><p>A common default for the prompt is to show the path to the working directory (but that might be long and you can change it)</p></li>
+<li><p>In Unix, we use the shorthand <code>~</code> as a nickname for your home directory</p>
+<ul>
+<li>Example: the full path for <em>docs</em> (image in prev. slides) can be written like this <code>~/docs</code>.</li>
+</ul></li>
+<li><p>A common default for the prompt is to show the path to the working directory (that path might be long, but you can change it)</p></li>
 <li><p>Let’s open a terminal window and see what the prompt is.</p></li>
-<li><p>you have an environment variable called <code>PATH</code> which you can display using <code>echo</code></p></li>
+<li><p>you have an environment variable called <code>PATH</code> which you can display using <code>echo</code></p>
+<ul>
 <li><p>that variable is a set of individual paths, separated by <code>:</code> (colon) and it tells your Unix shell where to look for commands</p></li>
 <li><p>you can modify that path, so that you can have it look for commands in other, non-standard places (eg make your own <code>bin</code> directory)</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="unix-commands" class="slide level2">

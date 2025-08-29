@@ -58,11 +58,12 @@ The oral presentation will be evaluated as a **group grade** out of 10 points ba
 | Score | Criteria |
 |:------|:---------|
 | 0-1   | No meeting scheduled or major absence of team members |
-| 2-3   | Limited understanding of project components; significant gaps in explanations; inability to answer basic questions about individual contributions |
-| 4-5   | Moderate understanding of project components with noticeable gaps; some difficulty explaining individual contributions and methodological choices |
-| 6-7   | Good understanding of project components with minor gaps; able to explain most individual contributions and defend methodological choices |
-| 8-9   | Very good understanding of all project components; clear explanations of individual contributions; strong defense of analytical approaches with minimal gaps |
-| 10    | Excellent understanding of all project components; comprehensive and clear explanations of individual contributions; exceptional ability to defend and discuss all aspects of the analysis |
+| 2-3   | Limited understanding of project components; significant gaps in explanations |
+| 4-5   | Moderate understanding of project components; difficulty explaining individual contributions/methodological choices |
+| 6-7   | Good understanding of project components; able to explain most individual contributions/methodological choices |
+| 8-9   | Very good understanding of all project components; strong defense of analytical approaches with minimal gaps |
+| 10    | Excellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis |
+
 
 ## Sections
 
