@@ -1,7 +1,7 @@
 ---
 title: "Git and GitHub"
 keywords: "Productivity Tools"
-date: 2024-09-09
+date: 2025-09-10
 format:
    revealjs:
      theme: night
@@ -49,9 +49,9 @@ We want to avoid this:
 
 ## Motivation
 
-* This is particularly true when more than one person is collaborating and editing the file. 
+* This is particularly difficult to manage when more than one person is collaborating and editing the file. 
 
-* Even more important when there are multiple files, as there is in software development, and to some extend data analysis.
+* Even more important when there are multiple files, as there is in software development, and to some extent data analysis.
 
 ----
 
@@ -103,7 +103,7 @@ We focus on the sharing aspects of Git and GitHub, but introduce some of the bas
 
 * Basically, it's a service that hosts the _remote repository (repo)_ on the web. 
 
-* This facilitates collaboration and sharing greatly. 
+* This facilitates collaboration and sharing. 
 
 ----
 
@@ -115,7 +115,7 @@ There many other features such as
 * You can host web pages, like the class notes for example.
 * Permits contributions via _forks_ and _pull requests_.
 * Issue tracking 
-* Automation tools. 
+* Automation tools 
 
 ----
 
@@ -189,7 +189,7 @@ https://github.com/your-username/your-repo-name.git
 
 * Carefully follow the instructions provided by GitHub.
 
-* When setting permissions for the token, choose _non-expiring and select the repo_ option in the scopes section.
+* When setting permissions for the token, choose _non-expiring and select the repo option_ in the scopes section.
 
 * Once you complete these steps, GitHub will display your token—a lengthy string of characters. 
 
@@ -360,7 +360,7 @@ git commit -m "must add comment"
 ## Commit
 
 :::{.callout-note}
-You can commit files directly without using `add` by explicitely writing the files at the end of the commit:
+You can commit files directly without using `add` by explicitly writing the files at the end of the commit:
 :::
 
 ```{r}
@@ -523,7 +523,7 @@ git log filename
 git reset HEAD~1
 ```
 
-undos the commit and unstages the files, but **keeps your local copies**. I use this on very often.
+undos the commit and unstages the files, but **keeps your local copies**. I use this command very often.
 
 * There are many wasy of using `get reset` and it covers most scenarios. 
  
@@ -534,7 +534,7 @@ undos the commit and unstages the files, but **keeps your local copies**. I use 
 
 ## Branches
 
-* We are just sratching the surface of Git.
+* We are just scratching the surface of Git.
 
 * One advanced feature to be aware of is that you can have several _branches_, useful for working in parallel or testing stuff out that might not make the main repo. 
 

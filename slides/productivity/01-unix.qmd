@@ -7,17 +7,17 @@ format:
     theme: night
 ---
 
-## Naming convention
+## Naming conventions
 
 * In general you want to name your files in a way that is related to their contents and specifies how they relate to other files. 
 
-* The [Smithsonian Data Management Best Practices](https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf) has "five precepts of file naming and organization"
+* The [Smithsonian Data Management Best Practices](https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf) has "Five precepts of file naming and organization"
 
 --- 
 
 ## Five precepts of file naming and organization{.smaller}
 
-* Have a distinctive, human-readable name that gives an indication of the content.
+* Have a distinctive, human-readable name that describes the content.
 * Follow a consistent pattern that is machine-friendly.
 * Organize files into directories (when necessary) that follow a consistent pattern.
 * Avoid repetition of semantic elements among file and directory names.
@@ -41,13 +41,15 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 - **Environment variables** control your computing environment and many are customizable by users 
 
-- LLMs are really useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on
+- LLMs are useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on
 
 ---
 
 ## The terminal
 
-- The terminal is integrated into Mac and Linux systems, but Windows users will have to install an emulator. Once you have a terminal open, you can start typing commands. 
+- The terminal is integrated into Mac and Linux systems, but Windows users will have to install an emulator. 
+
+- Once you have a terminal open, you can start typing commands. 
 
 - You should see a blinking cursor at the spot where what you type will show up. This position is called the command line. 
 
@@ -113,7 +115,7 @@ drwxr-xr-x    4 robert  staff   128B Aug  8 10:03 bin
 
 - The working directory is the directly you are currently *in*. 
 
-- Commands that you issue will generally take effect in this directory
+- Commands you issue will generally take effect in this directory
 
 - You can see your working directory using the Unix command `pwd`
 
@@ -126,7 +128,7 @@ drwxr-xr-x    4 robert  staff   128B Aug  8 10:03 bin
 
 ## Paths 
 
-- This string returned by `pwd` command is the *full path* to the working directory.
+- The string returned by `pwd` command is the *full path* to the working directory.
 
 - The full path to your home directory is stored in an *environment* variable. 
 
@@ -135,21 +137,21 @@ drwxr-xr-x    4 robert  staff   128B Aug  8 10:03 bin
 
 ---
 
-## Paths
+## Paths {.smaller}
 
 - In Unix, we use the shorthand `~` as a nickname for your home directory
 
-- Example: the full path for *docs* (in image above) can be written like this `~/docs`.
+  - Example: the full path for *docs* (image in prev. slides) can be written like this `~/docs`.
 
-- A common default for the prompt is to show the path to the working directory (but that might be long and you can change it)
+- A common default for the prompt is to show the path to the working directory (that path might be long, but you can change it)
 
 - Let's open a terminal window and see what the prompt is.
 
 - you have an environment variable called `PATH` which you can display using `echo`
 
-- that variable is a set of individual paths, separated by `:` (colon) and it tells your Unix shell where to look for commands
+  - that variable is a set of individual paths, separated by `:` (colon) and it tells your Unix shell where to look for commands
 
-- you can modify that path, so that you can have it look for commands in other, non-standard places (eg make your own `bin` directory)
+  - you can modify that path, so that you can have it look for commands in other, non-standard places (eg make your own `bin` directory)
 
 ---
 

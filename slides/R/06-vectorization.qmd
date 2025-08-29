@@ -1,7 +1,7 @@
 ---
 title: "Vectorization"
 keywords: "R"
-date: 2024-09-18
+date: 2025-09-18
 format:
   revealjs:
     theme: night
@@ -239,12 +239,13 @@ match(c("Boston", "Dakota", "Washington"), murders$state)
 match(murders$state, c("Boston", "Dakota", "Washington"))
 ```
 
+* there are also set manipulation functions `intersect`, `union`, `setdiff`, `setequal`
 
 ## The apply functions
 
 * `sapply` - apply the function and simplify if possible
 
-* `apply` - applies function to rows or columns o matrix.
+* `apply` - applies function to rows or columns of a matrix.
     
 * `lapply` - returns a list. Convenient when the function returns something other than a number.
     
@@ -263,7 +264,12 @@ match(murders$state, c("Boston", "Dakota", "Washington"))
 
 ## Split Example
  
-```{r }
+```{r split}
 sp1 = split(murders$population, murders$region)
 lapply(sp1, sum)
+```
+
+* alternatively:
+```{r tapply}
+with(murders, tapply(population, region, sum))
 ```

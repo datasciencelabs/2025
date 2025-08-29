@@ -1,7 +1,7 @@
 ---
 title: Quarto
 keywords: "Productivity Tools"
-date: 2024-09-09
+date: 2025-09-08
 format:
    revealjs:
      theme: night
@@ -25,7 +25,7 @@ title: "Untitled"
 
 <br>
 
-* The things between the `---` is the [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started) header.
+* The things between the `---` are the [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started) header.
 
 * You will see it used throughout the [Quarto guide](https://quarto.org/docs/guide/).
 
@@ -181,11 +181,11 @@ $$
 
 ## Computations
 
-* The main reason we use Quarto is because we can include code and execute the code when compiling the document. 
+* The main reason we use Quarto is because we can include and execute the code when compiling the document. 
 
-* In R we refer to them as R chunks.
+* In R we refer to the code as R chunks.
 
-* This applies to plots as well; the plot will be placed in that position. 
+* This applies to plots as well; the plot will be placed in the position of the code. 
 
 :::{.callout-note}
 To add your own R chunks, you can type the characters above quickly with the key binding command-option-I on the Mac and Ctrl-Alt-I on Windows.
@@ -207,7 +207,7 @@ x + y
 
 ## Computations
 
-It look slike this:
+It looks like this:
 
 ```{r}
 x <- 1
@@ -223,7 +223,7 @@ Note that it was evaluated and the result is shown.
 
 * By default, the code and result will show up as well. 
 
-* You can send arguments to control the behavior with `|#` 
+* You can send arguments to control the behavior with `#|` 
 
 * For example, to avoid showing code in the final document, you can use the argument `echo: FALSE`. 
 
@@ -296,5 +296,7 @@ There is a lot more you can do with R markdown. We highly recommend you continue
 * You can produce html, pdf, or word documents. 
 
 * You can specify the default in the YAML header using:
-`format: html`, `format: pdf`,`format: docx`, or `format: gfm` (gfm stands for GitHub flavored markdown, a convenient way to share your reports).
+`format: html`, `format: pdf`,`format: docx`, or `format: gfm` 
+
+  * (gfm stands for GitHub flavored markdown, a convenient way to share your reports).
 

@@ -1,7 +1,7 @@
 ---
 title: "R Basics"
 keywords: "R"
-date: 2024-09-16
+date: 2025-09-15
 format:
   revealjs:
     theme: night
@@ -14,9 +14,9 @@ execute:
 
 * R has a *base* installation and then tens of thousands of add-on software packages that can be obtained from CRAN
 
-* Use `install.packages` to install the **dslabs** package from CRAN
+* Use `install.packages` to install the **dslabs** package from [CRAN](https://cran.r-project.org/)
 
-* Tryout the following functions: `sessionInfo`, `installed.packages`
+* Try out the following functions: `sessionInfo`, `installed.packages`
 
 ---
 
@@ -26,7 +26,7 @@ execute:
 
 * Many are included in automatically loaded packages: `stats`, `graphics`, `grDevices`, `utils`, `datasets`, `methods`.
 
-* This subset of the R universe is refereed to as _R base_.
+* This subset of the R universe is referred to as _R base_.
 
 * Very popular packages not included in R base: `ggplot2`, `dplyr`, `tidyr`, and `data.table`.
 
@@ -45,7 +45,9 @@ For problem set 2 you can only use R base.
 
 * Example functions that we will use today: `ls`, `rm`, `library`, `search`, `factor`, `list`, `exists`, `str`, `typeof`, and `class`.
 
-* You can see the raw code for a function by typing its name without the parentheses: type `ls` on your console to see an example.
+* You can see the raw code for a function by typing its name without the parentheses.
+
+    * type `ls` on your console to see an example.
 
 ---
 
@@ -94,27 +96,38 @@ rm(a)
 
 * each time you start R you will get a new workspace that does not have any variables or libraries loaded
 
-* when you quit R you will be asked if you want to save the workspace, you probably will always be better off saying **NO**
+* when you quit R you will be asked if you want to save the workspace
 
-* if you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a save workspace then that workspace will be re-instantiated and used
+  * you will probably always be better off saying **NO**
 
-* this might be helpful if you are working on a long complex analysis with large data, but mostly it is much easier to just use a markdown document to detail your steps and rerun that on a clean workspace - this can help find errors in your analysis
+* if you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a saved workspace then that workspace will be re-instantiated and used
+
+  * this might be helpful if you are working on a long complex analysis with large data
+  
+* mostly it is much easier to just use a markdown document to detail your steps and rerun them on a clean workspace
+
+  * this can also help find errors in your analysis
+  
+--- 
+
+## The Workspace
 
 * just like Unix R uses a search path to find functions that you can evaluate
 
 ```{r search}
 search()
 ```
+
 ---
 
-## Variable name convention
+## Variable name convention {.smaller}
 
-* A nice convention to follow is to use meaningful words that describe what is stored, use only lower case, and use underscores as a substitute for spaces. 
+* A nice convention to follow is to use **meaningful** words that describe what is stored, **only lower** case, and **underscores** as a substitute for spaces. 
 
-* R and RStudio both provide autocomplete capabilities so you don't need to type the whole name - that makes it easier to use longer more descriptive variable names
+* R and RStudio both provide autocomplete capabilities so you don't need to type the whole name     
+    * this makes it easier to use longer, more descriptive variable names
 
-* It is highly recommended that you not use the period `.` in variable names, there are situations where R treats it differently and those
-can cause unintended actions
+* It is highly recommended that you not use the period `.` in variable names, there are situations where R treats it differently and those can cause unintended actions
 
 * For more we recommend [this guide](http://adv-r.had.co.nz/Style.html).
 
@@ -196,7 +209,7 @@ head(murders)
 View(murders)
 ```
 
-* This is more effective in RStudio that has an integrated viewer. 
+* This is more effective in RStudio because it has an integrated viewer. 
 
 ---
 
@@ -309,9 +322,9 @@ x[12]
 
 ___
 
-## Sequences
+## Sequences {.smaller}
 
-* Sequences are a the common example of vectors we generate.
+* Sequences are a common example of vectors we generate.
 
 ```{r}
 seq(1, 10)
@@ -330,7 +343,7 @@ ___
 
 ## Sequences{.smaller}
 
-* A useful function to quickly generate the sequence  the same length as a vector `x` is `seq_along(x)` and **NOT** `1:length(x)`
+* A useful function to quickly generate a sequence the same length as a vector `x` is `seq_along(x)` and **NOT** `1:length(x)`
 
 ```{r}
 x <- c("b", "s", "t", " ", "2", "6", "0")
@@ -354,7 +367,7 @@ seq_along(w)
 
 ---  
 
-## Vector Types and Coercion{.smaller}
+## Vector types and coercion{.smaller}
 
 * One dimensional vectors: double, integer, logical, complex, characters and numeric
 
@@ -383,11 +396,11 @@ typeof(1:10)
 
 * This can cause confusion and unnoticed errors. 
 
-*  So it's important to understand how and when it happens. 
+* So it's important to understand how and when it happens. 
 
 --- 
 
-## Vector Types and Coercion{.smaller}
+## Vector types and coercion{.smaller}
 
 * coercion is automatically performed when it is possible
 
@@ -407,7 +420,7 @@ as.logical(.5)
 
 ---
 
-## Coercing
+## Coercing {.smaller}
 
 * Here are some examples:
 
@@ -483,13 +496,15 @@ class(murders$region)
 
 ---  
 
-## Factors
+## Factors {.smaller}
 
-* A factor is a good representation for a variable, like Sex that has a fixed set of non-numeric values, like `Male` and `Female`
+* A factor is a good representation for a variable, that has a fixed set of non-numeric values
+    * ex: Sex has `Male` and `Female`
 
-* It is usually not a good representation for variables (like state names in the murders dataset) that have lots of levels
+* It is usually not a good representation for variables that have lots of levels (like state names in the murders dataset)
 
-* Internally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to `length(levels)` if the `i`th entry is `k` than that corresponds to the `k`th element of the levels
+* Internally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to `length(levels)`
+  * if the `i`th entry is `k` then that corresponds to the `k`th element of the levels
 
 * In statistics we refer to this as categorical data, where all of the individuals are mapped into a relatively small number of categories.
 
@@ -766,7 +781,7 @@ x[["name"]]
 
 ---
 
-## Functions
+## Functions {.smaller}
 
 * You can define your own function. The form is like this:
 
@@ -819,13 +834,13 @@ s <- function(n){
 
 * the short forms `&` and `|` perform element-wise comparisons (vectorized)
 * the long forms `&&` and `||` evaluate the first element only, move left to right and return when the result is determined
-* errors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn when it thinks there is a mistake)
+* errors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn you when it thinks there is a mistake)
 
 ## Arithmetic Operators{.smaller}
 
 * these are operators like `^` or `+`
 * `?Syntax` will get you the manual page for operator precedence
-* always use parentheses when in doubt - and it is much clearer to the reader
+* when in doubt always use parentheses - it is much clearer to the reader
 
 ```{r}
 
@@ -850,7 +865,7 @@ TRUE || (TRUE && FALSE) # and different from
 
 ## Scope{.smaller}
 
-* most of what computer languages do is to map symbols (syntax) to values (semantics) and then create an executable program
+* most of what computer languages do is map symbols (syntax) to values (semantics) and then create an executable program
 
 * when a computer comes upon an expression it parses it and that identifies the symbols that will need to be looked up
 
@@ -977,7 +992,7 @@ filter
 
 * if the function is in a package, then the Namespace directives of the package are used to augment this evaluation environment
 
-* any symbol not found in that evaluation environment will be searched for in _Global Environment_ (your workspace).
+* any symbol not found in that evaluation environment will be searched for in the _Global Environment_ (your workspace).
 
 * And after that the search path (`search()`) in order.
 

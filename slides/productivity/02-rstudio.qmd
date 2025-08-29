@@ -1,7 +1,7 @@
 ---
 title: RStudio IDE
 keywords: "Productivity Tools"
-date: 2024-09-04
+date: 2025-09-03
 format:
    revealjs:
      theme: night
@@ -11,7 +11,7 @@ format:
 
 -   Posit provides a free IDE for R with RStudio
 -   those with more programming experience may want to experiment with Positron (newer and adapted to LLMs)
--   IDEs provide a framework for developing software, carrying out analyses and integrating code, with analysis
+-   IDEs provide a framework for developing software, carrying out analyses, and integrating code with analysis
 -   they can help with creating packages, documenting functions and using external tools such as `gitHub`
 
 ## The panes
@@ -38,8 +38,8 @@ Let's try a few things together:
 
 Let's try this together:
 
--   Start new project in new directory.
--   Start new project in existing directory.
+-   Start a new project in a new directory.
+-   Start a new project in an existing directory.
 -   Change projects.
 -   Use the `File` menu to create a new Quarto document
 

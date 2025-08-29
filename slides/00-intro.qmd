@@ -13,7 +13,7 @@ format:
 - Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
 - TFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li
 - Mondays we have lectures, Wednesday we have labs.
-- We work on problem sets together, in lab.
+- In lab we work on problem sets together.
 
 ---
 
@@ -34,7 +34,7 @@ Please read the syllabus!
 - Midterms are in person. There are no makeups.
 - Make sure you read messages sent via Canvas
 - You can select your own final project, but need approval.
-- You should start final project by October 22.
+- You should start your final project by October 22.
 - Help us pick office hours: <https://forms.gle/GiQXqDTaeYVxaXd78>
  
 --- 
