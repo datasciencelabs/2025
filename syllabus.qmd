@@ -106,7 +106,7 @@ See the [Oral Evaluations page](https://datasciencelabs.github.io/2025/oral-eval
 **Both midterms are closed book, no internet, and in-class**. 
 You are expected to complete them in 1 hour. 
 
-Questions will be drawn mostly or entirely from the problem sets.
+They will be very similar to the problem sets and the examples given in class.
 
 Please make sure you can come to class on the midterm dates provided in the **Key Dates** table below. If you miss the exam, you will need approval from the Office of Student Affairs to receive a makeup. All make-up exams will be completely different from the in-class ones.
 
@@ -132,10 +132,10 @@ You can use ChatGPT however you want. Do remember **you won't be able to use it 
 | Date | Event |
 |------|-------|
 | Oct 13 | No class: Indigenous Peoples' Day |
-| Oct 15 | Midterm 1: covers material from Sep 04-Oct 11 |
-| Oct 22 | Start final project. Obtain approval if you want to do a personal project instead. |
+| Oct 15 | Midterm 1: covers material from Sep 03-Oct 08 |
+| Oct 22 | Start final project |
 | Nov 10 | No class: Veterans' Day |
-| Nov 24 | Midterm 2: cover material from Sep 04-Nov 22 | 
+| Nov 24 | Midterm 2: cover material from Sep 03-Nov 19 | 
 | Nov 26 | No class: Thanksgiving Recess Begins |
 | Dec 19 | Final Project due | 
 

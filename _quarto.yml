@@ -21,14 +21,14 @@ website:
     contents:
     - href: index.qmd
       text: Home
+    - href: syllabus.qmd
+      text: Syllabus
     - href: slides.qmd
       text: Slides
     - href: psets.qmd
       text: Problem Sets
     - href: oral-evaluations.qmd
       text: Oral Evaluations
-    - href: syllabus.qmd
-      text: Syllabus
     - href: final-project.qmd
       text: Final Project
     
