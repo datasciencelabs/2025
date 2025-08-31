@@ -112,16 +112,30 @@ Please make sure you can come to class on the midterm dates provided in the **Ke
 
 ## Final Project
 
-For your final project we ask that you turn in a 4-6 page report using data to answer a public health related question. You can chose from one of the following:
+You will be assigned to a **pre-assigned team of 4 or 5 students** and a **Teaching Fellow (TF)** who will supervise your project throughout the semester.
 
-* Based on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.
-* What was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?
- 
-Optionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 24.
+**Grading**: The final project accounts for **20% of your course grade**, divided as follows:
 
-Yet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).
+- **Final Project Report**: 10% of course grade  
+- **Oral Presentation**: 10% of course grade
 
-**Note: You should start working on your project after the first midterm. Do not wait until the last week**. Teaching staff will be available during office hours.
+### Project Overview
+
+Your team will select from a list of available data science projects or propose a custom research topic (subject to TF approval). You will prepare a comprehensive 2,500-3,000 word academic-style report with sections including Abstract, Introduction, Methods, Results, and Discussion.
+
+### Key Requirements
+
+- **Team Collaboration**: Work in assigned teams of 4-5 students
+- **Reproducible Analysis**: Submit via GitHub repository with all code and data
+- **Oral Presentation**: 20-minute team presentation scheduled between December 16-19
+- **Individual Accountability**: All team members must participate and demonstrate understanding of their contributions
+
+### AI Policy
+Students may use AI tools as complementary aids but must clearly document where AI was used in their analysis or writing.
+
+**Important**: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours to provide guidance.
+
+For complete details including team assignments, project options, submission guidelines, grading rubrics, and formatting requirements, see the [Final Project page](https://datasciencelabs.github.io/2025/final-project.html).
 
 ## ChatGPT Policy
 
