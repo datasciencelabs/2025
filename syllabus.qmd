@@ -6,7 +6,7 @@ title: "Syllabus"
 
 - BST 260 Introduction to Data Science
 - Kresge G1 (HSPH)
-- Monday 09:45 AM - 11:15 AM; Wednesday 09:45 AM - 11:15 AM
+- Monday Mon & Wed 9:45 am - 11:15 am
 - Lecture notes: [https://datasciencelabs.github.io/2025/](https://datasciencelabs.github.io/2025/)
 - Slack: [BST 260 Slack Workspace](https://bst-260-f25-7j2.slack.com/)
 - Canvas: [Home Page](https://canvas.harvard.edu/courses/158943)
