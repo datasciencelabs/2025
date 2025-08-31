@@ -6,12 +6,13 @@ title: "Final Project"
 
 You will be assigned to a **pre-assigned team of 4 or 5 students** and a **Teaching Fellow (TF)** who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.
 
-| TF (Project Supervisor)  | Assigned Groups |
-|:----|:----------------|
-| Angela | Groups 1-4      |
-| Ava | Groups 5-8      |
-| Emma | Groups 9-12     |
-| Jing | Groups 13-15    |
+| TF Name | Groups |
+|:--------|:-------|
+| Angela  | Groups 1-5 |
+| Ava     | Groups 6-10 |
+| Emma    | Groups 11-15 |
+| Jing    | Groups 16-20 |
+
 
 
 **Grading**: The final project accounts for 20% of your course grade, divided as follows:
@@ -41,15 +42,6 @@ You will submit your project using Git. Your project should be completely reprod
 1.  **GitHub Repository**: Submit the link to your team's GitHub repository
 
 2.  **Oral Presentation**: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between **December 16-19**. **All team members must be present** during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).
-
-### TF Assignment for Oral Presentations
-
-| TF Name | Groups |
-|:--------|:-------|
-| Angela  | Groups 1-5 |
-| Ava     | Groups 6-10 |
-| Emma    | Groups 11-15 |
-| Jing    | Groups 16-20 |
 
 ### Oral Presentation Evaluation Rubric
 
@@ -89,6 +81,9 @@ You will prepare a comprehensive report following the style of an academic paper
 -   **Purpose**: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.
 -   **Guidelines**: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.
 
+### Use of AI Tools  
+Students are welcome to use AI tools as a complementary aid, but they must clearly state in their report where AI was used (e.g., text generation, editing, data analysis suggestions, or AI-assisted conclusions). AI should serve as a productivity and learning tool, not as the primary author of the report.  
+
 ### Discussion (600-700 words) {.nonumber}
 
 -   **Purpose**: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.
@@ -114,7 +109,7 @@ We recommend your repository include:
 -   At least one script for wrangling in the `code` directory.
 -   There should be one file called `final-project.qmd` that can be rendered to produce the final report. This can be in the `code` or home directories as long as it renders.
 -   You should include a `README` file explaining how to reproduce all the results.
--   A **contribution summary document** detailing each team member's specific contributions to the final report and analysis.
+-   A **contribution summary document** detailing each team member's specific contributions to the final report and analysis. 
 -   If you need to share raw data include it in the `raw-data` directory. Alternatively, you can include code that downloads the necessary data from the internet.
 
-We expect to see at least five commits by each person.
+*We expect to see at least five commits by each person.*

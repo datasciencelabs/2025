@@ -596,7 +596,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-29 13:47:59 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-29 17:47:59 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-30 22:55:01 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-31 02:55:01 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -610,7 +610,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 13\n\nnow() |&gt; minute() \n\n[1] 47\n\nnow() |&gt; second() \n\n[1] 59.2787"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 22\n\nnow() |&gt; minute() \n\n[1] 55\n\nnow() |&gt; second() \n\n[1] 1.556031"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1016,7 +1016,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.04724 62.01816 65.97968 69.83320 69.86782 73.14807 66.95335 72.94384\n [9] 66.83270 70.10252"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.86986 61.99521 65.87371 69.99598 70.06790 72.90791 67.04959 72.90606\n [9] 66.93987 69.90424"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -1107,14 +1107,14 @@
     "href": "slides/R/06-vectorization.html#match-versus-in",
     "title": "Vectorization",
     "section": "match versus %in%",
-    "text": "match versus %in%\n\nc(\"Boston\", \"Dakota\", \"Washington\") %in% murders$state\n\n[1] FALSE FALSE  TRUE\n\n\n\nmatch(c(\"Boston\", \"Dakota\", \"Washington\"), murders$state)\n\n[1] NA NA 48\n\n\n\nmatch(murders$state, c(\"Boston\", \"Dakota\", \"Washington\"))\n\n [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA\n[26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA  3 NA NA\n[51] NA"
+    "text": "match versus %in%\n\nc(\"Boston\", \"Dakota\", \"Washington\") %in% murders$state\n\n[1] FALSE FALSE  TRUE\n\n\n\nmatch(c(\"Boston\", \"Dakota\", \"Washington\"), murders$state)\n\n[1] NA NA 48\n\n\n\nmatch(murders$state, c(\"Boston\", \"Dakota\", \"Washington\"))\n\n [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA\n[26] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA  3 NA NA\n[51] NA\n\n\n\nthere are also set manipulation functions intersect, union, setdiff, setequal"
   },
   {
     "objectID": "slides/R/06-vectorization.html#the-apply-functions",
     "href": "slides/R/06-vectorization.html#the-apply-functions",
     "title": "Vectorization",
     "section": "The apply functions",
-    "text": "The apply functions\n\nsapply - apply the function and simplify if possible\napply - applies function to rows or columns o matrix.\nlapply - returns a list. Convenient when the function returns something other than a number.\ntapply - can apply to subsets defined by second variable.\nmapply - multivector version of sapply."
+    "text": "The apply functions\n\nsapply - apply the function and simplify if possible\napply - applies function to rows or columns of a matrix.\nlapply - returns a list. Convenient when the function returns something other than a number.\ntapply - can apply to subsets defined by second variable.\nmapply - multivector version of sapply."
   },
   {
     "objectID": "slides/R/06-vectorization.html#apply-examples",
@@ -1128,7 +1128,7 @@
     "href": "slides/R/06-vectorization.html#split-example",
     "title": "Vectorization",
     "section": "Split Example",
-    "text": "Split Example\n\nsp1 = split(murders$population, murders$region)\nlapply(sp1, sum)\n\n$Northeast\n[1] 55317240\n\n$South\n[1] 115674434\n\n$`North Central`\n[1] 66927001\n\n$West\n[1] 71945553"
+    "text": "Split Example\n\nsp1 = split(murders$population, murders$region)\nlapply(sp1, sum)\n\n$Northeast\n[1] 55317240\n\n$South\n[1] 115674434\n\n$`North Central`\n[1] 66927001\n\n$West\n[1] 71945553\n\n\n\nalternatively:\n\n\nwith(murders, tapply(population, region, sum))\n\n    Northeast         South North Central          West \n     55317240     115674434      66927001      71945553"
   },
   {
     "objectID": "slides/productivity/04-git.html#goal-for-the-day",
@@ -2682,7 +2682,7 @@
     "href": "slides/ml/40-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.86 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-1",
@@ -3501,7 +3501,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4201589 0.4818411\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4122117 0.4737883\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4380693 0.4999307\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4211528 0.4828472\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3543,7 +3543,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.95"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9483"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4258,7 +4258,7 @@
     "href": "final-project.html",
     "title": "Final Project",
     "section": "",
-    "text": "You will be assigned to a pre-assigned team of 4 or 5 students and a Teaching Fellow (TF) who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.\n\n\n\nTF (Project Supervisor)\nAssigned Groups\n\n\n\n\nAngela\nGroups 1-4\n\n\nAva\nGroups 5-8\n\n\nEmma\nGroups 9-12\n\n\nJing\nGroups 13-15\n\n\n\nGrading: The final project accounts for 20% of your course grade, divided as follows:\n\nFinal Project Report: 10% of course grade\nOral Presentation: 10% of course grade\n\n\n\nYour team will choose one of the following projects (possible topics will be posted here as they become available):\n\nTBD\nTBD\n…\nCustom Topic: Your team may propose your own research topic, subject to approval by your assigned TF\n\nDetailed project descriptions, datasets, and example papers will be posted here as they become available.\n\n\n\nYou will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nCommunication: Each group is encouraged to communicate with each other and their assigned TF on Slack throughout the project timeline.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).\n\n\n\n\n\n\nTF Name\nGroups\n\n\n\n\nAngela\nGroups 1-5\n\n\nAva\nGroups 6-10\n\n\nEmma\nGroups 11-15\n\n\nJing\nGroups 16-20\n\n\n\n\n\n\nThe oral presentation will be evaluated as a group grade out of 10 points based on the following criteria:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0-1\nNo meeting scheduled or major absence of team members\n\n\n2-3\nLimited understanding of project components; significant gaps in explanations\n\n\n4-5\nModerate understanding of project components; difficulty explaining individual contributions/methodological choices\n\n\n6-7\nGood understanding of project components; able to explain most individual contributions/methodological choices\n\n\n8-9\nVery good understanding of all project components; strong defense of analytical approaches with minimal gaps\n\n\n10\nExcellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis\n\n\n\n\n\n\n\nYou will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.\n\n\n\n\nYou can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.\n\n\n\n\nWe recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nA contribution summary document detailing each team member’s specific contributions to the final report and analysis.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
+    "text": "You will be assigned to a pre-assigned team of 4 or 5 students and a Teaching Fellow (TF) who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.\n\n\n\nTF Name\nGroups\n\n\n\n\nAngela\nGroups 1-5\n\n\nAva\nGroups 6-10\n\n\nEmma\nGroups 11-15\n\n\nJing\nGroups 16-20\n\n\n\nGrading: The final project accounts for 20% of your course grade, divided as follows:\n\nFinal Project Report: 10% of course grade\nOral Presentation: 10% of course grade\n\n\n\nYour team will choose one of the following projects (possible topics will be posted here as they become available):\n\nTBD\nTBD\n…\nCustom Topic: Your team may propose your own research topic, subject to approval by your assigned TF\n\nDetailed project descriptions, datasets, and example papers will be posted here as they become available.\n\n\n\nYou will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nCommunication: Each group is encouraged to communicate with each other and their assigned TF on Slack throughout the project timeline.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).\n\n\n\nThe oral presentation will be evaluated as a group grade out of 10 points based on the following criteria:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0-1\nNo meeting scheduled or major absence of team members\n\n\n2-3\nLimited understanding of project components; significant gaps in explanations\n\n\n4-5\nModerate understanding of project components; difficulty explaining individual contributions/methodological choices\n\n\n6-7\nGood understanding of project components; able to explain most individual contributions/methodological choices\n\n\n8-9\nVery good understanding of all project components; strong defense of analytical approaches with minimal gaps\n\n\n10\nExcellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis\n\n\n\n\n\n\n\nYou will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\nStudents are welcome to use AI tools as a complementary aid, but they must clearly state in their report where AI was used (e.g., text generation, editing, data analysis suggestions, or AI-assisted conclusions). AI should serve as a productivity and learning tool, not as the primary author of the report.\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.\n\n\n\n\nYou can include a separate document titled Supplementary Methods.\n\nPurpose: Share any mathematical derivations, data visualizations, or tables needed to justify the choices described in the Methods Section. You can also provide further support for the claims made in the Results Section. You can refer to this document in the main report.\nGuidelines: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.\n\n\n\n\nWe recommend your repository include:\n\nDirectories code, data, and docs.\nAt least one script for wrangling in the code directory.\nThere should be one file called final-project.qmd that can be rendered to produce the final report. This can be in the code or home directories as long as it renders.\nYou should include a README file explaining how to reproduce all the results.\nA contribution summary document detailing each team member’s specific contributions to the final report and analysis.\nIf you need to share raw data include it in the raw-data directory. Alternatively, you can include code that downloads the necessary data from the internet.\n\nWe expect to see at least five commits by each person.",
     "crumbs": [
       "Final Project"
     ]
@@ -4278,7 +4278,7 @@
     "href": "final-project.html#project-submission-requirements",
     "title": "Final Project",
     "section": "",
-    "text": "You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nCommunication: Each group is encouraged to communicate with each other and their assigned TF on Slack throughout the project timeline.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).\n\n\n\n\n\n\nTF Name\nGroups\n\n\n\n\nAngela\nGroups 1-5\n\n\nAva\nGroups 6-10\n\n\nEmma\nGroups 11-15\n\n\nJing\nGroups 16-20\n\n\n\n\n\n\nThe oral presentation will be evaluated as a group grade out of 10 points based on the following criteria:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0-1\nNo meeting scheduled or major absence of team members\n\n\n2-3\nLimited understanding of project components; significant gaps in explanations\n\n\n4-5\nModerate understanding of project components; difficulty explaining individual contributions/methodological choices\n\n\n6-7\nGood understanding of project components; able to explain most individual contributions/methodological choices\n\n\n8-9\nVery good understanding of all project components; strong defense of analytical approaches with minimal gaps\n\n\n10\nExcellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis",
+    "text": "You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.\nCommunication: Each group is encouraged to communicate with each other and their assigned TF on Slack throughout the project timeline.\nRequired Submissions to your TF:\n\nGitHub Repository: Submit the link to your team’s GitHub repository\nOral Presentation: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between December 16-19. All team members must be present during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).\n\n\n\nThe oral presentation will be evaluated as a group grade out of 10 points based on the following criteria:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0-1\nNo meeting scheduled or major absence of team members\n\n\n2-3\nLimited understanding of project components; significant gaps in explanations\n\n\n4-5\nModerate understanding of project components; difficulty explaining individual contributions/methodological choices\n\n\n6-7\nGood understanding of project components; able to explain most individual contributions/methodological choices\n\n\n8-9\nVery good understanding of all project components; strong defense of analytical approaches with minimal gaps\n\n\n10\nExcellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis",
     "crumbs": [
       "Final Project"
     ]
@@ -4288,7 +4288,7 @@
     "href": "final-project.html#sections",
     "title": "Final Project",
     "section": "",
-    "text": "You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.",
+    "text": "You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.\n\n\n\nPurpose: The abstract provides a concise summary of your project, including its objectives, key findings, and significance. Write this section last, after completing all other sections, to accurately reflect your project’s focus and main results.\nGuidelines: Limit this section to 150-200 words. Briefly outline the purpose of your study, the approach you used, and the primary results and conclusions. The abstract should be clear, succinct, and give readers an immediate understanding of what your project entails.\n\n\n\n\n\nPurpose: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.\nGuidelines: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.\n\n\n\n\n\nPurpose: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.\nGuidelines: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.\n\n\n\n\n\nPurpose: The results section presents the main findings of your analysis without interpretation. Organize the data logically to highlight key insights, using tables, figures, and charts to illustrate trends and comparisons.\nGuidelines: For each result, briefly describe it and refer to relevant visuals or tables where appropriate. Do not provide explanations or discuss implications in this section; focus only on presenting the findings clearly and accurately.\n\n\n\n\nStudents are welcome to use AI tools as a complementary aid, but they must clearly state in their report where AI was used (e.g., text generation, editing, data analysis suggestions, or AI-assisted conclusions). AI should serve as a productivity and learning tool, not as the primary author of the report.\n\n\n\n\nPurpose: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.\nGuidelines: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.\n\nYour final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.\nTotal Word Count: Approximately 2,500-3,000 words.",
     "crumbs": [
       "Final Project"
     ]
@@ -6719,7 +6719,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4501176\n\nsd(x_hat) \n\n[1] 0.01587143"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498327\n\nsd(x_hat) \n\n[1] 0.01577372"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10191,7 +10191,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 114485 0.792\n 2 795676 0.770\n 3 618632 0.763\n 4 193363 0.761\n 5 456549 0.758\n 6 375390 0.752\n 7 607028 0.752\n 8 802557 0.750\n 9 233265 0.749\n10 236314 0.747\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.792."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 501236 0.827\n 2 232227 0.790\n 3  70558 0.783\n 4 580889 0.760\n 5 209496 0.749\n 6 741711 0.748\n 7 964435 0.746\n 8  57084 0.746\n 9 940990 0.746\n10 737618 0.744\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.827."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10226,7 +10226,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.824     0.133      6.21 0.00000245"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.984     0.140      7.05 0.000000348"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -10999,11 +10999,11 @@
     "text": "Continuous distributions\n\nx &lt;- seq(-4, 4, length.out = 100) \nqplot(x, f, geom = \"line\", data = data.frame(x, f = dnorm(x)))"
   },
   {
-    "objectID": "slides/productivity/01-unix.html#naming-convention",
-    "href": "slides/productivity/01-unix.html#naming-convention",
+    "objectID": "slides/productivity/01-unix.html#naming-conventions",
+    "href": "slides/productivity/01-unix.html#naming-conventions",
     "title": "Unix",
-    "section": "Naming convention",
-    "text": "Naming convention\n\nIn general you want to name your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “five precepts of file naming and organization”"
+    "section": "Naming conventions",
+    "text": "Naming conventions\n\nIn general you want to name your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “Five precepts of file naming and organization”"
   },
   {
     "objectID": "slides/productivity/01-unix.html#five-precepts-of-file-naming-and-organization",
@@ -11227,21 +11227,21 @@
     "href": "slides/R/05-r-basics.html#packages",
     "title": "R Basics",
     "section": "Packages",
-    "text": "Packages\n\nR has a base installation and then tens of thousands of add-on software packages that can be obtained from CRAN\nUse install.packages to install the dslabs package from CRAN\nTryout the following functions: sessionInfo, installed.packages"
+    "text": "Packages\n\nR has a base installation and then tens of thousands of add-on software packages that can be obtained from CRAN\nUse install.packages to install the dslabs package from CRAN\nTry out the following functions: sessionInfo, installed.packages"
   },
   {
     "objectID": "slides/R/05-r-basics.html#prebuilt-functions",
     "href": "slides/R/05-r-basics.html#prebuilt-functions",
     "title": "R Basics",
     "section": "Prebuilt functions",
-    "text": "Prebuilt functions\n\nMuch of what we do in R uses functions from either base R or installed packages.\nMany are included in automatically loaded packages: stats, graphics, grDevices, utils, datasets, methods.\nThis subset of the R universe is refereed to as R base.\nVery popular packages not included in R base: ggplot2, dplyr, tidyr, and data.table.\nIt is easy to write your own functions and packages"
+    "text": "Prebuilt functions\n\nMuch of what we do in R uses functions from either base R or installed packages.\nMany are included in automatically loaded packages: stats, graphics, grDevices, utils, datasets, methods.\nThis subset of the R universe is referred to as R base.\nVery popular packages not included in R base: ggplot2, dplyr, tidyr, and data.table.\nIt is easy to write your own functions and packages"
   },
   {
     "objectID": "slides/R/05-r-basics.html#base-r-functions",
     "href": "slides/R/05-r-basics.html#base-r-functions",
     "title": "R Basics",
     "section": "Base R functions",
-    "text": "Base R functions\n\nExample functions that we will use today: ls, rm, library, search, factor, list, exists, str, typeof, and class.\nYou can see the raw code for a function by typing its name without the parentheses: type ls on your console to see an example."
+    "text": "Base R functions\n\nExample functions that we will use today: ls, rm, library, search, factor, list, exists, str, typeof, and class.\nYou can see the raw code for a function by typing its name without the parentheses.\n\ntype ls on your console to see an example."
   },
   {
     "objectID": "slides/R/05-r-basics.html#help-system",
@@ -11262,14 +11262,21 @@
     "href": "slides/R/05-r-basics.html#the-workspace-1",
     "title": "R Basics",
     "section": "The workspace",
-    "text": "The workspace\n\neach time you start R you will get a new workspace that does not have any variables or libraries loaded\nwhen you quit R you will be asked if you want to save the workspace, you probably will always be better off saying NO\nif you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a save workspace then that workspace will be re-instantiated and used\nthis might be helpful if you are working on a long complex analysis with large data, but mostly it is much easier to just use a markdown document to detail your steps and rerun that on a clean workspace - this can help find errors in your analysis\njust like Unix R uses a search path to find functions that you can evaluate\n\n\nsearch()\n\n[1] \".GlobalEnv\"        \"package:stats\"     \"package:graphics\" \n[4] \"package:grDevices\" \"package:utils\"     \"package:datasets\" \n[7] \"package:methods\"   \"Autoloads\"         \"package:base\""
+    "text": "The workspace\n\neach time you start R you will get a new workspace that does not have any variables or libraries loaded\nwhen you quit R you will be asked if you want to save the workspace\n\nyou will probably always be better off saying NO\n\nif you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a saved workspace then that workspace will be re-instantiated and used\n\nthis might be helpful if you are working on a long complex analysis with large data\n\nmostly it is much easier to just use a markdown document to detail your steps and rerun them on a clean workspace\n\nthis can also help find errors in your analysis"
+  },
+  {
+    "objectID": "slides/R/05-r-basics.html#the-workspace-2",
+    "href": "slides/R/05-r-basics.html#the-workspace-2",
+    "title": "R Basics",
+    "section": "The Workspace",
+    "text": "The Workspace\n\njust like Unix R uses a search path to find functions that you can evaluate\n\n\nsearch()\n\n[1] \".GlobalEnv\"        \"package:stats\"     \"package:graphics\" \n[4] \"package:grDevices\" \"package:utils\"     \"package:datasets\" \n[7] \"package:methods\"   \"Autoloads\"         \"package:base\""
   },
   {
     "objectID": "slides/R/05-r-basics.html#variable-name-convention",
     "href": "slides/R/05-r-basics.html#variable-name-convention",
     "title": "R Basics",
     "section": "Variable name convention",
-    "text": "Variable name convention\n\nA nice convention to follow is to use meaningful words that describe what is stored, use only lower case, and use underscores as a substitute for spaces.\nR and RStudio both provide autocomplete capabilities so you don’t need to type the whole name - that makes it easier to use longer more descriptive variable names\nIt is highly recommended that you not use the period . in variable names, there are situations where R treats it differently and those can cause unintended actions\nFor more we recommend this guide."
+    "text": "Variable name convention\n\nA nice convention to follow is to use meaningful words that describe what is stored, only lower case, and underscores as a substitute for spaces.\nR and RStudio both provide autocomplete capabilities so you don’t need to type the whole name\n\nthis makes it easier to use longer, more descriptive variable names\n\nIt is highly recommended that you not use the period . in variable names, there are situations where R treats it differently and those can cause unintended actions\nFor more we recommend this guide."
   },
   {
     "objectID": "slides/R/05-r-basics.html#data-types",
@@ -11304,7 +11311,7 @@
     "href": "slides/R/05-r-basics.html#data-frames-1",
     "title": "R Basics",
     "section": "Data frames",
-    "text": "Data frames\n\nand you can use View to open a spreadsheet-like interface to see the entire data.frame.\n\n\nView(murders)\n\n\nThis is more effective in RStudio that has an integrated viewer."
+    "text": "Data frames\n\nand you can use View to open a spreadsheet-like interface to see the entire data.frame.\n\n\nView(murders)\n\n\nThis is more effective in RStudio because it has an integrated viewer."
   },
   {
     "objectID": "slides/R/05-r-basics.html#data-frames-2",
@@ -11360,21 +11367,21 @@
     "href": "slides/R/05-r-basics.html#sequences",
     "title": "R Basics",
     "section": "Sequences",
-    "text": "Sequences\n\nSequences are a the common example of vectors we generate.\n\n\nseq(1, 10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nseq(1, 9, by=2)\n\n[1] 1 3 5 7 9\n\n\n\nWhen you want a sequence that increases by 1 you can use the colon :\n\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n3.3:7.8\n\n[1] 3.3 4.3 5.3 6.3 7.3\n\n4:-1\n\n[1]  4  3  2  1  0 -1"
+    "text": "Sequences\n\nSequences are a common example of vectors we generate.\n\n\nseq(1, 10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nseq(1, 9, by=2)\n\n[1] 1 3 5 7 9\n\n\n\nWhen you want a sequence that increases by 1 you can use the colon :\n\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n3.3:7.8\n\n[1] 3.3 4.3 5.3 6.3 7.3\n\n4:-1\n\n[1]  4  3  2  1  0 -1"
   },
   {
     "objectID": "slides/R/05-r-basics.html#sequences-1",
     "href": "slides/R/05-r-basics.html#sequences-1",
     "title": "R Basics",
     "section": "Sequences",
-    "text": "Sequences\n\nA useful function to quickly generate the sequence the same length as a vector x is seq_along(x) and NOT 1:length(x)\n\n\nx &lt;- c(\"b\", \"s\", \"t\", \" \", \"2\", \"6\", \"0\")\nseq_along(x)\n\n[1] 1 2 3 4 5 6 7\n\n\n\nA reason to use this is to loop through entries:\n\n\nfor (i in seq_along(x)) {\n  cat(toupper(x[i]))\n}\n\nBST 260\n\n\n\nBut if the length of x is zero, then using 1:length(x) does not work for this loop\n\n\nw = x[x==\"W\"]\n1:length(w)\n\n[1] 1 0\n\nseq_along(w)\n\ninteger(0)"
+    "text": "Sequences\n\nA useful function to quickly generate a sequence the same length as a vector x is seq_along(x) and NOT 1:length(x)\n\n\nx &lt;- c(\"b\", \"s\", \"t\", \" \", \"2\", \"6\", \"0\")\nseq_along(x)\n\n[1] 1 2 3 4 5 6 7\n\n\n\nA reason to use this is to loop through entries:\n\n\nfor (i in seq_along(x)) {\n  cat(toupper(x[i]))\n}\n\nBST 260\n\n\n\nBut if the length of x is zero, then using 1:length(x) does not work for this loop\n\n\nw = x[x==\"W\"]\n1:length(w)\n\n[1] 1 0\n\nseq_along(w)\n\ninteger(0)"
   },
   {
     "objectID": "slides/R/05-r-basics.html#vector-types-and-coercion",
     "href": "slides/R/05-r-basics.html#vector-types-and-coercion",
     "title": "R Basics",
-    "section": "Vector Types and Coercion",
-    "text": "Vector Types and Coercion\n\nOne dimensional vectors: double, integer, logical, complex, characters and numeric\nEach basic type has its own version of NA (a missing value)\ntesting for types: is.TYPE,\ncoercing : as.TYPE, will result in NA if it is not possible\n\n\nis.numeric(\"a\")\n\n[1] FALSE\n\nis.double(1L)\n\n[1] FALSE\n\nas.double(\"6\")\n\n[1] 6\n\nas.numeric(x) + 3\n\n[1] NA NA NA NA  5  9  3\n\ntypeof(1:10)\n\n[1] \"integer\""
+    "section": "Vector types and coercion",
+    "text": "Vector types and coercion\n\nOne dimensional vectors: double, integer, logical, complex, characters and numeric\nEach basic type has its own version of NA (a missing value)\ntesting for types: is.TYPE,\ncoercing : as.TYPE, will result in NA if it is not possible\n\n\nis.numeric(\"a\")\n\n[1] FALSE\n\nis.double(1L)\n\n[1] FALSE\n\nas.double(\"6\")\n\n[1] 6\n\nas.numeric(x) + 3\n\n[1] NA NA NA NA  5  9  3\n\ntypeof(1:10)\n\n[1] \"integer\""
   },
   {
     "objectID": "slides/R/05-r-basics.html#coercing",
@@ -11387,8 +11394,8 @@
     "objectID": "slides/R/05-r-basics.html#vector-types-and-coercion-1",
     "href": "slides/R/05-r-basics.html#vector-types-and-coercion-1",
     "title": "R Basics",
-    "section": "Vector Types and Coercion",
-    "text": "Vector Types and Coercion\n\ncoercion is automatically performed when it is possible\nTRUE coerces to 1 and FALSE to 0\nbut any non-zero integer coerces to TRUE, only 0 coerces to FALSE\nas.logical converts 0 and only 0 to FALSE, everything else to TRUE\nthe character string “NA” is not a missing value\n\n\ntypeof(1:10 + 0.1)\n\n[1] \"double\"\n\ntypeof(TRUE+1)\n\n[1] \"double\"\n\nas.character(TRUE)\n\n[1] \"TRUE\"\n\nas.numeric(TRUE)\n\n[1] 1\n\nas.logical(1)\n\n[1] TRUE\n\nas.logical(.5)\n\n[1] TRUE"
+    "section": "Vector types and coercion",
+    "text": "Vector types and coercion\n\ncoercion is automatically performed when it is possible\nTRUE coerces to 1 and FALSE to 0\nbut any non-zero integer coerces to TRUE, only 0 coerces to FALSE\nas.logical converts 0 and only 0 to FALSE, everything else to TRUE\nthe character string “NA” is not a missing value\n\n\ntypeof(1:10 + 0.1)\n\n[1] \"double\"\n\ntypeof(TRUE+1)\n\n[1] \"double\"\n\nas.character(TRUE)\n\n[1] \"TRUE\"\n\nas.numeric(TRUE)\n\n[1] 1\n\nas.logical(1)\n\n[1] TRUE\n\nas.logical(.5)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/R/05-r-basics.html#coercing-1",
@@ -11430,14 +11437,14 @@
     "href": "slides/R/05-r-basics.html#factors-1",
     "title": "R Basics",
     "section": "Factors",
-    "text": "Factors\n\nA factor is a good representation for a variable, like Sex that has a fixed set of non-numeric values, like Male and Female\nIt is usually not a good representation for variables (like state names in the murders dataset) that have lots of levels\nInternally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to length(levels) if the ith entry is k than that corresponds to the kth element of the levels\nIn statistics we refer to this as categorical data, where all of the individuals are mapped into a relatively small number of categories.\nUsually order does not matter, but if it does you can also have ordered factors.\n\n\nx &lt;- murders$region\nlevels(x)\n\n[1] \"Northeast\"     \"South\"         \"North Central\" \"West\""
+    "text": "Factors\n\nA factor is a good representation for a variable, that has a fixed set of non-numeric values\n\nex: Sex has Male and Female\n\nIt is usually not a good representation for variables that have lots of levels (like state names in the murders dataset)\nInternally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to length(levels)\n\nif the ith entry is k then that corresponds to the kth element of the levels\n\nIn statistics we refer to this as categorical data, where all of the individuals are mapped into a relatively small number of categories.\nUsually order does not matter, but if it does you can also have ordered factors.\n\n\nx &lt;- murders$region\nlevels(x)\n\n[1] \"Northeast\"     \"South\"         \"North Central\" \"West\""
   },
   {
     "objectID": "slides/R/05-r-basics.html#setting-levels",
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Male   Female Female Female Female Male   Male   Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Male   Female Female Female Female Male   Male   Male   Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Male   Male   Female Female Female Female Male   Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Male   Male   Female Female Female Female Male   Male   Female\nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11570,14 +11577,14 @@
     "href": "slides/R/05-r-basics.html#logical-operators",
     "title": "R Basics",
     "section": "Logical Operators",
-    "text": "Logical Operators\n\nthe short forms & and | perform element-wise comparisons (vectorized)\nthe long forms && and || evaluate the first element only, move left to right and return when the result is determined\nerrors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn when it thinks there is a mistake)"
+    "text": "Logical Operators\n\nthe short forms & and | perform element-wise comparisons (vectorized)\nthe long forms && and || evaluate the first element only, move left to right and return when the result is determined\nerrors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn you when it thinks there is a mistake)"
   },
   {
     "objectID": "slides/R/05-r-basics.html#arithmetic-operators",
     "href": "slides/R/05-r-basics.html#arithmetic-operators",
     "title": "R Basics",
     "section": "Arithmetic Operators",
-    "text": "Arithmetic Operators\n\nthese are operators like ^ or +\n?Syntax will get you the manual page for operator precedence\nalways use parentheses when in doubt - and it is much clearer to the reader\n\n\n2^1+1\n\n[1] 3\n\n2^(1+1)\n\n[1] 4\n\nTRUE || TRUE && FALSE   # is the same as\n\n[1] TRUE\n\nTRUE || (TRUE && FALSE) # and different from\n\n[1] TRUE\n\n(TRUE || TRUE) && FALSE\n\n[1] FALSE"
+    "text": "Arithmetic Operators\n\nthese are operators like ^ or +\n?Syntax will get you the manual page for operator precedence\nwhen in doubt always use parentheses - it is much clearer to the reader\n\n\n2^1+1\n\n[1] 3\n\n2^(1+1)\n\n[1] 4\n\nTRUE || TRUE && FALSE   # is the same as\n\n[1] TRUE\n\nTRUE || (TRUE && FALSE) # and different from\n\n[1] TRUE\n\n(TRUE || TRUE) && FALSE\n\n[1] FALSE"
   },
   {
     "objectID": "slides/R/05-r-basics.html#functions-2",
@@ -11591,7 +11598,7 @@
     "href": "slides/R/05-r-basics.html#scope",
     "title": "R Basics",
     "section": "Scope",
-    "text": "Scope\n\nmost of what computer languages do is to map symbols (syntax) to values (semantics) and then create an executable program\nwhen a computer comes upon an expression it parses it and that identifies the symbols that will need to be looked up\n\n\nexpr &lt;- parse(text = \"a + b * c\")\nexpr[[1]][1]\n\n`+`()\n\nexpr[[1]][2]\n\na()\n\nexpr[[1]][3]\n\n(b * c)()\n\n\n\nthe third part itself is a compound expression that can be decomposed into its parts, *, b and c\nin order to evaluate this the evaluator must find bindings for each of the symbols\nhere we expect it wants numbers for a, b and c and functions for + and *\n\n##Scope\n\nall computer languages have a set of rules that are used to match these symbols to values\none commonly used rule is to use lexical scope, but there are lots of different ways this is done\n\n\nfun1 = function(x)  x + y\nfun1(4)\n\n\nin fun1(4) we probably all agree that the value that should be used for x is 4, we probably expect that + is a system function\nbut what about y - where should it’s value come from?"
+    "text": "Scope\n\nmost of what computer languages do is map symbols (syntax) to values (semantics) and then create an executable program\nwhen a computer comes upon an expression it parses it and that identifies the symbols that will need to be looked up\n\n\nexpr &lt;- parse(text = \"a + b * c\")\nexpr[[1]][1]\n\n`+`()\n\nexpr[[1]][2]\n\na()\n\nexpr[[1]][3]\n\n(b * c)()\n\n\n\nthe third part itself is a compound expression that can be decomposed into its parts, *, b and c\nin order to evaluate this the evaluator must find bindings for each of the symbols\nhere we expect it wants numbers for a, b and c and functions for + and *\n\n##Scope\n\nall computer languages have a set of rules that are used to match these symbols to values\none commonly used rule is to use lexical scope, but there are lots of different ways this is done\n\n\nfun1 = function(x)  x + y\nfun1(4)\n\n\nin fun1(4) we probably all agree that the value that should be used for x is 4, we probably expect that + is a system function\nbut what about y - where should it’s value come from?"
   },
   {
     "objectID": "slides/R/05-r-basics.html#scope-1",
@@ -11612,7 +11619,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x0000021a72b212c8&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000002211395da08&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -11633,7 +11640,7 @@
     "href": "slides/R/05-r-basics.html#evaluation-and-the-process-used-to-find-bindings",
     "title": "R Basics",
     "section": "Evaluation and the process used to find bindings",
-    "text": "Evaluation and the process used to find bindings\n\nwhen evaluating a function R first establishes an evaluation environment that contains the formal arguments matched to the supplied arguments\nif the function is in a package, then the Namespace directives of the package are used to augment this evaluation environment\nany symbol not found in that evaluation environment will be searched for in Global Environment (your workspace).\nAnd after that the search path (search()) in order.\nThe evaluator will take the first match it finds and try to use that (sort of - it does know when it is looking for a function)"
+    "text": "Evaluation and the process used to find bindings\n\nwhen evaluating a function R first establishes an evaluation environment that contains the formal arguments matched to the supplied arguments\nif the function is in a package, then the Namespace directives of the package are used to augment this evaluation environment\nany symbol not found in that evaluation environment will be searched for in the Global Environment (your workspace).\nAnd after that the search path (search()) in order.\nThe evaluator will take the first match it finds and try to use that (sort of - it does know when it is looking for a function)"
   },
   {
     "objectID": "slides/R/05-r-basics.html#namespaces",
@@ -12491,12 +12498,5 @@
     "crumbs": [
       "Slides"
     ]
-  },
-  {
-    "objectID": "slides/productivity/01-unix.html#naming-conventions",
-    "href": "slides/productivity/01-unix.html#naming-conventions",
-    "title": "Unix",
-    "section": "Naming conventions",
-    "text": "Naming conventions\n\nIn general you want to name your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “Five precepts of file naming and organization”"
   }
 ]

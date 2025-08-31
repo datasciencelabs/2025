@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2024-09-16">
+  <meta name="dcterms.date" content="2025-09-15">
   <meta name="keywords" content="R">
   <title>BST 260: Introduction to Data Science – R Basics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,14 +199,14 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-09-16</p>
+  <p class="date">2025-09-15</p>
 </section>
 <section id="packages" class="slide level2">
 <h2>Packages</h2>
 <ul>
 <li><p>R has a <em>base</em> installation and then tens of thousands of add-on software packages that can be obtained from CRAN</p></li>
-<li><p>Use <code>install.packages</code> to install the <strong>dslabs</strong> package from CRAN</p></li>
-<li><p>Tryout the following functions: <code>sessionInfo</code>, <code>installed.packages</code></p></li>
+<li><p>Use <code>install.packages</code> to install the <strong>dslabs</strong> package from <a href="https://cran.r-project.org/">CRAN</a></p></li>
+<li><p>Try out the following functions: <code>sessionInfo</code>, <code>installed.packages</code></p></li>
 </ul>
 </section>
 <section id="prebuilt-functions" class="slide level2">
@@ -214,7 +214,7 @@
 <ul>
 <li><p>Much of what we do in R uses functions from either base R or installed packages.</p></li>
 <li><p>Many are included in automatically loaded packages: <code>stats</code>, <code>graphics</code>, <code>grDevices</code>, <code>utils</code>, <code>datasets</code>, <code>methods</code>.</p></li>
-<li><p>This subset of the R universe is refereed to as <em>R base</em>.</p></li>
+<li><p>This subset of the R universe is referred to as <em>R base</em>.</p></li>
 <li><p>Very popular packages not included in R base: <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, and <code>data.table</code>.</p></li>
 <li><p>It is easy to write your own functions and packages</p></li>
 </ul>
@@ -239,7 +239,10 @@
 <h2>Base R functions</h2>
 <ul>
 <li><p>Example functions that we will use today: <code>ls</code>, <code>rm</code>, <code>library</code>, <code>search</code>, <code>factor</code>, <code>list</code>, <code>exists</code>, <code>str</code>, <code>typeof</code>, and <code>class</code>.</p></li>
-<li><p>You can see the raw code for a function by typing its name without the parentheses: type <code>ls</code> on your console to see an example.</p></li>
+<li><p>You can see the raw code for a function by typing its name without the parentheses.</p>
+<ul>
+<li>type <code>ls</code> on your console to see an example.</li>
+</ul></li>
 </ul>
 </section>
 <section id="help-system" class="slide level2">
@@ -283,10 +286,24 @@
 <h2>The workspace</h2>
 <ul>
 <li><p>each time you start R you will get a new workspace that does not have any variables or libraries loaded</p></li>
-<li><p>when you quit R you will be asked if you want to save the workspace, you probably will always be better off saying <strong>NO</strong></p></li>
-<li><p>if you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a save workspace then that workspace will be re-instantiated and used</p></li>
-<li><p>this might be helpful if you are working on a long complex analysis with large data, but mostly it is much easier to just use a markdown document to detail your steps and rerun that on a clean workspace - this can help find errors in your analysis</p></li>
-<li><p>just like Unix R uses a search path to find functions that you can evaluate</p></li>
+<li><p>when you quit R you will be asked if you want to save the workspace</p>
+<ul>
+<li>you will probably always be better off saying <strong>NO</strong></li>
+</ul></li>
+<li><p>if you do save a workspace it will be saved as a hidden file (Unix lecture) and whenever R is started in a directory with a saved workspace then that workspace will be re-instantiated and used</p>
+<ul>
+<li>this might be helpful if you are working on a long complex analysis with large data</li>
+</ul></li>
+<li><p>mostly it is much easier to just use a markdown document to detail your steps and rerun them on a clean workspace</p>
+<ul>
+<li>this can also help find errors in your analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-workspace-2" class="slide level2">
+<h2>The Workspace</h2>
+<ul>
+<li>just like Unix R uses a search path to find functions that you can evaluate</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">search</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -297,11 +314,14 @@
 </div>
 </div>
 </section>
-<section id="variable-name-convention" class="slide level2">
+<section id="variable-name-convention" class="slide level2 smaller">
 <h2>Variable name convention</h2>
 <ul>
-<li><p>A nice convention to follow is to use meaningful words that describe what is stored, use only lower case, and use underscores as a substitute for spaces.</p></li>
-<li><p>R and RStudio both provide autocomplete capabilities so you don’t need to type the whole name - that makes it easier to use longer more descriptive variable names</p></li>
+<li><p>A nice convention to follow is to use <strong>meaningful</strong> words that describe what is stored, <strong>only lower</strong> case, and <strong>underscores</strong> as a substitute for spaces.</p></li>
+<li><p>R and RStudio both provide autocomplete capabilities so you don’t need to type the whole name</p>
+<ul>
+<li>this makes it easier to use longer, more descriptive variable names</li>
+</ul></li>
 <li><p>It is highly recommended that you not use the period <code>.</code> in variable names, there are situations where R treats it differently and those can cause unintended actions</p></li>
 <li><p>For more we recommend <a href="http://adv-r.had.co.nz/Style.html">this guide</a>.</p></li>
 </ul>
@@ -388,7 +408,7 @@
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">View</span>(murders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>This is more effective in RStudio that has an integrated viewer.</li>
+<li>This is more effective in RStudio because it has an integrated viewer.</li>
 </ul>
 </section>
 <section id="data-frames-2" class="slide level2 smaller">
@@ -522,10 +542,10 @@
 <li><strong>NOTE</strong> R does not do array bounds checking…it silently pads with missing values</li>
 </ul>
 </section>
-<section id="sequences" class="slide level2">
+<section id="sequences" class="slide level2 smaller">
 <h2>Sequences</h2>
 <ul>
-<li>Sequences are a the common example of vectors we generate.</li>
+<li>Sequences are a common example of vectors we generate.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -558,7 +578,7 @@
 <section id="sequences-1" class="slide level2 smaller">
 <h2>Sequences</h2>
 <ul>
-<li>A useful function to quickly generate the sequence the same length as a vector <code>x</code> is <code>seq_along(x)</code> and <strong>NOT</strong> <code>1:length(x)</code></li>
+<li>A useful function to quickly generate a sequence the same length as a vector <code>x</code> is <code>seq_along(x)</code> and <strong>NOT</strong> <code>1:length(x)</code></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"s"</span>, <span class="st">"t"</span>, <span class="st">" "</span>, <span class="st">"2"</span>, <span class="st">"6"</span>, <span class="st">"0"</span>)</span>
@@ -594,7 +614,7 @@
 </div>
 </section>
 <section id="vector-types-and-coercion" class="slide level2 smaller">
-<h2>Vector Types and Coercion</h2>
+<h2>Vector types and coercion</h2>
 <ul>
 <li><p>One dimensional vectors: double, integer, logical, complex, characters and numeric</p></li>
 <li><p>Each basic type has its own version of NA (a missing value)</p></li>
@@ -635,7 +655,7 @@
 </ul>
 </section>
 <section id="vector-types-and-coercion-1" class="slide level2 smaller">
-<h2>Vector Types and Coercion</h2>
+<h2>Vector types and coercion</h2>
 <ul>
 <li><p>coercion is automatically performed when it is possible</p></li>
 <li><p><code>TRUE</code> coerces to 1 and <code>FALSE</code> to 0</p></li>
@@ -670,7 +690,7 @@
 </div>
 </div>
 </section>
-<section id="coercing-1" class="slide level2">
+<section id="coercing-1" class="slide level2 smaller">
 <h2>Coercing</h2>
 <ul>
 <li>Here are some examples:</li>
@@ -784,12 +804,18 @@
 <li>Why do you think this is?</li>
 </ul>
 </section>
-<section id="factors-1" class="slide level2">
+<section id="factors-1" class="slide level2 smaller">
 <h2>Factors</h2>
 <ul>
-<li><p>A factor is a good representation for a variable, like Sex that has a fixed set of non-numeric values, like <code>Male</code> and <code>Female</code></p></li>
-<li><p>It is usually not a good representation for variables (like state names in the murders dataset) that have lots of levels</p></li>
-<li><p>Internally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to <code>length(levels)</code> if the <code>i</code>th entry is <code>k</code> than that corresponds to the <code>k</code>th element of the levels</p></li>
+<li><p>A factor is a good representation for a variable, that has a fixed set of non-numeric values</p>
+<ul>
+<li>ex: Sex has <code>Male</code> and <code>Female</code></li>
+</ul></li>
+<li><p>It is usually not a good representation for variables that have lots of levels (like state names in the murders dataset)</p></li>
+<li><p>Internally a factor is stored as the unique set of labels (called levels) and an integer vector with values in 1 to <code>length(levels)</code></p>
+<ul>
+<li>if the <code>i</code>th entry is <code>k</code> then that corresponds to the <code>k</code>th element of the levels</li>
+</ul></li>
 <li><p>In statistics we refer to this as categorical data, where all of the individuals are mapped into a relatively small number of categories.</p></li>
 <li><p>Usually order does not matter, but if it does you can also have ordered factors.</p></li>
 </ul>
@@ -813,12 +839,12 @@
 <span id="cb111-3"><a aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">=</span> <span class="fu">factor</span>(x, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Female"</span>, <span class="st">"Male"</span>))</span>
 <span id="cb111-4"><a aria-hidden="true" tabindex="-1"></a>y1[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] Female Male   Female Female Female Female Male   Male   Male   Female
+<pre><code> [1] Male   Male   Male   Female Female Female Female Male   Male   Female
 Levels: Male Female</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a aria-hidden="true" tabindex="-1"></a>y2[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] Female Male   Female Female Female Female Male   Male   Male   Female
+<pre><code> [1] Male   Male   Male   Female Female Female Female Male   Male   Female
 Levels: Female Male</code></pre>
 </div>
 </div>
@@ -1122,7 +1148,7 @@ Levels: 3</code></pre>
 <li><p>We will learn more about matrices in the High Dimensional Data Analysis part of the class.</p></li>
 </ul>
 </section>
-<section id="functions" class="slide level2">
+<section id="functions" class="slide level2 smaller">
 <h2>Functions</h2>
 <ul>
 <li>You can define your own function. The form is like this:</li>
@@ -1171,7 +1197,7 @@ Levels: 3</code></pre>
 <ul>
 <li>the short forms <code>&amp;</code> and <code>|</code> perform element-wise comparisons (vectorized)</li>
 <li>the long forms <code>&amp;&amp;</code> and <code>||</code> evaluate the first element only, move left to right and return when the result is determined</li>
-<li>errors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn when it thinks there is a mistake)</li>
+<li>errors often occur when a programmer/analyst uses one form, when they want the other (R tries to warn you when it thinks there is a mistake)</li>
 </ul>
 </section>
 <section id="arithmetic-operators" class="slide level2 smaller">
@@ -1179,7 +1205,7 @@ Levels: 3</code></pre>
 <ul>
 <li>these are operators like <code>^</code> or <code>+</code></li>
 <li><code>?Syntax</code> will get you the manual page for operator precedence</li>
-<li>always use parentheses when in doubt - and it is much clearer to the reader</li>
+<li>when in doubt always use parentheses - it is much clearer to the reader</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a><span class="dv">2</span><span class="sc">^</span><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1216,7 +1242,7 @@ Levels: 3</code></pre>
 <section id="scope" class="slide level2 smaller">
 <h2>Scope</h2>
 <ul>
-<li><p>most of what computer languages do is to map symbols (syntax) to values (semantics) and then create an executable program</p></li>
+<li><p>most of what computer languages do is map symbols (syntax) to values (semantics) and then create an executable program</p></li>
 <li><p>when a computer comes upon an expression it parses it and that identifies the symbols that will need to be looked up</p></li>
 </ul>
 <div class="cell">
@@ -1306,7 +1332,7 @@ y is 3 </code></pre>
 {
     n * log(mu) - mu * sumx
 }
-&lt;environment: 0x0000021a72b212c8&gt;</code></pre>
+&lt;environment: 0x000002211395da08&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1344,7 +1370,7 @@ y is 3 </code></pre>
 <ul>
 <li><p>when evaluating a function R first establishes an <em>evaluation environment</em> that contains the formal arguments matched to the supplied arguments</p></li>
 <li><p>if the function is in a package, then the Namespace directives of the package are used to augment this evaluation environment</p></li>
-<li><p>any symbol not found in that evaluation environment will be searched for in <em>Global Environment</em> (your workspace).</p></li>
+<li><p>any symbol not found in that evaluation environment will be searched for in the <em>Global Environment</em> (your workspace).</p></li>
 <li><p>And after that the search path (<code>search()</code>) in order.</p></li>
 <li><p>The evaluator will take the first match it finds and try to use that (sort of - it does know when it is looking for a function)</p></li>
 </ul>

@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2024-09-18">
+  <meta name="dcterms.date" content="2025-09-18">
   <meta name="keywords" content="R">
   <title>BST 260: Introduction to Data Science – Vectorization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,7 +199,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-09-18</p>
+  <p class="date">2025-09-18</p>
 </section>
 <section id="vectorization" class="slide level2">
 <h2>Vectorization</h2>
@@ -270,8 +270,8 @@
 <span id="cb8-2"><a></a>error <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(heights), <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
 <span id="cb8-3"><a></a>heights <span class="sc">+</span> error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 69.04724 62.01816 65.97968 69.83320 69.86782 73.14807 66.95335 72.94384
- [9] 66.83270 70.10252</code></pre>
+<pre><code> [1] 68.86986 61.99521 65.87371 69.99598 70.06790 72.90791 67.04959 72.90606
+ [9] 66.93987 69.90424</code></pre>
 </div>
 </div>
 </section>
@@ -494,12 +494,15 @@ attr(,"scaled:scale")
 [51] NA</code></pre>
 </div>
 </div>
+<ul>
+<li>there are also set manipulation functions <code>intersect</code>, <code>union</code>, <code>setdiff</code>, <code>setequal</code></li>
+</ul>
 </section>
 <section id="the-apply-functions" class="slide level2">
 <h2>The apply functions</h2>
 <ul>
 <li><p><code>sapply</code> - apply the function and simplify if possible</p></li>
-<li><p><code>apply</code> - applies function to rows or columns o matrix.</p></li>
+<li><p><code>apply</code> - applies function to rows or columns of a matrix.</p></li>
 <li><p><code>lapply</code> - returns a list. Convenient when the function returns something other than a number.</p></li>
 <li><p><code>tapply</code> - can apply to subsets defined by second variable.</p></li>
 <li><p><code>mapply</code> - multivector version of <code>sapply</code>.</p></li>
@@ -541,6 +544,16 @@ $`North Central`
 
 $West
 [1] 71945553</code></pre>
+</div>
+</div>
+<ul>
+<li>alternatively:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">with</span>(murders, <span class="fu">tapply</span>(population, region, sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Northeast         South North Central          West 
+     55317240     115674434      66927001      71945553 </code></pre>
 </div>
 </div>
 
