@@ -65,7 +65,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
 | Robert Gentleman  | Monday, 11:30 am to 12:30 pm  |   TBD     |
-| Anthony Christidis  | Friday, 12:30 pm to 1:30 pm  |   [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)     |
+| Anthony Christidis  | Friday, 12:30 pm to 1:30 pm |   [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)     |
 | Angela Wang | TBD     | TBD         |
 | Ava Harrington   | TBD     | TBD         |
 | Emma Crenshaw | Tuesday, 10 am to 11 am | Kresge 201 on 9/9, otherwise FXB-G03 |
