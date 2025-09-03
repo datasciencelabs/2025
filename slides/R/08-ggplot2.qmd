@@ -23,6 +23,7 @@ The code in this lecture assumes these three libraries are loaded:
 library(dplyr)
 library(ggplot2)
 library(dslabs)
+library(lattice)
 ```
 
 ---
@@ -226,6 +227,29 @@ will give you an error since `abb` is not found because it is outside of the `ae
 * The layer `geom_text` does not know where to find `abb`: it's a column name and not a global variable.
 
 --- 
+
+## Multipanel plots - lattice
+
+* we can also use the `lattice` package to produce high quality graphics - R has lots of ways to do things
+
+```{r lattice ex}
+pl <- xyplot(total ~ population/10^6 | region, data = murders,
+      type = c("p", "g"), xlab = "Population/10^6", ylab = "Total",
+     strip = strip.custom(strip.names = TRUE, var.name = "region"), layout=c(2,2))
+print(pl)
+
+```
+
+## Multipanel plots - ggplot2
+
+* here we produce a similar plot using `ggplot2`
+```{r ggplotpanel}
+
+pg <- ggplot(murders, aes(population/10^6, total)) + geom_point(shape = 1) +
+    facet_wrap(~region) + theme(aspect.ratio = 1)
+print(pg)
+
+```
 
 ## Tinkering with arguments
 
