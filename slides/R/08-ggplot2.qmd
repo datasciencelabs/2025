@@ -9,6 +9,11 @@ execute:
   echo: true
 ---
 
+```{r, ThemePark, message=FALSE, warning=FALSE, echo=FALSE, eval=FALSE}
+##if you don't have ThemePark installed run this
+library(remotes)
+> remotes::install_github("https://github.com/MatthewBJane/ThemePark.git")
+```
 
 ## ggplot2
 
@@ -586,6 +591,7 @@ p + theme_excel()
 **ThemePark** provides fun themes:
 
 ```{r starwars}
+
 library(ThemePark)
 p + theme_starwars()
 ```
@@ -598,6 +604,7 @@ p + theme_starwars()
 This is a fan favorite:
 
 ```{r barbie}
+
 p + theme_barbie()
 ```
 

@@ -73,7 +73,7 @@ select(wide_data, country, `1960`:`1970`) |> as.data.frame()
 
 ## Tidyverse packages
 
-* **tibble** - improves data frame class.
+* **tibble** - modifies the data frame class.
 
 * **readr** - import data.
 
@@ -195,7 +195,7 @@ mutate(murders, across(where(is.character), tolower))
 
 --- 
 
-## The pipe: `|>` or `%>%`
+## The pipe: `|>`
 
 * We use the pipe to chain a series of operations.
 
@@ -208,7 +208,7 @@ $$ \mbox{original data }
 
 --- 
 
-## The pipe: `|>` or `%>%`
+## The pipe: `|>` 
 
 * The code looks like this:
 
@@ -223,7 +223,7 @@ murders |> select(state, region, rate) |> filter(rate <= 0.71)
 ---
 
 
-## The pipe: `|>` or `%>%`
+## The pipe: `|>` 
 
 * Here is a simple example:
 
@@ -244,7 +244,7 @@ murders |> select(state, region, rate) |> filter(rate <= 0.71)
 murders |> summarize(avg = mean(rate))
 ```
 
-* Let's compute murder rate for the US. Is the above it?
+* Let's compute murder rate for the US. Is the number we just computed an estimate of that rate?
 
 --- 
 
@@ -252,7 +252,7 @@ murders |> summarize(avg = mean(rate))
 
 * No, the rate is NOT the average of rates.
 
-* It is the total murders divided by total population:
+* The correct calculation is the total number of murders divided by total population:
 
 ```{r}
 murders |> summarize(rate = sum(total)/sum(population)*100000)
@@ -311,17 +311,15 @@ murders |> summarize(median_min_max(population))
 
 --- 
 
-## Group then summarize 
+## Group then summarize
 
 * Let's compute murder rate by region.
-
-* Take a close look at this output? 
 
 ```{r}
 murders |> group_by(region) |> head(4)
 ```
 
-* Note the `Groups: region [4]` at the top.
+* Note the `Groups: region ` at the top. Note that this is the number of groups in the first 4 rows.
 
 * This is a special data frame called a _grouped data frame_.
 

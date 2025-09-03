@@ -8,53 +8,52 @@ format:
 ---
 
 ## General Information
- 
-- BST 260 Introduction to Data Science
-- Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
-- TFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li
-- Mondays we have lectures, Wednesday we have labs.
-- In lab we work on problem sets together.
 
----
+-   BST 260 Introduction to Data Science
+-   Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
+-   TFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li
+-   Mondays we have lectures, Wednesday we have labs.
+-   In lab we work on problem sets together.
+
+------------------------------------------------------------------------
 
 ## Course Description
 
-Lecture notes: [https://datasciencelabs.github.io/2025/](https://datasciencelabs.github.io/2025/)
+Lecture notes: <https://datasciencelabs.github.io/2025/>
 
-
-![](https://pbs.twimg.com/media/EN5AnSsWAAAtWmN.jpg){width=25% fig-align="center"}
+![](https://pbs.twimg.com/media/EN5AnSsWAAAtWmN.jpg){width="25%" fig-align="center"}
 
 Please read the syllabus!
 
----
+------------------------------------------------------------------------
 
 ## Important details
 
-- Complete readings before class.
-- Midterms are in person. There are no makeups.
-- Make sure you read messages sent via Canvas
-- You can select your own final project, but need approval.
-- You should start your final project by October 22.
-- Help us pick office hours: <https://forms.gle/GiQXqDTaeYVxaXd78>
- 
---- 
+-   Complete readings before class.
+-   Midterms are in person. There are no makeups.
+-   Make sure you read messages sent via Canvas
+-   You can select your own final project, but need approval.
+-   You should start your final project by October 22.
+-   Help us pick office hours: <https://forms.gle/GiQXqDTaeYVxaXd78>
+
+------------------------------------------------------------------------
 
 ## What's coming
 
-* UNIX/Linux shell.
-* Reproducible document preparation
-* Version control with git and GitHub
-* R programming
-* Data wrangling with dplyr and data.table
-* Data visualization with ggplot2
-* Probability theory, inference and modeling
-* High-dimensional data techniques
-* Machine learning
+-   UNIX/Linux shell.
+-   Reproducible document preparation
+-   Version control with git and GitHub
+-   R programming
+-   Data wrangling with dplyr and data.table
+-   Data visualization with ggplot2
+-   Probability theory, inference and modeling
+-   High-dimensional data techniques
+-   Machine learning
 
----
+------------------------------------------------------------------------
+
 ## Let's get started
 
-- Install R.
-- Install RStudio.
-- Make sure you have access to a terminal.
-
+-   Install R.
+-   Install RStudio.
+-   Make sure you have access to a terminal.
