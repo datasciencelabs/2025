@@ -69,7 +69,7 @@ When you want to `clone` (download) or `push` (upload) your code to GitHub, your
 
 Whether you use a GUI like GitHub Desktop or the command line, the underlying process is the same. There are four key steps in a typical workflow.
 
-![Illustration of the core Git and GitHub workflow](git_steps.png.png)
+![Illustration of the core Git and GitHub workflow](git_steps.png)
 
 
 1.  **Modify Files (Working Directory):** This is just you, working on your project. You edit code, write text, add images, etc.
