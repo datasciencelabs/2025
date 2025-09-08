@@ -258,7 +258,7 @@
 <section id="tidyverse-packages" class="slide level2">
 <h2>Tidyverse packages</h2>
 <ul>
-<li><p><strong>tibble</strong> - improves data frame class.</p></li>
+<li><p><strong>tibble</strong> - modifies the data frame class.</p></li>
 <li><p><strong>readr</strong> - import data.</p></li>
 <li><p><strong>dplyr</strong> - used to modify data frames.</p></li>
 <li><p><strong>ggplot2</strong> - simplifies plotting.</p></li>
@@ -364,8 +364,8 @@
 <li>There are several other useful helper functions.</li>
 </ul>
 </section>
-<section id="the-pipe-or" class="slide level2">
-<h2>The pipe: <code>|&gt;</code> or <code>%&gt;%</code></h2>
+<section id="the-pipe" class="slide level2">
+<h2>The pipe: <code>|&gt;</code></h2>
 <ul>
 <li><p>We use the pipe to chain a series of operations.</p></li>
 <li><p>For example if we want to select columns and then filter rows we chain like this:</p></li>
@@ -374,8 +374,8 @@
 \rightarrow \mbox{ select }
 \rightarrow \mbox{ filter } \]</span></p>
 </section>
-<section id="the-pipe-or-1" class="slide level2">
-<h2>The pipe: <code>|&gt;</code> or <code>%&gt;%</code></h2>
+<section id="the-pipe-1" class="slide level2">
+<h2>The pipe: <code>|&gt;</code></h2>
 <ul>
 <li>The code looks like this:</li>
 </ul>
@@ -395,8 +395,8 @@
 <li><p>The second argument becomes the first, the third the second, and so on…</p></li>
 </ul>
 </section>
-<section id="the-pipe-or-2" class="slide level2">
-<h2>The pipe: <code>|&gt;</code> or <code>%&gt;%</code></h2>
+<section id="the-pipe-2" class="slide level2">
+<h2>The pipe: <code>|&gt;</code></h2>
 <ul>
 <li>Here is a simple example:</li>
 </ul>
@@ -421,14 +421,14 @@
 </div>
 </div>
 <ul>
-<li>Let’s compute murder rate for the US. Is the above it?</li>
+<li>Let’s compute murder rate for the US. Is the number we just computed an estimate of that rate?</li>
 </ul>
 </section>
 <section id="summarizing-data-1" class="slide level2">
 <h2>Summarizing data</h2>
 <ul>
 <li><p>No, the rate is NOT the average of rates.</p></li>
-<li><p>It is the total murders divided by total population:</p></li>
+<li><p>The correct calculation is the total number of murders divided by total population:</p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>murders <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">rate =</span> <span class="fu">sum</span>(total)<span class="sc">/</span><span class="fu">sum</span>(population)<span class="sc">*</span><span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -516,8 +516,7 @@
 <section id="group-then-summarize" class="slide level2">
 <h2>Group then summarize</h2>
 <ul>
-<li><p>Let’s compute murder rate by region.</p></li>
-<li><p>Take a close look at this output?</p></li>
+<li>Let’s compute murder rate by region.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>murders <span class="sc">|&gt;</span> <span class="fu">group_by</span>(region) <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -533,7 +532,7 @@
 </div>
 </div>
 <ul>
-<li><p>Note the <code>Groups: region [4]</code> at the top.</p></li>
+<li><p>Note the <code>Groups: region</code> at the top. Note that this is the number of groups in the first 4 rows.</p></li>
 <li><p>This is a special data frame called a <em>grouped data frame</em>.</p></li>
 </ul>
 </section>

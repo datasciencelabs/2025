@@ -596,7 +596,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-08-30 22:55:01 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-08-31 02:55:01 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-09-07 19:49:08 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-09-07 23:49:08 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -610,7 +610,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 22\n\nnow() |&gt; minute() \n\n[1] 55\n\nnow() |&gt; second() \n\n[1] 1.556031"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 19\n\nnow() |&gt; minute() \n\n[1] 49\n\nnow() |&gt; second() \n\n[1] 8.687771"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -701,7 +701,7 @@
     "href": "slides/R/08-ggplot2.html#ggplot2",
     "title": "ggplot2",
     "section": "ggplot2",
-    "text": "ggplot2\nThe code in this lecture assumes these three libraries are loaded:\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(dslabs)"
+    "text": "ggplot2\nThe code in this lecture assumes these three libraries are loaded:\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(dslabs)\nlibrary(lattice)"
   },
   {
     "objectID": "slides/R/08-ggplot2.html#the-components-of-a-graph",
@@ -793,6 +793,20 @@
     "title": "ggplot2",
     "section": "Layers",
     "text": "Layers\n\nAs an example of the unique behavior of aes note that this call:\n\n\np_test &lt;- p + geom_text(aes(population/10^6, total, label = abb))\n\nis fine, whereas this call:\n\np_test &lt;- p + geom_text(aes(population/10^6, total), label = abb) \n\nwill give you an error since abb is not found because it is outside of the aes function.\n\nThe layer geom_text does not know where to find abb: it’s a column name and not a global variable."
+  },
+  {
+    "objectID": "slides/R/08-ggplot2.html#multipanel-plots---lattice",
+    "href": "slides/R/08-ggplot2.html#multipanel-plots---lattice",
+    "title": "ggplot2",
+    "section": "Multipanel plots - lattice",
+    "text": "Multipanel plots - lattice\n\nwe can also use the lattice package to produce high quality graphics - R has lots of ways to do things\n\n\npl &lt;- xyplot(total ~ population/10^6 | region, data = murders,\n      type = c(\"p\", \"g\"), xlab = \"Population/10^6\", ylab = \"Total\",\n     strip = strip.custom(strip.names = TRUE, var.name = \"region\"), layout=c(2,2))\nprint(pl)"
+  },
+  {
+    "objectID": "slides/R/08-ggplot2.html#multipanel-plots---ggplot2",
+    "href": "slides/R/08-ggplot2.html#multipanel-plots---ggplot2",
+    "title": "ggplot2",
+    "section": "Multipanel plots - ggplot2",
+    "text": "Multipanel plots - ggplot2\n\nhere we produce a similar plot using ggplot2\n\n\npg &lt;- ggplot(murders, aes(population/10^6, total)) + geom_point(shape = 1) +\n    facet_wrap(~region) + theme(aspect.ratio = 1)\nprint(pg)"
   },
   {
     "objectID": "slides/R/08-ggplot2.html#tinkering-with-arguments",
@@ -1016,7 +1030,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.86986 61.99521 65.87371 69.99598 70.06790 72.90791 67.04959 72.90606\n [9] 66.93987 69.90424"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.89153 62.10910 65.83640 70.06104 70.01940 72.93401 66.97274 73.07718\n [9] 66.96838 70.07961"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -1135,7 +1149,14 @@
     "href": "slides/productivity/04-git.html#goal-for-the-day",
     "title": "Git and GitHub",
     "section": "Goal for the day",
-    "text": "Goal for the day\n\nCreate a repository\npush something to the repository\nconnect RStudio to GitHub"
+    "text": "Goal for the day\n\nCreate an account\nGenerate an SSH key and add it to the GitHub account.\nCreate a repository\npush something to the repository\nconnect RStudio to GitHub"
+  },
+  {
+    "objectID": "slides/productivity/04-git.html#ssh",
+    "href": "slides/productivity/04-git.html#ssh",
+    "title": "Git and GitHub",
+    "section": "SSH",
+    "text": "SSH\n\nmake sure you have ssh installed\nthen issue the command ssh-keygen\naccept the suggested location and do not use a passphrase\n\n\ntest@80f55a35ef03:/HostData/Epiconnector$ ssh-keygen \nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/test/.ssh/id_ed25519): \nCreated directory '/home/test/.ssh'.\nEnter passphrase (empty for no passphrase): \nEnter same passphrase again: \nYour identification has been saved in /home/test/.ssh/id_ed25519\nYour public key has been saved in /home/test/.ssh/id_ed25519.pub"
   },
   {
     "objectID": "slides/productivity/04-git.html#do-you-have-git",
@@ -2682,7 +2703,7 @@
     "href": "slides/ml/40-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.86 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-1",
@@ -3501,7 +3522,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4380693 0.4999307\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4211528 0.4828472\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4330901 0.4949099\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4151909 0.4768091\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3543,7 +3564,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9483"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9486"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4197,60 +4218,77 @@
     "text": "In the next problem set, we plan to explore the relationship between COVID-19 death rates and vaccination rates across US states by visually examining their correlation. This analysis will involve gathering COVID-19 related data from the CDC’s API and then extensively processing it to merge the various datasets. Since the population sizes of states vary significantly, we will focus on comparing rates rather than absolute numbers. To facilitate this, we will also source population data from the US Census to accurately calculate these rates.\nIn this problem set we will learn how to extract and wrangle data from the data US Census and CDC APIs.\n\nGet an API key from the US Census at https://api.census.gov/data/key_signup.html. You can’t share this public key. But your code has to run on a TFs computer. Assume the TF will have a file in their working directory named census-key.R with the following one line of code:\n\ncensus_key &lt;- \"A_CENSUS_KEY_THAT_WORKS\"\nWrite a first line of code for your problem set that defines census_key by running the code in the file census-key.R.\n\n## Your code here\n\n\nThe US Census API User Guide provides details on how to leverage this valuable resource. We are interested in vintage population estimates for years 2021 and 2022. From the documentation we find that the endpoint is:\n\n\nurl &lt;- \"https://api.census.gov/data/2021/pep/population\"\n\nUse the httr2 package to construct the following GET request.\nhttps://api.census.gov/data/2021/pep/population?get=POP_2020,POP_2021,NAME&for=state:*&key=YOURKEYHERE\nCreate an object called request of class httr2_request with this URL as an endpoint. Hint: Print out request to check that the URL matches what we want.\n\nlibrary(httr2)\n#request &lt;- \n\n\nMake a request to the US Census API using the request object. Save the response to and object named response. Check the response status of your request and make sure it was successful. You can learn about status codes here.\n\n\n#response &lt;- \n\n\nUse a function from the httr2 package to determine the content type of your response.\n\n\n# Your code here\n\n\nUse just one line of code and one function to extract the data into a matrix. Hints: 1) Use the resp_body_json function. 2) The first row of the matrix will be the variable names and this OK as we will fix in the next exercise.\n\n\n#population &lt;- \n\n\nExamine the population matrix you just created. Notice that 1) it is not tidy, 2) the column types are not what we want, and 3) the first row is a header. Convert population to a tidy dataset. Remove the state ID column and change the name of the column with state names to state_name. Add a column with state abbreviations called state. Make sure you assign the abbreviations for DC and PR correctly. Hint: Use the janitor package to make the first row the header.\n\n\nlibrary(tidyverse)\nlibrary(janitor)\n#population &lt;- population |&gt; ## Use janitor row to names function\n  # convert to tibble\n  # remove stat column\n  # rename state column to state_name\n  # use pivot_longer to tidy\n  # remove POP_ from year\n  # parese all relevant colunns to numeric\n  # add state abbreviations using state.abb variable\n  # use case_when to add abbreviations for DC and PR\n\n\nAs a check, make a barplot of states’ 2021 and 2022 populations. Show the state names in the y-axis ordered by population size. Hint: You will need to use reorder and use facet_wrap.\n\n\n# population |&gt; \n  # reorder state\n  # assign aesthetic mapping\n  # use geom_col to plot barplot\n  # flip coordinates\n  # facet by year\n\n\nThe following URL:\n\n\nurl &lt;- \"https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json\"\n\npoints to a JSON file that lists the states in the 10 Public Health Service (PHS) defined by CDC. We want to add these regions to the population dataset. To facilitate this create a data frame called regions that has two columns state_name, region, region_name. One of the regions has a long name. Change it to something shorter.\n\nlibrary(jsonlite)\nlibrary(purrr)\nurl &lt;- \"https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json\"\n# regions &lt;- use jsonlit JSON parser \n# regions &lt;- convert list to data frame. You can use map_df in purrr package \n\n\nAdd a region and region name columns to the population data frame.\n\n\n# population &lt;- \n\n\nFrom reading https://data.cdc.gov/ we learn the endpoint https://data.cdc.gov/resource/pwn4-m3yp.json provides state level data from SARS-COV2 cases. Use the httr2 tools you have learned to download this into a data frame. Is all the data there? If not, comment on why.\n\n\napi &lt;- \"https://data.cdc.gov/resource/pwn4-m3yp.json\"\n# cases_raw &lt;- \n\nWe see exactly 1,000 rows. We should be seeing over \\(52 \\times 3\\) rows per state.\n\nThe reason you see exactly 1,000 rows is because CDC has a default limit. You can change this limit by adding $limit=10000000000 to the request. Rewrite the previous request to ensure that you receive all the data. Then wrangle the resulting data frame to produce a data frame with columns state, date (should be the end date) and cases. Make sure the cases are numeric and the dates are in Date ISO-8601 format.\n\n\napi &lt;- \"https://data.cdc.gov/resource/pwn4-m3yp.json\"\n# cases_raw &lt;- \n\n\nFor 2020 and 2021, make a time series plot of cases per 100,000 versus time for each state. Stratify the plot by region name. Make sure to label you graph appropriately.\n\n\n#cases |&gt;"
   },
   {
-    "objectID": "psets/pset-02-r-vectorization.html",
-    "href": "psets/pset-02-r-vectorization.html",
+    "objectID": "psets/pset-02-vectorization.html",
+    "href": "psets/pset-02-vectorization.html",
     "title": "Problem set 2",
     "section": "",
     "text": "For these exercises, do not load any packages other than dslabs.\nMake sure to use vectorization whenever possible.\n\nWhat is the sum of the first 100 positive integers? Use the functions seq and sum to compute the sum with R for any n.\n\n\n# Your code here\n\n\nLoad the US murders dataset from the dslabs package. Use the function str to examine the structure of the murders object. What are the column names used by the data frame for these five variables? Show the subset of murders showing states with less than 1 per 100,000 deaths. Show all variables.\n\n\nlibrary(dslabs)\n\nWarning: package 'dslabs' was built under R version 4.4.3\n\nstr(murders)\n\n'data.frame':   51 obs. of  5 variables:\n $ state     : chr  \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ abb       : chr  \"AL\" \"AK\" \"AZ\" \"AR\" ...\n $ region    : Factor w/ 4 levels \"Northeast\",\"South\",..: 2 4 4 2 4 4 1 2 2 2 ...\n $ population: num  4779736 710231 6392017 2915918 37253956 ...\n $ total     : num  135 19 232 93 1257 ...\n\n\n\n# Your code here\n\n\nShow the subset of murders showing states with less than 1 per 100,000 deaths and in the West of the US. Don’t show the region variable.\n\n\n# Your code here\n\n\nShow the largest state with a rate less than 1 per 100,000.\n\n\n# Your code here\n\n\nShow the state with a population of more than 10 million with the lowest rate.\n\n\n# Your code here\n\n\nCompute the rate for each region of the US.\n\n\n# Your code here\n\n\nCreate a vector of numbers that starts at 6, does not pass 55, and adds numbers in increments of 4/7: 6, 6 + 4/7, 6 + 8/7, and so on. How many numbers does the list have? Hint: use seq and length.\n\n\n# Your code here\n\n\nMake this data frame:\n\n\ntemp &lt;- c(35, 88, 42, 84, 81, 30)\ncity &lt;- c(\"Beijing\", \"Lagos\", \"Paris\", \"Rio de Janeiro\", \n          \"San Juan\", \"Toronto\")\ncity_temps &lt;- data.frame(name = city, temperature = temp)\n\nConvert the temperatures to Celsius.\n\n# Your code here\n\n\nWrite a function euler that compute the following sum for any \\(n\\):\n\n\\[\nS_n = 1+1/2^2 + 1/3^2 + \\dots 1/n^2\n\\]\n\n# Your code here\n\n\nShow that as \\(n\\) gets bigger we get closer \\(\\pi^2/6\\) by plotting \\(S_n\\) versus \\(n\\) with a horizontal dashed line at \\(\\pi^2/6\\).\n\n\n# Your code here\n\n\nUse the %in% operator and the predefined object state.abb to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU?\n\n\n# Your code here\n\n\nExtend the code you used in the previous exercise to report the one entry that is not an actual abbreviation. Hint: use the ! operator, which turns FALSE into TRUE and vice versa, then which to obtain an index.\n\n\n# Your code here\n\n\nIn the murders dataset, use %in% to show all variables for New York, California, and Texas, in that order.\n\n\n# Your code here\n\n\nWrite a function called vandermonde_helper that for any \\(x\\) and \\(n\\), returns the vector \\((1, x, x^2, x^3, \\dots, x^n)\\). Show the results for \\(x=3\\) and \\(n=5\\).\n\n\n# Your code here\n\n\nCreate a vector using:\n\n\nn &lt;- 10000\np &lt;- 0.5\nset.seed(2024-9-6)\nx &lt;- sample(c(0,1), n, prob = c(1 - p, p), replace = TRUE)\n\nCompute the length of each stretch of 1s and then plot the distribution of these values. Check to see if the distribution follows a geometric distribution as the theory predicts. Do not use a loop!\n\n# Your code here\n\n\nIn the murders dataset, create a logical vector that indicates which states have both a murder rate higher than the national average AND a population greater than 5 million. Then use ifelse to create a character vector that labels these states as “High Crime, High Pop”, states with murder rate higher than average but population ≤ 5 million as “High Crime, Low Pop”, and all other states as “Lower Crime”.\n\n\n# Your code here\n\n\nUse order, rank, and sort functions on the murder rates to answer the following: What is the murder rate of the state that ranks 10th in terms of murder rate? Show your work by creating the murder rate vector, then using the appropriate function to find the 10th ranked value.\n\n\n# Your code here\n\n\n\nWrite a function called compute_harmonic_mean that takes a numeric vector and returns the harmonic mean (which is \\(n / \\sum_{i=1}^{n} 1/x_i\\)). The function should return NA if any values are zero or negative. Test your function on the vector c(1, 2, 4, 8) and show that it returns approximately 2.13.\n\n\n\n# Your code here\n\n\nCreate a function called safe_divide that takes two arguments x and y and returns their ratio x/y, but returns the string “Cannot divide by zero” when y is zero. Use vectorization so that the function works element-wise on vectors. Test it on the vectors x &lt;- c(10, 20, 30) and y &lt;- c(2, 0, 5).\n\n\n# Your code here\n\n\nUsing the murders dataset, write a function called classify_state_safety that takes a state name as input and returns a classification based on the murder rate: “Very Safe” (rate &lt; 1), “Safe” (rate 1-3), “Moderate” (rate 3-5), or “High Risk” (rate &gt; 5). If the state name is not found, return “State not found”. Test your function on “Vermont”, “Texas”, “California”, and “NotAState”. Then use sapply to classify all states and create a table showing how many states fall into each safety category using the table function.\n\n\n# Your code here"
   },
   {
-    "objectID": "oral-evaluations.html",
-    "href": "oral-evaluations.html",
-    "title": "Oral Evaluations",
+    "objectID": "psets/pset-01-unix-quarto.html",
+    "href": "psets/pset-01-unix-quarto.html",
+    "title": "Problem set 1",
     "section": "",
-    "text": "Oral evaluations account for 20% of your final grade, divided into four separate 5% evaluations throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code.\nImportant: You can only schedule an oral evaluation meeting after you have completed and submitted the problem sets included in that evaluation period.\n\n\n\n\n\nEvaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%\n\n\n\n\n\n\nStudents are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-F\n\n\nAva\nG-K\n\n\nEmma\nL-P\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom\n\n\n\nYour oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations\n\n\n\n\n\n\nDuring your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
+    "text": "After finishing the homework, you are to turn in all the code to GitHub using git.\n\nStart an RStudio project. Pick a good name following a naming convention. Start a Quarto document called beginning.qmd.\nCreate a directory called img and save a screen shot of your RStudio session for the project. Include your screenshot in the Quarto document.\nNext, in your Quarto document, define variables \\(a=1, b=-1, c=-2\\) and print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nInclude a graph of \\(f(x)\\) versus \\(x\\) for \\(x \\in (-5,5)\\).\n\n\nx &lt;- seq(-5, 5, length = 100)\n# Hint: Use the plot function\n\n\nCreate a directory called docs. Use the command quarto render to create a PDF and save it to the docs directory. Show us the command you typed:\n\n# Your code here\n\nUse Unix to create a directory called data in the project home directory. Include the Unix command you used to create the directory.\n\n# Your code here\n\nUse a terminal-based text editor to create a file coefs.txt in the data directory and save three coefficients, 1 -1 -2 for example. Show us the Unix commands you used to achieve this:\n\n# Your code here\n\nMake a directory called code. Use Unix to copy the file beginning.qmd to a file called quadratic.qmd in the code directory. Show us the Unix commands you used.\n\n# Your code here\n\nEdit the quadratic.qmd file to read in a, b, and c from the file coefs.txt. Make sure to use a relative path when reading the file. As before, print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nChange the path of the file you are reading to the full path you get when you type file.path(getwd(), \"data/coefs.txt\"). Confirm that the file still renders. Then move the entire pset-01-rmarkdown project to a directory called RtmpyDknq4. Does the file render? Change the path back to a relative path and see if it renders."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "",
+    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
-      "Oral Evaluations"
+      "Home"
     ]
   },
   {
-    "objectID": "oral-evaluations.html#evaluation-schedule",
-    "href": "oral-evaluations.html#evaluation-schedule",
-    "title": "Oral Evaluations",
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Evaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%",
+    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
-      "Oral Evaluations"
+      "Home"
     ]
   },
   {
-    "objectID": "oral-evaluations.html#tf-assignments",
-    "href": "oral-evaluations.html#tf-assignments",
-    "title": "Oral Evaluations",
-    "section": "",
-    "text": "Students are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-F\n\n\nAva\nG-K\n\n\nEmma\nL-P\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom",
+    "objectID": "index.html#lectures",
+    "href": "index.html#lectures",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Lectures",
+    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\n\nDates\nTopic\nSlides\nReading\nInstructor(s)\n\n\n\n\nSep 03\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\nRobert\n\n\nSep 08, Sep 10\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git\nRobert\n\n\nSep 15, Sep 18\nR\nR basics, Vectorization\nR Basics, Vectorization\nRobert\n\n\nSep 22\nR\nTidyverse, ggplot2\ndplyr, ggplot2\nRobert\n\n\nSep 24\nR\nTyding data\nReshaping Data\nRobert\n\n\nSep 29, Oct 01\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web scraping, Joining tables\nImporting data, dates and times, Locales, Joining Tables, Extracting data from the web\nAnthony\n\n\nOct 06, Oct 08\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\nAnthony\n\n\nOct 15\nMidterm 1\n\nCovers material from Sep 03-Oct 08\nAnthony\n\n\nOct 20\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables & CLT\nAnthony\n\n\nOct 22\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\nAnthony\n\n\nOct 27, Oct 29\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\nAnthony\n\n\nNov 03, Nov 05\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\nRobert\n\n\nNov 12, Nov 17\nLinear models\nMultivariate regression, Treatment effect models\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association Not Causation\nRobert\n\n\nNov 19\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R\nMatrices in R, Applied Linear Algebra\nRobert\n\n\nNov 24\nMidterm 2\n\nMidterm 2: cover material from Sep 03-Nov 19\nRobert\n\n\nDec 01\nHigh dimensional data\nDistance, Dimension reduction\nDimension Reduction\nRobert\n\n\nDec 03\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and terminology, Evaluation Metrics, conditional probabilities, smoothing\nAnthony\n\n\nDec 08, Dec 10\nMachine Learning\nkNN, Resampling methods, caret package, Algorithms, ML in practice\nResampling methods, ML algorithms, ML in practice\nAnthony\n\n\nDec 15, Dec 17\nOther topics\nAssociation is not causation, Shiny, Shiny example code\nAssociation is not causation\nRobert, Anthony",
     "crumbs": [
-      "Oral Evaluations"
+      "Home"
     ]
   },
   {
-    "objectID": "oral-evaluations.html#evaluation-criteria",
-    "href": "oral-evaluations.html#evaluation-criteria",
-    "title": "Oral Evaluations",
-    "section": "",
-    "text": "Your oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations",
+    "objectID": "index.html#problem-sets",
+    "href": "index.html#problem-sets",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Problem sets",
+    "text": "Problem sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\nProblem Set 1\nUnix, Quarto\nSep 10\neasy\n\n\nProblem Set 2\nR\nSep 18\nmedium\n\n\nProblem Set 3\nTidyverse\nSep 26\nmedium\n\n\nProblem Set 4\nWrangling\nOct 3\nmedium\n\n\nProblem Set 5\nCovid 19 data visualization\nOct 10\nmedium\n\n\nProblem Set 6\nProbability\nOct 24\neasy\n\n\nProblem Set 7\nPredict the election\nNov 03\nhard\n\n\nProblem Set 8\nExcess mortality after Hurricane María\nNov 14\nmedium\n\n\nProblem Set 9\nMatrices\nNov 21\neasy\n\n\nProblem Set 10\nDigit reading\nDec 15\nhard\n\n\nFinal Project\nYour choice\nDec 19\nhard",
     "crumbs": [
-      "Oral Evaluations"
+      "Home"
     ]
   },
   {
-    "objectID": "oral-evaluations.html#what-to-expect",
-    "href": "oral-evaluations.html#what-to-expect",
-    "title": "Oral Evaluations",
-    "section": "",
-    "text": "During your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
+    "objectID": "index.html#office-hour-times",
+    "href": "index.html#office-hour-times",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Office hour times",
+    "text": "Office hour times\n\n\n\nMeeting\nTime\nLocation\n\n\n\n\nRobert Gentleman\nMonday, 11:30 am to 12:30 pm\nTBD\n\n\nAnthony Christidis\nFriday, 12:30 pm to 1:30 pm\nZoom\n\n\nAngela Wang\nMonday, 3:45 pm to 4:45 pm\nKresge 204 (Except 11/3 which will be in FXB G13)\n\n\nAva Harrington\nTBD\nTBD\n\n\nEmma Crenshaw\nTuesday, 10 am to 11 am\nKresge 201 on 9/9, otherwise FXB-G03\n\n\nJing Li\nWednesday, 1:30 pm to 2:30 pm\nKresge LL6",
     "crumbs": [
-      "Oral Evaluations"
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgments",
+    "href": "index.html#acknowledgments",
+    "title": "BST 260 Introduction to Data Science",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nFor the Fall 2025 iteration of BST 260, the course website was modified by Anthony Christidis, building on the Fall 2024 course template. We thank Maria Tackett and Mine Çetinkaya-Rundel for sharing their web page template, which we used in creating this website.",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -4314,71 +4352,61 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BST 260 Introduction to Data Science",
+    "objectID": "oral-evaluations.html",
+    "href": "oral-evaluations.html",
+    "title": "Oral Evaluations",
     "section": "",
-    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Oral evaluations account for 20% of your final grade, divided into four separate 5% evaluations throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code.\nImportant: You can only schedule an oral evaluation meeting after you have completed and submitted the problem sets included in that evaluation period.\n\n\n\n\n\nEvaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%\n\n\n\n\n\n\nStudents are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-F\n\n\nAva\nG-K\n\n\nEmma\nL-P\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom\n\n\n\nYour oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations\n\n\n\n\n\n\nDuring your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
     "crumbs": [
-      "Home"
+      "Oral Evaluations"
     ]
   },
   {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "BST 260 Introduction to Data Science",
+    "objectID": "oral-evaluations.html#evaluation-schedule",
+    "href": "oral-evaluations.html#evaluation-schedule",
+    "title": "Oral Evaluations",
     "section": "",
-    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Evaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%",
     "crumbs": [
-      "Home"
+      "Oral Evaluations"
     ]
   },
   {
-    "objectID": "index.html#lectures",
-    "href": "index.html#lectures",
-    "title": "BST 260 Introduction to Data Science",
-    "section": "Lectures",
-    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\n\nDates\nTopic\nSlides\nReading\nInstructor(s)\n\n\n\n\nSep 03\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\nRobert\n\n\nSep 08, Sep 10\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git\nRobert\n\n\nSep 15, Sep 18\nR\nR basics, Vectorization\nR Basics, Vectorization\nRobert\n\n\nSep 22\nR\nTidyverse, ggplot2\ndplyr, ggplot2\nRobert\n\n\nSep 24\nR\nTyding data\nReshaping Data\nRobert\n\n\nSep 29, Oct 01\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web scraping, Joining tables\nImporting data, dates and times, Locales, Joining Tables, Extracting data from the web\nAnthony\n\n\nOct 06, Oct 08\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\nAnthony\n\n\nOct 15\nMidterm 1\n\nCovers material from Sep 03-Oct 08\nAnthony\n\n\nOct 20\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables & CLT\nAnthony\n\n\nOct 22\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\nAnthony\n\n\nOct 27, Oct 29\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\nAnthony\n\n\nNov 03, Nov 05\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\nRobert\n\n\nNov 12, Nov 17\nLinear models\nMultivariate regression, Treatment effect models\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association Not Causation\nRobert\n\n\nNov 19\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R\nMatrices in R, Applied Linear Algebra\nRobert\n\n\nNov 24\nMidterm 2\n\nMidterm 2: cover material from Sep 03-Nov 19\nRobert\n\n\nDec 01\nHigh dimensional data\nDistance, Dimension reduction\nDimension Reduction\nRobert\n\n\nDec 03\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and terminology, Evaluation Metrics, conditional probabilities, smoothing\nAnthony\n\n\nDec 08, Dec 10\nMachine Learning\nkNN, Resampling methods, caret package, Algorithms, ML in practice\nResampling methods, ML algorithms, ML in practice\nAnthony\n\n\nDec 15, Dec 17\nOther topics\nAssociation is not causation, Shiny, Shiny example code\nAssociation is not causation\nRobert, Anthony",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#problem-sets",
-    "href": "index.html#problem-sets",
-    "title": "BST 260 Introduction to Data Science",
-    "section": "Problem sets",
-    "text": "Problem sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\nProblem Set 1\nUnix, Quarto\nSep 10\neasy\n\n\nProblem Set 2\nR\nSep 18\nmedium\n\n\nProblem Set 3\nTidyverse\nSep 26\nmedium\n\n\nProblem Set 4\nWrangling\nOct 3\nmedium\n\n\nProblem Set 5\nCovid 19 data visualization\nOct 10\nmedium\n\n\nProblem Set 6\nProbability\nOct 24\neasy\n\n\nProblem Set 7\nPredict the election\nNov 03\nhard\n\n\nProblem Set 8\nExcess mortality after Hurricane María\nNov 14\nmedium\n\n\nProblem Set 9\nMatrices\nNov 21\neasy\n\n\nProblem Set 10\nDigit reading\nDec 15\nhard\n\n\nFinal Project\nYour choice\nDec 19\nhard",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#office-hour-times",
-    "href": "index.html#office-hour-times",
-    "title": "BST 260 Introduction to Data Science",
-    "section": "Office hour times",
-    "text": "Office hour times\n\n\n\nMeeting\nTime\nLocation\n\n\n\n\nRobert Gentleman\nMonday, 11:30 am to 12:30 pm\nTBD\n\n\nAnthony Christidis\nFriday, 12:30 pm to 1:30 pm\nZoom\n\n\nAngela Wang\nTBD\nTBD\n\n\nAva Harrington\nTBD\nTBD\n\n\nEmma Crenshaw\nTBD\nTBD\n\n\nJing Li\nTBD\nTBD",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#acknowledgments",
-    "href": "index.html#acknowledgments",
-    "title": "BST 260 Introduction to Data Science",
-    "section": "Acknowledgments",
-    "text": "Acknowledgments\nFor the Fall 2025 iteration of BST 260, the course website was modified by Anthony Christidis, building on the Fall 2024 course template. We thank Maria Tackett and Mine Çetinkaya-Rundel for sharing their web page template, which we used in creating this website.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "psets/pset-01-unix-quarto.html",
-    "href": "psets/pset-01-unix-quarto.html",
-    "title": "Problem set 1",
+    "objectID": "oral-evaluations.html#tf-assignments",
+    "href": "oral-evaluations.html#tf-assignments",
+    "title": "Oral Evaluations",
     "section": "",
-    "text": "After finishing the homework, you are to turn in all the code to GitHub using git.\n\nStart an RStudio project. Pick a good name following a naming convention. Start a Quarto document called beginning.qmd.\nCreate a directory called img and save a screen shot of your RStudio session for the project. Include your screenshot in the Quarto document.\nNext, in your Quarto document, define variables \\(a=1, b=-1, c=-2\\) and print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nInclude a graph of \\(f(x)\\) versus \\(x\\) for \\(x \\in (-5,5)\\).\n\n\nx &lt;- seq(-5, 5, length = 100)\n# Hint: Use the plot function\n\n\nCreate a directory called docs. Use the command quarto render to create a PDF and save it to the docs directory. Show us the command you typed:\n\n# Your code here\n\nUse Unix to create a directory called data in the project home directory. Include the Unix command you used to create the directory.\n\n# Your code here\n\nUse a terminal-based text editor to create a file coefs.txt in the data directory and save three coefficients, 1 -1 -2 for example. Show us the Unix commands you used to achieve this:\n\n# Your code here\n\nMake a directory called code. Use Unix to copy the file beginning.qmd to a file called quadratic.qmd in the code directory. Show us the Unix commands you used.\n\n# Your code here\n\nEdit the quadratic.qmd file to read in a, b, and c from the file coefs.txt. Make sure to use a relative path when reading the file. As before, print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nChange the path of the file you are reading to the full path you get when you type file.path(getwd(), \"data/coefs.txt\"). Confirm that the file still renders. Then move the entire pset-01-rmarkdown project to a directory called RtmpyDknq4. Does the file render? Change the path back to a relative path and see if it renders."
+    "text": "Students are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-F\n\n\nAva\nG-K\n\n\nEmma\nL-P\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom",
+    "crumbs": [
+      "Oral Evaluations"
+    ]
+  },
+  {
+    "objectID": "oral-evaluations.html#evaluation-criteria",
+    "href": "oral-evaluations.html#evaluation-criteria",
+    "title": "Oral Evaluations",
+    "section": "",
+    "text": "Your oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations",
+    "crumbs": [
+      "Oral Evaluations"
+    ]
+  },
+  {
+    "objectID": "oral-evaluations.html#what-to-expect",
+    "href": "oral-evaluations.html#what-to-expect",
+    "title": "Oral Evaluations",
+    "section": "",
+    "text": "During your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
+    "crumbs": [
+      "Oral Evaluations"
+    ]
+  },
+  {
+    "objectID": "psets/pset-02-r-vectorization.html",
+    "href": "psets/pset-02-r-vectorization.html",
+    "title": "Problem set 2",
+    "section": "",
+    "text": "For these exercises, do not load any packages other than dslabs.\nMake sure to use vectorization whenever possible.\n\nWhat is the sum of the first 100 positive integers? Use the functions seq and sum to compute the sum with R for any n.\n\n\n# Your code here\n\n\nLoad the US murders dataset from the dslabs package. Use the function str to examine the structure of the murders object. What are the column names used by the data frame for these five variables? Show the subset of murders showing states with less than 1 per 100,000 deaths. Show all variables.\n\n\nlibrary(dslabs)\n\nWarning: package 'dslabs' was built under R version 4.4.3\n\nstr(murders)\n\n'data.frame':   51 obs. of  5 variables:\n $ state     : chr  \"Alabama\" \"Alaska\" \"Arizona\" \"Arkansas\" ...\n $ abb       : chr  \"AL\" \"AK\" \"AZ\" \"AR\" ...\n $ region    : Factor w/ 4 levels \"Northeast\",\"South\",..: 2 4 4 2 4 4 1 2 2 2 ...\n $ population: num  4779736 710231 6392017 2915918 37253956 ...\n $ total     : num  135 19 232 93 1257 ...\n\n\n\n# Your code here\n\n\nShow the subset of murders showing states with less than 1 per 100,000 deaths and in the West of the US. Don’t show the region variable.\n\n\n# Your code here\n\n\nShow the largest state with a rate less than 1 per 100,000.\n\n\n# Your code here\n\n\nShow the state with a population of more than 10 million with the lowest rate.\n\n\n# Your code here\n\n\nCompute the rate for each region of the US.\n\n\n# Your code here\n\n\nCreate a vector of numbers that starts at 6, does not pass 55, and adds numbers in increments of 4/7: 6, 6 + 4/7, 6 + 8/7, and so on. How many numbers does the list have? Hint: use seq and length.\n\n\n# Your code here\n\n\nMake this data frame:\n\n\ntemp &lt;- c(35, 88, 42, 84, 81, 30)\ncity &lt;- c(\"Beijing\", \"Lagos\", \"Paris\", \"Rio de Janeiro\", \n          \"San Juan\", \"Toronto\")\ncity_temps &lt;- data.frame(name = city, temperature = temp)\n\nConvert the temperatures to Celsius.\n\n# Your code here\n\n\nWrite a function euler that compute the following sum for any \\(n\\):\n\n\\[\nS_n = 1+1/2^2 + 1/3^2 + \\dots 1/n^2\n\\]\n\n# Your code here\n\n\nShow that as \\(n\\) gets bigger we get closer \\(\\pi^2/6\\) by plotting \\(S_n\\) versus \\(n\\) with a horizontal dashed line at \\(\\pi^2/6\\).\n\n\n# Your code here\n\n\nUse the %in% operator and the predefined object state.abb to create a logical vector that answers the question: which of the following are actual abbreviations: MA, ME, MI, MO, MU?\n\n\n# Your code here\n\n\nExtend the code you used in the previous exercise to report the one entry that is not an actual abbreviation. Hint: use the ! operator, which turns FALSE into TRUE and vice versa, then which to obtain an index.\n\n\n# Your code here\n\n\nIn the murders dataset, use %in% to show all variables for New York, California, and Texas, in that order.\n\n\n# Your code here\n\n\nWrite a function called vandermonde_helper that for any \\(x\\) and \\(n\\), returns the vector \\((1, x, x^2, x^3, \\dots, x^n)\\). Show the results for \\(x=3\\) and \\(n=5\\).\n\n\n# Your code here\n\n\nCreate a vector using:\n\n\nn &lt;- 10000\np &lt;- 0.5\nset.seed(2024-9-6)\nx &lt;- sample(c(0,1), n, prob = c(1 - p, p), replace = TRUE)\n\nCompute the length of each stretch of 1s and then plot the distribution of these values. Check to see if the distribution follows a geometric distribution as the theory predicts. Do not use a loop!\n\n# Your code here\n\n\nIn the murders dataset, create a logical vector that indicates which states have both a murder rate higher than the national average AND a population greater than 5 million. Then use ifelse to create a character vector that labels these states as “High Crime, High Pop”, states with murder rate higher than average but population ≤ 5 million as “High Crime, Low Pop”, and all other states as “Lower Crime”.\n\n\n# Your code here\n\n\nUse order, rank, and sort functions on the murder rates to answer the following: What is the murder rate of the state that ranks 10th in terms of murder rate? Show your work by creating the murder rate vector, then using the appropriate function to find the 10th ranked value.\n\n\n# Your code here\n\n\n\nWrite a function called compute_harmonic_mean that takes a numeric vector and returns the harmonic mean (which is \\(n / \\sum_{i=1}^{n} 1/x_i\\)). The function should return NA if any values are zero or negative. Test your function on the vector c(1, 2, 4, 8) and show that it returns approximately 2.13.\n\n\n\n# Your code here\n\n\nCreate a function called safe_divide that takes two arguments x and y and returns their ratio x/y, but returns the string “Cannot divide by zero” when y is zero. Use vectorization so that the function works element-wise on vectors. Test it on the vectors x &lt;- c(10, 20, 30) and y &lt;- c(2, 0, 5).\n\n\n# Your code here\n\n\nUsing the murders dataset, write a function called classify_state_safety that takes a state name as input and returns a classification based on the murder rate: “Very Safe” (rate &lt; 1), “Safe” (rate 1-3), “Moderate” (rate 3-5), or “High Risk” (rate &gt; 5). If the state name is not found, return “State not found”. Test your function on “Vermont”, “Texas”, “California”, and “NotAState”. Then use sapply to classify all states and create a table showing how many states fall into each safety category using the table function.\n\n\n# Your code here"
   },
   {
     "objectID": "psets/pset-03-tidyverse.html",
@@ -6719,7 +6747,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498327\n\nsd(x_hat) \n\n[1] 0.01577372"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499372\n\nsd(x_hat) \n\n[1] 0.01588044"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10191,7 +10219,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 501236 0.827\n 2 232227 0.790\n 3  70558 0.783\n 4 580889 0.760\n 5 209496 0.749\n 6 741711 0.748\n 7 964435 0.746\n 8  57084 0.746\n 9 940990 0.746\n10 737618 0.744\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.827."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 657690 0.817\n 2  73769 0.797\n 3 302352 0.756\n 4 790364 0.754\n 5 949166 0.752\n 6 214630 0.745\n 7 447661 0.744\n 8 402907 0.740\n 9 781529 0.739\n10 575378 0.736\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.817."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10226,7 +10254,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.984     0.140      7.05 0.000000348"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.973     0.143      6.80 0.000000626"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11444,7 +11472,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Male   Male   Female Female Female Female Male   Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Male   Male   Female Female Female Female Male   Male   Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Female Female Female Male   Female Female Female Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Female Female Female Male   Female Female Female Male   Female\nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11619,7 +11647,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000002211395da08&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000001db3d740938&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -11731,7 +11759,7 @@
     "href": "slides/R/07-tidyverse.html#tidyverse-packages",
     "title": "Tidyverse",
     "section": "Tidyverse packages",
-    "text": "Tidyverse packages\n\ntibble - improves data frame class.\nreadr - import data.\ndplyr - used to modify data frames.\nggplot2 - simplifies plotting.\ntidyr - helps convert data into tidy format.\nstringr - string processing.\nforcats - utilities for categorical data.\npurrr - tidy version of apply functions."
+    "text": "Tidyverse packages\n\ntibble - modifies the data frame class.\nreadr - import data.\ndplyr - used to modify data frames.\nggplot2 - simplifies plotting.\ntidyr - helps convert data into tidy format.\nstringr - string processing.\nforcats - utilities for categorical data.\npurrr - tidy version of apply functions."
   },
   {
     "objectID": "slides/R/07-tidyverse.html#dplyr",
@@ -11783,39 +11811,39 @@
     "text": "Transforming variables\n\nThe helper functions come in handy when using across.\nAn example is if we want to apply the same transformation to all numeric variables:\n\n\nmutate(murders, across(where(is.numeric), log10))\n\n\nor all character variables:\n\n\nmutate(murders, across(where(is.character), tolower))\n\n\nThere are several other useful helper functions."
   },
   {
-    "objectID": "slides/R/07-tidyverse.html#the-pipe-or",
-    "href": "slides/R/07-tidyverse.html#the-pipe-or",
+    "objectID": "slides/R/07-tidyverse.html#the-pipe",
+    "href": "slides/R/07-tidyverse.html#the-pipe",
     "title": "Tidyverse",
-    "section": "The pipe: |> or %>%",
-    "text": "The pipe: |&gt; or %&gt;%\n\nWe use the pipe to chain a series of operations.\nFor example if we want to select columns and then filter rows we chain like this:\n\n\\[ \\mbox{original data }\n\\rightarrow \\mbox{ select }\n\\rightarrow \\mbox{ filter } \\]"
+    "section": "The pipe: |>",
+    "text": "The pipe: |&gt;\n\nWe use the pipe to chain a series of operations.\nFor example if we want to select columns and then filter rows we chain like this:\n\n\\[ \\mbox{original data }\n\\rightarrow \\mbox{ select }\n\\rightarrow \\mbox{ filter } \\]"
   },
   {
-    "objectID": "slides/R/07-tidyverse.html#the-pipe-or-1",
-    "href": "slides/R/07-tidyverse.html#the-pipe-or-1",
+    "objectID": "slides/R/07-tidyverse.html#the-pipe-1",
+    "href": "slides/R/07-tidyverse.html#the-pipe-1",
     "title": "Tidyverse",
-    "section": "The pipe: |> or %>%",
-    "text": "The pipe: |&gt; or %&gt;%\n\nThe code looks like this:\n\n\nmurders |&gt; select(state, region, rate) |&gt; filter(rate &lt;= 0.71)\n\n          state        region      rate\n1        Hawaii          West 0.5145920\n2          Iowa North Central 0.6893484\n3 New Hampshire     Northeast 0.3798036\n4  North Dakota North Central 0.5947151\n5       Vermont     Northeast 0.3196211\n\n\n\nThe object on the left of the pipe is used as the first argument for the function on the right.\nThe second argument becomes the first, the third the second, and so on…"
+    "section": "The pipe: |>",
+    "text": "The pipe: |&gt;\n\nThe code looks like this:\n\n\nmurders |&gt; select(state, region, rate) |&gt; filter(rate &lt;= 0.71)\n\n          state        region      rate\n1        Hawaii          West 0.5145920\n2          Iowa North Central 0.6893484\n3 New Hampshire     Northeast 0.3798036\n4  North Dakota North Central 0.5947151\n5       Vermont     Northeast 0.3196211\n\n\n\nThe object on the left of the pipe is used as the first argument for the function on the right.\nThe second argument becomes the first, the third the second, and so on…"
   },
   {
-    "objectID": "slides/R/07-tidyverse.html#the-pipe-or-2",
-    "href": "slides/R/07-tidyverse.html#the-pipe-or-2",
+    "objectID": "slides/R/07-tidyverse.html#the-pipe-2",
+    "href": "slides/R/07-tidyverse.html#the-pipe-2",
     "title": "Tidyverse",
-    "section": "The pipe: |> or %>%",
-    "text": "The pipe: |&gt; or %&gt;%\n\nHere is a simple example:\n\n\n16 |&gt; sqrt() |&gt; log(base = 2)\n\n[1] 2"
+    "section": "The pipe: |>",
+    "text": "The pipe: |&gt;\n\nHere is a simple example:\n\n\n16 |&gt; sqrt() |&gt; log(base = 2)\n\n[1] 2"
   },
   {
     "objectID": "slides/R/07-tidyverse.html#summarizing-data",
     "href": "slides/R/07-tidyverse.html#summarizing-data",
     "title": "Tidyverse",
     "section": "Summarizing data",
-    "text": "Summarizing data\n\nWe use the dplyr summarize function, not to be confused with summary from R base.\nHere is an example of how it works:\n\n\nmurders |&gt; summarize(avg = mean(rate))\n\n       avg\n1 2.779125\n\n\n\nLet’s compute murder rate for the US. Is the above it?"
+    "text": "Summarizing data\n\nWe use the dplyr summarize function, not to be confused with summary from R base.\nHere is an example of how it works:\n\n\nmurders |&gt; summarize(avg = mean(rate))\n\n       avg\n1 2.779125\n\n\n\nLet’s compute murder rate for the US. Is the number we just computed an estimate of that rate?"
   },
   {
     "objectID": "slides/R/07-tidyverse.html#summarizing-data-1",
     "href": "slides/R/07-tidyverse.html#summarizing-data-1",
     "title": "Tidyverse",
     "section": "Summarizing data",
-    "text": "Summarizing data\n\nNo, the rate is NOT the average of rates.\nIt is the total murders divided by total population:\n\n\nmurders |&gt; summarize(rate = sum(total)/sum(population)*100000)\n\n      rate\n1 3.034555"
+    "text": "Summarizing data\n\nNo, the rate is NOT the average of rates.\nThe correct calculation is the total number of murders divided by total population:\n\n\nmurders |&gt; summarize(rate = sum(total)/sum(population)*100000)\n\n      rate\n1 3.034555"
   },
   {
     "objectID": "slides/R/07-tidyverse.html#multiple-summaries",
@@ -11843,7 +11871,7 @@
     "href": "slides/R/07-tidyverse.html#group-then-summarize",
     "title": "Tidyverse",
     "section": "Group then summarize",
-    "text": "Group then summarize\n\nLet’s compute murder rate by region.\nTake a close look at this output?\n\n\nmurders |&gt; group_by(region) |&gt; head(4)\n\n# A tibble: 4 × 6\n# Groups:   region [2]\n  state    abb   region population total  rate\n  &lt;chr&gt;    &lt;chr&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Alabama  AL    South     4779736   135  2.82\n2 Alaska   AK    West       710231    19  2.68\n3 Arizona  AZ    West      6392017   232  3.63\n4 Arkansas AR    South     2915918    93  3.19\n\n\n\nNote the Groups: region [4] at the top.\nThis is a special data frame called a grouped data frame."
+    "text": "Group then summarize\n\nLet’s compute murder rate by region.\n\n\nmurders |&gt; group_by(region) |&gt; head(4)\n\n# A tibble: 4 × 6\n# Groups:   region [2]\n  state    abb   region population total  rate\n  &lt;chr&gt;    &lt;chr&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Alabama  AL    South     4779736   135  2.82\n2 Alaska   AK    West       710231    19  2.68\n3 Arizona  AZ    West      6392017   232  3.63\n4 Arkansas AR    South     2915918    93  3.19\n\n\n\nNote the Groups: region at the top. Note that this is the number of groups in the first 4 rows.\nThis is a special data frame called a grouped data frame."
   },
   {
     "objectID": "slides/R/07-tidyverse.html#group-then-summarize-1",
@@ -12347,7 +12375,7 @@
     "href": "slides/wrangling/13-locales.html#example-9",
     "title": "Locales",
     "section": "Example",
-    "text": "Example\nComputing the students’ ages is now straightforward:\n\ntime_length(today() - dat$f.n., unit = \"years\") |&gt; floor() \n\n[1] 43 45 94 56 43 84 54"
+    "text": "Example\nComputing the students’ ages is now straightforward:\n\ntime_length(today() - dat$f.n., unit = \"years\") |&gt; floor() \n\n[1] 44 45 94 56 43 84 54"
   },
   {
     "objectID": "slides/wrangling/13-locales.html#example-10",
@@ -12497,126 +12525,6 @@
     "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nWed, Sep 10\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nThu, Sep 18\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 11\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 01\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 08\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Dec 15\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 15\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
-    ]
-  },
-  {
-    "objectID": "index.html#general-information",
-    "href": "index.html#general-information",
-    "title": "Syllabus",
-    "section": "General Information",
-    "text": "General Information\n\nBST 260 Introduction to Data Science\nKresge G1 (HSPH)\nMonday Mon & Wed 9:45 am - 11:15 am\nLecture notes: https://datasciencelabs.github.io/2025/\nSlack: BST 260 Slack Workspace\nCanvas: Home Page",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#prerequisites",
-    "href": "index.html#prerequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nWe assume students have taken or are taking a probability and statistics course and have basic programming skills.\nStudents not matriculated in an HSPH Biostatistics graduate program (HDS SM60, BIO SM80 / SM60 / SM1, and CBQG SM80) will be required to score at least 90% on a basic math and programming diagnostic test to enroll in the course. If you are in a HSPH Biostatistics graduate program and you score less than 90% we will contact you to offer supplementary resource to help you be prepared for the course.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#textbooks",
-    "href": "index.html#textbooks",
-    "title": "Syllabus",
-    "section": "Textbooks",
-    "text": "Textbooks\n\nIntroduction to Data Science: Data Wrangling and Visualization with R\nIntroduction to Data Science: Statistics and Prediction Algorithms Through Case Studies",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Syllabus",
-    "section": "Course Description",
-    "text": "Course Description\nThis course introduces the following:\n\nUNIX/Linux shell\nReproducible document preparation with RStudio, knitr, and markdown\nVersion control with git and GitHub\nR programming\nData wrangling with dplyr and data.table\nData visualization with ggplot2\n\nWe also demonstrate how the following concepts are applied in data analysis:\n\nProbability theory\nStatistical inference and modeling\nHigh-dimensional data techniques\nMachine learning\n\nWe do not cover the theory and details of these methods as they are covered in other courses.\nThroughout the course, we use motivating case studies and data analysis problem sets based on challenges similar to those you encounter in scientific research.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#weekly-course-structure",
-    "href": "index.html#weekly-course-structure",
-    "title": "Syllabus",
-    "section": "Weekly Course Structure",
-    "text": "Weekly Course Structure\n\nMonday lectures: We describe the concepts, methods, and skills needed for problem sets.\nWednesday labs: We work together on problem sets.\nFriday: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#grade-distribution",
-    "href": "index.html#grade-distribution",
-    "title": "Syllabus",
-    "section": "Grade Distribution",
-    "text": "Grade Distribution\n\n\n\nComponent\nWeight\n\n\n\n\n10 Problem Sets\n30%\n\n\n4 Oral Evaluations\n20%\n\n\nMidterm 1\n10%\n\n\nMidterm 2\n20%\n\n\nFinal Project\n20%",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#problem-sets-1",
-    "href": "index.html#problem-sets-1",
-    "title": "Syllabus",
-    "section": "Problem Sets",
-    "text": "Problem Sets\nProblem sets will be due every week or every other week, depending on difficulty. They will be due at 11:59 PM on the day denoted on the Problem Sets page.\nSome problem sets include open ended questions that will be difficult to answer on your own. We will be working on these together during Wednesday labs. We also offer office hours where you can get help with unanswered questions.\nProblem sets must be submitted via GitHub. Students are required to have a GitHub account and create a repository for the course. We will be providing further instructions during the first lab.\n10% of the total points for the problem sets will be deducted for every late day. Students can have a total of 4 late days without penalty during the entire semester. No need to provide a written excuse. Providing an excuse does not give you more days unless an accommodation is requested and approved by the Office of Student Affairs (this includes COVID).\nProblem set submissions need to be completely reproducible Quarto documents. If your Quarto file does not compile it will be considered a late day, and you will be notified and will need to resubmit a Quarto file that does compile. You will be deducted further late days for every day it takes for you to turn in a Quarto file that does knit. You are required to check emails that come through the Canvas system, as this the only way we will communicate problems with your problem sets.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#oral-evaluations",
-    "href": "index.html#oral-evaluations",
-    "title": "Syllabus",
-    "section": "Oral Evaluations",
-    "text": "Oral Evaluations\nOral evaluations account for 20% of your final grade, divided into four separate evaluations (5% each) throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code and approach.\nKey Details:\n\nFour evaluations covering 2 or 3 problem sets each\nStudents are assigned to TFs based on the first letter of their last name\nYou can only schedule a meeting after completing the problem sets included in that evaluation period\nMeetings are conducted via Zoom using dedicated Slack channels for scheduling\n\nDuring each 15-minute session, your TF may ask you to:\n\nExplain specific sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss challenges you encountered and how you solved them\n\nGrading Scale: 0-5 points based on your demonstrated understanding, from no understanding (1/5) to excellent understanding with minimal gaps (5/5). Not scheduling a meeting results in 0/5.\nSee the Oral Evaluations page for complete details including scheduling instructions, TF assignments, and full grading criteria.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#midterm-policy",
-    "href": "index.html#midterm-policy",
-    "title": "Syllabus",
-    "section": "Midterm Policy",
-    "text": "Midterm Policy\nBoth midterms are closed book, no internet, and in-class. You are expected to complete them in 1 hour.\nThey will be very similar to the problem sets and the examples given in class.\nPlease make sure you can come to class on the midterm dates provided in the Key Dates table below. If you miss the exam, you will need approval from the Office of Student Affairs to receive a makeup. All make-up exams will be completely different from the in-class ones.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#final-project",
-    "href": "index.html#final-project",
-    "title": "Syllabus",
-    "section": "Final Project",
-    "text": "Final Project\nFor your final project we ask that you turn in a 4-6 page report using data to answer a public health related question. You can chose from one of the following:\n\nBased on state-level data, how effective where vaccines against SARS-CoV-2 reported cases and COVID-19 hospitalizations and deaths, and vaccination rates.\nWhat was the excess mortality after Hurricane María in Puerto Rico? Where different age groups affected differently?\n\nOptionally, you can select a question that align with your ongoing research. This way, it can be directly beneficial to your work. This will require prior approval from the instructor by October 24.\nYet another option is to build a interactive webpage with poll-driven predictions for the 2024 US elections. Note this will be more challenging as we will not cover tools for interactive webpages until the last week of class (time permitting).\nNote: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#chatgpt-policy",
-    "href": "index.html#chatgpt-policy",
-    "title": "Syllabus",
-    "section": "ChatGPT Policy",
-    "text": "ChatGPT Policy\nYou can use ChatGPT however you want. Do remember you won’t be able to use it during the midterms.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#key-dates",
-    "href": "index.html#key-dates",
-    "title": "Syllabus",
-    "section": "Key Dates",
-    "text": "Key Dates\n\n\n\nDate\nEvent\n\n\n\n\nOct 13\nNo class: Indigenous Peoples’ Day\n\n\nOct 15\nMidterm 1: covers material from Sep 03-Oct 08\n\n\nOct 22\nStart final project\n\n\nNov 10\nNo class: Veterans’ Day\n\n\nNov 24\nMidterm 2: cover material from Sep 03-Nov 19\n\n\nNov 26\nNo class: Thanksgiving Recess Begins\n\n\nDec 19\nFinal Project due",
-    "crumbs": [
-      "Home"
     ]
   }
 ]
