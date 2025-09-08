@@ -1,6 +1,5 @@
 ---
 title: "A Beginner's Guide to Git and GitHub"
-subtitle: "From Zero to Pushing Code"
 ---
 
 ## Introduction: The "Final_v2_final_FINAL.docx" Problem
