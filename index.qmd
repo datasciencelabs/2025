@@ -44,7 +44,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 
 
 
-## Problem sets
+## Problem Sets
 
 | Problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
@@ -60,7 +60,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | Problem Set 10         | Digit reading | Dec 15   | hard | 
 |Final Project| Your choice | Dec 19   | hard  |
 
-## Office hour times
+## Office Hour Times
 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
