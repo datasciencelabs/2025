@@ -416,7 +416,20 @@ Our Recommendation
 <li>Paste the following command, replacing the email with your own GitHub email.</li>
 <li>Press Enter to accept the default file location and again for no passphrase (or enter one if you want extra security).</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding SSH Key Pairs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This command creates two files: a <strong>private key</strong> (<code>id_ed25519</code>) and a <strong>public key</strong> (<code>id_ed25519.pub</code>). Think of them as a lock and key pair. Your <strong>private key stays on your computer and should never be shared</strong>, i.e.&nbsp;it’s like your house key. Your <strong>public key can be safely shared with services like GitHub</strong>, i.e.&nbsp;it’s like giving someone your address so they can send you mail. Each private key has exactly one corresponding public key, and you typically only need one key pair per computer. You can use the same public key on multiple services (GitHub, GitLab, etc.).</p>
+</div>
+</div></li>
 <li><p><strong>Add the Key to the SSH Agent.</strong></p>
 <ul>
 <li>This ensures your key is automatically used when you run git commands.</li>

@@ -145,6 +145,11 @@ This method requires a one-time setup but is much more efficient for long-term c
     ssh-keygen -t ed25519 -C "your_email@example.com"
     ```
 
+    ::: {.callout-note}
+    ### Understanding SSH Key Pairs
+    This command creates two files: a **private key** (`id_ed25519`) and a **public key** (`id_ed25519.pub`). Think of them as a lock and key pair. Your **private key stays on your computer and should never be shared**, i.e. it's like your house key. Your **public key can be safely shared with services like GitHub**, i.e. it's like giving someone your address so they can send you mail. Each private key has exactly one corresponding public key, and you typically only need one key pair per computer. You can use the same public key on multiple services (GitHub, GitLab, etc.).
+    :::
+
 3.  **Add the Key to the SSH Agent.**
 
     -   This ensures your key is automatically used when you run git commands.
