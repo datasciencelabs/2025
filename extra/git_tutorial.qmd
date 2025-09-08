@@ -1,5 +1,5 @@
 ---
-title: "Beginner's Guide to Git and GitHub"
+title: "Git and GitHub Tutorial"
 ---
 
 ## Introduction: The "Final_v2_final_FINAL.docx" Problem
