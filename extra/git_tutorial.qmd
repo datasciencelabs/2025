@@ -1,6 +1,5 @@
 ---
-title: "A Beginner's Guide to Git and GitHub"
-subtitle: "From Zero to Pushing Code"
+title: "Beginner's Guide to Git and GitHub"
 ---
 
 ## Introduction: The "Final_v2_final_FINAL.docx" Problem
@@ -70,31 +69,8 @@ When you want to `clone` (download) or `push` (upload) your code to GitHub, your
 
 Whether you use a GUI like GitHub Desktop or the command line, the underlying process is the same. There are four key steps in a typical workflow.
 
-```{mermaid}
-graph LR
-    %% Give the subgraph an ID ("local") so we can style it
-    subgraph local [On Your Computer]
-        A("<b>Working Directory</b><br>Your actual files") -- "git add" --> B("<b>Staging Area</b><br>Files marked for next save");
-        B -- "git commit" --> C("<b>Local Repository</b><br>Project history in .git");
-    end
-    
-    C -- "git push" --> D("<b>Remote Repository</b><br>GitHub.com");
+![Illustration of the core Git and GitHub workflow](git_steps.png.png)
 
-    %% Define a professional and clean color palette for the nodes
-    classDef work fill:#fff7d6,stroke:#d1b749,stroke-width:2px,color:#333
-    classDef stage fill:#d1ecf1,stroke:#74a2aa,stroke-width:2px,color:#333
-    classDef localrepo fill:#d4edda,stroke:#6da978,stroke-width:2px,color:#333
-    classDef remote fill:#e2e3e5,stroke:#868e96,stroke-width:2px,color:#333
-    
-    %% Apply styles to the individual nodes
-    class A work
-    class B stage
-    class C localrepo
-    class D remote
-
-    %% --> FIX: Explicitly style the subgraph background to be light grey <--
-    style local fill:#f8f9fa,stroke:#dee2e6,stroke-width:1px
-```
 
 1.  **Modify Files (Working Directory):** This is just you, working on your project. You edit code, write text, add images, etc.
 

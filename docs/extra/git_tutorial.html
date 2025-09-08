@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>A Beginner’s Guide to Git and GitHub – BST 260: Introduction to Data Science</title>
+<title>Beginner’s Guide to Git and GitHub – BST 260: Introduction to Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,9 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../style.css">
@@ -118,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">A Beginner’s Guide to Git and GitHub</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Beginner’s Guide to Git and GitHub</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -227,8 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A Beginner’s Guide to Git and GitHub</h1>
-<p class="subtitle lead">From Zero to Pushing Code</p>
+<h1 class="title">Beginner’s Guide to Git and GitHub</h1>
 </div>
 
 
@@ -335,39 +331,11 @@ Our Recommendation
 <section id="section-3-the-core-git-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="section-3-the-core-git-workflow">Section 3: The Core Git Workflow</h2>
 <p>Whether you use a GUI like GitHub Desktop or the command line, the underlying process is the same. There are four key steps in a typical workflow.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    %% Give the subgraph an ID ("local") so we can style it
-    subgraph local [On Your Computer]
-        A("&lt;b&gt;Working Directory&lt;/b&gt;&lt;br&gt;Your actual files") -- "git add" --&gt; B("&lt;b&gt;Staging Area&lt;/b&gt;&lt;br&gt;Files marked for next save");
-        B -- "git commit" --&gt; C("&lt;b&gt;Local Repository&lt;/b&gt;&lt;br&gt;Project history in .git");
-    end
-    
-    C -- "git push" --&gt; D("&lt;b&gt;Remote Repository&lt;/b&gt;&lt;br&gt;GitHub.com");
-
-    %% Define a professional and clean color palette for the nodes
-    classDef work fill:#fff7d6,stroke:#d1b749,stroke-width:2px,color:#333
-    classDef stage fill:#d1ecf1,stroke:#74a2aa,stroke-width:2px,color:#333
-    classDef localrepo fill:#d4edda,stroke:#6da978,stroke-width:2px,color:#333
-    classDef remote fill:#e2e3e5,stroke:#868e96,stroke-width:2px,color:#333
-    
-    %% Apply styles to the individual nodes
-    class A work
-    class B stage
-    class C localrepo
-    class D remote
-
-    %% --&gt; FIX: Explicitly style the subgraph background to be light grey &lt;--
-    style local fill:#f8f9fa,stroke:#dee2e6,stroke-width:1px
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="git_steps.png.png" class="img-fluid figure-img"></p>
+<figcaption>Illustration of the core Git and GitHub workflow</figcaption>
+</figure>
 </div>
 <ol type="1">
 <li><p><strong>Modify Files (Working Directory):</strong> This is just you, working on your project. You edit code, write text, add images, etc.</p></li>
