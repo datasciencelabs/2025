@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <meta name="dcterms.date" content="2025-10-27">
+  <meta name="keywords" content="Inference">
+  <title>BST 260: Introduction to Data Science – Data-driven models</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Data-driven models</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+  <p class="date">2025-10-27</p>
+</section>
+<section id="data-driven-models" class="slide level2">
+<h2>Data-driven models</h2>
+<blockquote>
+<blockquote>
+<p>“All models are wrong, but some are useful.” –George E.P. Box.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="data-driven-models-1" class="slide level2">
+<h2>Data-driven models</h2>
+<ul>
+<li><p>Our analysis of poll-related results has been based on a simple sampling model.</p></li>
+<li><p>This model assumes that each voter has an equal chance of being selected for the poll, similar to picking beads from an urn with two colors.</p></li>
+<li><p>However, in this section, we explore real-world data and discover that this model is incorrect.</p></li>
+</ul>
+</section>
+<section id="data-driven-models-2" class="slide level2">
+<h2>Data-driven models</h2>
+<ul>
+<li>However, these introductions are just scratching the surface, and readers interested in statistical modeling should supplement the material presented in this book with additional references.</li>
+</ul>
+</section>
+<section id="case-study-poll-aggregators" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>We generate results for 12 polls taken the week before the election.</p></li>
+<li><p>We mimic sample sizes from actual polls, construct, and report 95% confidence intervals for each of the 12 polls.</p></li>
+<li><p>We save the results from this simulation in a data frame and add a poll ID column.</p></li>
+</ul>
+</section>
+<section id="case-study-poll-aggregators-1" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(dslabs) </span>
+<span id="cb1-3"><a></a>mu <span class="ot">&lt;-</span> <span class="fl">0.039</span> </span>
+<span id="cb1-4"><a></a>Ns <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1298</span>, <span class="dv">533</span>, <span class="dv">1342</span>, <span class="dv">897</span>, <span class="dv">774</span>, <span class="dv">254</span>, <span class="dv">812</span>, <span class="dv">324</span>, <span class="dv">1291</span>, <span class="dv">1056</span>, <span class="dv">2172</span>, <span class="dv">516</span>) </span>
+<span id="cb1-5"><a></a>p <span class="ot">&lt;-</span> (mu <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">2</span> </span>
+<span id="cb1-6"><a></a>polls <span class="ot">&lt;-</span> <span class="fu">map_df</span>(Ns, <span class="cf">function</span>(N) { </span>
+<span id="cb1-7"><a></a>  x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> N, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">-</span> p, p)) </span>
+<span id="cb1-8"><a></a>  x_hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(x) </span>
+<span id="cb1-9"><a></a>  se_hat <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x_hat <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x_hat) <span class="sc">/</span> N) </span>
+<span id="cb1-10"><a></a>  <span class="fu">list</span>(<span class="at">estimate =</span> <span class="dv">2</span> <span class="sc">*</span> x_hat <span class="sc">-</span> <span class="dv">1</span>,  </span>
+<span id="cb1-11"><a></a>    <span class="at">low =</span> <span class="dv">2</span><span class="sc">*</span>(x_hat <span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span>se_hat) <span class="sc">-</span> <span class="dv">1</span>,  </span>
+<span id="cb1-12"><a></a>    <span class="at">high =</span> <span class="dv">2</span><span class="sc">*</span>(x_hat <span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span>se_hat) <span class="sc">-</span> <span class="dv">1</span>, </span>
+<span id="cb1-13"><a></a>    <span class="at">sample_size =</span> N) </span>
+<span id="cb1-14"><a></a>}) <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a></a>  <span class="fu">mutate</span>(<span class="at">poll =</span> <span class="fu">seq_along</span>(Ns)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-2" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+
+<img data-src="25-models_files/figure-revealjs/simulated-polls-1.png" width="960" class="r-stretch"></section>
+<section id="case-study-poll-aggregators-3" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>Poll aggregators combine polls to improve power.</p></li>
+<li><p>By doing this, we are effectively conducting a poll with a huge sample size.</p></li>
+<li><p>Although, as aggregators, we do not have access to the raw poll data.</p></li>
+<li><p>We can use math to reconstruct what we would have obtained with one large poll with sample size:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">sum</span>(polls<span class="sc">$</span>sample_size) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11269</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-4" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li>Basically, we construct an estimate of the spread, let’s call it <span class="math inline">\(\mu\)</span>, with a weighted average in the following way:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>mu_hat <span class="ot">&lt;-</span> polls <span class="sc">|&gt;</span>  </span>
+<span id="cb4-2"><a></a>  <span class="fu">summarize</span>(<span class="at">avg =</span> <span class="fu">sum</span>(estimate<span class="sc">*</span>sample_size) <span class="sc">/</span> <span class="fu">sum</span>(sample_size)) <span class="sc">|&gt;</span>  </span>
+<span id="cb4-3"><a></a>  <span class="fu">pull</span>(avg) </span>
+<span id="cb4-4"><a></a><span class="fu">print</span>(mu_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0311474</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-5" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li>We can reconstruct the margin of error as well:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>p_hat <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">+</span> mu_hat)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb6-2"><a></a>moe <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="fl">1.96</span><span class="sc">*</span><span class="fu">sqrt</span>(p_hat<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p_hat)<span class="sc">/</span><span class="fu">sum</span>(polls<span class="sc">$</span>sample_size))</span>
+<span id="cb6-3"><a></a><span class="fu">print</span>(moe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01845451</code></pre>
+</div>
+</div>
+<ul>
+<li>Which is much smaller than any of the individual polls.</li>
+</ul>
+</section>
+<section id="case-study-poll-aggregators-6" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<p>The aggregator estimate is in red:</p>
+
+<img data-src="25-models_files/figure-revealjs/confidence-coverage-2008-election-1.png" width="960" class="r-stretch"></section>
+<section id="case-study-poll-aggregators-7" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>However, this was just a simulation to illustrate the idea.</p></li>
+<li><p>Let’s look at real data from the 2016 presidential election.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(dslabs) </span>
+<span id="cb8-2"><a></a>polls <span class="ot">&lt;-</span> polls_us_election_2016 <span class="sc">|&gt;</span>  </span>
+<span id="cb8-3"><a></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"U.S."</span> <span class="sc">&amp;</span> population <span class="sc">==</span> <span class="st">"lv"</span> <span class="sc">&amp;</span> </span>
+<span id="cb8-4"><a></a>           enddate <span class="sc">&gt;=</span> <span class="st">"2016-10-31"</span> <span class="sc">&amp;</span> </span>
+<span id="cb8-5"><a></a>           (grade <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A+"</span>,<span class="st">"A"</span>,<span class="st">"A-"</span>,<span class="st">"B+"</span>) <span class="sc">|</span> <span class="fu">is.na</span>(grade))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-8" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li>We add a spread estimate:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>polls <span class="ot">&lt;-</span> polls <span class="sc">|&gt;</span>  </span>
+<span id="cb9-2"><a></a>  <span class="fu">mutate</span>(<span class="at">spread =</span> rawpoll_clinton<span class="sc">/</span><span class="dv">100</span> <span class="sc">-</span> rawpoll_trump<span class="sc">/</span><span class="dv">100</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-9" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>We are interested in the spread <span class="math inline">\(2p-1\)</span>.</p></li>
+<li><p>Let’s call the spread <span class="math inline">\(\mu\)</span> (for difference).</p></li>
+<li><p>We have 49 estimates of the spread.</p></li>
+<li><p>The theory we learned from sampling models tells us that these estimates are a random variable with a probability distribution that is approximately normal.</p></li>
+<li><p>The expected value is the election night spread <span class="math inline">\(\mu\)</span> and the standard error is <span class="math inline">\(2\sqrt{p (1 - p) / N}\)</span>.</p></li>
+</ul>
+</section>
+<section id="case-study-poll-aggregators-10" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li>We construct a confidence interval assuming the data is from an urn model:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>mu_hat <span class="ot">&lt;-</span> polls <span class="sc">|&gt;</span>  </span>
+<span id="cb10-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mu_hat =</span> <span class="fu">sum</span>(spread<span class="sc">*</span>samplesize)<span class="sc">/</span><span class="fu">sum</span>(samplesize)) <span class="sc">|&gt;</span>  </span>
+<span id="cb10-3"><a></a>  <span class="fu">pull</span>(mu_hat) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>and the standard error is:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>p_hat <span class="ot">&lt;-</span> (mu_hat <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">/</span><span class="dv">2</span>  </span>
+<span id="cb11-2"><a></a>moe <span class="ot">&lt;-</span> <span class="fl">1.96</span><span class="sc">*</span><span class="dv">2</span><span class="sc">*</span><span class="fu">sqrt</span>(p_hat<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p_hat)<span class="sc">/</span><span class="fu">sum</span>(polls<span class="sc">$</span>samplesize)) </span>
+<span id="cb11-3"><a></a>moe </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.006623178</code></pre>
+</div>
+</div>
+</section>
+<section id="case-study-poll-aggregators-11" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>So we report a spread of 1.43% with a margin of error of 0.66%.</p></li>
+<li><p>On election night, we discover that the actual percentage was 2.1%, which is outside a 95% confidence interval.</p></li>
+<li><p>What happened?</p></li>
+</ul>
+</section>
+<section id="case-study-poll-aggregators-12" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<p>A histogram of the reported spreads reveals a problem:</p>
+
+<img data-src="25-models_files/figure-revealjs/polls-2016-spread-histogram-run-1.png" width="960" class="r-stretch"></section>
+<section id="case-study-poll-aggregators-13" class="slide level2">
+<h2>Case study: poll aggregators</h2>
+<ul>
+<li><p>The data does not appear to be normally distributed</p></li>
+<li><p>The standard error appears to be larger than 0.0066232.</p></li>
+<li><p>The theory is not working her</p></li>
+<li><p>This motivates the use of a <strong>data-driven model</strong>.</p></li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li>Data come from various pollsters, some taking several polls:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>polls <span class="sc">|&gt;</span> <span class="fu">count</span>(pollster) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                     pollster n
+1                                                    IBD/TIPP 8
+2                                    The Times-Picayune/Lucid 8
+3                                       USC Dornsife/LA Times 8
+4                                    ABC News/Washington Post 7
+5                                                       Ipsos 6
+6                                     CBS News/New York Times 2
+7  Fox News/Anderson Robbins Research/Shaw &amp; Company Research 2
+8                                           Angus Reid Global 1
+9                                               Insights West 1
+10                                             Marist College 1
+11                                        Monmouth University 1
+12                                            Morning Consult 1
+13                               NBC News/Wall Street Journal 1
+14                      RKM Research and Communications, Inc. 1
+15                                           Selzer &amp; Company 1</code></pre>
+</div>
+</div>
+</section>
+<section id="beyond-the-sampling-model-1" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li>Let’s visualize the data for the pollsters that are regularly polling:</li>
+</ul>
+
+<img data-src="25-models_files/figure-revealjs/pollster-bias-1.png" width="960" class="r-stretch"></section>
+<section id="beyond-the-sampling-model-2" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>This plot reveals an unexpected result.</p></li>
+<li><p>The standard error predicted by theory is between 0.018 and 0.033:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>polls <span class="sc">|&gt;</span> <span class="fu">group_by</span>(pollster) <span class="sc">|&gt;</span>  </span>
+<span id="cb15-2"><a></a>  <span class="fu">filter</span>(<span class="fu">n</span>() <span class="sc">&gt;=</span> <span class="dv">6</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a></a>  <span class="fu">summarize</span>(<span class="at">se =</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">sqrt</span>(p_hat<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p_hat)<span class="sc">/</span><span class="fu">median</span>(samplesize))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  pollster                     se
+  &lt;fct&gt;                     &lt;dbl&gt;
+1 ABC News/Washington Post 0.0265
+2 IBD/TIPP                 0.0333
+3 Ipsos                    0.0225
+4 The Times-Picayune/Lucid 0.0196
+5 USC Dornsife/LA Times    0.0183</code></pre>
+</div>
+</div>
+<ul>
+<li>This agrees with the within poll variation we see.</li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model-3" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li>However, there appears to be differences <em>across the polls</em>:</li>
+</ul>
+
+<img data-src="25-models_files/figure-revealjs/pollster-bias-2-1.png" width="960" class="r-stretch"></section>
+<section id="beyond-the-sampling-model-4" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>Sompling theory says nothing about different pollsters having expected values.</p></li>
+<li><p>FiveThirtyEight refers to these differences as <em>house effects</em>.</p></li>
+<li><p>We also call them <em>pollster bias</em>.</p></li>
+<li><p>Rather than modeling the process generating these values with an urn model, we instead model the pollster results directly.</p></li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model-5" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>To do this, we start by collecting some data.</p></li>
+<li><p>Specifically, for each pollster, we look at the last reported result before the election:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>one_poll_per_pollster <span class="ot">&lt;-</span> polls <span class="sc">|&gt;</span> <span class="fu">group_by</span>(pollster) <span class="sc">|&gt;</span>  </span>
+<span id="cb17-2"><a></a>  <span class="fu">filter</span>(enddate <span class="sc">==</span> <span class="fu">max</span>(enddate)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a></a>  <span class="fu">ungroup</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="beyond-the-sampling-model-6" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li>Here is a histogram of the data for these 15 pollsters:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">hist</span>(one_poll_per_pollster<span class="sc">$</span>spread, <span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="25-models_files/figure-revealjs/pollster-bias-histogram-1.png" width="960" class="r-stretch"></section>
+<section id="beyond-the-sampling-model-7" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>Although we are no longer using a model with red (Republicans) and blue (Democrats) beads in an urn, our new model can also be thought of as an urn model, but containing poll results from all possible pollsters.</p></li>
+<li><p>Think of our $N=$15 data points <span class="math inline">\(X_1,\dots X_N\)</span> as a random sample from this urn.</p></li>
+<li><p>To develop a useful model, we <em>assume</em> that the expected value of our urn is the actual spread <span class="math inline">\(\mu=2p-1\)</span>, which implies that the sample average has expected value <span class="math inline">\(\mu\)</span>.</p></li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model-8" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>Now, because instead of 0s and 1s, our urn contains continuous numbers, the standard deviation of the urn is no longer <span class="math inline">\(\sqrt{p(1-p)}\)</span>.</p></li>
+<li><p>Rather than voter sampling variability, the standard error now includes the pollster-to-pollster variability.</p></li>
+<li><p>Our new urn also includes the sampling variability from the polling.</p></li>
+<li><p>Regardless, this standard deviation is now an unknown parameter.</p></li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model-9" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li><p>In statistics textbooks, the Greek symbol <span class="math inline">\(\sigma\)</span> is used to represent this parameter.</p></li>
+<li><p>So our new statistical model is that <span class="math inline">\(X_1, \dots, X_N\)</span> are a random sample with expected <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>The distribution, for now, is unspecified.</p></li>
+</ul>
+</section>
+<section id="beyond-the-sampling-model-10" class="slide level2">
+<h2>Beyond the sampling model</h2>
+<ul>
+<li>Assume <span class="math inline">\(N\)</span> is large enough to assume the sample average <span class="math inline">\(\bar{X} = \sum_{i=1}^N X_i\)</span> follows a normal distribution with expected value <span class="math inline">\(\mu\)</span> and standard error <span class="math inline">\(\sigma / \sqrt{N}\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\bar{X} \sim \mbox{N}(\mu, \sigma / \sqrt{N})
+\]</span></p>
+<ul>
+<li><p>Here the <span class="math inline">\(\sim\)</span> symbol tells us that the random variable on the left follows the distribution on the right.</p></li>
+<li><p>We use the notation <span class="math inline">\(N(a,b)\)</span> to represent the normal distribution with mean <span class="math inline">\(a\)</span> and standard deviation <span class="math inline">\(b\)</span>.</p></li>
+</ul>
+</section>
+<section id="estimating-the-sd" class="slide level2">
+<h2>Estimating the SD</h2>
+<ul>
+<li><p>Our new model has two unknown parameters: the expected value <span class="math inline">\(\mu\)</span> and the standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>We know that the sample average <span class="math inline">\(\bar{X}\)</span> will be our estimate of <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p>But what about <span class="math inline">\(\sigma\)</span>?</p></li>
+</ul>
+</section>
+<section id="estimating-the-sd-1" class="slide level2">
+<h2>Estimating the SD</h2>
+<ul>
+<li>Theory tells us that we can estimate the urn model <span class="math inline">\(\sigma\)</span> with the <em>sample standard deviation</em> defined as:</li>
+</ul>
+<p><span class="math display">\[
+s = \sqrt{ \frac{1}{N-1} \sum_{i=1}^N (X_i - \bar{X})^2 }
+\]</span></p>
+<ul>
+<li><p>Unlike for the population standard deviation definition, we now divide by <span class="math inline">\(N-1\)</span>.</p></li>
+<li><p>This makes <span class="math inline">\(s\)</span> a better estimate of <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>There is a mathematical explanation for this, which is explained in most statistics textbooks.</p></li>
+</ul>
+</section>
+<section id="estimating-the-sd-2" class="slide level2">
+<h2>Estimating the SD</h2>
+<ul>
+<li>The <code>sd</code> function in R computes the sample standard deviation:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">sd</span>(one_poll_per_pollster<span class="sc">$</span>spread) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02419369</code></pre>
+</div>
+</div>
+</section>
+<section id="computing-a-confidence-interval" class="slide level2">
+<h2>Computing a confidence interval</h2>
+<ul>
+<li>We are now ready to form a new confidence interval based on our new data-driven model:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>results <span class="ot">&lt;-</span> one_poll_per_pollster <span class="sc">|&gt;</span>  </span>
+<span id="cb21-2"><a></a>  <span class="fu">summarize</span>(<span class="at">avg =</span> <span class="fu">mean</span>(spread),  </span>
+<span id="cb21-3"><a></a>            <span class="at">se =</span> <span class="fu">sd</span>(spread)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(spread))) <span class="sc">|&gt;</span>  </span>
+<span id="cb21-4"><a></a>  <span class="fu">mutate</span>(<span class="at">start =</span> avg <span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span>se,  </span>
+<span id="cb21-5"><a></a>         <span class="at">end =</span> avg <span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span>se)  </span>
+<span id="cb21-6"><a></a><span class="fu">round</span>(results<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  avg  se start end
+1 2.9 0.6   1.7 4.1</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Our confidence interval is wider now since it incorporates the pollster variability.</p></li>
+<li><p>It does include the election night result of 2.1%.</p></li>
+<li><p>Also, note that it was small enough not to include 0, which means we were confident Clinton would win the popular vote.</p></li>
+</ul>
+</section>
+<section id="the-t-distribution" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li><p>Above, we made use of the CLT with a sample size of 15.</p></li>
+<li><p>Because we are estimating a second parameters <span class="math inline">\(\sigma\)</span>, further variability is introduced into our confidence interval, which results in intervals that are too small.</p></li>
+</ul>
+</section>
+<section id="the-t-distribution-1" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li><p>For very large sample sizes, this extra variability is negligible, but in general, for values smaller than 30, we need to be cautious about using the CLT.</p></li>
+<li><p>However, if the data in the urn is known to follow a normal distribution, then we actually have mathematical theory that tells us how much bigger we need to make the intervals to account for the estimation of <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>Applying this theory, we can construct confidence intervals for any <span class="math inline">\(N\)</span>.</p></li>
+<li><p>But again, this works only if <strong>the data in the urn is known to follow a normal distribution</strong>.</p></li>
+<li><p>So for the 0, 1 data of our previous urn model, this theory definitely does not apply.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Note that 30 is a very general rule of thumb based on the case when the data come from a normal distribution.</p></li>
+<li><p>There are cases when a large sample size is needed as well as cases when smaller sample sizes are good enough.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-t-distribution-2" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li>The statistic on which confidence intervals for <span class="math inline">\(\mu\)</span> are based is:</li>
+</ul>
+<p><span class="math display">\[
+Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{N}}
+\]</span></p>
+<ul>
+<li>CLT tells us that Z is approximately normally distributed with expected value 0 and standard error 1.</li>
+</ul>
+</section>
+<section id="the-t-distribution-3" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li>But in practice we don’t know <span class="math inline">\(\sigma\)</span>, so we use:</li>
+</ul>
+<p><span class="math display">\[
+t = \frac{\bar{X} - \mu}{s/\sqrt{N}}
+\]</span></p>
+<ul>
+<li>This is referred to as a <em>t-statistic</em>.</li>
+</ul>
+</section>
+<section id="the-t-distribution-4" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li><p>By substituting <span class="math inline">\(\sigma\)</span> with <span class="math inline">\(s\)</span>, we introduce some variability.</p></li>
+<li><p>Theory tells us that <span class="math inline">\(t\)</span> follows a <em>student t-distribution</em> with <span class="math inline">\(N-1\)</span> <em>degrees of freedom (df)</em>.</p></li>
+<li><p>The df is a parameter that controls the variability via fatter tails:</p></li>
+</ul>
+
+<img data-src="25-models_files/figure-revealjs/t-distribution-examples-1.png" width="960" class="r-stretch"></section>
+<section id="the-t-distribution-5" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li>If we are willing to assume the pollster effect data is normally distributed, based on the sample data <span class="math inline">\(X_1, \dots, X_N\)</span>,</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>one_poll_per_pollster <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">sample =</span> spread)) <span class="sc">+</span> <span class="fu">stat_qq</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-t-distribution-6" class="slide level2">
+<h2>The t-distribution</h2>
+
+<img data-src="25-models_files/figure-revealjs/poll-spread-qq-run-1.png" width="960" class="r-stretch"><ul>
+<li>then <span class="math inline">\(t\)</span> follows a t-distribution with <span class="math inline">\(N-1\)</span> degrees of freedom.</li>
+</ul>
+</section>
+<section id="the-t-distribution-7" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li>So perhaps a better confidence interval for <span class="math inline">\(\mu\)</span> is:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>z <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>,  <span class="fu">nrow</span>(one_poll_per_pollster) <span class="sc">-</span> <span class="dv">1</span>) </span>
+<span id="cb24-2"><a></a>one_poll_per_pollster <span class="sc">|&gt;</span>  </span>
+<span id="cb24-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg =</span> <span class="fu">mean</span>(spread), <span class="at">moe =</span> z<span class="sc">*</span><span class="fu">sd</span>(spread)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(spread))) <span class="sc">|&gt;</span>  </span>
+<span id="cb24-4"><a></a>  <span class="fu">mutate</span>(<span class="at">start =</span> avg <span class="sc">-</span> moe, <span class="at">end =</span> avg <span class="sc">+</span> moe)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+     avg    moe  start    end
+   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 0.0290 0.0134 0.0156 0.0424</code></pre>
+</div>
+</div>
+<ul>
+<li>A bit larger than the one using normal is:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="dv">14</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.144787</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">qnorm</span>(<span class="fl">0.975</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.959964</code></pre>
+</div>
+</div>
+</section>
+<section id="the-t-distribution-8" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li>This results in a slightly larger confidence interval than we obtained before:</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  start end
+1   1.6 4.2</code></pre>
+</div>
+</div>
+</section>
+<section id="the-t-distribution-9" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li><p>Note that using the t-distribution and the t-statistic is the basis for <em>t-tests</em>, a widely used approach for computing p-values.</p></li>
+<li><p>To learn more about t-tests, you can consult any statistics textbook.</p></li>
+<li><p>The t-distribution can also be used to model errors in bigger deviations that are more likely than with the normal distribution, as seen in the densities we previously observed.</p></li>
+<li><p>FiveThirtyEight uses the t-distribution to generate errors that better model the deviations we see in election data.</p></li>
+</ul>
+</section>
+<section id="the-t-distribution-10" class="slide level2">
+<h2>The t-distribution</h2>
+<ul>
+<li><p>For example, in Wisconsin, the average of six polls was 7% in favor of Clinton with a standard deviation of 1%, but Trump won by 0.7%.</p></li>
+<li><p>Even after taking into account the overall bias, this 7.7% residual is more in line with t-distributed data than the normal distribution.</p></li>
+</ul>
+</section>
+<section id="the-t-distribution-11" class="slide level2">
+<h2>The t-distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Wisconsin"</span> <span class="sc">&amp;</span> </span>
+<span id="cb31-3"><a></a>           enddate <span class="sc">&gt;=</span> <span class="st">"2016-10-31"</span> <span class="sc">&amp;</span>  </span>
+<span id="cb31-4"><a></a>           (grade <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A+"</span>, <span class="st">"A"</span>, <span class="st">"A-"</span>, <span class="st">"B+"</span>) <span class="sc">|</span> <span class="fu">is.na</span>(grade))) <span class="sc">|&gt;</span> </span>
+<span id="cb31-5"><a></a>  <span class="fu">mutate</span>(<span class="at">spread =</span> rawpoll_clinton<span class="sc">/</span><span class="dv">100</span> <span class="sc">-</span> rawpoll_trump<span class="sc">/</span><span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-6"><a></a>  <span class="fu">mutate</span>(<span class="at">state =</span> <span class="fu">as.character</span>(state)) <span class="sc">|&gt;</span> </span>
+<span id="cb31-7"><a></a>  <span class="fu">left_join</span>(results_us_election_2016, <span class="at">by =</span> <span class="st">"state"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-8"><a></a>  <span class="fu">mutate</span>(<span class="at">actual =</span> clinton<span class="sc">/</span><span class="dv">100</span> <span class="sc">-</span> trump<span class="sc">/</span><span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb31-9"><a></a>  <span class="fu">summarize</span>(<span class="at">actual =</span> <span class="fu">first</span>(actual), <span class="at">avg =</span> <span class="fu">mean</span>(spread),  </span>
+<span id="cb31-10"><a></a>            <span class="at">sd =</span> <span class="fu">sd</span>(spread), <span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb31-11"><a></a>  <span class="fu">select</span>(actual, avg, sd, n) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  actual        avg         sd n
+1 -0.007 0.07106667 0.01041454 6</code></pre>
+</div>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

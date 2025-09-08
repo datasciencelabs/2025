@@ -2,6 +2,8 @@
 title: "Git and GitHub Tutorial"
 ---
 
+**[Tutorial Video](https://harvard.zoom.us/rec/play/P8gIF7BQKR4R56VxncMITXOFpIzR4EJ8pOLbsQGPte6d53V6R-crppuhIsC-dJW7_ZTMeg_g6mLrUCGq.v5ZJlVDDhQl_ISLs?eagerLoadZvaPages=sidemenu.billing.plan_management&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&startTime=1757311077000&componentName=rec-play&originRequestUrl=https%3A%2F%2Fharvard.zoom.us%2Frec%2Fshare%2FsHYKGg8YpAc7zOjb8FaSLL096n3ZRFqYar2Kh7RYNJCCM3fgP88KjnaAUbrkZbVW.XQSb8JMBGl8BtG6S%3FstartTime%3D1757311077000)**
+
 ## Introduction: The "Final_v2_final_FINAL.docx" Problem
 
 We've all been there. You're working on a big project, and your folder looks like this:
