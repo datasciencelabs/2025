@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>A Beginner’s Guide to Git and GitHub – BST 260: Introduction to Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-969bffafd60ec8060b63c31f43cd2ccd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">A Beginner’s Guide to Git and GitHub</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/datasciencelabs/2025" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../psets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Sets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../oral-evaluations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oral Evaluations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../final-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-the-final_v2_final_final.docx-problem" id="toc-introduction-the-final_v2_final_final.docx-problem" class="nav-link active" data-scroll-target="#introduction-the-final_v2_final_final.docx-problem">Introduction: The “Final_v2_final_FINAL.docx” Problem</a></li>
+  <li><a href="#section-1-what-are-git-and-github" id="toc-section-1-what-are-git-and-github" class="nav-link" data-scroll-target="#section-1-what-are-git-and-github">Section 1: What Are Git and GitHub?</a></li>
+  <li><a href="#section-2-how-you-talk-to-github-https-vs.-ssh" id="toc-section-2-how-you-talk-to-github-https-vs.-ssh" class="nav-link" data-scroll-target="#section-2-how-you-talk-to-github-https-vs.-ssh">Section 2: How You “Talk” to GitHub (HTTPS vs.&nbsp;SSH)</a>
+  <ul class="collapse">
+  <li><a href="#https-the-login-with-password-method" id="toc-https-the-login-with-password-method" class="nav-link" data-scroll-target="#https-the-login-with-password-method">HTTPS (The “Login with Password” Method)</a></li>
+  <li><a href="#ssh-the-use-a-key-method" id="toc-ssh-the-use-a-key-method" class="nav-link" data-scroll-target="#ssh-the-use-a-key-method">SSH (The “Use a Key” Method)</a></li>
+  </ul></li>
+  <li><a href="#section-3-the-core-git-workflow" id="toc-section-3-the-core-git-workflow" class="nav-link" data-scroll-target="#section-3-the-core-git-workflow">Section 3: The Core Git Workflow</a></li>
+  <li><a href="#section-4-practical-guide-1---the-easy-way-with-github-desktop" id="toc-section-4-practical-guide-1---the-easy-way-with-github-desktop" class="nav-link" data-scroll-target="#section-4-practical-guide-1---the-easy-way-with-github-desktop">Section 4: Practical Guide 1 - The Easy Way with GitHub Desktop</a>
+  <ul class="collapse">
+  <li><a href="#step-a-setup-one-time-only" id="toc-step-a-setup-one-time-only" class="nav-link" data-scroll-target="#step-a-setup-one-time-only">Step A: Setup (One Time Only)</a></li>
+  <li><a href="#step-b-cloning-your-first-repository" id="toc-step-b-cloning-your-first-repository" class="nav-link" data-scroll-target="#step-b-cloning-your-first-repository">Step B: Cloning Your First Repository</a></li>
+  <li><a href="#step-c-the-daily-workflow-add-commit-push" id="toc-step-c-the-daily-workflow-add-commit-push" class="nav-link" data-scroll-target="#step-c-the-daily-workflow-add-commit-push">Step C: The Daily Workflow (Add, Commit, Push)</a></li>
+  </ul></li>
+  <li><a href="#section-5-practical-guide-2---the-powerful-way-with-command-line-ssh" id="toc-section-5-practical-guide-2---the-powerful-way-with-command-line-ssh" class="nav-link" data-scroll-target="#section-5-practical-guide-2---the-powerful-way-with-command-line-ssh">Section 5: Practical Guide 2 - The Powerful Way with Command Line + SSH</a>
+  <ul class="collapse">
+  <li><a href="#step-a-setup---generating-and-adding-your-ssh-key-one-time-only" id="toc-step-a-setup---generating-and-adding-your-ssh-key-one-time-only" class="nav-link" data-scroll-target="#step-a-setup---generating-and-adding-your-ssh-key-one-time-only">Step A: Setup - Generating and Adding Your SSH Key (One Time Only)</a></li>
+  <li><a href="#step-b-cloning-with-ssh" id="toc-step-b-cloning-with-ssh" class="nav-link" data-scroll-target="#step-b-cloning-with-ssh">Step B: Cloning with SSH</a></li>
+  <li><a href="#step-c-the-daily-workflow-add-commit-push-1" id="toc-step-c-the-daily-workflow-add-commit-push-1" class="nav-link" data-scroll-target="#step-c-the-daily-workflow-add-commit-push-1">Step C: The Daily Workflow (Add, Commit, Push)</a></li>
+  </ul></li>
+  <li><a href="#additional-topics-best-practices" id="toc-additional-topics-best-practices" class="nav-link" data-scroll-target="#additional-topics-best-practices">Additional Topics &amp; Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#keeping-in-sync-git-pull" id="toc-keeping-in-sync-git-pull" class="nav-link" data-scroll-target="#keeping-in-sync-git-pull">Keeping in Sync: <code>git pull</code></a></li>
+  <li><a href="#writing-good-commit-messages" id="toc-writing-good-commit-messages" class="nav-link" data-scroll-target="#writing-good-commit-messages">Writing Good Commit Messages</a></li>
+  <li><a href="#the-art-of-the-commit-frequency-and-content" id="toc-the-art-of-the-commit-frequency-and-content" class="nav-link" data-scroll-target="#the-art-of-the-commit-frequency-and-content">The Art of the Commit: Frequency and Content</a></li>
+  <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link" data-scroll-target="#recommended-reading">Recommended Reading</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/extra/git_tutorial.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A Beginner’s Guide to Git and GitHub</h1>
+<p class="subtitle lead">From Zero to Pushing Code</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-the-final_v2_final_final.docx-problem" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-the-final_v2_final_final.docx-problem">Introduction: The “Final_v2_final_FINAL.docx” Problem</h2>
+<p>We’ve all been there. You’re working on a big project, and your folder looks like this:</p>
+<ul>
+<li><code>report.docx</code></li>
+<li><code>report_with_edits.docx</code></li>
+<li><code>report_final.docx</code></li>
+<li><code>report_final_REALLY_final.docx</code></li>
+<li><code>report_final_for_prof_smith.docx</code></li>
+<li><code>report_backup_monday.docx</code></li>
+</ul>
+<p>This is a messy, inefficient, and error-prone way to track changes. What if you want to go back to a version from last week? How do you safely merge your work with a collaborator’s? And what if you want to try a new, experimental feature without breaking the main project?</p>
+<p>These problems are all solved by <strong>version control</strong>. The world’s most popular system, <strong>Git</strong>, lets you save snapshots of your work (<em>commits</em>) and create parallel timelines to work on new ideas (<em>branches</em>). While this guide covers the basics, mastering the branching workflow on GitHub is a key skill for collaborating on your final project and beyond.</p>
+</section>
+<section id="section-1-what-are-git-and-github" class="level2">
+<h2 class="anchored" data-anchor-id="section-1-what-are-git-and-github">Section 1: What Are Git and GitHub?</h2>
+<p>People often use the terms “Git” and “GitHub” interchangeably, but they are two different things.</p>
+<ul>
+<li><p><strong>Git</strong> is the version control software that runs <strong>on your local computer</strong>. It’s a command-line tool that tracks changes to your files. Think of it as a “time machine” for your project, allowing you to save “snapshots” (called <strong>commits</strong>) of your work and travel back to them at any time.</p></li>
+<li><p><strong>GitHub</strong> is a <strong>website and cloud-based service</strong> that hosts your Git repositories. It’s a place to store your projects online so you have a backup and can easily collaborate with others. Think of it as a “Google Drive” or “Dropbox” specifically for your Git projects.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Analogy:</strong> Git is the diary you write in on your desk at home. GitHub is the cloud service where you upload a copy of your diary for safekeeping and to share entries with friends.</p>
+</blockquote>
+<p>The basic relationship looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="git_github_relationship.png" class="img-fluid figure-img"></p>
+<figcaption>Diagram showing the relationship between Git on a local computer and GitHub on the internet. Git is used to push code to GitHub and to clone or pull code from GitHub.</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-2-how-you-talk-to-github-https-vs.-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="section-2-how-you-talk-to-github-https-vs.-ssh">Section 2: How You “Talk” to GitHub (HTTPS vs.&nbsp;SSH)</h2>
+<p>When you want to <code>clone</code> (download) or <code>push</code> (upload) your code to GitHub, your computer needs to prove to GitHub that you are who you say you are. This is called <strong>authentication</strong>. There are two primary ways to do this:</p>
+<section id="https-the-login-with-password-method" class="level3">
+<h3 class="anchored" data-anchor-id="https-the-login-with-password-method">HTTPS (The “Login with Password” Method)</h3>
+<ul>
+<li><strong>What it is:</strong> The URL looks like <code>https://github.com/user/repo.git</code>.</li>
+<li><strong>How it works:</strong> Each time you connect to GitHub, it might ask for your username and password (or a <strong>Personal Access Token</strong>, which is a more secure, modern replacement for passwords).</li>
+<li><strong>Pros:</strong>
+<ul>
+<li>Very easy to get started.</li>
+<li>Works everywhere, even behind strict firewalls, because it uses the same port as regular web traffic.</li>
+</ul></li>
+<li><strong>Cons:</strong>
+<ul>
+<li>Can be annoying to repeatedly enter your credentials (though helper tools can save them for you).</li>
+</ul></li>
+<li><strong>Who should use it:</strong> <strong>Beginners!</strong> It’s the simplest way to get up and running. <strong>GitHub Desktop</strong> uses this method automatically and makes it painless.</li>
+</ul>
+</section>
+<section id="ssh-the-use-a-key-method" class="level3">
+<h3 class="anchored" data-anchor-id="ssh-the-use-a-key-method">SSH (The “Use a Key” Method)</h3>
+<ul>
+<li><strong>What it is:</strong> The URL looks like <code>git@github.com:user/repo.git</code>.</li>
+<li><strong>How it works:</strong> You generate a pair of cryptographic keys on your computer: a <strong>private key</strong> (which you keep secret) and a <strong>public key</strong> (which you give to GitHub). When you connect, your computer proves its identity using the private key, and GitHub verifies it using the public key you provided.</li>
+<li><strong>Pros:</strong>
+<ul>
+<li>Extremely secure.</li>
+<li>After setup, you <strong>never have to type your password</strong> to <code>push</code> or <code>pull</code>. It’s much faster for frequent command-line users.</li>
+</ul></li>
+<li><strong>Cons:</strong>
+<ul>
+<li>Requires a one-time setup process that can be tricky for beginners.</li>
+<li>Can sometimes be blocked by corporate or university firewalls.</li>
+</ul></li>
+<li><strong>Who should use it:</strong> Anyone who plans to use the command line regularly. It’s the preferred method for developers.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Our Recommendation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Start with GitHub Desktop.</strong> It uses HTTPS and handles all authentication for you automatically. This is the fastest way to solve the “permission denied” error and get working on your assignments.</li>
+<li><strong>Set up SSH later.</strong> Once you’re comfortable with the Git workflow, take 15 minutes to set up SSH. It will make your command-line experience much smoother in the long run.</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3-the-core-git-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="section-3-the-core-git-workflow">Section 3: The Core Git Workflow</h2>
+<p>Whether you use a GUI like GitHub Desktop or the command line, the underlying process is the same. There are four key steps in a typical workflow.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Give the subgraph an ID ("local") so we can style it
+    subgraph local [On Your Computer]
+        A("&lt;b&gt;Working Directory&lt;/b&gt;&lt;br&gt;Your actual files") -- "git add" --&gt; B("&lt;b&gt;Staging Area&lt;/b&gt;&lt;br&gt;Files marked for next save");
+        B -- "git commit" --&gt; C("&lt;b&gt;Local Repository&lt;/b&gt;&lt;br&gt;Project history in .git");
+    end
+    
+    C -- "git push" --&gt; D("&lt;b&gt;Remote Repository&lt;/b&gt;&lt;br&gt;GitHub.com");
+
+    %% Define a professional and clean color palette for the nodes
+    classDef work fill:#fff7d6,stroke:#d1b749,stroke-width:2px,color:#333
+    classDef stage fill:#d1ecf1,stroke:#74a2aa,stroke-width:2px,color:#333
+    classDef localrepo fill:#d4edda,stroke:#6da978,stroke-width:2px,color:#333
+    classDef remote fill:#e2e3e5,stroke:#868e96,stroke-width:2px,color:#333
+    
+    %% Apply styles to the individual nodes
+    class A work
+    class B stage
+    class C localrepo
+    class D remote
+
+    %% --&gt; FIX: Explicitly style the subgraph background to be light grey &lt;--
+    style local fill:#f8f9fa,stroke:#dee2e6,stroke-width:1px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>Modify Files (Working Directory):</strong> This is just you, working on your project. You edit code, write text, add images, etc.</p></li>
+<li><p><strong>Stage Changes (<code>git add</code>):</strong> You choose which of your modified files you want to include in your next “snapshot” (commit). This is like putting items into a cardboard box before you seal it.</p>
+<ul>
+<li><code>git add file1.R</code> stages just that one file.</li>
+<li><code>git add .</code> stages all modified files in the current directory and subdirectories.</li>
+</ul></li>
+<li><p><strong>Commit Changes (<code>git commit</code>):</strong> You take the “snapshot” of all the files in the staging area. This saves it to your <strong>local</strong> repository history. Every commit has a unique ID and a message describing the changes. This is like sealing the box and writing a label on it.</p>
+<ul>
+<li><code>git commit -m "Add initial data analysis script"</code></li>
+</ul></li>
+<li><p><strong>Push Changes (<code>git push</code>):</strong> You upload your new commits from your local repository to the remote repository on GitHub. This is how you back up your work and share it with others. This is like mailing the box.</p>
+<ul>
+<li><code>git push</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="section-4-practical-guide-1---the-easy-way-with-github-desktop" class="level2">
+<h2 class="anchored" data-anchor-id="section-4-practical-guide-1---the-easy-way-with-github-desktop">Section 4: Practical Guide 1 - The Easy Way with GitHub Desktop</h2>
+<p>GitHub Desktop is a graphical user interface (GUI) that makes using Git incredibly simple by abstracting away the command line.</p>
+<section id="step-a-setup-one-time-only" class="level3">
+<h3 class="anchored" data-anchor-id="step-a-setup-one-time-only">Step A: Setup (One Time Only)</h3>
+<ol type="1">
+<li><strong>Download and Install:</strong> Get GitHub Desktop from <a href="https://desktop.github.com/">desktop.github.com</a>.</li>
+<li><strong>Log In:</strong> Open the application and follow the prompts to log in with your GitHub account. It will handle all authentication for you.</li>
+</ol>
+</section>
+<section id="step-b-cloning-your-first-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-b-cloning-your-first-repository">Step B: Cloning Your First Repository</h3>
+<ol type="1">
+<li>Go to the repository’s page on GitHub.com.</li>
+<li>Click the green <strong><code>&lt; &gt; Code</code></strong> button.</li>
+<li>Select the <strong>“Local”</strong> tab, then click <strong>“Open with GitHub Desktop”</strong>.</li>
+<li>GitHub Desktop will open and ask you where on your computer you want to save the project. Choose a location and click <strong>“Clone”</strong>.</li>
+</ol>
+<p>That’s it! The repository is now on your computer.</p>
+</section>
+<section id="step-c-the-daily-workflow-add-commit-push" class="level3">
+<h3 class="anchored" data-anchor-id="step-c-the-daily-workflow-add-commit-push">Step C: The Daily Workflow (Add, Commit, Push)</h3>
+<ol type="1">
+<li><p><strong>Make Changes:</strong> Open the project folder in RStudio (or your editor of choice) and modify your files as usual.</p></li>
+<li><p><strong>Review and Commit:</strong></p>
+<ul>
+<li>Go back to GitHub Desktop. The “Changes” tab on the left will show you all the files you’ve modified (it shows you the “diffs” — the exact lines you added or removed).</li>
+<li>GitHub Desktop automatically “stages” all your changes.</li>
+<li>In the bottom-left corner, type a descriptive <strong>commit message</strong> in the “Summary” box.</li>
+<li>Click the <strong>“Commit to master”</strong> button.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="GitHub_desktop.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub Desktop Commit Interface</figcaption>
+</figure>
+</div></li>
+<li><p><strong>Push to GitHub:</strong></p>
+<ul>
+<li>After you commit, a blue button will appear at the top saying <strong>“Push origin”</strong>.</li>
+<li>Click it. Your changes are now safely on GitHub!</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="section-5-practical-guide-2---the-powerful-way-with-command-line-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="section-5-practical-guide-2---the-powerful-way-with-command-line-ssh">Section 5: Practical Guide 2 - The Powerful Way with Command Line + SSH</h2>
+<p>This method requires a one-time setup but is much more efficient for long-term command-line use.</p>
+<section id="step-a-setup---generating-and-adding-your-ssh-key-one-time-only" class="level3">
+<h3 class="anchored" data-anchor-id="step-a-setup---generating-and-adding-your-ssh-key-one-time-only">Step A: Setup - Generating and Adding Your SSH Key (One Time Only)</h3>
+<ol type="1">
+<li><p><strong>Open a Terminal.</strong></p>
+<ul>
+<li>On Mac: Use the Terminal app.</li>
+<li>On Windows: Use Git Bash (which comes with Git for Windows) or WSL.</li>
+</ul></li>
+<li><p><strong>Generate a New SSH Key.</strong></p>
+<ul>
+<li>Paste the following command, replacing the email with your own GitHub email.</li>
+<li>Press Enter to accept the default file location and again for no passphrase (or enter one if you want extra security).</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"your_email@example.com"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Add the Key to the SSH Agent.</strong></p>
+<ul>
+<li>This ensures your key is automatically used when you run git commands.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start the ssh-agent in the background</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add your SSH private key to the ssh-agent</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Copy Your Public Key.</strong></p>
+<ul>
+<li>This is the key you will give to GitHub.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On macOS</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pbcopy</span> <span class="op">&lt;</span> ~/.ssh/id_ed25519.pub</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On Windows (in Git Bash)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub <span class="kw">|</span> <span class="ex">clip</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># On Linux</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># If you have xclip installed:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">xclip</span> <span class="at">-selection</span> clipboard <span class="op">&lt;</span> ~/.ssh/id_ed25519.pub</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Otherwise, just print it and copy it manually:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Add the Key to GitHub.</strong></p>
+<ul>
+<li>Go to <a href="https://github.com">github.com</a>.</li>
+<li>Click your profile picture in the top-right and go to <strong>Settings</strong>.</li>
+<li>In the left sidebar, click <strong>“SSH and GPG keys”</strong>.</li>
+<li>Click <strong>“New SSH key”</strong>.</li>
+<li>Give it a descriptive <strong>Title</strong> (e.g., “My MacBook Pro”).</li>
+<li>Paste your public key into the <strong>“Key”</strong> field.</li>
+<li>Click <strong>“Add SSH key”</strong>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="step-b-cloning-with-ssh" class="level3">
+<h3 class="anchored" data-anchor-id="step-b-cloning-with-ssh">Step B: Cloning with SSH</h3>
+<ol type="1">
+<li><p>Go to the repository’s page on GitHub.com.</p></li>
+<li><p>Click the green <strong><code>&lt; &gt; Code</code></strong> button.</p></li>
+<li><p>Select the <strong>SSH</strong> tab. The URL should start with <code>git@github.com:...</code>.</p></li>
+<li><p>Click the copy button.</p></li>
+<li><p>In your terminal, navigate to where you want to store the project, and run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:USER/REPO_NAME.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+<section id="step-c-the-daily-workflow-add-commit-push-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-c-the-daily-workflow-add-commit-push-1">Step C: The Daily Workflow (Add, Commit, Push)</h3>
+<ol type="1">
+<li><p><strong>Navigate into your project directory.</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> REPO_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Make Changes:</strong> Edit your files in RStudio.</p></li>
+<li><p><strong>Check Status:</strong> See what you’ve changed.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Stage your changes.</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stage a single file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add pset-01.qmd</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Or, stage all changes</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Commit your staged changes.</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Finish quadratic formula and add plot"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Push your commit to GitHub.</strong> Because you set up SSH, this will work without a password.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+</section>
+<section id="additional-topics-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="additional-topics-best-practices">Additional Topics &amp; Best Practices</h2>
+<p>Now that you know the basic workflow, let’s cover a few more essential concepts and best practices that will make your experience with Git and GitHub much smoother, especially when collaborating.</p>
+<section id="keeping-in-sync-git-pull" class="level3">
+<h3 class="anchored" data-anchor-id="keeping-in-sync-git-pull">Keeping in Sync: <code>git pull</code></h3>
+<p>What happens if a partner pushes a change to the GitHub repository while you’re working? Your local version is now out of date. To update it, you use <code>git pull</code>.</p>
+<p><code>git pull</code> fetches the latest changes from the remote repository (GitHub) and merges them into your local working directory.</p>
+<blockquote class="blockquote">
+<p><strong>Best Practice:</strong> Always run <code>git pull</code> before you start working on a project, and again right before you <code>git push</code> your own changes. This helps prevent “merge conflicts,” where Git gets confused by simultaneous edits to the same file.</p>
+</blockquote>
+</section>
+<section id="writing-good-commit-messages" class="level3">
+<h3 class="anchored" data-anchor-id="writing-good-commit-messages">Writing Good Commit Messages</h3>
+<p>Your commit messages are a log of your project’s history. They are a communication tool for your future self and for your teammates. A vague message like “updated file” is useless. A good commit message follows a simple convention:</p>
+<ol type="1">
+<li><strong>The Subject Line:</strong> A short summary (under 50 characters) written in the present tense, imperative mood. Think of it as a command:
+<ul>
+<li><strong>Good:</strong> <code>Add initial data analysis script</code></li>
+<li><strong>Bad:</strong> <code>added a script</code> or <code>adding the script</code></li>
+</ul></li>
+<li><strong>The Body (Optional):</strong> After the subject line, leave a blank line and write a more detailed explanation. Describe the <em>what</em> and the <em>why</em>, not the <em>how</em> (the code itself shows the <em>how</em>).</li>
+</ol>
+<p><strong>Example of a great commit:</strong></p>
+<pre><code>Fix bug in quadratic formula calculation
+
+The formula was not correctly handling cases where the discriminant
+was zero, leading to a single NA instead of one real root. This
+commit adds a specific check for discriminant == 0.</code></pre>
+</section>
+<section id="the-art-of-the-commit-frequency-and-content" class="level3">
+<h3 class="anchored" data-anchor-id="the-art-of-the-commit-frequency-and-content">The Art of the Commit: Frequency and Content</h3>
+<p>How often should you commit? What should go into a single commit?</p>
+<p>The goal is to make <strong>atomic commits</strong>: each commit should represent a single, logical, self-contained change. Think of commits as small, logical steps in a recipe, not just one big “cooked the meal” commit at the end.</p>
+<ul>
+<li><strong>Do:</strong> Commit when you’ve completed a small task, like fixing one bug, adding one new function, or completing the first part of a problem set question.</li>
+<li><strong>Don’t:</strong> Lump unrelated changes together (e.g., fixing a typo in the README, adding a new plot, and changing a variable name should ideally be separate commits).</li>
+<li><strong>Don’t:</strong> Commit broken code that will prevent a collaborator (or yourself) from running the project.</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Mantra to remember:</strong> Commit early, commit often. Small, frequent commits are easier to understand and, if necessary, to undo.</p>
+</blockquote>
+</section>
+<section id="recommended-reading" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-reading">Recommended Reading</h3>
+<p>The topics in this guide are just the beginning. To prepare for the final project and for using version control professionally, we highly recommend exploring these resources:</p>
+<ul>
+<li><strong>Chapter 19</strong> of the course textbook, which provides another overview of these concepts.</li>
+<li><strong>The first two chapters of <em>Pro Git</em></strong> by Scott Chacon and Ben Straub. This is considered the definitive guide to Git. It’s available for free online, and the initial chapters perfectly explain the foundational ideas behind version control. You can read it at <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a>.</li>
+</ul>
+<hr>
+<p>That’s it! You now know the difference between Git and GitHub, how to authenticate with HTTPS and SSH, and the fundamental workflow for versioning your projects using both a friendly GUI and the powerful command line.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/extra/git_tutorial.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
