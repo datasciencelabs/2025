@@ -23,9 +23,9 @@ Students are assigned to Teaching Fellows based on the **first letter of their l
 
 | TF Name | Last Name Starting Letter |
 |:--------|:--------------------------|
-| Angela | A-F |
-| Ava | G-K |
-| Emma | L-P |
+| Angela | A-H |
+| Ava | I-Q |
+| Emma | R-X |
 | Jing | Q-Z |
 
 **Scheduling Instructions**: 
