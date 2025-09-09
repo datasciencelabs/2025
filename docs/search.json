@@ -596,7 +596,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-09-08 03:02:01 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-09-08 07:02:01 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-09-09 14:06:48 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-09-09 18:06:48 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -610,7 +610,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 3\n\nnow() |&gt; minute() \n\n[1] 2\n\nnow() |&gt; second() \n\n[1] 1.787875"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 14\n\nnow() |&gt; minute() \n\n[1] 6\n\nnow() |&gt; second() \n\n[1] 48.56998"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1030,7 +1030,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.02313 61.84785 65.97922 70.12404 70.02304 73.01627 67.00313 73.12703\n [9] 66.89271 69.94341"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.13633 61.97373 65.93203 70.01390 70.07509 73.23291 67.06241 73.22122\n [9] 66.95692 69.85242"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -2703,14 +2703,14 @@
     "href": "slides/ml/40-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.859 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-1",
     "href": "slides/ml/40-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.994\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.998\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/40-knn.html#over-training-2",
@@ -3522,7 +3522,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4390655 0.5009345\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.395351 0.456649\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4320946 0.4939054\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.3983237 0.4596763\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3564,7 +3564,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9479"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9519"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4412,7 +4412,7 @@
     "href": "oral-evaluations.html",
     "title": "Oral Evaluations",
     "section": "",
-    "text": "Oral evaluations account for 20% of your final grade, divided into four separate 5% evaluations throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code.\nImportant: You can only schedule an oral evaluation meeting after you have completed and submitted the problem sets included in that evaluation period.\n\n\n\n\n\nEvaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%\n\n\n\n\n\n\nStudents are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-H\n\n\nAva\nI-Q\n\n\nEmma\nR-X\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom\n\n\n\nYour oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations\n\n\n\n\n\n\nDuring your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
+    "text": "Oral evaluations account for 20% of your final grade, divided into four separate 5% evaluations throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code.\nImportant: You can only schedule an oral evaluation meeting after you have completed and submitted the problem sets included in that evaluation period.\n\n\n\n\n\nEvaluation\nDate Range\nProblem Sets Included\nGrade Weight\n\n\n\n\nOral Eval 1\nSeptember 15 - September 30\nProblem Sets 1-2\n5%\n\n\nOral Eval 2\nOctober 15 - October 31\nProblem Sets 3-5\n5%\n\n\nOral Eval 3\nNovember 5-20\nProblem Sets 6-7\n5%\n\n\nOral Eval 4\nDecember 1 - December 15\nProblem Sets 8-9\n5%\n\n\n\n\n\n\nStudents are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-H\n\n\nAva\nI-Q\n\n\nEmma\nR-X\n\n\nJing\nY-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom\n\n\n\nYour oral evaluation will be graded on the following scale:\n\n\n\n\n\n\n\nScore\nCriteria\n\n\n\n\n0/5\nNo meeting scheduled\n\n\n1/5\nNo understanding of the code/answers\n\n\n2/5\nLimited understanding of code/answers\n\n\n3/5\nModerate understanding of code/answers but with significant gaps in explanations\n\n\n4/5\nGood understanding of code/answers but moderate gaps in explanations\n\n\n5/5\nExcellent understanding of code/answers with either very little or no gaps in explanations\n\n\n\n\n\n\nDuring your 15-minute meeting, your TF may ask you to:\n\nExplain specific lines or sections of your code\nWalk through your problem-solving approach\nJustify your choice of methods or functions\nDiscuss any challenges you encountered and how you solved them\nDemonstrate your understanding of key concepts covered in the problem sets\n\nCome prepared to discuss any part of your submitted work in detail.",
     "crumbs": [
       "Oral Evaluations"
     ]
@@ -4432,7 +4432,7 @@
     "href": "oral-evaluations.html#tf-assignments",
     "title": "Oral Evaluations",
     "section": "",
-    "text": "Students are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-H\n\n\nAva\nI-Q\n\n\nEmma\nR-X\n\n\nJing\nQ-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom",
+    "text": "Students are assigned to Teaching Fellows based on the first letter of their last name:\n\n\n\nTF Name\nLast Name Starting Letter\n\n\n\n\nAngela\nA-H\n\n\nAva\nI-Q\n\n\nEmma\nR-X\n\n\nJing\nY-Z\n\n\n\nScheduling Instructions: Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:\n\nAngela: #oral-evals-angela\nAva: #oral-evals-ava\nEmma: #oral-evals-emma\nJing: #oral-evals-jing\n\nZoom Link for Oral Evaluations: Zoom",
     "crumbs": [
       "Oral Evaluations"
     ]
@@ -6803,7 +6803,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.450163\n\nsd(x_hat) \n\n[1] 0.0157283"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498539\n\nsd(x_hat) \n\n[1] 0.01588481"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10275,7 +10275,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 977752 0.794\n 2 158365 0.791\n 3 144186 0.791\n 4 428831 0.784\n 5 185150 0.767\n 6 823479 0.764\n 7  39964 0.758\n 8 111882 0.750\n 9 392493 0.749\n10 665432 0.746\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.794."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 517486 0.848\n 2 416499 0.792\n 3 345725 0.774\n 4 484939 0.772\n 5 284055 0.764\n 6 981803 0.764\n 7 234848 0.758\n 8 787818 0.755\n 9 195228 0.755\n10 346492 0.749\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.848."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10310,7 +10310,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x         1.24     0.198      6.26 0.00000219"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic      p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 x        0.919     0.120      7.69 0.0000000847"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11528,7 +11528,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Male   Male   Female Female Male   Male   Female Female Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Male   Male   Female Female Male   Male   Female Female Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Male   Female Male   Female Female Female Female Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Male   Female Male   Female Female Female Female Male   Female\nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11703,7 +11703,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x0000024ae6779af8&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000001b09f72caf8&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",

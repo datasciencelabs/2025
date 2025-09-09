@@ -26,7 +26,7 @@ Students are assigned to Teaching Fellows based on the **first letter of their l
 | Angela | A-H |
 | Ava | I-Q |
 | Emma | R-X |
-| Jing | Q-Z |
+| Jing | Y-Z |
 
 **Scheduling Instructions**: 
 Contact your assigned TF through their dedicated Slack channel to schedule your meeting. Channel assignments:
