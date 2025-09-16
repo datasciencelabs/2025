@@ -5,6 +5,11 @@ date: 2025-09-28
 
 In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race. You can find more information about the NHANES survey data in [reference manual](https://cran.r-project.org/web/packages/NHANES/refman/NHANES.html) of the `NHANES` CRAN package.
 
+### Grading Information {.unnumbered}
+
+Problems 1-15 are mandatory and will be included in your grade. Problems 16-18 are optional and provided for additional practice.
+
+
 ### Instructions {.unnumbered}
 
 - For each exercise, we want you to write a single line of code using the pipe (`|>`) to chain together multiple operations. This doesn't mean the code must fit within 80 characters or be written on a single physical line, but rather that the entire sequence of operations can be executed as one continuous line of code without needing to assign intermediate values or create new variables.
@@ -182,6 +187,8 @@ Write a function that computes the number of observations in each gender, age gr
 ```{r}
 ## code here
 ```
+
+### Optional Exercises {.unnumbered}
 
 16. Create a visualization comparing SBP distributions across the three race groups using box plots. Make separate plots for smokers (`Smoke100 == "Yes"`) and non-smokers (`Smoke100 == "No"`), and use `facet_wrap` to create separate panels for males and females. Filter out missing values for both `BPSysAve` and `Smoke100`. Add appropriate axis labels and a title: "Systolic Blood Pressure by Race and Smoking Status".
 

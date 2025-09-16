@@ -7,6 +7,7 @@ listing:
     contents:
       - psets/pset-01-unix-quarto.qmd
       - psets/pset-02-r-vectorization.qmd
+      - psets/pset-03-tidyverse.qmd
     type: table
     fields: [title, date]
     date-format: "ddd, MMM DD"

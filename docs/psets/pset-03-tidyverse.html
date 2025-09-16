@@ -219,8 +219,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#grading-information" id="toc-grading-information" class="nav-link active" data-scroll-target="#grading-information">Grading Information</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#optional-exercises" id="toc-optional-exercises" class="nav-link" data-scroll-target="#optional-exercises">Optional Exercises</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-03-tidyverse.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -253,6 +255,10 @@ window.Quarto = {
 
 
 <p>In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race. You can find more information about the NHANES survey data in <a href="https://cran.r-project.org/web/packages/NHANES/refman/NHANES.html">reference manual</a> of the <code>NHANES</code> CRAN package.</p>
+<section id="grading-information" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="grading-information">Grading Information</h3>
+<p>Problems 1-15 are mandatory and will be included in your grade. Problems 16-18 are optional and provided for additional practice.</p>
+</section>
 <section id="instructions" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="instructions">Instructions</h3>
 <ul>
@@ -412,6 +418,9 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="optional-exercises" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="optional-exercises">Optional Exercises</h3>
 <ol start="16" type="1">
 <li>Create a visualization comparing SBP distributions across the three race groups using box plots. Make separate plots for smokers (<code>Smoke100 == "Yes"</code>) and non-smokers (<code>Smoke100 == "No"</code>), and use <code>facet_wrap</code> to create separate panels for males and females. Filter out missing values for both <code>BPSysAve</code> and <code>Smoke100</code>. Add appropriate axis labels and a title: “Systolic Blood Pressure by Race and Smoking Status”.</li>
 </ol>

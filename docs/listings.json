@@ -3,7 +3,8 @@
     "listing": "/psets.html",
     "items": [
       "/psets/pset-01-unix-quarto.html",
-      "/psets/pset-02-r-vectorization.html"
+      "/psets/pset-02-r-vectorization.html",
+      "/psets/pset-03-tidyverse.html"
     ]
   },
   {
