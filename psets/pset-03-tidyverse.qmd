@@ -1,6 +1,6 @@
 ---
 title: Problem set 3 
-date: 2025-09-26
+date: 2025-09-29
 ---
 
 In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race.
