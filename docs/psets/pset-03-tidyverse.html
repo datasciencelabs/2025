@@ -252,7 +252,7 @@ window.Quarto = {
 </header>
 
 
-<p>In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race.</p>
+<p>In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race. You can find more information about the NHANES survey data in <a href="https://cran.r-project.org/web/packages/NHANES/refman/NHANES.html">reference manual</a> of the <code>NHANES</code> CRAN package.</p>
 <section id="instructions" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="instructions">Instructions</h3>
 <ul>
@@ -301,7 +301,7 @@ window.Quarto = {
 <section id="exercises" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h3>
 <ol type="1">
-<li>Filter the <code>NHANES</code> data to only include survey year 2011-2012. Save the resulting <code>data.frame</code> in <code>dat</code>. This table should have 5,000 rows and 76 columns.</li>
+<li>Filter the <code>NHANES</code> data to only include survey year 2011-2012. Save the resulting <code>data.frame</code> (in <code>tbl</code> or <code>tbl_df</code> format) in <code>dat</code>. This <code>data.frame</code> should have 5,000 rows and 76 columns.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -357,7 +357,7 @@ window.Quarto = {
 </div>
 <p>Given these results provide an explanation for the difference in systolic pressure is lower when comparing the <code>White</code> and <code>Mexican</code> groups.</p>
 <ol start="9" type="1">
-<li>When the age distribution between two populations we can’t conclude that there are differences in SBP based just on the population averages. The observed differences are likely due to age differences rather than genetic differences. We will therefore stratify by group and then compare SBP. But before we do this, we might need redefine <code>dat</code> to avoid small groups.</li>
+<li>When the age distributions differ between two populations, we can’t conclude that there are differences in SBP based just on the population averages. The observed differences are likely due to age differences rather than genetic differences. We will therefore stratify by group and then compare SBP. But before we do this, we might need redefine <code>dat</code> to avoid small groups.</li>
 </ol>
 <p>Write a function that computes the number of observations in each gender, age group and race combination. Show the groups with less than five observations. Make sure to remove the rows with no BPSysAve measurments before calculating the number of observations. Show a table with four columns representing gender, age strate, group, and the number of individuals in that group. Make sure to include combinations with 0 individuals (hint: use <code>complete</code>).</p>
 <div class="cell">

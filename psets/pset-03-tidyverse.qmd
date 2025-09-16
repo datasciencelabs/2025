@@ -3,7 +3,7 @@ title: Problem set 3
 date: 2025-09-28
 ---
 
-In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race.
+In these exercises, we will explore a subset of the NHANES dataset to investigate potential differences in systolic blood pressure across groups defined by self reported race. You can find more information about the NHANES survey data in [reference manual](https://cran.r-project.org/web/packages/NHANES/refman/NHANES.html) of the `NHANES` CRAN package.
 
 ### Instructions {.unnumbered}
 
@@ -56,7 +56,7 @@ options(digits = 2)
 ### Exercises {.unnumbered}
 
 
-1. Filter the `NHANES` data to only include survey year 2011-2012. Save the resulting `data.frame` in `dat`.  This table should have 5,000 rows and 76 columns.
+1. Filter the `NHANES` data to only include survey year 2011-2012. Save the resulting `data.frame` (in `tbl` or `tbl_df` format) in `dat`.  This `data.frame` should have 5,000 rows and 76 columns. 
 
 ```{r}
 ## code here
@@ -124,9 +124,10 @@ Below the graph, comment on what notice about the age distributions and how this
 
 Given these results provide an explanation for the difference in systolic pressure is lower when comparing the `White` and `Mexican` groups.
 
-9. When the age distribution between two populations we can't conclude that there are differences in SBP based just on the population averages. The observed differences are likely due to age differences rather than genetic differences. We will therefore stratify by group and then compare SBP. But before we do this, we might need redefine `dat` to avoid small groups. 
+9. When the age distributions differ between two populations, we can't conclude that there are differences in SBP based just on the population averages. The observed differences are likely due to age differences rather than genetic differences. We will therefore stratify by group and then compare SBP. But before we do this, we might need redefine `dat` to avoid small groups. 
 
 Write a function that computes the number of observations in each gender, age group and race combination. Show the groups with less than five observations. Make sure to remove the rows with no BPSysAve measurments before calculating the number of observations. Show a table with four columns representing gender, age strate, group, and the number of individuals in that group. Make sure to include combinations with 0 individuals (hint: use `complete`).
+
 
 ```{r}
 ## code here
