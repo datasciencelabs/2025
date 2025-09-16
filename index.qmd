@@ -57,7 +57,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | Problem Set 6         | Probability | Oct 24   | easy | 
 | Problem Set 7          | Predict the election |Nov 03   |  hard | 
 | Problem Set 8          | Excess mortality after Hurricane María |Nov 14   |  medium | 
-| Problem Set 9          | Matrices | Nov 21   | easy | 
+| Problem Set 9          | Matrices | Nov 23   | easy | 
 | Problem Set 10         | Digit reading | Dec 15   | hard | 
 |Final Project| Your choice | Dec 19   | hard  |
 
