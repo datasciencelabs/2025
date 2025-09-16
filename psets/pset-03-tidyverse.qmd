@@ -56,7 +56,7 @@ options(digits = 2)
 ### Exercises {.unnumbered}
 
 
-1. Filter the `NHANES` data to only include survey year 2011-2012. Save the resulting table in `dat`.  This table should have 5,000 rows and 76 columns.
+1. Filter the `NHANES` data to only include survey year 2011-2012. Save the resulting `data.frame` in `dat`.  This table should have 5,000 rows and 76 columns.
 
 ```{r}
 ## code here
@@ -116,8 +116,7 @@ Below the graph, comment on what notice about the age distributions and how this
 ## code here
 ```
 
-8. Summarize the results shown in the graph by 
-compute the median age for each `Race3` group and the percent of individuals that are younger than 18. Order the rows by median age. The resulting data frame should have 6 rows (one for each group) and three columns to denote group, median age, and children respectively.
+8. Summarize the results shown in the graph by computing the median age for each `Race3` group and the percent of individuals that are younger than 18. Order the rows by median age. The resulting data frame should have 6 rows (one for each group) and three columns to denote group, median age, and children respectively.
 
 ```{r}
 ## code here
@@ -138,7 +137,7 @@ Write a function that computes the number of observations in each gender, age gr
     * As before, include only survey year 2011-2012.
     * Remove the observations with no age group reported.
     * Remove the 0-9 age group.
-    * Combine the 60-69 and 70+ ageroups into a 60+ group.
+    * Combine the 60-69 and 70+ age groups into a 60+ group.
     * Remove observations reporting `Other` in `Race3`.
     * Rename the variable `Race3` to `Race`. 
 
@@ -151,7 +150,7 @@ Write a function that computes the number of observations in each gender, age gr
 ## code here
 ```
 
-11. Crete a plot that shows the averege BPS for each age decade. Show the different race groups with color and lines joining them. Generate a two plots, one for males and one for females.
+11. Crete a plot that shows the average BPS for each age decade. Show the different race groups with color and lines joining them. Generate a two plots, one for males and one for females.
  
 ```{r}
 ## code here
