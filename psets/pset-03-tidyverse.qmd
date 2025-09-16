@@ -171,3 +171,32 @@ Write a function that computes the number of observations in each gender, age gr
 ## code here
 ```
 
+14. We want to explore if BMI might also be a confounder. Create a table showing the average BMI (`BMI`) for each `Race` and `Gender` combination using the redefined `dat` from exercise 10. Include the number of observations, average BMI, and standard deviation of BMI for each group. Remove observations with missing BMI values before calculating. Order the results by average BMI from lowest to highest.
+
+```{r}
+## code here
+```
+
+15. Smoking is another potential confounder for blood pressure. Create a summary table that shows the average SBP by smoking status (`Smoke100`) for each `Race` and `Gender` combination. The table should have columns for race, gender, smoking status (Yes/No), number of observations, average SBP, and standard deviation of SBP. Filter out observations with missing `Smoke100` or `BPSysAve` values, and arrange by race, then gender, then smoking status.
+
+```{r}
+## code here
+```
+
+16. Create a visualization comparing SBP distributions across the three race groups using box plots. Make separate plots for smokers (`Smoke100 == "Yes"`) and non-smokers (`Smoke100 == "No"`), and use `facet_wrap` to create separate panels for males and females. Filter out missing values for both `BPSysAve` and `Smoke100`. Add appropriate axis labels and a title: "Systolic Blood Pressure by Race and Smoking Status".
+
+```{r}
+## code here
+```
+
+17. We want to identify which age-race-gender combinations have insufficient sample sizes for reliable analysis. Create a table showing the count of observations for each combination of `AgeDecade`, `Race`, and `Gender`, but only for combinations that have fewer than 10 observations. Include only observations with non-missing `BPSysAve` values. The resulting table should have four columns: age decade, race, gender, and count.
+
+```{r}
+## code here
+```
+
+18. For your final analysis, create a comprehensive summary table that combines multiple factors. For each combination of `Race` and `Gender`, calculate the overall average SBP, the average age, the percentage of smokers, and the average BMI. Include the number of observations for each group. Filter out rows with missing values for `BPSysAve`, `Age`, `Smoke100`, or `BMI`. Round all numeric values to 1 decimal place and arrange by race then gender.
+
+```{r}
+## code here
+```

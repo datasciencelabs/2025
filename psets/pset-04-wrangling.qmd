@@ -96,7 +96,7 @@ library(janitor)
 8. The following URL:
 
 ```{r}
-url <- "https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json"
+url <- "https://github.com/datasciencelabs/2025/raw/refs/heads/main/data/regions.json"
 ```
 
 points to a JSON file that lists the states in the 10 Public Health Service (PHS) defined by CDC. We want to add these regions to the `population` dataset. To facilitate this create a data frame called `regions` that has two columns `state_name`, `region`, `region_name`. One of the regions has a long name. Change it to something shorter.
@@ -106,7 +106,7 @@ points to a JSON file that lists the states in the 10 Public Health Service (PHS
 #| warning: false
 library(jsonlite)
 library(purrr)
-url <- "https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/regions.json"
+url <- "https://github.com/datasciencelabs/2025/raw/refs/heads/main/data/regions.json"
 # regions <- use jsonlit JSON parser 
 # regions <- convert list to data frame. You can use map_df in purrr package 
 ```
@@ -142,5 +142,27 @@ api <- "https://data.cdc.gov/resource/pwn4-m3yp.json"
 #cases |> 
 ```
 
+13. The dates in the `cases` dataset are stored as character strings. Use the **lubridate** package to properly parse the `date` column, then create a summary table showing the total COVID-19 cases by month and year for 2020 and 2021. The table should have columns for year, month (as month name), and total cases across all states. Order by year and month.
+
+```{r}
+#cases |> 
+```
+
+14. The following URL provides additional COVID-19 data from the CDC in JSON format:
+
+```{r}
+deaths_url <- "https://data.cdc.gov/resource/9bhg-hcku.json"
+```
+
+Use **httr2** to download COVID-19 death data from this endpoint. Make sure to remove the default limit to get all available data. Create a clean dataset called `deaths` with columns `state`, `date`, and `deaths` (renamed from the original column name). Ensure dates are in proper Date format and deaths are numeric.
 
 
+```{r}
+# Your code here
+```
+
+15. Using the `deaths` dataset you created, make a bar plot showing the total COVID-19 deaths by state. Show only the top 10 states with the highest death counts. Order the bars from highest to lowest and use appropriate labels and title.
+
+```{r}
+# Your code here
+```

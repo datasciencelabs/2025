@@ -400,6 +400,36 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="14" type="1">
+<li>We want to explore if BMI might also be a confounder. Create a table showing the average BMI (<code>BMI</code>) for each <code>Race</code> and <code>Gender</code> combination using the redefined <code>dat</code> from exercise 10. Include the number of observations, average BMI, and standard deviation of BMI for each group. Remove observations with missing BMI values before calculating. Order the results by average BMI from lowest to highest.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="15" type="1">
+<li>Smoking is another potential confounder for blood pressure. Create a summary table that shows the average SBP by smoking status (<code>Smoke100</code>) for each <code>Race</code> and <code>Gender</code> combination. The table should have columns for race, gender, smoking status (Yes/No), number of observations, average SBP, and standard deviation of SBP. Filter out observations with missing <code>Smoke100</code> or <code>BPSysAve</code> values, and arrange by race, then gender, then smoking status.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="16" type="1">
+<li>Create a visualization comparing SBP distributions across the three race groups using box plots. Make separate plots for smokers (<code>Smoke100 == "Yes"</code>) and non-smokers (<code>Smoke100 == "No"</code>), and use <code>facet_wrap</code> to create separate panels for males and females. Filter out missing values for both <code>BPSysAve</code> and <code>Smoke100</code>. Add appropriate axis labels and a title: “Systolic Blood Pressure by Race and Smoking Status”.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="17" type="1">
+<li>We want to identify which age-race-gender combinations have insufficient sample sizes for reliable analysis. Create a table showing the count of observations for each combination of <code>AgeDecade</code>, <code>Race</code>, and <code>Gender</code>, but only for combinations that have fewer than 10 observations. Include only observations with non-missing <code>BPSysAve</code> values. The resulting table should have four columns: age decade, race, gender, and count.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="18" type="1">
+<li>For your final analysis, create a comprehensive summary table that combines multiple factors. For each combination of <code>Race</code> and <code>Gender</code>, calculate the overall average SBP, the average age, the percentage of smokers, and the average BMI. Include the number of observations for each group. Filter out rows with missing values for <code>BPSysAve</code>, <code>Age</code>, <code>Smoke100</code>, or <code>BMI</code>. Round all numeric values to 1 decimal place and arrange by race then gender.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
