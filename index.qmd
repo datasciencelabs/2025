@@ -65,7 +65,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
-| Robert Gentleman  | Monday, 11:30 am to 12:30 pm  |   Building 2 Room 437F     |
+| Robert Gentleman  | Monday, 1:00 pm to 2:00 pm  |   Building 2 Room 437F (October via Appointment)     |
 | Anthony Christidis  | Friday, 12:30 pm to 1:30 pm |   [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)     |
 | Angela Wang | Monday, 3:45 pm to 4:45 pm     | Kresge 204 (Except 11/3 which will be in FXB G13)         |
 | Ava Harrington   | Thursday, 2:00 pm to 3:00 pm     | Kresge 204         |
