@@ -81,23 +81,26 @@ Problem set submissions need to be completely reproducible Quarto documents. **I
 
 ## Oral Evaluations
 
-Oral evaluations account for **20% of your final grade**, divided into four separate evaluations (5% each) throughout the semester. Each student must schedule a 15-minute Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code and approach.
+Oral evaluations account for **20% of your final grade**, divided into three separate evaluations throughout the semester. Each student must schedule a Zoom meeting with their assigned Teaching Fellow (TF) to discuss their problem set solutions and demonstrate understanding of their code and approach.
 
 **Key Details:**
 
-- **Four evaluations** covering 2 or 3 problem sets each 
-- Students are assigned to TFs based on the **first letter of their last name**
-- You can only schedule a meeting **after completing** the problem sets included in that evaluation period
+- **First evaluation**: 15 minutes, 5% of final grade, covers 2 problem sets
+- **Second evaluation**: 15 minutes, 5% of final grade, covers 3 problem sets  
+- **Final evaluation**: 20 minutes, 10% of final grade, covers 4 problem sets
+- Students are assigned to TFs based on the **first letter of their last name** (see assignments on the full page)
+- You can **only schedule a meeting after completing** all problem sets included in that evaluation period
 - Meetings are conducted via **Zoom** using dedicated Slack channels for scheduling
+- **Failure to schedule and attend a meeting results in 0 points** for that evaluation
 
-During each 15-minute session, your TF may ask you to:
+During each session, your TF may ask you to:
 
 - Explain specific sections of your code
 - Walk through your problem-solving approach
 - Justify your choice of methods or functions
 - Discuss challenges you encountered and how you solved them
 
-**Grading Scale**: 0-5 points based on your demonstrated understanding, from no understanding (1/5) to excellent understanding with minimal gaps (5/5). Not scheduling a meeting results in 0/5.
+**Grading Scale**: 0-5 points based on your demonstrated understanding, ranging from no understanding (0 points) to excellent understanding with minimal gaps (5 points).
 
 See the [Oral Evaluations page](https://datasciencelabs.github.io/2025/oral-evaluations.html) for complete details including scheduling instructions, TF assignments, and full grading criteria.
 
