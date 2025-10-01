@@ -53,7 +53,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | Sep 18   |medium | 
 | [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | Sep 28   |hard | 
 | [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | Oct 5   | hard | 
-| Problem Set 5 |  Covid 19 data visualization | Oct 10   |medium | 
+| Problem Set 5 |  Covid 19 data visualization | Oct 12   |medium | 
 | Problem Set 6         | Probability | Oct 24   | easy | 
 | Problem Set 7          | Predict the election |Nov 03   |  hard | 
 | Problem Set 8          | Excess mortality after Hurricane María |Nov 14   |  medium | 

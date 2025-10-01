@@ -1,6 +1,7 @@
 ---
-title: Problem set 5
-date: 2025-10-10
+title: "Problem Set 5"
+date: "2025-10-12"
+format: html
 ---
 
 ## Introduction 
@@ -45,7 +46,6 @@ Your task is divided into three parts:
 
 * The `figs` directory should contain three PNG files, with each file corresponding to one of the figures you are asked to create.
 
-
 Detailed instructions follow for each of the tasks.
 
 ## Download data
@@ -55,7 +55,19 @@ For this part we want the following:
 * Save all your code in a file called `wrangle.R` that produces the final data frame.
 * When executed, this code should save the final data frame in an RDA file in the `data` directory. 
 
-1. Copy the relevant code from the previous homework to create the `population` data frame. Put this code in the the `wrangle.R` file in the `code` directory. Comment the code so we know where the population is create, where the regions are read in, and where we combine these.
+1. Copy the relevant code from the previous homework to create the `population` data frame. Put this code in the the `wrangle.R` file in the `code` directory. Comment the code so we know where the population is created, where the regions are read in, and where we combine these.
+
+```{r}
+#| eval: false
+## Create population data frame
+# Your code here
+
+## Read in regions data
+# Your code here  
+
+## Combine population and regions
+# Your code here
+```
 
 
 2. In the previous problem set we wrote the following script to download cases data:
@@ -69,18 +81,30 @@ cases_raw <- request(api) |>
   resp_body_json(simplifyVector = TRUE)
 ```
 
-We are now going to download three other datasets from CDC that provide hospitalization, provisional COVID deaths, and vaccine data. A different endpoint is provided for each one, but the requests are the same otherwise. To avoid rewriting the same code more than once, write a function called `get_cdc_data` that receives and endpoint and returns a data frame. Save this code in a file called `functions.R`.
+We are now going to download three other datasets from CDC that provide hospitalization, provisional COVID deaths, and vaccine data. A different endpoint is provided for each one, but the requests are the same otherwise. To avoid rewriting the same code more than once, write a function called `get_cdc_data` that receives an endpoint and returns a data frame. Save this code in a file called `functions.R`.
+
+```{r}
+#| eval: false
+get_cdc_data <- function(endpoint) {
+  # Your function code here
+}
+```
 
 
-
-3. Use the `get_cdc` Download the cases, hospitalization, deaths, and vaccination data and save the data frames. We recommend saving them into objects called: `cases_raw`,  `hosp_raw`, `deaths_raw`, and `vax_raw`.
+3. Use the `get_cdc_data` Download the cases, hospitalization, deaths, and vaccination data and save the data frames. We recommend saving them into objects called: `cases_raw`,  `hosp_raw`, `deaths_raw`, and `vax_raw`.
 
 * cases - `https://data.cdc.gov/resource/pwn4-m3yp.json`
 * hospitalizations - `https://data.cdc.gov/resource/39z2-9zu6.json`
 * deaths - `https://data.cdc.gov/resource/r8kw-7aab.json`
 * vaccinations `https://data.cdc.gov/resource/rh2h-3yt2.json`
 
-We recommend saving them into objects called: `cases_raw`,  `hosp_raw`, `deaths_raw`, and `vax_raw`. Add the code to the `wranling.R` file. Add comments to describe we read in data here.
+Add the code to the `wrangle.R` file. Add comments to describe where you read in data.
+
+```{r}
+#| eval: false
+## Download CDC data
+# Your code here
+```
 
 ## Wrangling Challenge
 
@@ -106,14 +130,35 @@ In this section, you will wrangle the files downloaded in the previous step into
 5. Wrangle the cases data frame to keep state MMWR year, MMWR week, and the total number of cases for that week in that state. Keep only states for which we have population estimates.
 Hint: Use `as_date`, `ymd_hms`, `epiweek` and `epiyear` functions in the **lubridate** package. Comment appropriately.
 
+```{r}
+#| eval: false
+## Wrangle cases data
+# Your code here
+```
 
 6. Now repeat the same exercise for hospitalizations. Note that you will have to collapse the data into weekly data and keep the same columns as in the cases dataset, except keep total weekly hospitalizations instead of cases. Remove weeks with less than 7 days reporting. Add this code to `wrangle.R` and comment appropriately.
 
+```{r}
+#| eval: false
+## Wrangle hospitalizations data
+# Your code here
+```
 
 7. Repeat what you did in the previous two exercises for provisional COVID-19 deaths. Add this code to `wrangle.R` and comment appropriately.
 
+```{r}
+#| eval: false
+## Wrangle deaths data
+# Your code here
+```
 
 8. Repeat this now for vaccination data. Keep the variables `series_complete` and `booster` along with state and date. Add this code to `wrangle.R` and comment appropriately.
+
+```{r}
+#| eval: false
+## Wrangle vaccination data
+# Your code here
+```
 
 9. Now we are ready to join the tables. We will only consider 2020 and 2021 as we don't have population sizes for 2022. However, because we want to guarantee that all dates are included we will create a data frame with all possible weeks. Add this code to your `wrangle.R` file. We can use this:
 
@@ -131,22 +176,54 @@ dates_and_pop <- cross_join(all_dates, data.frame(state = unique(population$stat
 
 Now join all the table to create your final table. Make sure it is ordered by date within each state. Call it `dat` and save an RDS file to the `data` directory.  Add this code to `wrangle.R` and comment appropriately.
 
+```{r}
+#| eval: false
+## Join all datasets
+# Your code here
+
+## Save final dataset
+# Your code here
+```
 
 ## Data visualization generate some plots
 
 We are now ready to create some figures. In the `analysis.qmd` file create a section for each figure. You should load the `dat` object stored in the RDS file in the `dat` directory.
 
-You can call these sections Figure 1, Figure 2, and so on. Inlcude a short description of what the figure is before the code chunk. The rendered file should show both the code and figure.
+You can call these sections Figure 1, Figure 2, and so on. Include a short description of what the figure is before the code chunk. The rendered file should show both the code and figure.
 
-10. Plot a trend plot for cases, hospitalizations and deaths.  Plot rates per $100,000$ people. Place the plots on top of each other. Hint: Use `pivot_longer` and `facet_wrap`.
+10. **Figure 1**: Plot a trend plot for cases, hospitalizations and deaths.  Plot rates per $100,000$ people. Place the plots on top of each other. Hint: Use `pivot_longer` and `facet_wrap`.
 
-11. To determine when vaccination started and when most of the population was vaccinated, compute the percent of the US population (including DC and Puerto Rico) were vaccinated by date. Do the same for the booster. Then plot both percentages.
+```{r}
+#| eval: false
+## Figure 1: Trends over time
+# Your code here
+```
 
-12. Describe the distribution of vaccination rates on July 1, 2021.
+11. **Figure 2**: To determine when vaccination started and when most of the population was vaccinated, compute the percent of the US population (including DC and Puerto Rico) were vaccinated by date. Do the same for the booster. Then plot both percentages.
 
-13. Is there a difference across region? Discuss what the plot shows?
+```{r}
+#| eval: false
+## Figure 2: Vaccination progress over time
+# Your code here
+```
 
-14. Using the two previous figures, identify two time periods that meet the following criteria:
+12. **Figure 3**: Describe the distribution of vaccination rates on July 1, 2021.
+
+```{r}
+#| eval: false
+## Figure 3: Vaccination rates distribution
+# Your code here
+```
+
+13. **Figure 4**: Is there a difference across region? Discuss what the plot shows?
+
+```{r}
+#| eval: false
+## Figure 4: Regional differences
+# Your code here
+```
+
+14. **Figure 5**: Using the two previous figures, identify two time periods that meet the following criteria:
 - A significant COVID-19 wave occurred across the United States.
 - A sufficient number of people had been vaccinated.
 
@@ -158,8 +235,18 @@ Next, follow these steps:
    - The **x-axis** should represent the vaccination rate.
    - The **y-axis** should represent the deaths per day per 100,000 people.
 
+```{r}
+#| eval: false
+## Figure 5: Vaccination vs death rates scatter plot
+# Your code here
+```
 
-15. Repeat the exercise for the booster.
+15. **Figure 6**: Repeat the exercise from question 14 but for booster vaccination rates.
 
 
+```{r}
+#| eval: false
+## Figure 6: Booster vaccination vs death rates
+# Your code here
+```
 
