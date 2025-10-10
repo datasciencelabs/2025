@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-24">
+<meta name="dcterms.date" content="2025-10-26">
 
 <title>Problem set 6 – BST 260: Introduction to Data Science</title>
 <style>
@@ -233,7 +233,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2025</p>
+      <p class="date">October 26, 2025</p>
     </div>
   </div>
   
@@ -245,26 +245,27 @@ window.Quarto = {
 </header>
 
 
+<p>This problem set explores probability through two classic scenarios: the birthday paradox and casino games. You’ll use both Monte Carlo simulation and exact mathematical calculations to understand these phenomena.</p>
 <p>Please answer each of the exercises below. For those asking for a mathematical calculation please use LaTeX to show your work.</p>
 <p>Important: Make sure that your document renders in less than 5 minutes.</p>
 <ol type="1">
-<li>Write a function called <code>same_birthday</code> that takes a number <code>n</code> as an argument, randomly generates <code>n</code> birthdays and returns <code>TRUE</code> if two or more birthdays are the same. You can assume nobody is born on February 29.</li>
+<li><p>Write a function called <code>same_birthday</code> that takes a number <code>n</code> as an argument, randomly generates <code>n</code> birthdays and returns <code>TRUE</code> if two or more birthdays are the same. You can assume nobody is born on February 29.</p>
+<p>Hint: use the functions <code>sample</code>, <code>duplicated</code>, and <code>any</code>.</p></li>
 </ol>
-<p>Hint: use the functions <code>sample</code>, <code>duplicated</code>, and <code>any</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>same_birthday <span class="ot">&lt;-</span> <span class="cf">function</span>(n){ </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Your code here</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
-<li>Suppose you are in a classroom with 50 people. If we assume this is a randomly selected group of 50 people, what is the chance that at least two people have the same birthday? Use a Monte Carlo simulation with $B=$1,000 trials based on the function <code>same_birthday</code> from the previous exercises.</li>
+<li>Suppose you are in a classroom with 50 people. If we assume this is a randomly selected group of 50 people, what is the chance that at least two people have the same birthday? Use a Monte Carlo simulation with <span class="math inline">\(B=1,000\)</span> trials based on the function <code>same_birthday</code> from the previous exercise.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">3</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
-<li>Redo the previous exercises for several values on <code>n</code> to determine at what group size do the chances become greater than 50%. Set the seed at 1997.</li>
+<li>Redo the previous exercise for several values of <code>n</code> to determine at what group size do the chances become greater than 50%. Set the seed at 1997.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1997</span>)</span>
@@ -274,13 +275,13 @@ window.Quarto = {
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
-<li>These probabilities can be computed exactly instead of relying on Monte Carlo approximations. We use the multiplication rule:</li>
-</ol>
+<li><p>These probabilities can be computed exactly instead of relying on Monte Carlo approximations. We use the multiplication rule:</p>
 <p><span class="math display">\[
 \mbox{Pr}(n\mbox{ different birthdays}) = 1 \times \frac{364}{365}\times\frac{363}{365} \dots \frac{365-n + 1}{365}
 \]</span></p>
-<p>Plot the probabilities you obtained using Monte Carlos as a points and the exact probabilities with a red line.</p>
-<p>Hint: use the function <code>prod</code> to compute the exact probabilities.</p>
+<p>Plot the probabilities you obtained using Monte Carlo as points and the exact probabilities with a red line.</p>
+<p>Hint: use the function <code>prod</code> to compute the exact probabilities.</p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>exact_prob <span class="ot">&lt;-</span> <span class="cf">function</span>(n){ </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> <span class="do">## Your code here</span></span>
@@ -288,7 +289,7 @@ window.Quarto = {
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
-<li>Note that the points don’t quite match the red line. This is because our Monte Carlos simulation was based on only 1,000 iterations. Repeat exercise 2 but for <code>n = 23</code> and try <code>B &lt;- seq(10, 250, 5)^2</code> number iterations. Plot the estimated probability against <code>sqrt(b)</code>. Describe when it starts to stabilize in that the estimates are within 0.005 for the exact probability. Add horizontal lines around the exact probability <span class="math inline">\(\pm\)</span> 0.005. Note this could take several seconds to run. Set the seed to 1998.</li>
+<li>Note that the points don’t quite match the red line. This is because our Monte Carlo simulation was based on only 1,000 iterations. Repeat exercise 2 but for <code>n = 23</code> and try <code>B &lt;- seq(10, 250, 5)^2</code> number of iterations. Plot the estimated probability against <code>sqrt(B)</code>. At what value of sqrt(B) do the estimates consistently stay within 0.005 of the exact probability? Add horizontal lines around the exact probability <span class="math inline">\(\pm\)</span> 0.005. Note this could take several seconds to run. Set the seed to 1998.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1998</span>)</span>
@@ -296,88 +297,79 @@ window.Quarto = {
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="6" type="1">
-<li>Repeat exercise 4 but use the the results of exercise 5 to select the number of iterations so that the points practically fall on the red curve.</li>
+<li><p>Repeat the comparison from question 4 (Monte Carlo points vs exact red line), but use your findings from question 5 to choose an appropriate number of iterations B so that the points practically fall on the red curve.</p>
+<p>Hint: If the number of iterations you chose is too large, you will achieve the correct plot but your document might not render in less than five minutes.</p></li>
 </ol>
-<p>Hint: If the number of iterations you chose is too large, you will achieve the correct plot but your document might not render in less than five minutes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">60</span>) </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="7" type="1">
-<li>In American Roulette, with 18 red slots, 18 black slots, and 2 green slots (0 and 00), what is the probability of landing on a green slot?</li>
-</ol>
+<li><p>In American Roulette, with 18 red slots, 18 black slots, and 2 green slots (0 and 00), what is the probability of landing on a green slot?</p>
 <p><span class="math display">\[
 \mbox{Derivation here}
-\]</span></p>
-<ol start="6" type="1">
-<li>The payout for winning on green is $17 dollars. This means that if you bet a dollar and it lands on green, you get $17. If it lands on red or black you lose your dollar. Create a sampling model using <code>sample</code> to simulate the random variable <span class="math inline">\(X\)</span> for the Casino’s winnings.</li>
+\]</span></p></li>
+<li><p>The payout for winning on green is $17 dollars. This means that if you bet a dollar and it lands on green, you get $17. If it lands on red or black you lose your dollar. Create a sampling model to simulate the random variable <span class="math inline">\(X\)</span> representing the casino’s profit from a single $1 bet on green. Use the <code>sample</code> function.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="7" type="1">
-<li>Now create a random variable <span class="math inline">\(S\)</span> of the Casino’s total winnings if $n = $1,000 people bet on green. Use Monte Carlo simulation to estimate the probability that the Casino loses money.</li>
+<ol start="9" type="1">
+<li>Now create a random variable <span class="math inline">\(S\)</span> of the Casino’s total winnings if <span class="math inline">\(n = 1,000\)</span> people bet on green. Use Monte Carlo simulation with B=10,000 trials to estimate the probability that the Casino loses money.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="8" type="1">
-<li>What is the expected value of <span class="math inline">\(X\)</span>?</li>
-</ol>
-<p><span class="math display">\[
-\mbox{Your derivation here.}
-\]</span></p>
-<ol start="9" type="1">
-<li>What is the standard error of <span class="math inline">\(X\)</span>?</li>
-</ol>
-<p><span class="math display">\[
-\mbox{Your derivation here.}
-\]</span></p>
 <ol start="10" type="1">
-<li>What is the expected value of <span class="math inline">\(S\)</span>? Does the Monte Carlo simulation confirm this?</li>
-</ol>
+<li><p>What is the expected value of <span class="math inline">\(X\)</span>?</p>
 <p><span class="math display">\[
-\mbox{Your dereviation here}
-\]</span></p>
+\mbox{Your derivation here.}
+\]</span></p></li>
+<li><p>What is the standard error of <span class="math inline">\(X\)</span>?</p>
+<p><span class="math display">\[
+\mbox{Your derivation here.}
+\]</span></p></li>
+<li><p>What is the expected value of <span class="math inline">\(S\)</span>? Does the Monte Carlo simulation confirm this?</p>
+<p><span class="math display">\[
+\mbox{Your derivation here}
+\]</span></p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="11" type="1">
-<li>What is the standard error of <span class="math inline">\(S\)</span>? Does the Monte Carlos simulation confirm this?</li>
-</ol>
+<ol start="13" type="1">
+<li><p>What is the standard error of <span class="math inline">\(S\)</span>? Does the Monte Carlo simulation confirm this?</p>
 <p><span class="math display">\[
 \mbox{Your derivation here.}
-\]</span></p>
+\]</span></p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="12" type="1">
+<ol start="14" type="1">
 <li>Use data visualization to convince yourself that the distribution of <span class="math inline">\(S\)</span> is approximately normal. Make a histogram and a QQ-plot of standardized values of <span class="math inline">\(S\)</span>. The QQ-plot should be on the identity line.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="13" type="1">
-<li>Notice that the normal approximation is slightly off for the tails of the distribution. What would make this better? Increasing the number of people playing <span class="math inline">\(n\)</span> or the number of Monte Carlo iterations <span class="math inline">\(B\)</span>?</li>
-</ol>
-<p><strong>Answer here</strong></p>
-<ol start="14" type="1">
-<li>Now approximate the probability estimated using CLT. Does it agree with the Monte Carlo simulation?</li>
-</ol>
+<ol start="15" type="1">
+<li><p>Notice that the normal approximation is slightly off for the tails of the distribution. What would make this better? Increasing the number of people playing <span class="math inline">\(n\)</span> or the number of Monte Carlo iterations <span class="math inline">\(B\)</span>? Explain your reasoning.</p>
+<p><strong>Answer here</strong></p></li>
+<li><p>Now approximate the probability estimated using CLT. Does it agree with the Monte Carlo simulation?</p>
 <p><span class="math display">\[
 \mbox{Your derivation here.}
-\]</span></p>
+\]</span></p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="15" type="1">
-<li>How many people <span class="math inline">\(n\)</span> must bet on green for the Casino to reduce the probability of losing money to 1%. Check your answer with a Monte Carlo simulation.</li>
-</ol>
+<ol start="17" type="1">
+<li><p>What is the minimum number of people <span class="math inline">\(n\)</span> who must bet on green for the Casino to reduce the probability of losing money to 1%? Check your answer with a Monte Carlo simulation.</p>
 <p><span class="math display">\[
 \mbox{Your derivation here.}
-\]</span></p>
+\]</span></p></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
