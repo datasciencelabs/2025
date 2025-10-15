@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-03">
+<meta name="dcterms.date" content="2025-11-05">
 
 <title>Problem set 7 – BST 260: Introduction to Data Science</title>
 <style>
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 3, 2025</p>
+      <p class="date">November 5, 2025</p>
     </div>
   </div>
   
@@ -216,30 +216,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>For this problem set we want you to predict the election. You will enter you predictions to <a href="https://forms.gle/kREjqXK5WqGsojGWA">this form</a>. You you will report a prediction of the number of electoral votes for Harris and an interval. You will do the same for the popular vote. We will give prizes for those that report the shortest interval but with the true result inside the interval.</p>
+<p>In this problem set, you will build a statistical model to analyze the 2024 U.S. presidential election using the same polling data that was available to forecasters before the election. You’ll learn the methods used by election forecasters to predict both the popular vote margin and the electoral college outcome for the Harris-Trump race.</p>
+<p>Your analysis will involve cleaning and processing polling data, handling the complexities of different poll types and populations, and dealing with missing data for states where few or no polls are conducted. You’ll use both frequentist and Bayesian approaches to quantify uncertainty in your predictions.</p>
+<p>This exercise will give you hands-on experience with real-world data science challenges including data cleaning, model selection, uncertainty quantification, and the practical difficulties of election forecasting. At the end, you’ll be able to compare your forecasts to the actual election results to evaluate your model’s performance.</p>
+<p><strong>Important</strong>: Do not look up the actual 2024 election results until after you complete your analysis. The goal is to understand what forecasters could reasonably predict given the available data.</p>
 <ol type="1">
 <li>Read in the data provided here:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://projects.fivethirtyeight.com/polls/data/president_polls.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/datasciencelabs/2025/main/data/president_polls.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Examine the data frame paying particular attention to the <code>poll_id</code> <code>question_id</code>, <code>population</code>, and <code>candidate</code>. Note that some polls have more than one question based on different population types.</p>
+<p>Examine the data frame paying particular attention to the <code>poll_id</code>, <code>question_id</code>, <code>population</code>, and <code>answer</code>. Note that some polls have more than one question based on different population types.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>raw_dat <span class="ot">&lt;-</span> <span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Note: The candidate information is stored in the <code>answer</code> column, which contains values like “Harris”, “Trump”, etc.</p>
 <ol start="2" type="1">
-<li>Polls are based on either likely voters (lv), registered voters (rv), all voters (a), or voters (v). Polls based on ‘voters’ are exit polls. We want to remove these because exit polls are too old or might be biased due to differences in the likelihood of early voter by party. We prefer likely voter (lv) polls because they are more predictive. Registered voter polls are more predictive than all voter (a) polls. Remove the exit poll (v) polls and then redefine <code>population</code> to be a factor ordered from best to worse predictive power: (lv, rv, a). You should also remove hypothetical polls and make the date columns into date objects. Name the resulting data frame <code>dat</code>.</li>
+<li>Polls are based on either likely voters (lv), registered voters (rv), all voters (a), or voters (v). Polls based on ‘voters’ are exit polls. We want to remove these because exit polls are too old or might be biased due to differences in the likelihood of early voting by party. We prefer likely voter (lv) polls because they are more predictive than registered voter polls. Registered voter polls are more predictive than all voter (a) polls. Remove the exit poll (v) polls and then redefine <code>population</code> to be a factor ordered from best to worst predictive power: (lv, rv, a). You should also remove hypothetical polls (if any) and convert the date columns to date objects. Name the resulting data frame <code>dat</code>.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> raw_dat <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
-<li>Some polls asked more than one questions. So if you filter to one poll ID in our dataset, you might see more than one question ID associated with the same poll. The most common reason for this is that they asked a head-to-head question (Harris versus Trump) and, in the same poll, a question about all candidates. We want to prioritize the head-to-head questions.</li>
+<li>Some polls asked more than one question. So if you filter to one poll ID in our dataset, you might see more than one question ID associated with the same poll. The most common reason for this is that they asked a head-to-head question (Harris versus Trump) and, in the same poll, a question about all candidates. We want to prioritize the head-to-head questions.</li>
 </ol>
-<p>Add a column that tells us, for each question, how many candidates where mentioned in that question.</p>
+<p>Add a column that tells us, for each question, how many candidates were mentioned in that question.</p>
 <p>Add a new column <code>n</code> to <code>dat</code> that provides the number of candidates mentioned for each question. For example the relevant column of your final table will looks something like this:</p>
 <table class="caption-top table">
 <thead>
@@ -285,24 +289,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>We are going to focus on the Harris versus Trump comparison. Redefine <code>dat</code> to only include the rows providing information for Harris and Trump. Then pivot the dataset so that the percentages for Harris and Trump are in their own columns. Note that for pivot to work you will have to remove some columns. To avoid this keep only the columns you are pivoting and along with <code>poll_id</code>, <code>question_id</code>, <code>state</code>, <code>pollster</code>, <code>start_date</code>, <code>end_date</code>, <code>numeric_grade</code>, <code>sample_size</code>. Once you accomplish the pivot, add a column called <code>spread</code> with the difference between Harris and Trump.</li>
 </ol>
-<p>Note that the values stored in <code>spread</code> are estimates of the popular vote difference that we will use to predict for the competition:</p>
+<p>Note that the values stored in spread are estimates of the popular vote difference:</p>
 <p><strong>spread = % of the popular vote for Harris - % of the popular vote for Trump</strong></p>
-<p>However, for the calculations in the rest of problem set to be consistent with the sampling model we have been discussing in class, save <code>spread</code> as a proportion, not a percentage. But remember to turn it back to a percentage when submitting your entry to the competition.</p>
+<p>However, for the calculations in the rest of problem set to be consistent with the sampling model we have been discussing in class, save <code>spread</code> as a proportion, not a percentage.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
-<li>Note that some polls have multiple questions. We want to keep only one question per poll. We will keep likely voter (lv) polls when available, and prefer register voter (rv) over all voter polls (a). If more than one question was asked in one poll, take the most targeted question (smallest <code>n</code>). Save the resulting table<code>dat</code>. Note that now each after you do this each row will represents exactly one poll/question, so can remove <code>n</code>, <code>poll_id</code> and <code>question_id</code>.</li>
+<li>Note that some polls have multiple questions. We want to keep only one question per poll. We will keep likely voter (lv) polls when available, and prefer registered voter (rv) over all voter polls (a). If more than one question was asked in one poll, take the most targeted question (smallest <code>n</code>). Save the resulting table <code>dat</code>. Note that after you do this, each row will represent exactly one poll/question, so can remove <code>n</code>, <code>poll_id</code> and <code>question_id</code>.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="6" type="1">
 <li>Separate <code>dat</code> into two data frames: one with popular vote polls and one with state level polls. Call them <code>popular_vote</code> and <code>polls</code> respectively.</li>
@@ -312,23 +316,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>polls <span class="ot">&lt;-</span> <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="7" type="1">
-<li>For the popular vote, plot the spread reported by each poll against start date for polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during this period as <code>Other</code>. Use color to denote pollster. Make separate plots for likely voters and registered voters. Do not use <em>all voter</em> polls (a). Use <code>geom_smooth</code> with method <code>loess</code> to show a curve going through the points. You can change how adaptive the curve is to that through the <code>span</code> argument.</li>
+<li>For the popular vote, plot the spread reported by each poll against start date for polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during this period as <code>Other</code>. Use color to denote pollster. Make separate plots for likely voters and registered voters. Do not use <em>all voter</em> polls (a). Use <code>geom_smooth</code> with method <code>loess</code> to show a curve going through the points. You can control how adaptive the curve is through the <code>span</code> argument.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>popular_vote <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(start_date <span class="sc">&gt;</span> <span class="fu">make_date</span>(<span class="dv">2024</span>, <span class="dv">7</span>, <span class="dv">21</span>) <span class="sc">&amp;</span> population <span class="sc">!=</span> <span class="st">"a"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="8" type="1">
-<li>To show the pollster effect, make boxplots for the the spread for each popular vote poll. Include only likely voter polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during that time period as <code>Other</code>.</li>
+<li>To show the pollster effect, make boxplots for the spread for each popular vote poll. Include only likely voter polls starting after July 21, 2024. Rename all the pollsters with less than 5 polls during that time period as <code>Other</code>.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>popular_vote <span class="sc">|&gt;</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(start_date <span class="sc">&gt;</span> <span class="fu">make_date</span>(<span class="dv">2024</span>, <span class="dv">7</span>, <span class="dv">21</span>) <span class="sc">&amp;</span> population <span class="sc">==</span> <span class="st">"lv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="9" type="1">
-<li>Compute a prediction and an interval for the competition and submit <a href="https://forms.gle/kREjqXK5WqGsojGWA">here</a> Include the code you used to create your confidence interval for the popular vote here:</li>
+<li>Compute a prediction and a confidence interval for the popular vote spread. Include the code you used to create your confidence interval below:</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -350,10 +354,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Wrangle the data in <code>ev</code> to only have two columns <code>state</code> and <code>electoral_votes</code>. Make sure the electoral vote column is numeric. Add the electoral votes for Maine CD-1 (1), Maine CD-2 (1), Nebraska CD-2 (1), and District of Columbia (3) by hand.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="11" type="1">
-<li>The presidential race in some states is a forgone conclusion. Because their is practically no uncertainty in who will win, polls are not taken. We will therefore assume that the party that won in 2020 will win again in 2024 if no polls are being collected for a state.</li>
+<li>The presidential race in some states is a forgone conclusion. Because there is practically no uncertainty in who will win, polls are not taken. We will therefore assume that the party that won in 2020 will win again in 2024 if no polls are being collected for a state.</li>
 </ol>
 <p>Download the following sheet:</p>
 <div class="cell">
@@ -364,11 +368,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Tidy the <code>raw_res_2020</code> dataset so that you have two columns <code>state</code> and <code>party</code>, with <code>D</code> and <code>R</code> in the party column to indicate who won in 2020. Add Maine CD-1 (D), Maine CD-2 (R), Nebraska CD-2 (D), and District of Columbia (D) by hand. Save the result to <code>res_2020</code>. Hint use the <strong>janitor</strong> <code>row_to_names</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>res_2020 <span class="ot">&lt;-</span> raw_res_2020[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)] <span class="sc">|&gt;</span>  </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a> <span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>res_2020 <span class="ot">&lt;-</span> raw_res_2020 <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="12" type="1">
-<li>Decide on a period that you will use to compute your prediction. We will use <code>spread</code> as the outcome. Make sure the the outcomes is saved as a proportion not percentage. Create a <code>results</code> data frame with columns <code>state</code>, <code>avg</code>, <code>sd</code>, <code>n</code> and <code>electoral_votes</code>, with one row per state.</li>
+<li>Decide on a period that you will use to compute your prediction. We will use <code>spread</code> as the outcome. Make sure the outcome is saved as a proportion not percentage. Create a <code>results</code> data frame with columns <code>state</code>, <code>avg</code>, <code>sd</code>, <code>n</code> and <code>electoral_votes</code>, with one row per state.</li>
 </ol>
 <p>Some ideas and recommendations:</p>
 <ul>
@@ -379,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> polls <span class="sc">|&gt;</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="13" type="1">
 <li>Note you will not have polls for all states. Assume that lack of polls implies the state is not in play. Use the <code>res_2020</code> data frame to compute the electoral votes Harris is practically guaranteed to have.</li>
@@ -391,13 +395,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use a Bayesian approach to compute posterior means and standard deviations for each state in <code>results</code>. Plot the posterior mean versus the observed average with the size of the point proportional to the number of polls.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Your code heer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="15" type="1">
-<li>Compute a prediction and an interval for Harris’ electoral votes and submit to the competition <a href="https://forms.gle/kREjqXK5WqGsojGWA">here</a>. Include the code you used to create your estimate and interval below.</li>
+<li>Compute a prediction and a confidence interval for Harris’ electoral votes. Include the code you used to create your estimate and interval below:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
