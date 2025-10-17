@@ -10,6 +10,7 @@ listing:
       - psets/pset-03-tidyverse.qmd
       - psets/pset-04-wrangling.qmd
       - psets/pset-05-dataviz.qmd
+      - psets/pset-06-prob.qmd
     type: table
     fields: [title, date]
     date-format: "ddd, MMM DD"
