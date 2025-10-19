@@ -4,15 +4,38 @@ title: "Final Project"
 
 # General Instructions
 
-You will be assigned to a **pre-assigned team of 4 or 5 students** and a **Teaching Fellow (TF)** who will supervise your project. Your team will select one project from the list below and report to your assigned TF throughout the semester.
+You will be assigned to a **pre-assigned team of 3 or 4 students** and a **Teaching Fellow (TF)** who will supervise your project. Your team will select one project approach from the options below and report to your assigned TF throughout the semester.
 
-| TF Name | Groups |
-|:--------|:-------|
-| Angela  | Groups 1-5 |
-| Ava     | Groups 6-10 |
-| Emma    | Groups 11-15 |
-| Jing    | Groups 16-20 |
+**Important**: All project communication should go through your assigned TF. Do not contact the instructors directly about project questions.
 
+::: {.callout-note collapse="true" title="Click to View Team Assignments"}
+
+| Team | TF | Team Slack Channel | Members |
+|:--------------|:--------------|:--------------------------|:----------------|
+| Team 1 | Angela | [#bst-260-project-team1](https://harvard.enterprise.slack.com/archives/C09MCF1BW5Q) | Motohiko Adomi, Jethro Au, Kate Bucci, Anthony Candelmo |
+| Team 2 | Angela | [#bst-260-project-team2](https://harvard.enterprise.slack.com/archives/C09M919D58V) | Tiger Chaisutyakorn, Yixiao Chen, EK Cheng, Huihan Cui |
+| Team 3 | Angela | [#bst-260-project-team3](https://harvard.enterprise.slack.com/archives/C09MG1JMZ60) | Sylvia Deng, Yinuo Du, Qianyu Fan, Frank Feng |
+| Team 4 | Angela | [#bst-260-project-team4](https://harvard.enterprise.slack.com/archives/C09N6P792N4) | Tanvi Gaitonde, Gabrielle Gonzalez, Allen Gu, Camila Guetter |
+| Team 5 | Angela | [#bst-260-project-team5](https://harvard.enterprise.slack.com/archives/C09M632U4MR) | Siwei Guo, Hannah Hamling, Shuying Han, Runpeng Hu |
+| Team 6 | Ava | [#bst-260-project-team6](https://harvard.enterprise.slack.com/archives/C09MG1KMD7W) | Anthea Hua, Jiaming Huang, Helen Keetley, Helena Li |
+| Team 7 | Ava | [#bst-260-project-team7](https://harvard.enterprise.slack.com/archives/C09M91K2A13) | Stellen Li, Yutong Li, Jason Liang, Julia Lin |
+| Team 8 | Ava | [#bst-260-project-team8](https://harvard.enterprise.slack.com/archives/C09N6P85R8Q) | Siyan Lin, Cindy Liu, Jasper Liu, Junhao Luo |
+| Team 9 | Ava | [#bst-260-project-team9](https://harvard.enterprise.slack.com/archives/C09LX1CB49M) | Peng Luo, Yuxi Luo, Adriana Manjon, Neel Mirani |
+| Team 10 | Ava | [#bst-260-project-team10](https://harvard.enterprise.slack.com/archives/C09M634FFL3) | Bao Han Ngo, Ryan Ou, Katelyn Power, Chloe Qiu |
+| Team 11 | Emma | [#bst-260-project-team11](https://harvard.enterprise.slack.com/archives/C09MG1MD0UC) | Yvonne Qiu, Ziyue Qiu, Varshini Ramanathan, April Ren |
+| Team 12 | Emma | [#bst-260-project-team12](https://harvard.enterprise.slack.com/archives/C09MCF7DCJE) | Aanika Schueler, Emily Shen, Shriya Sai Shivakumar, Erica Song |
+| Team 13 | Emma | [#bst-260-project-team13](https://harvard.enterprise.slack.com/archives/C09M91CB1QD) | Rahul Srinivasaragavan, Nyah Strickland, Christina Wang, Hengyuan Wang |
+| Team 14 | Emma | [#bst-260-project-team14](https://harvard.enterprise.slack.com/archives/C09MCF7K5PU) | Siwen Wang, Yuanshu Wang, Emily Weng, Andrew Wu |
+| Team 15 | Emma | [#bst-260-project-team15](https://harvard.enterprise.slack.com/archives/C09N6P9TXLG) | Kai Wu, Yanting Wu, Zhentian Wu, Baoyue Xing |
+| Team 16 | Jing | [#bst-260-project-team16](https://harvard.enterprise.slack.com/archives/C09M91DAJ5T) | Lavinia Xu, Xinyu Xu, Xu Yan, Cuiqiyun Yang |
+| Team 17 | Jing | [#bst-260-project-team17](https://harvard.enterprise.slack.com/archives/C09LX1ELXT9) | Yuntian Yang, Haochen Ye, Haihan Yuan, Yiwei Yun |
+| Team 18 | Jing | [#bst-260-project-team18](https://harvard.enterprise.slack.com/archives/C09MCF89VQA) | Irene Zhang, Iris Zhang, Yiyang Zhang, Zihan Zhang |
+| Team 19 | Jing | [#bst-260-project-team19](https://harvard.enterprise.slack.com/archives/C09M636P8UB) | Johnny Zhao, Mengze Zhao, Tianyu Zhao, Yinuo Zhao |
+| Team 20 | Jing | [#bst-260-project-team20](https://harvard.enterprise.slack.com/archives/C09MG1PK9E0) | Zifan Zhao, Junyi Zhou, Zi Zhu |
+
+**Note**: All project communication should happen in this channel with your TF.
+
+:::
 
 
 **Grading**: The final project accounts for 20% of your course grade, divided as follows:
@@ -20,28 +43,130 @@ You will be assigned to a **pre-assigned team of 4 or 5 students** and a **Teach
 -   **Final Project Report**: 10% of course grade
 -   **Oral Presentation**: 10% of course grade
 
-## Available Projects
+## GitHub Repository Setup
 
-Your team will choose one of the following projects (possible topics will be posted here as they become available):
+### Creating Your Team Repository
 
-1.  TBD
-2.  TBD
-3.  ...
-4.  Custom Topic: Your team may propose your own research topic, subject to approval by your assigned TF
+**Repository Naming Convention**: `bst-260-2025F-team#` (where \# is your team number, e.g., `bst-260-2025F-team1`, `bst-260-2025F-team15`)
 
-*Detailed project descriptions, datasets, and example papers will be posted here as they become available.*
+**Setup Process**: 
+
+1. **One team member** creates the repository on GitHub with the exact naming convention above 
+2. Make the repository **private** 
+3. Add all team members as collaborators with **write access** 
+4. Add your assigned TF as a collaborator with **admin access** 
+5. Set up the initial directory structure (see requirements below)
+
+### Notifying Your TF
+
+Once your repository is created: 
+
+1. Post the repository URL in your TF's Slack channel (see table above) 
+2. Include your team number and all team member names 
+3. Your TF will confirm access and provide initial feedback
+
+**Example Slack message**:
+
+```         
+Team 5 Repository: https://github.com/username/bst-260-2025F-team5
+Members: Siwei Guo, Hannah Hamling, Shuying Han, Runpeng Hu
+Ready for initial review of `Outline.txt`
+```
+
+## Communication Guidelines
+
+**All project communication must go through your assigned TF using your team's private Slack channel**:
+
+- Your TF is your primary point of contact for all project matters
+- TFs will approve your `Outline.txt` and provide ongoing feedback
+- **TFs will review and approve your final project submission**
+- TFs will conduct your oral evaluation
+- Only your TF can escalate issues to instructors if necessary
+
+## Project Framework: NHANES Data Analysis
+
+All teams will work with the **NHANES (National Health and Nutrition Examination Survey)** dataset using the `NHANES` R package. You must choose between two versions and justify your choice:
+
+- **NHANES**: A probability sample from the US population (recommended for most analyses)
+- **NHANESraw**: Survey-weighted population data (recommended for teams interested in epidemiological methods using survey weights)
+
+**Project Differentiation**: Each team must have a distinct project through different **age groups**, **outcomes**, or **methodological approaches**.
+
+## Project Planning Requirements
+
+**Within one week of team assignment**, you must:
+
+1. Create your GitHub repository (see setup instructions above)
+2. Choose your specific project focus (see options below)
+3. Create a file called `Outline.txt` (plain text) in your GitHub repository with:
+   - Your analysis plan and research questions
+   - Team member responsibilities for each activity
+   - Weekly breakdown of tasks and deliverables
+4. Notify your TF via Slack when ready for review and feedback
+
+You should update this outline document throughout the project to track progress and any changes to your plan.
+
+## Project Timeline & Deadlines
+
+| Milestone | Deadline | Responsibility |
+|:----------|:---------|:---------------|
+| **`Outline.txt` Submission** | **October 31, 2025** | Teams post in their Slack channel |
+| **`Outline.txt` Feedback** | **November 7, 2025** | TFs provide approval/revision requests |
+| **Revised Outline (if needed)** | **November 12** | Teams address TF feedback |
+| **Oral Presentation Scheduling** | **December 12, 2025** | Teams schedule with TF for December 16-19 window |
+| **Final Project Submission** | **December 15, 2025** | Teams notify TF when repository is complete |
+
+**Important**: All deadlines are firm. Late submissions will result in grade penalties.
+
+## Available Project Approaches
+
+### Option 1: Age-Specific Health Analysis
+
+Focus on one of these age groups with appropriate health outcomes:
+
+- **Ages 2-18**: Growth patterns, childhood health indicators (note: different BMI/growth relationships than adults)
+- **Ages 19-40**: Young adult health patterns, lifestyle factors
+- **Ages 40+**: Disease risk factors, aging-related health patterns
+
+**Key considerations**: Include important covariates (age, sex, race) and their interactions. Consult relevant literature for risk factors specific to your chosen age group and outcome.
+
+### Option 2: Statistical Methodology Focus
+
+Instead of focusing on specific health outcomes, examine statistical approaches:
+
+- **Multiple imputation methods** for handling missing data patterns
+- **Spline models** for interpretable non-linear associations with continuous variables
+- **Survey methods** for population-level estimates and inference
+- **Machine learning approaches** (logistic regression, random forests) for data structure exploration
+- **Interactive applications** using Shiny/Posit Connect for data exploration tools
+
+### Option 3: Missing Data Analysis
+
+Investigate missing data patterns in NHANES:
+
+- Understand why observations are missing for different variables
+- Apply modern missing data methods
+- Compare analytical approaches under different missingness assumptions
+
+### Option 4: Custom Research Question
+
+Propose your own research question using NHANES data, subject to TF approval. Must demonstrate clear analytical approach and feasibility.
+
+## Important Data Considerations
+
+**Missing Values**: Many NHANES variables have substantial missing data. Consider whether this affects your analysis or could be the focus of your study.
+
+**Outcome Variables**: Examples include systolic blood pressure, diabetes risk, depression scores, sleep patterns, smoking status, BMI. Continuous outcomes may be easier to model initially.
 
 ## Project Submission Requirements
 
 You will submit your project using Git. Your project should be completely reproducible, meaning all the code and data needed to render your report from scratch should be in the repository.
 
-**Communication**: Each group is encouraged to communicate with each other and their assigned TF on Slack throughout the project timeline.
-
 **Required Submissions to your TF:**
 
-1.  **GitHub Repository**: Submit the link to your team's GitHub repository
+1.  **GitHub Repository**: Submit the link to your team's GitHub repository with all components below
 
-2.  **Oral Presentation**: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom between **December 16-19**. **All team members must be present** during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).
+2.  **Oral Presentation**: Each team must schedule a 20-minute oral presentation with their assigned TF via Zoom. **Scheduling must be completed by December 12, 2025,** for presentations during **December 16-19, 2025**. **All team members must be present** during the presentation. The TF will ask each team member specific questions about different aspects of the project based on their individual contributions detailed in the contribution summary document (e.g., if a member contributed to data analysis, they may be asked about model choice, coding decisions, statistical methods, etc.).
 
 ### Oral Presentation Evaluation Rubric
 
@@ -56,8 +181,7 @@ The oral presentation will be evaluated as a **group grade** out of 10 points ba
 | 8-9   | Very good understanding of all project components; strong defense of analytical approaches with minimal gaps |
 | 10    | Excellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis |
 
-
-## Sections
+## Report Structure
 
 You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.
 
@@ -68,13 +192,13 @@ You will prepare a comprehensive report following the style of an academic paper
 
 ### Introduction (500-600 words) {.nonumber}
 
--   **Purpose**: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant.
+-   **Purpose**: The introduction sets the stage for your project, presenting the background and rationale for your analysis. Explain why the topic is significant and justify your choice of NHANES vs. NHANESraw.
 -   **Guidelines**: Start with a broad overview of the topic, gradually narrowing down to your specific focus. Conclude with a clear statement of your research questions, hypotheses, or objectives. Use 2-3 paragraphs to establish a solid foundation for the rest of the paper.
 
 ### Methods (600-700 words) {.nonumber}
 
 -   **Purpose**: This section details the data sources, methods, and analytical techniques you used to conduct your analysis. It should be specific enough that someone else could replicate your study using the same resources and approach.
--   **Guidelines**: Describe the dataset(s) you used, including information about data collection (e.g., sources, time frame). Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach.
+-   **Guidelines**: Describe the NHANES dataset version you used and justify your choice. Outline your approach for cleaning and analyzing the data, including any statistical or computational methods applied. Clearly explain any assumptions or limitations in your approach, particularly regarding missing data handling.
 
 ### Results (500-600 words) {.nonumber}
 
@@ -87,7 +211,7 @@ Students are welcome to use AI tools as a complementary aid, but they must clear
 ### Discussion (600-700 words) {.nonumber}
 
 -   **Purpose**: In the discussion, interpret the significance of your findings, explore potential implications, and relate the results back to your initial research questions or hypotheses. This section allows you to discuss any patterns, unexpected findings, or limitations and suggest possible future research.
--   **Guidelines**: Analyze your results in the context of your research question, linking them back to the background information from the introduction. Consider what your findings reveal, any limitations they may have, and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.
+-   **Guidelines**: Analyze your results in the context of your research question and relevant health literature. Consider what your findings reveal, any limitations they may have (particularly regarding missing data or survey design), and how they might impact future work or policy. End with a brief conclusion summarizing your main insights.
 
 Your final report should be professionally formatted, with each section clearly labeled and referenced. Aim for clarity, precision, and a well-organized presentation of your analysis.
 
@@ -101,15 +225,16 @@ You can include a **separate document** titled Supplementary Methods.
 
 -   **Guidelines**: There is no limits in the length of this section nor on the number of figures and tables. However, be careful not to drown the graders with too much information.
 
-## GitHub Repository {.nonumber}
+## GitHub Repository Requirements {.nonumber}
 
-We recommend your repository include:
+Your repository must include:
 
--   Directories `code`, `data`, and `docs`.
--   At least one script for wrangling in the `code` directory.
--   There should be one file called `final-project.qmd` that can be rendered to produce the final report. This can be in the `code` or home directories as long as it renders.
--   You should include a `README` file explaining how to reproduce all the results.
--   A **contribution summary document** detailing each team member's specific contributions to the final report and analysis. 
--   If you need to share raw data include it in the `raw-data` directory. Alternatively, you can include code that downloads the necessary data from the internet.
+-   **Directory structure**: `code`, `data`, and `docs` directories
+-   **Analysis scripts**: At least one script for data wrangling in the `code` directory
+-   **Main report**: One file called `final-project.qmd` that renders to produce the final report (can be in `code` or home directory)
+-   **README file**: Explaining how to reproduce all results
+-   **Project outline**: `Outline.txt` with your initial plan and progress updates
+-   **Individual contribution files**: Each team member creates a file with their name documenting their specific contributions and effort (hours/week)
+-   **Data handling**: Include code that loads NHANES data via the R package (no need to store raw data)
 
-*We expect to see at least five commits by each person.*
+**Git Requirements**: *We expect to see at least five meaningful commits by each person* demonstrating collaborative development throughout the project timeline.
