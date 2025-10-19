@@ -181,6 +181,54 @@ The oral presentation will be evaluated as a **group grade** out of 10 points ba
 | 8-9   | Very good understanding of all project components; strong defense of analytical approaches with minimal gaps |
 | 10    | Excellent understanding of all project components; exceptional ability to defend and discuss all aspects of the analysis |
 
+### Final Report Evaluation Rubric
+
+The final report will be evaluated as a **group grade** out of 10 points based on the following criteria:
+
+| Score | Criteria |
+|:------|:---------|
+| **9-10** (Excellent) | Clear, well-structured report with sophisticated analysis. |
+| **8-8.9** (Very Good) | Well-written report with good analysis. |
+| **7-7.9** (Good) | Adequate report structure with acceptable analysis. |
+| **6-6.9** (Satisfactory) | Report meets basic requirements but has several areas for improvement. |
+| **4-5.9** (Needs Improvement) | Report has significant structural problems or analysis errors. |
+| **0-3.9** (Inadequate) | Report does not meet basic requirements. |
+
+
+**Detailed Criteria:**
+
+**9-10 Points (Excellent):** Clear, well-structured report with sophisticated analysis. All sections meet word count requirements. Exceptional use of statistical methods, excellent data visualization, and insightful interpretation. Professional formatting with proper citations. Demonstrates deep understanding of NHANES data and chosen methodology.
+
+**8-8.9 Points (Very Good):** Well-written report with good analysis. Minor issues in structure or presentation. Good use of statistical methods and visualizations. Most sections meet requirements with solid interpretation of results.
+
+**7-7.9 Points (Good):** Adequate report structure with acceptable analysis. Some sections may be slightly under/over word count. Basic statistical methods applied correctly. Visualizations present but could be improved. Interpretation shows understanding but lacks depth.
+
+**6-6.9 Points (Satisfactory):** Report meets basic requirements but has several areas for improvement. Statistical analysis is basic or contains minor errors. Limited interpretation of results. Some formatting or structural issues.
+
+**4-5.9 Points (Needs Improvement):** Report has significant structural problems or analysis errors. Poor data visualization or interpretation. Major sections missing or substantially under word count. Limited understanding of methodology.
+
+**0-3.9 Points (Inadequate):** Report does not meet basic requirements. Major analysis errors, missing key sections, or demonstrates poor understanding of the data and methods. Unprofessional presentation.
+
+### TF Feedback Process
+
+**Your TF will provide detailed feedback and final grades through GitHub Issues:**
+
+1. **After your final submission**, your TF will create Issues in your repository for:
+
+   - Overall project feedback and final grade breakdown
+   - Specific comments on analysis, methods, or presentation
+   - Individual contribution assessment based on commit history and contribution files
+
+2. **Grade breakdown will include**:
+
+   - Final Report Score (out of 10 points)
+   - Oral Presentation Score (out of 10 points) 
+   - Overall Final Project Grade calculation
+
+3. **Teams can respond** to TF feedback through Issue comments if clarification is needed
+
+**Note**: Check your repository for Issues after the final project deadline for comprehensive feedback and grades.
+
 ## Report Structure
 
 You will prepare a comprehensive report following the style of an academic paper. This report will be divided into the following five structured sections, with approximate word counts to help you reach a target of 2,500 to 3,000 words, up to four figures and up to two tables.
