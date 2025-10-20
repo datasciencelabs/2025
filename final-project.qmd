@@ -14,7 +14,7 @@ You will be assigned to a **pre-assigned team of 3 or 4 students** and a **Teach
 |:--------------|:--------------|:---------------------------------|:----------------|
 | Team 1 | Angela | [#bst-260-project-team1](https://harvard.enterprise.slack.com/archives/C09MCF1BW5Q)               | Motohiko Adomi, Jethro Au, Kate Bucci, Anthony Candelmo |
 | Team 2 | Angela | [#bst-260-project-team2](https://harvard.enterprise.slack.com/archives/C09M919D58V)                | Tiger Chaisutyakorn, Yixiao Chen, EK Cheng, Huihan Cui |
-| Team 3 | Angela | [#bst-260-project-team3](https://harvard.enterprise.slack.com/archives/C09MG1JMZ60)                | Sylvia Deng, Yinuo Du, Qianyu Fan, Frank Feng |
+| Team 3 | Angela | [#bst-260-project-team3](https://harvard.enterprise.slack.com/archives/C09MG1JMZ60)                | Sylvia Deng, Yinuo Du, Qianyu Fan |
 | Team 4 | Angela | [#bst-260-project-team4](https://harvard.enterprise.slack.com/archives/C09N6P792N4)                | Tanvi Gaitonde, Gabrielle Gonzalez, Allen Gu, Camila Guetter |
 | Team 5 | Angela | [#bst-260-project-team5](https://harvard.enterprise.slack.com/archives/C09M632U4MR)                | Siwei Guo, Hannah Hamling, Shuying Han, Runpeng Hu |
 | Team 6 | Ava | [#bst-260-project-team6](https://harvard.enterprise.slack.com/archives/C09MG1KMD7W)                | Anthea Hua, Jiaming Huang, Helen Keetley, Helena Li |
