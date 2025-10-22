@@ -596,7 +596,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-09-09 14:06:48 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-09-09 18:06:48 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-10-22 19:05:32 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-10-22 23:05:32 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -610,7 +610,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 14\n\nnow() |&gt; minute() \n\n[1] 6\n\nnow() |&gt; second() \n\n[1] 48.56998"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 19\n\nnow() |&gt; minute() \n\n[1] 5\n\nnow() |&gt; second() \n\n[1] 32.72051"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1030,7 +1030,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.77576 61.93554 66.08156 70.09951 69.94480 73.12672 66.91353 73.06271\n [9] 66.90022 69.98144"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.88902 62.14738 66.00393 70.06498 69.92703 73.19973 67.12054 72.91806\n [9] 67.06231 70.00410"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -3522,7 +3522,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4320946 0.4939054\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.3983237 0.4596763\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4122117 0.4737883\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4330901 0.4949099\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3564,7 +3564,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9519"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9495"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -6803,7 +6803,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498539\n\nsd(x_hat) \n\n[1] 0.01588481"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4500833\n\nsd(x_hat) \n\n[1] 0.01591142"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -10275,7 +10275,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-3",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 240928 0.851\n 2 805635 0.827\n 3 913345 0.819\n 4 756824 0.806\n 5 431479 0.805\n 6 970715 0.796\n 7 272216 0.769\n 8  46457 0.768\n 9 312056 0.756\n10 826733 0.754\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.851."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 532469 0.799\n 2 999327 0.772\n 3 939371 0.768\n 4 185862 0.757\n 5 168264 0.754\n 6 656973 0.750\n 7 134676 0.747\n 8 107769 0.746\n 9 854265 0.744\n10 445425 0.738\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.799."
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-4",
@@ -10310,7 +10310,7 @@
     "href": "slides/other-topics/45-association-not-causation.html#spurious-correlation-8",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic      p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 x        0.930     0.120      7.76 0.0000000721"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x         1.24     0.194      6.38 0.00000165"
   },
   {
     "objectID": "slides/other-topics/45-association-not-causation.html#spurious-correlation-9",
@@ -11528,7 +11528,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Female Female Female Female Male   Male   Female Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Female Female Female Female Male   Male   Female Male  \nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Male   Male   Male   Male   Male   Female Male   Female Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Male   Male   Male   Male   Male   Female Male   Female Female\nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11703,7 +11703,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x0000023def73ab30&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000002393f732b68&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -12578,7 +12578,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nWed, Sep 10\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 17\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 11\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 01\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 08\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Nov 17\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 15\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nWed, Sep 10\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 17\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nMon, Oct 27\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nTue, Nov 04\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nTue, Nov 11\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nTue, Nov 11\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 01\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nTue, Dec 09\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 08\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Nov 17\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nMon, Dec 15\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
     ]
