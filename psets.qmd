@@ -11,6 +11,7 @@ listing:
       - psets/pset-04-wrangling.qmd
       - psets/pset-05-dataviz.qmd
       - psets/pset-06-prob.qmd
+      - psets/pset-07-election.qmd
     type: table
     fields: [title, date]
     date-format: "ddd, MMM DD"

@@ -55,7 +55,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | Oct 5   | hard | 
 | [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | Oct 12   |medium | 
 | [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | Oct 26   | easy | 
-| Problem Set 7          | Predict the election |Nov 05   |  hard | 
+| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election |Nov 05   |  hard | 
 | Problem Set 8          | Excess mortality after Hurricane María |Nov 14   |  medium | 
 | Problem Set 9          | Matrices | Nov 23   | easy | 
 | Problem Set 10         | Digit reading | Dec 15   | hard | 
