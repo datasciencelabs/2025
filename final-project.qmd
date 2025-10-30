@@ -54,7 +54,7 @@ You will be assigned to a **pre-assigned team of 3 or 4 students** and a **Teach
 1. **One team member** creates the repository on GitHub with the exact naming convention above 
 2. Make the repository **private** 
 3. Add all team members as collaborators with **write access** 
-4. Add your assigned TF as a collaborator with **admin access** 
+4. Add your assigned TF as a collaborator with **write access** 
 5. Set up the initial directory structure (see requirements below)
 
 ### Notifying Your TF
