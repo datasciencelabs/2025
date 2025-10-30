@@ -81,19 +81,18 @@ galton_heights |> ggplot(aes(father, son)) +
 ``` 
 
 
-## Case study: is height hereditary?
+## Case study: is height hereditary?{.smaller}
 
-- The correlation coefficient is an informative summary of how two variables move together.
+- The Pearson correlation coefficient is an informative summary of how two variables move together.
 
+- we can define the sample correlation for any bivariate set of data
 
 - It's defined for a list of pairs $(x_1, y_1), \dots, (x_n,y_n)$ as:
 
-
 $$
-\rho = \frac{1}{n} \sum_{i=1}^n \left( \frac{x_i-\mu_x}{\sigma_x} \right)\left( \frac{y_i-\mu_y}{\sigma_y} \right) 
+\rho = \frac{1}{n} \sum_{i=1}^n \left( \frac{x_i-\bar{x}}{s_x} \right)\left( \frac{y_i-\bar{y}}{s_y} \right) 
 $$ 
-
-- with $\mu_x, \mu_y$ the averages of $x_1,\dots, x_n$ and $y_1, \dots, y_n$, respectively, and $\sigma_x, \sigma_y$ the standard deviations.
+- with $\bar{x}, \bar{y}$ the sample means of $x_1,\dots, x_n$ and $y_1, \dots, y_n$, respectively, and $s_x, s_y$ the sample standard deviations.
 
 
 
@@ -103,7 +102,7 @@ $$
 
 - It is not a coincidence that $r$ is the first letter in _regression_.
 
-- We learn about the connection between correlation and regression.
+- We will learn about the connection between correlation and regression.
 
 ## The correlation coefficient
 
@@ -113,34 +112,39 @@ $$
 rho <- mean(scale(x) * scale(y)) 
 ``` 
 
+## The correlation coefficient{.smaller}
+
+- To understand why this equation does in fact summarize how two variables move together, note that the $i$-th entry of $x$ is $\left( \frac{x_i-\bar{x}}{s_x} \right)$ SDs away from the average.
+
+- Similarly, the $y_i$ that is paired with $x_i$, is $\left( \frac{y_1-\bar{y}}{s_y} \right)$ SDs away from the average $y$.
+
+- If $x$ and $y$ are unrelated, the product 
+$$ 
+\left( \frac{x_i-\bar{x}}{s_x} \right) \cdot \left( \frac{y_i-\bar{y}}{s_y} \right) 
+$$ 
+will be positive ( $+ \times +$ and $- \times -$ ) as often as negative ($+ \times -$ and $- \times +$) and will average out to about 0.
+
+- this correlation measure linear relationships and is less informative if $x$ and $y$ have a non-linear relationship
+
+
+
+
 ## The correlation coefficient
 
-- To understand why this equation does in fact summarize how two variables move together, consider the $i$-th entry of $x$ is $\left( \frac{x_i-\mu_x}{\sigma_x} \right)$ SDs away from the average.
+- The Pearson correlation is the average of the product of those deviations and therefore unrelated variables will have a correlation close to zero
 
+- If instead the quantities vary together, say higher values of x go with higher values of y, then we are averaging mostly positive products so we get a positive correlation
 
-
-
-- Similarly, the $y_i$ that is paired with $x_i$, is $\left( \frac{y_1-\mu_y}{\sigma_y} \right)$ SDs away from the average $y$.
-
-- If $x$ and $y$ are unrelated, the product $\left( \frac{x_i-\mu_x}{\sigma_x} \right)\left( \frac{y_i-\mu_y}{\sigma_y} \right)$ will be positive ( $+ \times +$ and $- \times -$ ) as often as negative ($+ \times -$ and $- \times +$) and will average out to about 0.
-
-
-
-
-## The correlation coefficient
-
-- This correlation is the average and therefore unrelated variables will have 0 correlation.
-
-- If instead the quantities vary together, then we are averaging mostly positive products ($+ \times +$ and $- \times -$) and we get a positive correlation.
-
-- If they vary in opposite directions, we get a negative correlation.
+- If large values of x go with smaller values of y, then we are averaging mostly negative values, and we get a negative correlation
 
 ## The correlation coefficient
 
 
 - The correlation coefficient is always between -1 and 1.
 
-- We can show this mathematically.
+- the sample correlation coefficient is 1 or -1 only when x and y lie exactly on a straight line.
+
+- We can show these facts mathematically.
 
 ## The correlation coefficient
 
@@ -220,8 +224,10 @@ r <- sample_n(galton_heights, 25, replace = TRUE) |>
 
 - We can run a Monte Carlo simulation to see its distribution:
 
+```{r sample-correlation-distribution-run, fig.align = "center"} 
+#| echo: true
+#| output-location: slide
 
-```{r sample-correlation-distribution-run, fig.align = "center", echo=FALSE} 
 B <- 1000 
 N <- 25 
 r <- replicate(B, { 
@@ -261,14 +267,16 @@ sd(r)
 
 ## Sample correlation is random
 
-- $N=25$ does not seem to be large enough:
+- $N=25$ does not seem to be large enough to get a good approximation to the Normal distribution:
 
-```{r small-sample-correlation-not-normal-run, fig.align = "center", echo=FALSE} 
+```{r small-sample-correlation-not-normal-run, fig.align = "center"} 
+#| echo: true
+#| output-location: slide
+
 ggplot(aes(sample = r), data = data.frame(r)) +  
   stat_qq() +  
   geom_abline(intercept = mean(r), slope = sqrt((1 - mean(r)^2)/(N - 2))) 
 ``` 
-
 
 
 ## Correlation not always useful 
@@ -323,13 +331,15 @@ anscombe |> mutate(row = seq_len(n())) |>
 
 
 
-## Conditional expectations
+## Conditional expectations{.smaller}
 
 - To provide a mathematical description of conditioning, consider that we have a population of pairs of values $(x_1,y_1),\dots,(x_n,y_n)$, for example all father and son heights in England.
 
-- In the previous chapter, we learned that if you take a random pair $(X,Y)$, the expected value and best predictor of $Y$ is $\mbox{E}(Y) = \mu_y$, the population average $1/n\sum_{i=1}^n y_i$.
+- In the previous chapter, we learned that if you take a random pair $(X,Y)$, the expected value and best predictor of $Y$ is $\mbox{E}(Y) = \bar{y}$, the population average $1/n\sum_{i=1}^n y_i$.
 
 - However, we are no longer interested in the general population.
+
+- We want to see if we can get better estimates if we know something additional, say from another variable that is correlated with $Y$.
 
 
 
@@ -341,21 +351,16 @@ anscombe |> mutate(row = seq_len(n())) |>
 
 - The $y_i$ in the subpopulation have a distribution, referred to as the *conditional distribution*, and this distribution has an expected value referred to as the *conditional expectation*.
 
-## Conditional expectations
+## Conditional expectations{.smaller}
 
 - In our example, the conditional expectation is the average height of all sons in England with fathers that are 72 inches.
 
-
-
-
 - The statistical notation for the conditional expectation is:
-
-
 $$
 \mbox{E}(Y \mid X = x) 
 $$
-
 - with $x$ representing the fixed value that defines that subset, for example 72 inches.
+- this represents the average value of the variable named $Y$ when the variable named $X$ has value $x$
 
 ## Conditional expectations
 
@@ -487,14 +492,16 @@ galton_heights |>
 
 ## The regression line
 
-- If we are predicting a random variable $Y$ knowing the value of another $X=x$ using a regression line, then we predict that for every standard deviation, $\sigma_X$, that $x$ increases above the average $\mu_X$, our prediction $\hat{Y}$ increase $\rho$ standard deviations $\sigma_Y$ above the average $\mu_Y$ with $\rho$ the correlation between $X$ and $Y$.
+- If we are predicting a random variable $Y$ knowing the value of another $X=x$ using a regression line:
+- then we predict that for every standard deviation, $\sigma_X$, that $x$ increases above the average $\mu_X$, 
+- our prediction $\widehat{Y}$ increase $\rho$ standard deviations $\sigma_Y$ above the average $\mu_Y$ with $\rho$ the correlation between $X$ and $Y$.
 
 ## The regression line
 
 - The formula for the regression is therefore:
 
 $$ 
-\left( \frac{\hat{Y}-\mu_Y}{\sigma_Y} \right) = \rho \left( \frac{x-\mu_X}{\sigma_X} \right) 
+\left( \frac{\widehat{Y}-\mu_Y}{\sigma_Y} \right) = \rho \left( \frac{x-\mu_X}{\sigma_X} \right) 
 $$
 
 
@@ -506,16 +513,16 @@ $$
 
 
 $$ 
-\hat{Y} = \mu_Y + \rho \left( \frac{x-\mu_X}{\sigma_X} \right) \sigma_Y 
+\widehat{Y} = \mu_Y + \rho \left( \frac{x-\mu_X}{\sigma_X} \right) \sigma_Y 
 $$
 
 - If there is perfect correlation, the regression line predicts an increase that is the same number of SDs.
 
-- If there is 0 correlation, then we don't use $x$ at all for the prediction and simply predict the average $\mu_Y$.
+- If there is 0 correlation, then $X$ does not help predict $Y$ at all we simply predict the average $\bar{Y}$.
 
-- For values between 0 and 1, the prediction is somewhere in between.
+- For values of $|\rho|$ between 0 and 1, the prediction is somewhere in between.
 
-- If the correlation is negative, we predict a reduction instead of an increase.
+- If the correlation between $X$ and $Y$ is negative, we predict a reduction instead of an increase.
 
 
 
@@ -536,7 +543,7 @@ $$
 
 
 $$
-\hat{Y} = b + mx \mbox{ with slope } m = \rho \frac{\sigma_y}{\sigma_x} \mbox{ and intercept } b=\mu_y - m \mu_x 
+\widehat{Y} = b + mx \mbox{ with slope } m = \rho \frac{\sigma_y}{\sigma_x} \mbox{ and intercept } b=\mu_y - m \mu_x 
 $$
 
 ## The regression line
@@ -590,9 +597,6 @@ galton_heights |>
 ``` 
 
 
-
-
-
 ## Regression improves precision
 
 - Let's compare the two approaches to prediction that we have presented:
@@ -602,8 +606,6 @@ galton_heights |>
   2. Compute the regression line and use it to predict.
 
 - We use a Monte Carlo simulation sampling $N=50$ families:
-
-
 
 ## Regression improves precision
 
@@ -659,7 +661,7 @@ sd(regression_prediction)
 
 - The conditional average is computed on a relatively small subset: the fathers that are about 72 inches tall.
 
-- In fact, in some of the permutations we have no data, which is why we use `na.rm=TRUE`.
+- In fact, in some of the permutations we have no data, which is why we used `na.rm=TRUE` in our simulation.
 
 - The regression line is estimated using all the data.
 
@@ -712,7 +714,10 @@ sd(regression_prediction)
 
 ## Bivariate normal distribution
 
-```{r qqnorm-of-strata-run, echo=FALSE} 
+```{r qqnorm-of-strata-run} 
+#| echo: true
+#| output-location: slide
+
 galton_heights |> 
   mutate(z_father = round((father - mean(father)) / sd(father))) |> 
   filter(z_father %in% -2:2) |> 
@@ -1107,7 +1112,7 @@ fit$coefficients
 
 - The intercept is added automatically to the model that will be fit.
 
-## The `lm` function
+## The `lm` function{.smaller}
 
 - The object `fit` includes more information.
 
@@ -1176,8 +1181,6 @@ grid.arrange(p1, p2, ncol = 2)
 - The function `summary` shows us the standard error estimates:
 
 
-
-
 ```{r} 
 sample_n(galton_heights, N, replace = TRUE) |>  
   lm(son ~ father, data = _) |>  
@@ -1199,9 +1202,14 @@ lse |> summarize(se_0 = sd(beta_0), se_1 = sd(beta_1))
 
 
 
-## LSE are random variables
+## LSE are random variables{.smaller}
 
-- Under this assumption, mathematical theory tells us that the LSE divided by their standard error, $\hat{\beta}_0 / \hat{\mbox{SE}}(\hat{\beta}_0 )$ and $\hat{\beta}_1 / \hat{\mbox{SE}}(\hat{\beta}_1 )$, follow a t-distribution with $N-p$ degrees of freedom, with $p$ the number of parameters in our model.
+- Under this assumption, mathematical theory tells us that the LSE divided by their standard error,
+$$
+\hat{\beta}_0 / \widehat{\mbox{SE}}(\hat{\beta}_0 ) \quad \mbox{and} \quad
+\hat{\beta}_1 / \widehat{\mbox{SE}}(\hat{\beta}_1 )
+$$
+follow a t-distribution with $N-p$ degrees of freedom, with $p$ the number of parameters in our model.
 
 - In our example  $p=2$, and the two p-values are obtained from testing the null hypothesis that $\beta_0 = 0$ and $\beta_1=0$, respectively.
 
@@ -1225,13 +1233,13 @@ lse |> summarize(se_0 = sd(beta_0), se_1 = sd(beta_1))
 
 - For example, if the father's height is $x$, then our prediction $\hat{Y}$ for the son's height will be:
 
-$$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x$$ 
+$$\widehat{Y} = \widehat{\beta}_0 + \widehat{\beta}_1 x$$ 
 
 ## Predicted values are random variables
 
-- When we plot $\hat{Y}$ versus $x$, we see the regression line.
+- When we plot $\widehat{Y}$ versus $x$, we see the regression line.
 
-- Keep in mind that the prediction $\hat{Y}$ is also a random variable and mathematical theory tells us what the standard errors are.
+- Keep in mind that the prediction $\widehat{Y}$ is also a random variable and mathematical theory tells us what the standard errors are.
 
 
 
@@ -1239,7 +1247,7 @@ $$\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 x$$
 
 - If we assume the errors are normal, or have a large enough sample size, we can use theory to construct confidence intervals as well.
 
-- In fact, the **ggplot2** layer `geom_smooth(method = "lm")` that we previously used plots $\hat{Y}$ and surrounds it by confidence intervals:
+- In fact, the **ggplot2** layer `geom_smooth(method = "lm")` that we previously used plots $\widehat{Y}$ and surrounds it by confidence intervals:
 
 ```{r father-son-regression, eval=FALSE} 
 galton_heights |> ggplot(aes(son, father)) + 
@@ -1281,7 +1289,7 @@ names(y_hat)
 
 
 $$
-r = Y - \hat{Y} = Y - \left(\hat{\beta}_0 - \hat{\beta}_1 x_i\right), 
+r = Y - \widehat{Y} = Y - \left(\widehat{\beta}_0 - \widehat{\beta}_1 x_i\right), 
 $$
 
 
@@ -1297,7 +1305,7 @@ $$
 \varepsilon = Y - \left(\beta_0 + \beta_1 x_i \right). 
 $$
 
-- In fact residuals are often denoted as $\hat{\varepsilon}$.
+- In fact residuals are often denoted as $\widehat{\varepsilon}$.
 
 - This motivates several _diagnostic_ plots.
 
@@ -1307,7 +1315,7 @@ $$
 
 - Because we observe $r$, but don't observe $\varepsilon$, we based the plots on the residuals.
 
-  1. Because the errors are assumed not to depend on the expected value of $Y$, a plot of $r$ versus the fitted values $\hat{Y}$ should show no relationship.
+  1. Because the errors are assumed not to depend on the expected value of $Y$, a plot of $r$ versus the fitted values $\widehat{Y}$ should show no relationship.
 
   2. In cases in which we assume the errors follow a normal distribution, a qqplot of standardized $r$ should fall on a line when plotted against theoretical quantiles.
   
@@ -1334,7 +1342,7 @@ plot(fit, which = 1:3)
 
 ## Diagnostic plots
 
-```{r diagnostic-plots-run, echo=FALSE} 
+```{r diagnostic-plots-run} 
 #| echo: false 
 #| out-width: 100% 
 rafalib::mypar(1,3) 
@@ -1344,14 +1352,14 @@ plot(fit, which = 1:3)
 
 ## Diagnostic plots
 
-```{r, eval=FALSE} 
+```{r} 
 #| eval: false 
 plot(fit, which = 1:3) 
 ``` 
 
 
 
-## Diagnostic plots
+## Diagnostic plots{.smaller}
 
 - This function can produce six different plots, and the argument `which` let's you specify which you want to see.
 
@@ -1393,7 +1401,9 @@ plot(fit, which = 1:3)
 
 ## The regression fallacy
 
-- <https://web.archive.org/web20160815063904/http://www.foxsports.com/mlb/story/kris-bryant-carlos-correa-rookies-of-year-award-matt-duffy-francisco-lindor-kang-sano-120715>
+- [Sophomore Slump](https://www.baseball-reference.com/bullpen/Sophomore_slump)
+
+- You can find the data in this R package: [Lahman](https://cran.r-project.org/web/packages/Lahman/index.html)
 
 - Does the data confirm the existence of a sophomore slump? Let's take a look.
 
@@ -1495,9 +1505,9 @@ two_years |> ggplot(aes(`2013`, `2014`)) + geom_point()
 ``` 
 
 
-## The regression fallacy
+## The regression fallacy{.smaller}
 
-- The correlation is `r cor(two_years$"2013",two_years$"2014")` and the data look very much like a bivariate normal distribution, which means we predict a 2014 batting average $Y$ for any given player that had a 2013 batting average $X$ with:
+- The correlation is `r round(cor(two_years$"2013",two_years$"2014"), digits=3)` and the data look very much like a bivariate normal distribution, which means we predict a 2014 batting average $Y$ for any given player that had a 2013 batting average $X$ with:
 
 $$ \frac{Y - .255}{.032} = 0.46 \left( \frac{X - .261}{.023}\right) $$ 
 
