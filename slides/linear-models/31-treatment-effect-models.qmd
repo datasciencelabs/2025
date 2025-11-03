@@ -1,7 +1,7 @@
 ---
 title: "Treatment Effect Models"
 keywords: "Linear Models"
-date: 2025-11-11
+date: 2025-11-10
 format:
   revealjs:
     theme: night
