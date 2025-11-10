@@ -12,6 +12,7 @@ listing:
       - psets/pset-05-dataviz.qmd
       - psets/pset-06-prob.qmd
       - psets/pset-07-election.qmd
+      - psets/pset-08-linear-models.qmd
     type: table
     fields: [title, date]
     date-format: "ddd, MMM DD"
