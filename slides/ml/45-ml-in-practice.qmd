@@ -1,6 +1,5 @@
 ---
 title: "ML In Practice"
-author: "Rafael A. Irizarry"
 keywords: "Machine Learning"
 date: "2025-12-15"
 format:
