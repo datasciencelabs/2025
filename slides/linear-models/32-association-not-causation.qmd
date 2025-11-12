@@ -24,14 +24,26 @@ options(digits = 3)
 
 - However, we must be careful not to over-interpret these associations.
 
+## Minimal requirements
+
+- **Empirical association** (i.e. Correlation): A relationship must exist between the cause and effect
+
+- **Temporal priority:** The cause must happen before the effect. This is considered the most widely accepted requirement for a causal relationship.
+
+- **There is a dose-response relationship:** increasing the "dose" of the cause increases the effect.
+
+- **Plausibility:** There is a plausible mechanism that explains how the cause leads to the effect. 
+
+- **Exploration and Elimination of alternative causes:** Find confounders and understand their role.
 
 
 ## Association is not causation
 
 - There are many reasons that a variable $X$ can be correlated with a variable $Y$, without having any direct effect on $Y$.
 
-- Today we describe three: spurious correlation, reverse causation, and confounders.
+- Today we describe four: spurious correlation, data dredging, reverse causation, and confounders.
 
+- With reverse causation the correlation is real, it is just not causal
 
 ## Spurious correlation
 
@@ -53,13 +65,17 @@ divorce_margarine |>
 ``` 
 
 
-## Spurious correlation
+## Spurious Associations{.smaller}
 
-More here: <http://tylervigen.com/spurious-correlations>
+- any two things that change in a monotone fashion over time will be correlated
+    - this can also be caused, as we will see by confounding (where time is often an unadjusted confounder)
 
-- Referred to as *data dredging*, *data fishing*, or *data snooping*.
+- if you look at enough tests, one will be positive (data dredging) 
+    - you should always ask: "How many tests did you do?"
+    - use of the False Discovery Rate (FDR) and other tools reduces this issue
 
-- It's basically a form of what in the US they call *cherry picking*.
+- outlying observations can cause high correlation 
+    - outliers are often spurious but not always
 
 
 ## Spurious correlation
@@ -119,7 +135,7 @@ res |> ggplot(aes(x=r)) + geom_histogram(binwidth = 0.1, color = "black")
 
 ## Spurious correlation
 
-- It's simply a mathematical fact that if we observe `r cat(prettyNum(g, big.mark=",",scientific=FALSE))` random correlations that are expected to be 0, but have a standard error of `r sd(res$r)`, the largest one will be close to 1.
+- It's simply a mathematical fact that if we observe `r cat(prettyNum(g, big.mark=",",scientific=FALSE))` random correlations that are expected to be 0, but have a standard error of `r sd(res$r)`, then the largest one will be close to 1.
 
 ## Spurious correlation
 
@@ -146,6 +162,9 @@ sim_data |>
 
 - In epidemiology and the social sciences, for example, researchers may look for associations between an adverse outcome and several exposures, and report only the one exposure that resulted in a small p-value.
 
+- Similarly with high throughput biology it is routine to test 100's to 1000's of genes, genetic variants, epigenetic sites
+
+- unless care is taken to perform some form of p-value adjustment these results are unlikely to replicate
 
 
 ## Spurious correlation
@@ -199,36 +218,6 @@ This high correlation is driven by the one outlier.
 cor(x[-23], y[-23]) 
 ``` 
 
-## Outliers
-
-- There is an alternative to the sample correlation for estimating the population correlation that is robust to outliers.
-
-- It is called *Spearman correlation*.
-
-
-
-## Outliers
-
-
-```{r scatter-plot-of-ranks-run, echo=FALSE} 
-qplot(rank(x), rank(y)) 
-``` 
-
-
-## Outliers
-
-- The outlier is no longer associated with a very large value, and the correlation decreases significantly:
-
-```{r} 
-cor(rank(x), rank(y)) 
-``` 
-
-- Spearman correlation can also be calculated like this:
-
-```{r} 
-cor(x, y, method = "spearman") 
-``` 
-
 
 ## Reversing cause and effect
 
@@ -245,11 +234,7 @@ Quote from [NY Times](https://opinionator.blogs.nytimes.com/2014/04/12/parental-
 
 >> When we examined whether regular help with homework had a positive impact on children's academic performance, we were quite startled by what we found. Regardless of a family's social class, racial or ethnic background, or a child's grade level, consistent homework help almost never improved test scores or grades... 
 
-
-## Reversing cause and effect
-
 - A more likely possibility is that the children needing regular parental help, receive this help because they don't perform well in school.
-
 
 ## Reversing cause and effect
 
@@ -288,14 +273,21 @@ galton_heights |> summarize(tidy(lm(father ~ son)))
 
 - The estimates and p-values were obtained correctly as well.
 
-- What is wrong here is the interpretation.
+- But we cannot interpret this as saying that the heights of the son's has any causal effect on the height of the fathers
 
 
 ## Confounders
 
-- Confounders are perhaps the most common reason that leads to associations begin misinterpreted.
+- Confounders are a common reason for associations being misinterpreted.
 
-- If $X$ and $Y$ are correlated, we call $Z$ a *confounder* if changes in $Z$ cause changes in both $X$ and $Y$.
+- When studying the relationship between and exposure and an outcome a confounder is third variable that:
+
+     - Is related to the exposure 
+
+     - Affects the outcome, and is not caused by the exposure
+
+- hence the confounder can affect the perceived relationship between the exposure and the outcome.
+
 
 ## Confounders
 
@@ -310,10 +302,6 @@ galton_heights |> summarize(tidy(lm(father ~ son)))
 - Incorrect interpretation due to confounders is ubiquitous in the lay press and they are often hard to detect.
 
 - Here, we present a widely used example related to college admissions.
-
-
-
-
 
 ## UC Berkeley admissions
 
@@ -347,8 +335,7 @@ admissions |> select(major, gender, admitted) |>
 
 - This actually can happen if an uncounted confounder is driving most of the variability.
 
-
-
+- This particular version is called *Simpson's Paradox*
 
 ## UC Berkeley admissions
 
@@ -402,7 +389,7 @@ admissions |>  group_by(gender) |>
 
 - The case we have just covered is an example of Simpson's paradox.
 
-- It is called a paradox because we see the sign of the correlation flip when comparing the entire publication to specific strata.
+- It is called a paradox because we see the sign of the correlation flip when comparing the entire population to specific strata.
 
 
 
@@ -467,4 +454,38 @@ dat |> ggplot(aes(x, y, color = z)) +
 - It is really $Z$ that is negatively correlated with $X$.
 
 - If we stratify by $Z$, the $X$ and $Y$ are actually positively correlated, as seen in the plot above.
+
+## Collider Bias
+
+- when studying medical records an interesting phenomenon called collider bias can occur
+
+- Example from Wikipedia: https://en.wikipedia.org/wiki/Berkson%27s_paradox
+
+An example presented by mathematician Jordan Ellenberg is that of a dating pool, measured on axes of niceness and handsomeness. A person might conclude from their own dating experience that "the handsome ones tend not to be nice, and the nice ones tend not to be handsome".
+
+## Collider Bias Example
+
+- Alice decides to only date men that that are above some line of handsomeness and niceness
+
+- But as a result the really handsome ones do not have to be that nice and the really nice ones do not need to be that handsome
+
+- so now Alice notices a correlation in her dating pool even when there is no such correlation in the population
+
+## Medically relevant examples
+
+- studies of hospital records can come to the wrong conclusions
+
+- being in hospital requires that the person have something serious and medically adverse
+
+- unless care is taken spurious negative associations can be found
+
+- when looking at everyone in the hospital for appendicitis the researchers find that few if any of them have kidney disease
+
+## Medical Example
+
+- and when comparing their appendicitis patients to controls, taken from patients in the hospital they find this association to be significant
+
+- it would be wrong to believe that this suggests that kidney disease is *protective* against appendicitis
+
+- they have to have something wrong with them, and since both kidney disease and appendicitis are rare it is very unlikely that many patients will have both
 
