@@ -1,41 +1,128 @@
 ---
-title: Problem set 9
-date: 2025-11-21
+title: "Problem Set 9"
+date: "2025-11-23"
+format: html
+execute: 
+  eval: false
 ---
 
-You are not allowed to load any package or use for-loop. For exercises 1 and 3-6 you only get to write one line of code for the solution.
+## Instructions
 
-For better preparation for midterm, we  recommend not using chatGPT for this homework.
+- **No additional packages**: Use only base R functions (assume basic packages like `dslabs` are pre-loaded if needed)
+- **No for-loops**: Use vectorized operations and built-in functions
+- **One line of code**: Problems 1 and 3-6 require exactly one line of code for the solution
+- **Midterm preparation**: We recommend completing this independently without AI assistance
 
-1. Create a 100 by 10 matrix of randomly generated normal numbers. Put the result in `x`.
+---
 
+1. Create a 100×10 matrix of randomly generated normal numbers. Store the result in `x`.
 
-2. Apply the three R functions that give you the dimension of `x`, the number of rows of `x`, and the number of columns of `x`, respectively.
-
-3. Add the scalar 1 to row 1, the scalar 2 to row 2, and so on, to the matrix `x`.
-
-4. Add the scalar 1 to column 1, the scalar 2 to column 2, and so on, to the matrix `x`. Hint: Use `sweep` with `FUN = "+"`.
-
-5. Compute the average of each row of `x`.
-
-6. Compute the average of each column of `x`.
-
-7. For each digit in the MNIST training data, compute the proportion of pixels that are in a *grey area*, defined as values between 50 and 205. Make a boxplot by digit class. Hint: Use logical operators and `rowMeans`.
+```{r}
+## your code here
+```
 
 
-8. Use the function `solve` to solve the following system of equations. Hint: use the function `solve`.
+2. Apply the three R functions that return: (a) the dimensions of `x`, (b) the number of rows of `x`, and (c) the number of columns of `x`.
+
+```{r}
+## your code here
+```
+
+
+3. Add row-specific scalars to matrix `x`: add 1 to row 1, add 2 to row 2, and so on.
+
+```{r}
+## your code here
+```
+
+
+4. Add column-specific scalars to matrix `x`: add 1 to column 1, add 2 to column 2, and so on. *Hint: Use `sweep` with `FUN = "+"`.*
+
+```{r}
+## your code here
+```
+
+
+5. Compute the mean of each row of `x`.
+
+```{r}
+## your code here
+```
+
+
+6. Compute the mean of each column of `x`.
+
+```{r}
+## your code here
+```
+
+
+7. Load the MNIST training data using `dslabs`. For each digit class (0-9), compute the proportion of pixels that are in the "grey area" (pixel values between 50 and 205, inclusive). Create a boxplot showing these proportions by digit class. *Hint: Use logical operators and `rowMeans`.*
+
+```{r}
+## your code here
+```
+
+
+8. Use the `solve` function to find the solution to this system of linear equations:
 
 $$
 \begin{align}
-x+2y−2z &=−15\\
-2x+y−5z&=−21\\
-x−4y+z&=18
+x + 2y - 2z &= -15\\
+2x + y - 5z &= -21\\
+x - 4y + z &= 18
 \end{align}
 $$
 
-9. Use matrix multiplication to compute the average of each column of `x` and store in a single row matrix. Hint define a $1\times n$ matrix $(1/n, \dots, 1/n)$ with $n$ the `nrow(x)`.
+```{r}
+## your code here
+```
 
 
-10. Use matrix multiplication and other matrix operations to compute the standard deviation of each column. Do not use `sweep` or `apply`.
+9. Use matrix multiplication to compute the mean of each column of `x` and store the result as a single-row matrix. *Hint: Create a 1×n matrix of weights (1/n, 1/n, ..., 1/n) where n = `nrow(x)`.*
+
+```{r}
+## your code here
+```
 
 
+10. Use matrix multiplication and other matrix operations to compute the standard deviation of each column of `x`. Do not use `sweep`, `apply`, or any built-in standard deviation functions. *Hint: Recall that $\text{sd} = \sqrt{\frac{1}{n-1}\sum(x_i - \bar{x})^2}$.*
+
+```{r}
+## your code here
+```
+
+
+11. Load the MNIST training data and create a matrix `small_x` containing only the first 100 observations. Use matrix multiplication to compute the correlation matrix between all pairs of these 100 observations. *Hint: First standardize the rows, then use `%*%` with the transpose.*
+
+```{r}
+## your code here
+```
+
+
+12. Using the matrix `x` from problem 1, create a new matrix where each entry is replaced by 1 if the original value is above the row mean, and 0 otherwise. Do this using only matrix operations and logical indexing (no loops or apply functions).
+
+```{r}
+## your code here
+```
+
+
+13. Compute the Euclidean distance between row 1 and row 50 of matrix `x` using matrix multiplication. Store the result in a variable called `distance`. *Hint: Use `crossprod()` or matrix multiplication with transpose.*
+
+```{r}
+## your code here
+```
+
+
+14. Create a 5×5 identity matrix using only the `matrix()` function and `diag()`. Store it in a variable called `I5`.
+
+```{r}
+## your code here
+```
+
+
+15. Using the MNIST data, find which pixel position (row and column in the 28×28 image grid) has the highest average intensity across all training images. Return both the row and column indices. *Hint: Use `which.max()` and `arrayInd()`.*
+
+```{r}
+## your code here
+```
