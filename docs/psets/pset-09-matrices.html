@@ -357,7 +357,7 @@ x - 4y + z &amp;= 18
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="16" type="1">
-<li>Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. You can visualize this average image using <code>image(1:28, 1:28, pixel_averages[, 28:1])</code> to see what the “average” digit looks like across these 100 observations.</li>
+<li>Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. Note that it is recommended to <code>apply</code> here is needed for multidimensional arrays. You can visualize this average image using <code>image(1:28, 1:28, pixel_averages[, 28:1])</code> to see what the “average” digit looks like across these 100 observations.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
