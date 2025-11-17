@@ -8,9 +8,8 @@ execute:
 
 ## Instructions
 
-- **No additional packages**: Use only base R functions (assume basic packages like `dslabs` are pre-loaded if needed)
-- **No for-loops**: Use vectorized operations and built-in functions
-- **One line of code**: Problems 1 and 3-6 require exactly one line of code for the solution
+- **Limited packages**: Use only base R functions and the `dslabs` package
+- **No for-loops**: Use vectorized operations and built-in functions (functions like `apply` are acceptable except where specifically noted)
 
 ---
 
