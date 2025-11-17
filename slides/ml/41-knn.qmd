@@ -1,7 +1,7 @@
 ---
 title: "k-nearest neighbors (knn)"
 keywords: "Machine Learning"
-date: "2025-12-10"
+date: "2025-12-08"
 format:
   revealjs:
     theme: night

@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2025-11-17">
+  <meta name="dcterms.date" content="2025-11-12">
   <meta name="keywords" content="Other topics">
   <title>BST 260: Introduction to Data Science – Association Not Causation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -199,7 +199,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2025-11-17</p>
+  <p class="date">2025-11-12</p>
 </section>
 <section id="association-is-not-causation" class="slide level2">
 <h2>Association is not causation</h2>
@@ -231,7 +231,7 @@
 <section id="spurious-correlation" class="slide level2">
 <h2>Spurious correlation</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/divorce-versus-margarine-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/divorce-versus-margarine-1.png" width="960" class="r-stretch"></section>
 <section id="spurious-associations" class="slide level2 smaller">
 <h2>Spurious Associations</h2>
 <ul>
@@ -273,21 +273,21 @@
 <pre><code># A tibble: 1,000,000 × 2
     group     r
     &lt;int&gt; &lt;dbl&gt;
- 1 466290 0.794
- 2 922259 0.772
- 3 737771 0.768
- 4 477363 0.767
- 5 866431 0.759
- 6 391868 0.756
- 7 319823 0.753
- 8 815222 0.752
- 9  21329 0.752
-10 236378 0.750
+ 1 487822 0.809
+ 2 312927 0.799
+ 3 458790 0.785
+ 4 824422 0.781
+ 5 160316 0.772
+ 6 658446 0.767
+ 7 646127 0.761
+ 8 444083 0.758
+ 9 242805 0.757
+10 898776 0.754
 # ℹ 999,990 more rows</code></pre>
 </div>
 </div>
 <ul>
-<li>We see a maximum correlation of 0.794.</li>
+<li>We see a maximum correlation of 0.809.</li>
 </ul>
 </section>
 <section id="spurious-correlation-3" class="slide level2">
@@ -301,20 +301,15 @@
 </section>
 <section id="spurious-correlation-4" class="slide level2">
 <h2>Spurious correlation</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 
-</div>
-<img data-src="32-association-not-causation_files/figure-html/dredging-run-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/dredging-run-1.png" width="960" class="r-stretch"></section>
 <section id="spurious-correlation-5" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li>Sample correlation is a random variable:</li>
 </ul>
 
-<img data-src="32-association-not-causation_files/figure-html/null-corr-hist-run-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/null-corr-hist-run-1.png" width="960" class="r-stretch"></section>
 <section id="spurious-correlation-6" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
@@ -324,16 +319,16 @@
 <section id="spurious-correlation-7" class="slide level2">
 <h2>Spurious correlation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(broom) </span>
-<span id="cb6-2"><a></a>sim_data <span class="sc">|&gt;</span>  </span>
-<span id="cb6-3"><a></a>  <span class="fu">filter</span>(group <span class="sc">==</span> res<span class="sc">$</span>group[<span class="fu">which.max</span>(res<span class="sc">$</span>r)]) <span class="sc">|&gt;</span> </span>
-<span id="cb6-4"><a></a>  <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))) <span class="sc">|&gt;</span>  </span>
-<span id="cb6-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(broom) </span>
+<span id="cb5-2"><a></a>sim_data <span class="sc">|&gt;</span>  </span>
+<span id="cb5-3"><a></a>  <span class="fu">filter</span>(group <span class="sc">==</span> res<span class="sc">$</span>group[<span class="fu">which.max</span>(res<span class="sc">$</span>r)]) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a></a>  <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))) <span class="sc">|&gt;</span>  </span>
+<span id="cb5-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-  term  estimate std.error statistic    p.value
-  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 x        0.846     0.135      6.27 0.00000216</code></pre>
+  term  estimate std.error statistic     p.value
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+1 x        0.802     0.121      6.61 0.000000970</code></pre>
 </div>
 </div>
 </section>
@@ -375,26 +370,21 @@
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1985</span>) </span>
-<span id="cb8-2"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">1</span>) </span>
-<span id="cb8-3"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">84</span>,<span class="dv">1</span>) </span>
-<span id="cb8-4"><a></a>x[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(x[<span class="sc">-</span><span class="dv">23</span>]) </span>
-<span id="cb8-5"><a></a>y[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1985</span>) </span>
+<span id="cb7-2"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">1</span>) </span>
+<span id="cb7-3"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">84</span>,<span class="dv">1</span>) </span>
+<span id="cb7-4"><a></a>x[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(x[<span class="sc">-</span><span class="dv">23</span>]) </span>
+<span id="cb7-5"><a></a>y[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="outliers-1" class="slide level2">
 <h2>Outliers</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `qplot()` was deprecated in ggplot2 3.4.0.</code></pre>
-</div>
 
-</div>
-<img data-src="32-association-not-causation_files/figure-html/outlier-run-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/outlier-run-1.png" width="960" class="r-stretch"></section>
 <section id="outliers-2" class="slide level2">
 <h2>Outliers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">cor</span>(x,y) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">cor</span>(x,y) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.988</code></pre>
 </div>
@@ -407,7 +397,7 @@
 <li>If we remove this outlier, the correlation is greatly reduced to almost 0:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">cor</span>(x[<span class="sc">-</span><span class="dv">23</span>], y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">cor</span>(x[<span class="sc">-</span><span class="dv">23</span>], y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.0442</code></pre>
 </div>
@@ -445,19 +435,7 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <li>where <span class="math inline">\(X_i\)</span> is the father height and <span class="math inline">\(y_i\)</span> is the son height, we do get a statistically significant result.</li>
 </ul>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'HistData' was built under R version 4.4.3</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>galton_heights <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(father <span class="sc">~</span> son))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
-dplyr 1.1.0.
-ℹ Please use `reframe()` instead.
-ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
-  always returns an ungrouped data frame and adjust accordingly.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>galton_heights <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(father <span class="sc">~</span> son))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   term        estimate std.error statistic  p.value
@@ -506,11 +484,11 @@ dplyr 1.1.0.
 <section id="uc-berkeley-admissions" class="slide level2">
 <h2>UC Berkeley admissions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>two_by_two <span class="ot">&lt;-</span> admissions <span class="sc">|&gt;</span> <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span>  </span>
-<span id="cb18-2"><a></a>  <span class="fu">summarize</span>(<span class="at">total_admitted =</span> <span class="fu">round</span>(<span class="fu">sum</span>(admitted <span class="sc">/</span> <span class="dv">100</span> <span class="sc">*</span> applicants)),  </span>
-<span id="cb18-3"><a></a>            <span class="at">not_admitted =</span> <span class="fu">sum</span>(applicants) <span class="sc">-</span> <span class="fu">sum</span>(total_admitted)) </span>
-<span id="cb18-4"><a></a>two_by_two <span class="sc">|&gt;</span> </span>
-<span id="cb18-5"><a></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> total_admitted<span class="sc">/</span>(total_admitted <span class="sc">+</span> not_admitted)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>two_by_two <span class="ot">&lt;-</span> admissions <span class="sc">|&gt;</span> <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span>  </span>
+<span id="cb14-2"><a></a>  <span class="fu">summarize</span>(<span class="at">total_admitted =</span> <span class="fu">round</span>(<span class="fu">sum</span>(admitted <span class="sc">/</span> <span class="dv">100</span> <span class="sc">*</span> applicants)),  </span>
+<span id="cb14-3"><a></a>            <span class="at">not_admitted =</span> <span class="fu">sum</span>(applicants) <span class="sc">-</span> <span class="fu">sum</span>(total_admitted)) </span>
+<span id="cb14-4"><a></a>two_by_two <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> total_admitted<span class="sc">/</span>(total_admitted <span class="sc">+</span> not_admitted)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   gender total_admitted not_admitted percent
@@ -520,8 +498,8 @@ dplyr 1.1.0.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>two_by_two <span class="ot">&lt;-</span> <span class="fu">select</span>(two_by_two, <span class="sc">-</span>gender)</span>
-<span id="cb20-2"><a></a><span class="fu">chisq.test</span>(two_by_two)<span class="sc">$</span>p.value </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>two_by_two <span class="ot">&lt;-</span> <span class="fu">select</span>(two_by_two, <span class="sc">-</span>gender)</span>
+<span id="cb16-2"><a></a><span class="fu">chisq.test</span>(two_by_two)<span class="sc">$</span>p.value </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.06e-21</code></pre>
 </div>
@@ -533,9 +511,9 @@ dplyr 1.1.0.
 <li>Closer inspection shows a paradoxical result:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>admissions <span class="sc">|&gt;</span> <span class="fu">select</span>(major, gender, admitted) <span class="sc">|&gt;</span> </span>
-<span id="cb22-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"gender"</span>, <span class="at">values_from =</span> <span class="st">"admitted"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb22-3"><a></a>  <span class="fu">mutate</span>(<span class="at">women_minus_men =</span> women <span class="sc">-</span> men) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>admissions <span class="sc">|&gt;</span> <span class="fu">select</span>(major, gender, admitted) <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">"gender"</span>, <span class="at">values_from =</span> <span class="st">"admitted"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a></a>  <span class="fu">mutate</span>(<span class="at">women_minus_men =</span> women <span class="sc">-</span> men) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   major   men women women_minus_men
@@ -560,23 +538,23 @@ dplyr 1.1.0.
 <section id="uc-berkeley-admissions-3" class="slide level2">
 <h2>UC Berkeley admissions</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/uc-berkeley-majors-run-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/uc-berkeley-majors-run-1.png" width="960" class="r-stretch"></section>
 <section id="confounding-explained" class="slide level2">
 <h2>Confounding explained</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/confounding-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/confounding-1.png" width="960" class="r-stretch"></section>
 <section id="average-after-stratifying" class="slide level2">
 <h2>Average after stratifying</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/admission-by-major-run-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/admission-by-major-run-1.png" width="960" class="r-stretch"></section>
 <section id="average-after-stratifying-1" class="slide level2">
 <h2>Average after stratifying</h2>
 <ul>
 <li>If we average the difference by major, we find that the percent is actually 3.5% higher for women.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>admissions <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span> </span>
-<span id="cb24-2"><a></a>  <span class="fu">summarize</span>(<span class="at">average =</span> <span class="fu">mean</span>(admitted)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>admissions <span class="sc">|&gt;</span>  <span class="fu">group_by</span>(gender) <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a></a>  <span class="fu">summarize</span>(<span class="at">average =</span> <span class="fu">mean</span>(admitted)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   gender average
@@ -599,7 +577,7 @@ dplyr 1.1.0.
 <li>Simulated <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>:</li>
 </ul>
 
-<img data-src="32-association-not-causation_files/figure-html/simpsons-paradox-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/simpsons-paradox-1.png" width="960" class="r-stretch"></section>
 <section id="simpsons-paradox-2" class="slide level2">
 <h2>Simpson’s paradox</h2>
 <ul>
@@ -610,11 +588,11 @@ dplyr 1.1.0.
 <section id="simpsons-paradox-3" class="slide level2">
 <h2>Simpson’s paradox</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/unnamed-chunk-13-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="simpsons-paradox-4" class="slide level2">
 <h2>Simpson’s paradox</h2>
 
-<img data-src="32-association-not-causation_files/figure-html/simpsons-paradox-explained-1.png" width="672" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-revealjs/simpsons-paradox-explained-1.png" width="960" class="r-stretch"></section>
 <section id="simpsons-paradox-5" class="slide level2">
 <h2>Simpson’s paradox</h2>
 <ul>
@@ -872,6 +850,82 @@ dplyr 1.1.0.
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

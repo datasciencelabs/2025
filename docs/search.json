@@ -596,7 +596,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-10-22 19:05:32 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2025-10-22 23:05:32 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2025-11-17 16:47:10 EST\"\n\nnow(\"GMT\") \n\n[1] \"2025-11-17 21:47:10 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -610,7 +610,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 19\n\nnow() |&gt; minute() \n\n[1] 5\n\nnow() |&gt; second() \n\n[1] 32.72051"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 16\n\nnow() |&gt; minute() \n\n[1] 47\n\nnow() |&gt; second() \n\n[1] 11.12048"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -1030,7 +1030,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.88902 62.14738 66.00393 70.06498 69.92703 73.19973 67.12054 72.91806\n [9] 67.06231 70.00410"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.93421 61.89420 65.71486 70.04100 69.91496 73.04519 66.94353 73.02527\n [9] 66.96612 70.07128"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -3522,7 +3522,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4141977 0.4758023\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4151909 0.4768091\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4251299 0.4868701\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4022892 0.4637108\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -3564,7 +3564,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9464"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9488"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -6803,7 +6803,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4501135\n\nsd(x_hat) \n\n[1] 0.01568601"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.450178\n\nsd(x_hat) \n\n[1] 0.01573065"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -11528,7 +11528,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Male   Male   Male   Male   Male   Female Male   Female Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Male   Male   Male   Male   Male   Female Male   Female Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Male   Female Female Female Female Female Male   Female Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Male   Female Female Female Female Female Male   Female Male  \nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -11703,7 +11703,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000002393f732b68&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x000001407e7117a8&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -12578,7 +12578,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nWed, Sep 10\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 17\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nMon, Nov 03\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nMon, Nov 03\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nMon, Nov 10\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nMon, Nov 10\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nMon, Nov 17\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nWed, Nov 19\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nWed, Nov 19\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nMon, Dec 01\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nMon, Dec 15\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 15\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nWed, Dec 17\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFirst day\n\n\nIntroduction\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\nWed, Sep 03\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\nMon, Sep 08\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\nWed, Sep 10\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\nMon, Sep 15\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\nWed, Sep 17\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\nMon, Sep 22\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\nWed, Sep 24\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\nMon, Sep 29\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\nMon, Sep 29\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\nMon, Oct 06\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\nWed, Oct 08\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\nWed, Oct 08\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\nMon, Oct 20\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\nMon, Oct 20\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\nWed, Oct 22\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\nMon, Oct 27\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\nWed, Oct 29\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\nMon, Nov 03\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\nMon, Nov 03\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\nMon, Nov 10\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\nMon, Nov 10\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\nWed, Nov 12\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\nMon, Nov 17\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\nMon, Nov 17\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\nWed, Nov 19\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\nWed, Nov 19\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\nMon, Dec 01\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\nWed, Dec 03\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\nMon, Dec 08\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\nWed, Dec 10\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\nMon, Dec 15\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\nMon, Dec 15\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\nWed, Dec 17\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
     ]
@@ -12823,7 +12823,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-2",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 466290 0.794\n 2 922259 0.772\n 3 737771 0.768\n 4 477363 0.767\n 5 866431 0.759\n 6 391868 0.756\n 7 319823 0.753\n 8 815222 0.752\n 9  21329 0.752\n10 236378 0.750\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.794."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 487822 0.809\n 2 312927 0.799\n 3 458790 0.785\n 4 824422 0.781\n 5 160316 0.772\n 6 658446 0.767\n 7 646127 0.761\n 8 444083 0.758\n 9 242805 0.757\n10 898776 0.754\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.809."
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-3",
@@ -12837,7 +12837,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-4",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Spurious correlation"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-5",
@@ -12858,7 +12858,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-7",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.846     0.135      6.27 0.00000216"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  summarize(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.802     0.121      6.61 0.000000970"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-8",
@@ -12914,7 +12914,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#outliers-1",
     "title": "Association Not Causation",
     "section": "Outliers",
-    "text": "Outliers\n\n\nWarning: `qplot()` was deprecated in ggplot2 3.4.0."
+    "text": "Outliers"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#outliers-2",
@@ -12970,7 +12970,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#reversing-cause-and-effect-2",
     "title": "Association Not Causation",
     "section": "Reversing cause and effect",
-    "text": "Reversing cause and effect\n\nIf we fit the model:\n\n\\[\nX_i = \\beta_0 + \\beta_1 y_i + \\varepsilon_i, i=1, \\dots, N\n\\]\n\nwhere \\(X_i\\) is the father height and \\(y_i\\) is the son height, we do get a statistically significant result.\n\n\n\nWarning: package 'HistData' was built under R version 4.4.3\n\n\n\ngalton_heights |&gt; summarize(tidy(lm(father ~ son))) \n\nWarning: Returning more (or less) than 1 row per `summarise()` group was deprecated in\ndplyr 1.1.0.\nℹ Please use `reframe()` instead.\nℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`\n  always returns an ungrouped data frame and adjust accordingly.\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   40.9      4.40        9.29 5.47e-17\n2 son            0.407    0.0636      6.40 1.36e- 9"
+    "text": "Reversing cause and effect\n\nIf we fit the model:\n\n\\[\nX_i = \\beta_0 + \\beta_1 y_i + \\varepsilon_i, i=1, \\dots, N\n\\]\n\nwhere \\(X_i\\) is the father height and \\(y_i\\) is the son height, we do get a statistically significant result.\n\n\ngalton_heights |&gt; summarize(tidy(lm(father ~ son))) \n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)   40.9      4.40        9.29 5.47e-17\n2 son            0.407    0.0636      6.40 1.36e- 9"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#reversing-cause-and-effect-3",
@@ -14320,8 +14320,8 @@
     "objectID": "slides/ml/44-algorithms.html#examples-of-algorithms",
     "href": "slides/ml/44-algorithms.html#examples-of-algorithms",
     "title": "Algorithms",
-    "section": "",
-    "text": "There are hundreds of machine learning algorithms.\nHere we provide a few examples spanning rather different approaches.\nWe will use the mnist_27 dataset from dslabs.\n\n\nlibrary(tidyverse) \nlibrary(caret) \nlibrary(dslabs)"
+    "section": "Examples of algorithms",
+    "text": "Examples of algorithms\n\nThere are hundreds of machine learning algorithms.\nHere we provide a few examples spanning rather different approaches.\nWe will use the mnist_27 dataset from dslabs.\n\n\nlibrary(tidyverse) \nlibrary(caret) \nlibrary(dslabs)"
   },
   {
     "objectID": "slides/ml/44-algorithms.html#logistic-regression",
@@ -14698,8 +14698,8 @@
     "objectID": "slides/ml/42-resampling-methods.html#resampling-methods-math",
     "href": "slides/ml/42-resampling-methods.html#resampling-methods-math",
     "title": "Resampling Methods",
-    "section": "",
-    "text": "Our goal is to find the \\(\\lambda\\) that minimizes:\n\n\\[\n\\text{MSE}(\\lambda) = \\mbox{E}\\{[\\widehat{Y}(\\lambda) - Y]^2 \\}\n\\]\n\nA intuitive first attempt is the apparent error defined by:\n\n\\[\n\\hat{\\mbox{MSE}}(\\lambda) = \\frac{1}{N}\\sum_{i = 1}^N \\left\\{\\widehat{y}_i(\\lambda) - y_i\\right\\}^2\n\\]"
+    "section": "Resampling methods math",
+    "text": "Resampling methods math\n\nOur goal is to find the \\(\\lambda\\) that minimizes:\n\n\\[\n\\text{MSE}(\\lambda) = \\mbox{E}\\{[\\widehat{Y}(\\lambda) - Y]^2 \\}\n\\]\n\nA intuitive first attempt is the apparent error defined by:\n\n\\[\n\\hat{\\mbox{MSE}}(\\lambda) = \\frac{1}{N}\\sum_{i = 1}^N \\left\\{\\widehat{y}_i(\\lambda) - y_i\\right\\}^2\n\\]"
   },
   {
     "objectID": "slides/ml/42-resampling-methods.html#resampling-methods-math-1",
@@ -14866,8 +14866,8 @@
     "objectID": "slides/ml/40-smoothing.html#smoothing",
     "href": "slides/ml/40-smoothing.html#smoothing",
     "title": "Smoothing",
-    "section": "",
-    "text": "Before continuing learning about machine learning algorithms, we introduce the important concept of smoothing.\nSmoothing is a very powerful technique used all across data analysis.\nOther names given to this technique are curve fitting and low pass filtering.\nIt is designed to detect trends in the presence of noisy data in cases in which the shape of the trend is unknown."
+    "section": "Smoothing",
+    "text": "Smoothing\n\nBefore continuing learning about machine learning algorithms, we introduce the important concept of smoothing.\nSmoothing is a very powerful technique used all across data analysis.\nOther names given to this technique are curve fitting and low pass filtering.\nIt is designed to detect trends in the presence of noisy data in cases in which the shape of the trend is unknown."
   },
   {
     "objectID": "slides/ml/40-smoothing.html#smoothing-1",
@@ -15035,7 +15035,7 @@
     "href": "slides/ml/40-smoothing.html#signal-plus-noise-model-5",
     "title": "Smoothing",
     "section": "Signal plus noise model",
-    "text": "Signal plus noise model\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Signal plus noise model"
   },
   {
     "objectID": "slides/ml/40-smoothing.html#signal-plus-noise-model-6",
@@ -15203,7 +15203,7 @@
     "href": "slides/ml/40-smoothing.html#local-weighted-regression-4",
     "title": "Smoothing",
     "section": "Local weighted regression",
-    "text": "Local weighted regression\n\n\n`geom_smooth()` using formula = 'y ~ x'"
+    "text": "Local weighted regression"
   },
   {
     "objectID": "slides/ml/40-smoothing.html#local-weighted-regression-5",
@@ -15356,8 +15356,8 @@
     "objectID": "slides/ml/38-evaluation-metrics.html#evaluation-metrics",
     "href": "slides/ml/38-evaluation-metrics.html#evaluation-metrics",
     "title": "Evaluation Metrics",
-    "section": "",
-    "text": "Here we describe ways in which machine learning algorithms are evaluated.\nWe need to quantify what we mean when we say an algorithm performs better.\nWe demonstrate with a boring and simple example: how to predict sex using height."
+    "section": "Evaluation metrics",
+    "text": "Evaluation metrics\n\nHere we describe ways in which machine learning algorithms are evaluated.\nWe need to quantify what we mean when we say an algorithm performs better.\nWe demonstrate with a boring and simple example: how to predict sex using height."
   },
   {
     "objectID": "slides/ml/38-evaluation-metrics.html#evaluation-metrics-1",
@@ -15609,7 +15609,7 @@
     "href": "slides/ml/38-evaluation-metrics.html#mean-squared-error-2",
     "title": "Evaluation Metrics",
     "section": "Mean Squared Error",
-    "text": "Mean Squared Error\n\nBecause in practice we have tests set with many, say \\(N\\), independent observations, a commonly used observable estimate of the MSE is:\n\n\\[\n\\hat{\\mbox{MSE}} = \\frac{1}{N}\\sum_{i=1}^N (\\hat{y}_i - y_i)^2\n\\]\n\nwith the \\(\\hat{y}_i\\) generated completely independently from the the \\(y_i\\).\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn practice, we often report the root mean squared error (RMSE), which is simply \\(\\sqrt{\\mbox{MSE}}\\), because it is in the same units as the outcomes."
+    "text": "Mean Squared Error\n\nBecause in practice we have tests set with many, say \\(N\\), independent observations, a commonly used observable estimate of the MSE is:\n\n\\[\n\\hat{\\mbox{MSE}} = \\frac{1}{N}\\sum_{i=1}^N (\\hat{y}_i - y_i)^2\n\\]\n\nwith the \\(\\hat{y}_i\\) generated completely independently from the the \\(y_i\\)."
   },
   {
     "objectID": "slides/ml/38-evaluation-metrics.html#mean-squared-error-3",
@@ -15629,8 +15629,8 @@
     "objectID": "slides/ml/37-intro-ml.html#machine-learning",
     "href": "slides/ml/37-intro-ml.html#machine-learning",
     "title": "Introduction",
-    "section": "",
-    "text": "Machine learning has achieved remarkable successes in a variety of applications.\nThese range from the postal service’s use of machine learning for reading handwritten zip codes to the development of voice recognition systems."
+    "section": "Machine Learning",
+    "text": "Machine Learning\n\nMachine learning has achieved remarkable successes in a variety of applications.\nThese range from the postal service’s use of machine learning for reading handwritten zip codes to the development of voice recognition systems."
   },
   {
     "objectID": "slides/ml/37-intro-ml.html#machine-learning-1",
@@ -15741,8 +15741,8 @@
     "objectID": "slides/ml/39-conditionals.html#conditional-probabilities-and-expectations",
     "href": "slides/ml/39-conditionals.html#conditional-probabilities-and-expectations",
     "title": "Conditionals",
-    "section": "",
-    "text": "In machine learning applications, we rarely can predict outcomes perfectly.\nThe most common reason for not being able to build perfect algorithms is that it is impossible.\nTo see this, consider that most datasets will include groups of observations with the same exact observed values for all predictors, but with different outcomes."
+    "section": "Conditional probabilities and expectations",
+    "text": "Conditional probabilities and expectations\n\nIn machine learning applications, we rarely can predict outcomes perfectly.\nThe most common reason for not being able to build perfect algorithms is that it is impossible.\nTo see this, consider that most datasets will include groups of observations with the same exact observed values for all predictors, but with different outcomes."
   },
   {
     "objectID": "slides/ml/39-conditionals.html#conditional-probabilities-and-expectations-1",
@@ -15763,7 +15763,7 @@
     "href": "slides/ml/39-conditionals.html#conditional-probabilities-1",
     "title": "Conditionals",
     "section": "Conditional probabilities",
-    "text": "Conditional probabilities\n\nWhen the outcome is binary, we only need to know 1, so we drop the \\(k\\) and use the notation:\n\n\\[p(\\mathbf{x}) = \\mbox{Pr}(Y=1 \\mid \\mathbf{X}=\\mathbf{x})\\]\n\n\n\n\n\n\nNote\n\n\n\n\nDo not be confused by the fact that we use \\(p\\) for two different things: the conditional probability \\(p(\\mathbf{x})\\) and the number of predictors \\(p\\)."
+    "text": "Conditional probabilities\n\nWhen the outcome is binary, we only need to know 1, so we drop the \\(k\\) and use the notation:\n\n\\[p(\\mathbf{x}) = \\mbox{Pr}(Y=1 \\mid \\mathbf{X}=\\mathbf{x})\\]\n\n\n\n\n\n\nNote\n\n\n\nDo not be confused by the fact that we use \\(p\\) for two different things: the conditional probability \\(p(\\mathbf{x})\\) and the number of predictors \\(p\\)."
   },
   {
     "objectID": "slides/ml/39-conditionals.html#conditional-probabilities-2",
@@ -15896,7 +15896,7 @@
     "href": "slides/ml/41-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.86 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.859 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-1",
@@ -15937,8 +15937,8 @@
     "objectID": "slides/ml/43-caret.html#the-caret-package",
     "href": "slides/ml/43-caret.html#the-caret-package",
     "title": "The caret package",
-    "section": "",
-    "text": "There dozens of machine learning algorithms.\nMany of these algorithms are implemented in R.\nHowever, they are distributed via different packages, developed by different authors, and often use different syntax.\nThe caret package tries to consolidate these differences and provide consistency."
+    "section": "The caret package",
+    "text": "The caret package\n\nThere dozens of machine learning algorithms.\nMany of these algorithms are implemented in R.\nHowever, they are distributed via different packages, developed by different authors, and often use different syntax.\nThe caret package tries to consolidate these differences and provide consistency."
   },
   {
     "objectID": "slides/ml/43-caret.html#the-caret-package-1",
@@ -16057,7 +16057,7 @@
     "href": "slides/ml/43-caret.html#resampling-2",
     "title": "The caret package",
     "section": "Resampling",
-    "text": "Resampling\n\nggplot(train_knn, highlight = TRUE) \n\n\n\n\n\n\n\n\nThe argument highlight highlights the max."
+    "text": "Resampling\n\nggplot(train_knn, highlight = TRUE) \n\n\nThe argument highlight highlights the max."
   },
   {
     "objectID": "slides/ml/43-caret.html#resampling-3",
@@ -16078,7 +16078,7 @@
     "href": "slides/ml/43-caret.html#resampling-5",
     "title": "The caret package",
     "section": "Resampling",
-    "text": "Resampling\n\nggplot(train_knn, highlight = TRUE) \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nBecause resampling methods are random procedures, the same code can result in different results.\nTo assure reproducible results you should set the seed."
+    "text": "Resampling\n\nggplot(train_knn, highlight = TRUE)"
   },
   {
     "objectID": "slides/ml/43-caret.html#resampling-6",
@@ -16106,7 +16106,7 @@
     "href": "slides/ml/43-caret.html#resampling-9",
     "title": "The caret package",
     "section": "Resampling",
-    "text": "Resampling\n\nWe accomplish this using the following code:\n\n\ncontrol &lt;- trainControl(method = \"cv\", number = 10, p = .9) \ntrain_knn_cv &lt;- train(y ~ ., method = \"knn\",  \n                   data = mnist_27$train, \n                   tuneGrid = data.frame(k = seq(1, 71, 2)), \n                   trControl = control) \n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThe results component of the train output includes several summary statistics related to the variability of the cross validation estimates:\n\n\nnames(train_knn$results) \n\n[1] \"k\"          \"Accuracy\"   \"Kappa\"      \"AccuracySD\" \"KappaSD\"   \n\n\n\nYou can learn many more details about the caret package, from the manual."
+    "text": "Resampling\n\nWe accomplish this using the following code:\n\n\ncontrol &lt;- trainControl(method = \"cv\", number = 10, p = .9) \ntrain_knn_cv &lt;- train(y ~ ., method = \"knn\",  \n                   data = mnist_27$train, \n                   tuneGrid = data.frame(k = seq(1, 71, 2)), \n                   trControl = control)"
   },
   {
     "objectID": "slides/ml/43-caret.html#preprocessing",
@@ -16217,8 +16217,8 @@
     "objectID": "slides/ml/45-ml-in-practice.html#machine-learning-in-practice",
     "href": "slides/ml/45-ml-in-practice.html#machine-learning-in-practice",
     "title": "ML In Practice",
-    "section": "",
-    "text": "Now that we have learned several methods and explored them with simple examples, we will try them out on a real example: the MNIST digits.\nWe can load this data using the following dslabs package:\n\n\nlibrary(dslabs) \nmnist &lt;- read_mnist()"
+    "section": "Machine learning in practice",
+    "text": "Machine learning in practice\n\nNow that we have learned several methods and explored them with simple examples, we will try them out on a real example: the MNIST digits.\nWe can load this data using the following dslabs package:\n\n\nlibrary(dslabs) \nmnist &lt;- read_mnist()"
   },
   {
     "objectID": "slides/ml/45-ml-in-practice.html#machine-learning-in-practice-1",
@@ -16253,7 +16253,7 @@
     "href": "slides/ml/45-ml-in-practice.html#parallelization-2",
     "title": "ML In Practice",
     "section": "Parallelization",
-    "text": "Parallelization\n\nIf you do use parallelization, make sure to let R know you are done with the following lines of code:\n\n\nstopCluster(cl) \nstopImplicitCluster() \n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nWhen parallelizing tasks across multiple processors, it’s important to consider the risk of running out of memory.\nEach processor might require a copy of the data or substantial portions of it, which can multiply overall memory demands.\nThis is especially challenging if the data or models are large."
+    "text": "Parallelization\n\nIf you do use parallelization, make sure to let R know you are done with the following lines of code:\n\n\nstopCluster(cl) \nstopImplicitCluster()"
   },
   {
     "objectID": "slides/ml/45-ml-in-practice.html#k-nearest-neighbors",
