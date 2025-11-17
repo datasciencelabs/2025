@@ -126,7 +126,7 @@ $$
 ## your code here
 ```
 
-16. Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. You can visualize this average image using `image(1:28, 1:28, pixel_averages[, 28:1])` to see what the "average" digit looks like across these 100 observations.
+16. Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. Note that it is recommended to `apply` here is needed for multidimensional arrays. You can visualize this average image using `image(1:28, 1:28, pixel_averages[, 28:1])` to see what the "average" digit looks like across these 100 observations.
 
 ```{r}
 ## your code here
