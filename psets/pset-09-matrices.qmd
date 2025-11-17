@@ -18,6 +18,7 @@ execute:
 1. Create a 100×10 matrix of randomly generated normal numbers. Store the result in `x`.
 
 ```{r}
+set.seed(2025)
 ## your code here
 ```
 
