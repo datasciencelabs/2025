@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-21">
+<meta name="dcterms.date" content="2025-11-23">
 
-<title>Problem set 9 – BST 260: Introduction to Data Science</title>
+<title>Problem Set 9 – BST 260: Introduction to Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -110,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem set 9</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem Set 9</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -179,15 +214,21 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-09-matrices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem set 9</h1>
+<h1 class="title">Problem Set 9</h1>
 </div>
 
 
@@ -198,7 +239,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 21, 2025</p>
+      <p class="date">November 23, 2025</p>
     </div>
   </div>
   
@@ -210,31 +251,127 @@ window.Quarto = {
 </header>
 
 
-<p>You are not allowed to load any package or use for-loop. For exercises 1 and 3-6 you only get to write one line of code for the solution.</p>
-<p>For better preparation for midterm, we recommend not using chatGPT for this homework.</p>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<ul>
+<li><strong>No additional packages</strong>: Use only base R functions (assume basic packages like <code>dslabs</code> are pre-loaded if needed)</li>
+<li><strong>No for-loops</strong>: Use vectorized operations and built-in functions</li>
+<li><strong>One line of code</strong>: Problems 1 and 3-6 require exactly one line of code for the solution</li>
+</ul>
+<hr>
 <ol type="1">
-<li><p>Create a 100 by 10 matrix of randomly generated normal numbers. Put the result in <code>x</code>.</p></li>
-<li><p>Apply the three R functions that give you the dimension of <code>x</code>, the number of rows of <code>x</code>, and the number of columns of <code>x</code>, respectively.</p></li>
-<li><p>Add the scalar 1 to row 1, the scalar 2 to row 2, and so on, to the matrix <code>x</code>.</p></li>
-<li><p>Add the scalar 1 to column 1, the scalar 2 to column 2, and so on, to the matrix <code>x</code>. Hint: Use <code>sweep</code> with <code>FUN = "+"</code>.</p></li>
-<li><p>Compute the average of each row of <code>x</code>.</p></li>
-<li><p>Compute the average of each column of <code>x</code>.</p></li>
-<li><p>For each digit in the MNIST training data, compute the proportion of pixels that are in a <em>grey area</em>, defined as values between 50 and 205. Make a boxplot by digit class. Hint: Use logical operators and <code>rowMeans</code>.</p></li>
-<li><p>Use the function <code>solve</code> to solve the following system of equations. Hint: use the function <code>solve</code>.</p></li>
+<li>Create a 100×10 matrix of randomly generated normal numbers. Store the result in <code>x</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2025</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Apply the three R functions that return: (a) the dimensions of <code>x</code>, (b) the number of rows of <code>x</code>, and (c) the number of columns of <code>x</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Add row-specific scalars to matrix <code>x</code>: add 1 to row 1, add 2 to row 2, and so on.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Add column-specific scalars to matrix <code>x</code>: add 1 to column 1, add 2 to column 2, and so on. <em>Hint: Use <code>sweep</code> with <code>FUN = "+"</code>.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Compute the mean of each row of <code>x</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="6" type="1">
+<li>Compute the mean of each column of <code>x</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Load the MNIST training data using <code>dslabs</code>. For each digit class (0-9), compute the proportion of pixels that are in the “grey area” (pixel values between 50 and 205, inclusive). Create a boxplot showing these proportions by digit class. <em>Hint: Use logical operators and <code>rowMeans</code>.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Use the <code>solve</code> function to find the solution to this system of linear equations:</li>
 </ol>
 <p><span class="math display">\[
 \begin{align}
-x+2y−2z &amp;=−15\\
-2x+y−5z&amp;=−21\\
-x−4y+z&amp;=18
+x + 2y - 2z &amp;= -15\\
+2x + y - 5z &amp;= -21\\
+x - 4y + z &amp;= 18
 \end{align}
 \]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol start="9" type="1">
-<li><p>Use matrix multiplication to compute the average of each column of <code>x</code> and store in a single row matrix. Hint define a <span class="math inline">\(1\times n\)</span> matrix <span class="math inline">\((1/n, \dots, 1/n)\)</span> with <span class="math inline">\(n\)</span> the <code>nrow(x)</code>.</p></li>
-<li><p>Use matrix multiplication and other matrix operations to compute the standard deviation of each column. Do not use <code>sweep</code> or <code>apply</code>.</p></li>
+<li>Use matrix multiplication to compute the mean of each column of <code>x</code> and store the result as a single-row matrix. <em>Hint: Create a 1×n matrix of weights (1/n, 1/n, …, 1/n) where n = <code>nrow(x)</code>.</em></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="10" type="1">
+<li>Use matrix multiplication and other matrix operations to compute the standard deviation of each column of <code>x</code>. Do not use <code>sweep</code>, <code>apply</code>, or any built-in standard deviation functions. <em>Hint: Recall that <span class="math inline">\(\text{sd} = \sqrt{\frac{1}{n-1}\sum(x_i - \bar{x})^2}\)</span>.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="11" type="1">
+<li>Load the MNIST training data and create a matrix <code>small_x</code> containing only the first 100 observations. Use matrix multiplication to compute the correlation matrix between all pairs of these 100 observations. <em>Hint: First standardize the rows, then use <code>%*%</code> with the transpose.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="12" type="1">
+<li>Using the matrix <code>x</code> from problem 1, create a new matrix where each entry is replaced by 1 if the original value is above the row mean, and 0 otherwise. Do this using only matrix operations and logical indexing (no loops or apply functions).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="13" type="1">
+<li>Compute the Euclidean distance between row 1 and row 50 of matrix <code>x</code> using matrix multiplication. Store the result in a variable called <code>distance</code>. <em>Hint: Use <code>crossprod()</code> or matrix multiplication with transpose.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="14" type="1">
+<li>Create a 5×5 identity matrix using only the <code>matrix()</code> function and <code>diag()</code>. Store it in a variable called <code>I5</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="15" type="1">
+<li>Using the MNIST data, find which pixel position (row and column in the 28×28 image grid) has the highest average intensity across all training images. Return both the row and column indices. <em>Hint: Use <code>which.max()</code> and <code>arrayInd()</code>.</em></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="16" type="1">
+<li>Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. You can visualize this average image using <code>image(1:28, 1:28, pixel_averages[, 28:1])</code> to see what the “average” digit looks like across these 100 observations.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="17" type="1">
+<li>Select the first 20 observations labeled as “1” and the first 20 observations labeled as “0” from the MNIST training data. Compute three correlation matrices: (a) correlations within the 1’s group, (b) correlations within the 0’s group, and (c) correlations between the 1’s and 0’s groups. Compare the average within-group correlation to the average between-group correlation.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -641,4 +778,4 @@ x−4y+z&amp;=18
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-09-matrices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/psets/pset-09-matrices.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

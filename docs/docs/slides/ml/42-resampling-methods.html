@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-12-08">
+<meta name="keywords" content="Machine Learning">
+
+<title>Resampling Methods – BST 260: Introduction to Data Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8e0d6fe173fc884be9977477430247b6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Resampling Methods</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/datasciencelabs/2025" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../psets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Sets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../oral-evaluations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Oral Evaluations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../final-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#resampling-methods-math" id="toc-resampling-methods-math" class="nav-link active" data-scroll-target="#resampling-methods-math">Resampling methods math</a></li>
+  <li><a href="#resampling-methods-math-1" id="toc-resampling-methods-math-1" class="nav-link" data-scroll-target="#resampling-methods-math-1">Resampling methods math</a></li>
+  <li><a href="#mathematical-description-of-resampling-methods" id="toc-mathematical-description-of-resampling-methods" class="nav-link" data-scroll-target="#mathematical-description-of-resampling-methods">Mathematical description of resampling methods</a></li>
+  <li><a href="#resampling-methods-math-2" id="toc-resampling-methods-math-2" class="nav-link" data-scroll-target="#resampling-methods-math-2">Resampling methods math</a></li>
+  <li><a href="#cross-validation" id="toc-cross-validation" class="nav-link" data-scroll-target="#cross-validation">Cross validation</a></li>
+  <li><a href="#cross-validation-1" id="toc-cross-validation-1" class="nav-link" data-scroll-target="#cross-validation-1">Cross validation</a></li>
+  <li><a href="#cross-validation-2" id="toc-cross-validation-2" class="nav-link" data-scroll-target="#cross-validation-2">Cross validation</a></li>
+  <li><a href="#k-fold-cross-validation" id="toc-k-fold-cross-validation" class="nav-link" data-scroll-target="#k-fold-cross-validation">K-fold cross validation</a></li>
+  <li><a href="#k-fold-cross-validation-1" id="toc-k-fold-cross-validation-1" class="nav-link" data-scroll-target="#k-fold-cross-validation-1">K-fold cross validation</a></li>
+  <li><a href="#k-fold-cross-validation-2" id="toc-k-fold-cross-validation-2" class="nav-link" data-scroll-target="#k-fold-cross-validation-2">K-fold cross validation</a></li>
+  <li><a href="#k-fold-cross-validation-3" id="toc-k-fold-cross-validation-3" class="nav-link" data-scroll-target="#k-fold-cross-validation-3">K-fold cross validation</a></li>
+  <li><a href="#k-fold-cross-validation-4" id="toc-k-fold-cross-validation-4" class="nav-link" data-scroll-target="#k-fold-cross-validation-4">K-fold cross validation</a></li>
+  <li><a href="#how-many-folds" id="toc-how-many-folds" class="nav-link" data-scroll-target="#how-many-folds">How many folds?</a></li>
+  <li><a href="#how-many-folds-1" id="toc-how-many-folds-1" class="nav-link" data-scroll-target="#how-many-folds-1">How many folds?</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm" id="toc-mse-of-our-optimized-algorithm" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm">MSE of our optimized algorithm</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm-1" id="toc-mse-of-our-optimized-algorithm-1" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm-1">MSE of our optimized algorithm</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm-2" id="toc-mse-of-our-optimized-algorithm-2" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm-2">MSE of our optimized algorithm</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm-3" id="toc-mse-of-our-optimized-algorithm-3" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm-3">MSE of our optimized algorithm</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm-4" id="toc-mse-of-our-optimized-algorithm-4" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm-4">MSE of our optimized algorithm</a></li>
+  <li><a href="#mse-of-our-optimized-algorithm-5" id="toc-mse-of-our-optimized-algorithm-5" class="nav-link" data-scroll-target="#mse-of-our-optimized-algorithm-5">MSE of our optimized algorithm</a></li>
+  <li><a href="#boostrap-resampling" id="toc-boostrap-resampling" class="nav-link" data-scroll-target="#boostrap-resampling">Boostrap resampling</a></li>
+  <li><a href="#boostrap-resampling-1" id="toc-boostrap-resampling-1" class="nav-link" data-scroll-target="#boostrap-resampling-1">Boostrap resampling</a></li>
+  <li><a href="#boostrap-resampling-2" id="toc-boostrap-resampling-2" class="nav-link" data-scroll-target="#boostrap-resampling-2">Boostrap resampling</a></li>
+  <li><a href="#comparison-of-mse-estimates" id="toc-comparison-of-mse-estimates" class="nav-link" data-scroll-target="#comparison-of-mse-estimates">Comparison of MSE estimates</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/docs/slides/ml/42-resampling-methods.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="42-resampling-methods.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Resampling Methods</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 8, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>Machine Learning</p>
+  </div>
+</div>
+
+</header>
+
+
+<section id="resampling-methods-math" class="level2">
+<h2 class="anchored" data-anchor-id="resampling-methods-math">Resampling methods math</h2>
+<ul>
+<li>Our goal is to find the <span class="math inline">\(\lambda\)</span> that minimizes:</li>
+</ul>
+<p><span class="math display">\[
+\text{MSE}(\lambda) = \mbox{E}\{[\widehat{Y}(\lambda) - Y]^2 \}
+\]</span></p>
+<ul>
+<li>A intuitive first attempt is the apparent error defined by:</li>
+</ul>
+<p><span class="math display">\[
+\hat{\mbox{MSE}}(\lambda) = \frac{1}{N}\sum_{i = 1}^N \left\{\widehat{y}_i(\lambda) - y_i\right\}^2
+\]</span></p>
+</section>
+<section id="resampling-methods-math-1" class="level2">
+<h2 class="anchored" data-anchor-id="resampling-methods-math-1">Resampling methods math</h2>
+<ul>
+<li>But this is just one realization of a random variable.</li>
+</ul>
+<p><span class="math display">\[
+\hat{\mbox{MSE}}(\lambda) = \frac{1}{N}\sum_{i = 1}^N \left\{\widehat{y}_i(\lambda) - y_i\right\}^2
+\]</span></p>
+<ul>
+<li>Can we find a better estimate?</li>
+</ul>
+</section>
+<section id="mathematical-description-of-resampling-methods" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-description-of-resampling-methods">Mathematical description of resampling methods</h2>
+<ul>
+<li><p>Imagine a world in which repeat data collection.</p></li>
+<li><p>Take a large of number samples <span class="math inline">\(B\)</span> define:</p></li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{B} \sum_{b=1}^B \frac{1}{N}\sum_{i=1}^N \left\{\widehat{y}_i^b(\lambda) - y_i^b\right\}^2
+\]</span></p>
+<ul>
+<li>Law of large numbers says this is close to <span class="math inline">\(MSE(\lambda)\)</span>.</li>
+</ul>
+</section>
+<section id="resampling-methods-math-2" class="level2">
+<h2 class="anchored" data-anchor-id="resampling-methods-math-2">Resampling methods math</h2>
+<ul>
+<li><p>We can’t do this in practice.</p></li>
+<li><p>But we can try to immitate it.</p></li>
+</ul>
+</section>
+<section id="cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="cross-validation">Cross validation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="cross-validation-1" class="level2">
+<h2 class="anchored" data-anchor-id="cross-validation-1">Cross validation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="cross-validation-2" class="level2">
+<h2 class="anchored" data-anchor-id="cross-validation-2">Cross validation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="k-fold-cross-validation" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation">K-fold cross validation</h2>
+<ul>
+<li>Remember we are going to imitate this:</li>
+</ul>
+<p><span class="math display">\[
+\mbox{MSE}(\lambda) \approx\frac{1}{B} \sum_{b = 1}^B \frac{1}{N}\sum_{i = 1}^N \left(\widehat{y}_i^b(\lambda) - y_i^b\right)^2  
+\]</span></p>
+<ul>
+<li><p>We want to generate a dataset that can be thought of as independent random sample, and do this <span class="math inline">\(B\)</span> times.</p></li>
+<li><p>The K in K-fold cross validation, represents the number of time <span class="math inline">\(B\)</span>.</p></li>
+</ul>
+</section>
+<section id="k-fold-cross-validation-1" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation-1">K-fold cross validation</h2>
+<ul>
+<li><p>For each sample we simply pick <span class="math inline">\(M = N/B\)</span> observations at random and think of these as a random sample <span class="math inline">\(y_1^b, \dots, y_M^b\)</span>, with <span class="math inline">\(b = 1\)</span>.</p></li>
+<li><p>We call this the validation set.</p></li>
+<li><p>Now we can fit the model in the training set, then compute the apparent error on the independent set:</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{\mbox{MSE}}_b(\lambda) = \frac{1}{M}\sum_{i = 1}^M \left(\widehat{y}_i^b(\lambda) - y_i^b\right)^2  
+\]</span></p>
+</section>
+<section id="k-fold-cross-validation-2" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation-2">K-fold cross validation</h2>
+<ul>
+<li>In K-fold cross validation, we randomly split the observations into <span class="math inline">\(B\)</span> non-overlapping sets:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="k-fold-cross-validation-3" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation-3">K-fold cross validation</h2>
+<ul>
+<li>Now we repeat the calculation above for each of these sets <span class="math inline">\(b = 1,\dots,B\)</span> and obtain:</li>
+</ul>
+<p><span class="math display">\[\hat{\mbox{MSE}}_1(\lambda),\dots, \hat{\mbox{MSE}}_B(\lambda)\]</span></p>
+<ul>
+<li>Then, for our final estimate, we compute the average:</li>
+</ul>
+<p><span class="math display">\[
+\hat{\mbox{MSE}}(\lambda) = \frac{1}{B} \sum_{b = 1}^B \hat{\mbox{MSE}}_b(\lambda)
+\]</span></p>
+</section>
+<section id="k-fold-cross-validation-4" class="level2">
+<h2 class="anchored" data-anchor-id="k-fold-cross-validation-4">K-fold cross validation</h2>
+<ul>
+<li>A final step is to select the <span class="math inline">\(\lambda\)</span> that minimizes the <span class="math inline">\(\hat{\mbox{MSE}}(\lambda)\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+\hat{\mbox{MSE}}(\lambda) = \frac{1}{B} \sum_{b = 1}^B \hat{\mbox{MSE}}_b(\lambda)
+\]</span></p>
+</section>
+<section id="how-many-folds" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-folds">How many folds?</h2>
+<ul>
+<li><p>How do we pick the cross validation fold?</p></li>
+<li><p>Large values of <span class="math inline">\(B\)</span> are preferable because the training data better imitates the original dataset.</p></li>
+<li><p>However, larger values of <span class="math inline">\(B\)</span> will have much slower computation time: for example, 100-fold cross validation will be 10 times slower than 10-fold cross validation.</p></li>
+<li><p>For this reason, the choices of <span class="math inline">\(B = 5\)</span> and <span class="math inline">\(B = 10\)</span> are popular.</p></li>
+</ul>
+</section>
+<section id="how-many-folds-1" class="level2">
+<h2 class="anchored" data-anchor-id="how-many-folds-1">How many folds?</h2>
+<ul>
+<li><p>One way we can improve the variance of our final estimate is to take more samples.</p></li>
+<li><p>To do this, we would no longer require the training set to be partitioned into non-overlapping sets.</p></li>
+<li><p>Instead, we would just pick <span class="math inline">\(B\)</span> sets of some size at random.</p></li>
+</ul>
+</section>
+<section id="mse-of-our-optimized-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm">MSE of our optimized algorithm</h2>
+<ul>
+<li><p>We have described how to use cross validation to optimize parameters.</p></li>
+<li><p>However, we now have to take into account the fact that the optimization occurred on the training data and we therefore need an estimate of our final algorithm based on data that was not used to optimize the choice.</p></li>
+<li><p>Here is where we use the test set we separated early on.</p></li>
+</ul>
+</section>
+<section id="mse-of-our-optimized-algorithm-1" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm-1">MSE of our optimized algorithm</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="mse-of-our-optimized-algorithm-2" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm-2">MSE of our optimized algorithm</h2>
+<ul>
+<li>We can actually do cross validation again:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="mse-of-our-optimized-algorithm-3" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm-3">MSE of our optimized algorithm</h2>
+<ul>
+<li><p>and obtain a final estimate of our expected loss.</p></li>
+<li><p>However, note that last cross validation iteration means that our entire compute time gets multiplied by <span class="math inline">\(K\)</span>.</p></li>
+<li><p>You will soon learn that fitting each algorithm takes time because we are performing many complex computations.</p></li>
+<li><p>As a result, we are always looking for ways to reduce this time.</p></li>
+<li><p>For the final evaluation, we often just use the one test set.</p></li>
+</ul>
+</section>
+<section id="mse-of-our-optimized-algorithm-4" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm-4">MSE of our optimized algorithm</h2>
+<ul>
+<li>Once we are satisfied with this model and want to make it available to others, we could refit the model on the entire dataset, without changing the optimized parameters.</li>
+</ul>
+</section>
+<section id="mse-of-our-optimized-algorithm-5" class="level2">
+<h2 class="anchored" data-anchor-id="mse-of-our-optimized-algorithm-5">MSE of our optimized algorithm</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="boostrap-resampling" class="level2">
+<h2 class="anchored" data-anchor-id="boostrap-resampling">Boostrap resampling</h2>
+<ul>
+<li><p>Typically, cross-validation involves partitioning the original dataset into a training set to train the model and a testing set to evaluate it.</p></li>
+<li><p>With the bootstrap approach you can create multiple different training datasets via bootstrapping.</p></li>
+<li><p>This method is sometimes called bootstrap aggregating or bagging.</p></li>
+<li><p>In bootstrap resampling, we create a large number of bootstrap samples from the original training dataset.</p></li>
+</ul>
+</section>
+<section id="boostrap-resampling-1" class="level2">
+<h2 class="anchored" data-anchor-id="boostrap-resampling-1">Boostrap resampling</h2>
+<ul>
+<li><p>Each bootstrap sample is created by randomly selecting observations with replacement, usually the same size as the original training dataset.</p></li>
+<li><p>For each bootstrap sample, we fit the model and compute the MSE estimate on the observations not selected in the random sampling, referred to as the <em>out-of-bag observations</em>.</p></li>
+<li><p>These out-of-bag observations serve a similar role to a validation set in standard cross-validation.</p></li>
+<li><p>We then average the MSEs obtained in the out-of-bag observations.</p></li>
+</ul>
+</section>
+<section id="boostrap-resampling-2" class="level2">
+<h2 class="anchored" data-anchor-id="boostrap-resampling-2">Boostrap resampling</h2>
+<ul>
+<li><p>This approach is actually the default approach in the <strong>caret</strong> package.</p></li>
+<li><p>We describe how to implement resampling methods with the <strong>caret</strong> package next.</p></li>
+</ul>
+</section>
+<section id="comparison-of-mse-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-of-mse-estimates">Comparison of MSE estimates</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
+Loading required package: lattice
+
+
+Attaching package: 'caret'
+
+
+The following object is masked from 'package:purrr':
+
+    lift</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="42-resampling-methods_files/figure-html/k-fold-versus-bootstrap-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/docs/slides/ml/42-resampling-methods.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

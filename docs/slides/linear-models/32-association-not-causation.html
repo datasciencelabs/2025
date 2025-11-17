@@ -210,26 +210,47 @@
 <li><p>However, we must be careful not to over-interpret these associations.</p></li>
 </ul>
 </section>
+<section id="minimal-requirements" class="slide level2">
+<h2>Minimal requirements</h2>
+<ul>
+<li><p><strong>Empirical association</strong> (i.e.&nbsp;Correlation): A relationship must exist between the cause and effect</p></li>
+<li><p><strong>Temporal priority:</strong> The cause must happen before the effect. This is considered the most widely accepted requirement for a causal relationship.</p></li>
+<li><p><strong>There is a dose-response relationship:</strong> increasing the “dose” of the cause increases the effect.</p></li>
+<li><p><strong>Plausibility:</strong> There is a plausible mechanism that explains how the cause leads to the effect.</p></li>
+<li><p><strong>Exploration and Elimination of alternative causes:</strong> Find confounders and understand their role.</p></li>
+</ul>
+</section>
 <section id="association-is-not-causation-1" class="slide level2">
 <h2>Association is not causation</h2>
 <ul>
 <li><p>There are many reasons that a variable <span class="math inline">\(X\)</span> can be correlated with a variable <span class="math inline">\(Y\)</span>, without having any direct effect on <span class="math inline">\(Y\)</span>.</p></li>
-<li><p>Today we describe three: spurious correlation, reverse causation, and confounders.</p></li>
+<li><p>Today we describe four: spurious correlation, data dredging, reverse causation, and confounders.</p></li>
+<li><p>With reverse causation the correlation is real, it is just not causal</p></li>
 </ul>
 </section>
 <section id="spurious-correlation" class="slide level2">
 <h2>Spurious correlation</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/divorce-versus-margarine-1.png" width="960" class="r-stretch"></section>
-<section id="spurious-correlation-1" class="slide level2">
-<h2>Spurious correlation</h2>
-<p>More here: <a href="http://tylervigen.com/spurious-correlations" class="uri">http://tylervigen.com/spurious-correlations</a></p>
+<img data-src="32-association-not-causation_files/figure-html/divorce-versus-margarine-1.png" width="672" class="r-stretch"></section>
+<section id="spurious-associations" class="slide level2 smaller">
+<h2>Spurious Associations</h2>
 <ul>
-<li><p>Referred to as <em>data dredging</em>, <em>data fishing</em>, or <em>data snooping</em>.</p></li>
-<li><p>It’s basically a form of what in the US they call <em>cherry picking</em>.</p></li>
+<li>any two things that change in a monotone fashion over time will be correlated
+<ul>
+<li>this can also be caused, as we will see by confounding (where time is often an unadjusted confounder)</li>
+</ul></li>
+<li>if you look at enough tests, one will be positive (data dredging)
+<ul>
+<li>you should always ask: “How many tests did you do?”</li>
+<li>use of the False Discovery Rate (FDR) and other tools reduces this issue</li>
+</ul></li>
+<li>outlying observations can cause high correlation
+<ul>
+<li>outliers are often spurious but not always</li>
+</ul></li>
 </ul>
 </section>
-<section id="spurious-correlation-2" class="slide level2">
+<section id="spurious-correlation-1" class="slide level2">
 <h2>Spurious correlation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
@@ -240,7 +261,7 @@
 <span id="cb1-6"><a></a>                   <span class="at">y =</span> <span class="fu">rnorm</span>(N<span class="sc">*</span>g)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="spurious-correlation-3" class="slide level2">
+<section id="spurious-correlation-2" class="slide level2">
 <h2>Spurious correlation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>res <span class="ot">&lt;-</span> sim_data <span class="sc">|&gt;</span>  </span>
@@ -252,24 +273,24 @@
 <pre><code># A tibble: 1,000,000 × 2
     group     r
     &lt;int&gt; &lt;dbl&gt;
- 1 881693 0.809
- 2 934751 0.781
- 3 761413 0.775
- 4 646126 0.774
- 5 643613 0.768
- 6  18459 0.766
- 7 441844 0.762
- 8  52842 0.762
- 9 973566 0.762
-10 443601 0.755
+ 1 466290 0.794
+ 2 922259 0.772
+ 3 737771 0.768
+ 4 477363 0.767
+ 5 866431 0.759
+ 6 391868 0.756
+ 7 319823 0.753
+ 8 815222 0.752
+ 9  21329 0.752
+10 236378 0.750
 # ℹ 999,990 more rows</code></pre>
 </div>
 </div>
 <ul>
-<li>We see a maximum correlation of 0.809.</li>
+<li>We see a maximum correlation of 0.794.</li>
 </ul>
 </section>
-<section id="spurious-correlation-4" class="slide level2">
+<section id="spurious-correlation-3" class="slide level2">
 <h2>Spurious correlation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>sim_data <span class="sc">|&gt;</span> <span class="fu">filter</span>(group <span class="sc">==</span> res<span class="sc">$</span>group[<span class="fu">which.max</span>(res<span class="sc">$</span>r)]) <span class="sc">|&gt;</span> </span>
@@ -278,40 +299,45 @@
 <span id="cb4-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="spurious-correlation-5" class="slide level2">
+<section id="spurious-correlation-4" class="slide level2">
 <h2>Spurious correlation</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/dredging-run-1.png" width="960" class="r-stretch"></section>
-<section id="spurious-correlation-6" class="slide level2">
+</div>
+<img data-src="32-association-not-causation_files/figure-html/dredging-run-1.png" width="672" class="r-stretch"></section>
+<section id="spurious-correlation-5" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li>Sample correlation is a random variable:</li>
 </ul>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/null-corr-hist-run-1.png" width="960" class="r-stretch"></section>
-<section id="spurious-correlation-7" class="slide level2">
+<img data-src="32-association-not-causation_files/figure-html/null-corr-hist-run-1.png" width="672" class="r-stretch"></section>
+<section id="spurious-correlation-6" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
-<li>It’s simply a mathematical fact that if we observe random correlations that are expected to be 0, but have a standard error of 0.204, the largest one will be close to 1.</li>
+<li>It’s simply a mathematical fact that if we observe random correlations that are expected to be 0, but have a standard error of 0.204, then the largest one will be close to 1.</li>
 </ul>
 </section>
-<section id="spurious-correlation-8" class="slide level2">
+<section id="spurious-correlation-7" class="slide level2">
 <h2>Spurious correlation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(broom) </span>
-<span id="cb5-2"><a></a>sim_data <span class="sc">|&gt;</span>  </span>
-<span id="cb5-3"><a></a>  <span class="fu">filter</span>(group <span class="sc">==</span> res<span class="sc">$</span>group[<span class="fu">which.max</span>(res<span class="sc">$</span>r)]) <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))) <span class="sc">|&gt;</span>  </span>
-<span id="cb5-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(broom) </span>
+<span id="cb6-2"><a></a>sim_data <span class="sc">|&gt;</span>  </span>
+<span id="cb6-3"><a></a>  <span class="fu">filter</span>(group <span class="sc">==</span> res<span class="sc">$</span>group[<span class="fu">which.max</span>(res<span class="sc">$</span>r)]) <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a></a>  <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))) <span class="sc">|&gt;</span>  </span>
+<span id="cb6-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-  term  estimate std.error statistic     p.value
-  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
-1 x        0.598    0.0905      6.61 0.000000964</code></pre>
+  term  estimate std.error statistic    p.value
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1 x        0.846     0.135      6.27 0.00000216</code></pre>
 </div>
 </div>
 </section>
-<section id="spurious-correlation-9" class="slide level2">
+<section id="spurious-correlation-8" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li><p>This particular form of data dredging is referred to as <em>p-hacking</em>.</p></li>
@@ -319,25 +345,27 @@
 <li><p>Since publishers tend to reward statistically significant results over negative results, there is an incentive to report significant results.</p></li>
 </ul>
 </section>
-<section id="spurious-correlation-10" class="slide level2">
+<section id="spurious-correlation-9" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
-<li>In epidemiology and the social sciences, for example, researchers may look for associations between an adverse outcome and several exposures, and report only the one exposure that resulted in a small p-value.</li>
+<li><p>In epidemiology and the social sciences, for example, researchers may look for associations between an adverse outcome and several exposures, and report only the one exposure that resulted in a small p-value.</p></li>
+<li><p>Similarly with high throughput biology it is routine to test 100’s to 1000’s of genes, genetic variants, epigenetic sites</p></li>
+<li><p>unless care is taken to perform some form of p-value adjustment these results are unlikely to replicate</p></li>
 </ul>
 </section>
-<section id="spurious-correlation-11" class="slide level2">
+<section id="spurious-correlation-10" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li>Furthermore, they might try fitting several different models to account for confounding and choose the one that yields the smallest p-value.</li>
 </ul>
 </section>
-<section id="spurious-correlation-12" class="slide level2">
+<section id="spurious-correlation-11" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li>In experimental disciplines, an experiment might be repeated more than once, yet only the results of the one experiment with a small p-value reported.</li>
 </ul>
 </section>
-<section id="spurious-correlation-13" class="slide level2">
+<section id="spurious-correlation-12" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
 <li><p>This does not necessarily happen due to unethical behavior, but rather as a result of statistical ignorance or wishful thinking.</p></li>
@@ -347,21 +375,26 @@
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1985</span>) </span>
-<span id="cb7-2"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">1</span>) </span>
-<span id="cb7-3"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">84</span>,<span class="dv">1</span>) </span>
-<span id="cb7-4"><a></a>x[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(x[<span class="sc">-</span><span class="dv">23</span>]) </span>
-<span id="cb7-5"><a></a>y[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1985</span>) </span>
+<span id="cb8-2"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">1</span>) </span>
+<span id="cb8-3"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">84</span>,<span class="dv">1</span>) </span>
+<span id="cb8-4"><a></a>x[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(x[<span class="sc">-</span><span class="dv">23</span>]) </span>
+<span id="cb8-5"><a></a>y[<span class="sc">-</span><span class="dv">23</span>] <span class="ot">&lt;-</span> <span class="fu">scale</span>(y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="outliers-1" class="slide level2">
 <h2>Outliers</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `qplot()` was deprecated in ggplot2 3.4.0.</code></pre>
+</div>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/outlier-run-1.png" width="960" class="r-stretch"></section>
+</div>
+<img data-src="32-association-not-causation_files/figure-html/outlier-run-1.png" width="672" class="r-stretch"></section>
 <section id="outliers-2" class="slide level2">
 <h2>Outliers</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">cor</span>(x,y) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">cor</span>(x,y) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.988</code></pre>
 </div>
@@ -374,41 +407,9 @@
 <li>If we remove this outlier, the correlation is greatly reduced to almost 0:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">cor</span>(x[<span class="sc">-</span><span class="dv">23</span>], y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">cor</span>(x[<span class="sc">-</span><span class="dv">23</span>], y[<span class="sc">-</span><span class="dv">23</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.0442</code></pre>
-</div>
-</div>
-</section>
-<section id="outliers-4" class="slide level2">
-<h2>Outliers</h2>
-<ul>
-<li><p>There is an alternative to the sample correlation for estimating the population correlation that is robust to outliers.</p></li>
-<li><p>It is called <em>Spearman correlation</em>.</p></li>
-</ul>
-</section>
-<section id="outliers-5" class="slide level2">
-<h2>Outliers</h2>
-
-<img data-src="32-association-not-causation_files/figure-revealjs/scatter-plot-of-ranks-run-1.png" width="960" class="r-stretch"></section>
-<section id="outliers-6" class="slide level2">
-<h2>Outliers</h2>
-<ul>
-<li>The outlier is no longer associated with a very large value, and the correlation decreases significantly:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">cor</span>(<span class="fu">rank</span>(x), <span class="fu">rank</span>(y)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.00251</code></pre>
-</div>
-</div>
-<ul>
-<li>Spearman correlation can also be calculated like this:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.00251</code></pre>
 </div>
 </div>
 </section>
@@ -428,14 +429,11 @@
 <p>When we examined whether regular help with homework had a positive impact on children’s academic performance, we were quite startled by what we found. Regardless of a family’s social class, racial or ethnic background, or a child’s grade level, consistent homework help almost never improved test scores or grades…</p>
 </blockquote>
 </blockquote>
-</section>
-<section id="reversing-cause-and-effect-2" class="slide level2">
-<h2>Reversing cause and effect</h2>
 <ul>
 <li>A more likely possibility is that the children needing regular parental help, receive this help because they don’t perform well in school.</li>
 </ul>
 </section>
-<section id="reversing-cause-and-effect-3" class="slide level2">
+<section id="reversing-cause-and-effect-2" class="slide level2">
 <h2>Reversing cause and effect</h2>
 <ul>
 <li>If we fit the model:</li>
@@ -447,7 +445,19 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <li>where <span class="math inline">\(X_i\)</span> is the father height and <span class="math inline">\(y_i\)</span> is the son height, we do get a statistically significant result.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>galton_heights <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(father <span class="sc">~</span> son))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'HistData' was built under R version 4.4.3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>galton_heights <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">tidy</span>(<span class="fu">lm</span>(father <span class="sc">~</span> son))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
+dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
+  always returns an ungrouped data frame and adjust accordingly.</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   term        estimate std.error statistic  p.value
@@ -457,20 +467,25 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 </div>
 </div>
 </section>
-<section id="reversing-cause-and-effect-4" class="slide level2">
+<section id="reversing-cause-and-effect-3" class="slide level2">
 <h2>Reversing cause and effect</h2>
 <ul>
 <li><p>The model fits the data very well.</p></li>
 <li><p>The model is technically correct.</p></li>
 <li><p>The estimates and p-values were obtained correctly as well.</p></li>
-<li><p>What is wrong here is the interpretation.</p></li>
+<li><p>But we cannot interpret this as saying that the heights of the son’s has any causal effect on the height of the fathers</p></li>
 </ul>
 </section>
 <section id="confounders" class="slide level2">
 <h2>Confounders</h2>
 <ul>
-<li><p>Confounders are perhaps the most common reason that leads to associations begin misinterpreted.</p></li>
-<li><p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are correlated, we call <span class="math inline">\(Z\)</span> a <em>confounder</em> if changes in <span class="math inline">\(Z\)</span> cause changes in both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>Confounders are a common reason for associations being misinterpreted.</p></li>
+<li><p>When studying the relationship between and exposure and an outcome a confounder is third variable that:</p>
+<ul>
+<li><p>Is related to the exposure</p></li>
+<li><p>Affects the outcome, and is not caused by the exposure</p></li>
+</ul></li>
+<li><p>hence the confounder can affect the perceived relationship between the exposure and the outcome.</p></li>
 </ul>
 </section>
 <section id="confounders-1" class="slide level2">
@@ -539,20 +554,21 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <ul>
 <li><p>What’s going on?</p></li>
 <li><p>This actually can happen if an uncounted confounder is driving most of the variability.</p></li>
+<li><p>This particular version is called <em>Simpson’s Paradox</em></p></li>
 </ul>
 </section>
 <section id="uc-berkeley-admissions-3" class="slide level2">
 <h2>UC Berkeley admissions</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/uc-berkeley-majors-run-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/uc-berkeley-majors-run-1.png" width="672" class="r-stretch"></section>
 <section id="confounding-explained" class="slide level2">
 <h2>Confounding explained</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/confounding-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/confounding-1.png" width="672" class="r-stretch"></section>
 <section id="average-after-stratifying" class="slide level2">
 <h2>Average after stratifying</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/admission-by-major-run-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/admission-by-major-run-1.png" width="672" class="r-stretch"></section>
 <section id="average-after-stratifying-1" class="slide level2">
 <h2>Average after stratifying</h2>
 <ul>
@@ -574,7 +590,7 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <h2>Simpson’s paradox</h2>
 <ul>
 <li><p>The case we have just covered is an example of Simpson’s paradox.</p></li>
-<li><p>It is called a paradox because we see the sign of the correlation flip when comparing the entire publication to specific strata.</p></li>
+<li><p>It is called a paradox because we see the sign of the correlation flip when comparing the entire population to specific strata.</p></li>
 </ul>
 </section>
 <section id="simpsons-paradox-1" class="slide level2">
@@ -583,7 +599,7 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <li>Simulated <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>:</li>
 </ul>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/simpsons-paradox-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/simpsons-paradox-1.png" width="672" class="r-stretch"></section>
 <section id="simpsons-paradox-2" class="slide level2">
 <h2>Simpson’s paradox</h2>
 <ul>
@@ -594,16 +610,49 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
 <section id="simpsons-paradox-3" class="slide level2">
 <h2>Simpson’s paradox</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/unnamed-chunk-13-1.png" width="672" class="r-stretch"></section>
 <section id="simpsons-paradox-4" class="slide level2">
 <h2>Simpson’s paradox</h2>
 
-<img data-src="32-association-not-causation_files/figure-revealjs/simpsons-paradox-explained-1.png" width="960" class="r-stretch"></section>
+<img data-src="32-association-not-causation_files/figure-html/simpsons-paradox-explained-1.png" width="672" class="r-stretch"></section>
 <section id="simpsons-paradox-5" class="slide level2">
 <h2>Simpson’s paradox</h2>
 <ul>
 <li><p>It is really <span class="math inline">\(Z\)</span> that is negatively correlated with <span class="math inline">\(X\)</span>.</p></li>
 <li><p>If we stratify by <span class="math inline">\(Z\)</span>, the <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are actually positively correlated, as seen in the plot above.</p></li>
+</ul>
+</section>
+<section id="collider-bias" class="slide level2">
+<h2>Collider Bias</h2>
+<ul>
+<li><p>when studying medical records an interesting phenomenon called collider bias can occur</p></li>
+<li><p>Example from Wikipedia: https://en.wikipedia.org/wiki/Berkson%27s_paradox</p></li>
+</ul>
+<p>An example presented by mathematician Jordan Ellenberg is that of a dating pool, measured on axes of niceness and handsomeness. A person might conclude from their own dating experience that “the handsome ones tend not to be nice, and the nice ones tend not to be handsome”.</p>
+</section>
+<section id="collider-bias-example" class="slide level2">
+<h2>Collider Bias Example</h2>
+<ul>
+<li><p>Alice decides to only date men that that are above some line of handsomeness and niceness</p></li>
+<li><p>But as a result the really handsome ones do not have to be that nice and the really nice ones do not need to be that handsome</p></li>
+<li><p>so now Alice notices a correlation in her dating pool even when there is no such correlation in the population</p></li>
+</ul>
+</section>
+<section id="medically-relevant-examples" class="slide level2">
+<h2>Medically relevant examples</h2>
+<ul>
+<li><p>studies of hospital records can come to the wrong conclusions</p></li>
+<li><p>being in hospital requires that the person have something serious and medically adverse</p></li>
+<li><p>unless care is taken spurious negative associations can be found</p></li>
+<li><p>when looking at everyone in the hospital for appendicitis the researchers find that few if any of them have kidney disease</p></li>
+</ul>
+</section>
+<section id="medical-example" class="slide level2">
+<h2>Medical Example</h2>
+<ul>
+<li><p>and when comparing their appendicitis patients to controls, taken from patients in the hospital they find this association to be significant</p></li>
+<li><p>it would be wrong to believe that this suggests that kidney disease is <em>protective</em> against appendicitis</p></li>
+<li><p>they have to have something wrong with them, and since both kidney disease and appendicitis are rare it is very unlikely that many patients will have both</p></li>
 </ul>
 
 
@@ -823,82 +872,6 @@ X_i = \beta_0 + \beta_1 y_i + \varepsilon_i, i=1, \dots, N
         ]
       });
     </script>
-    
-
-    <script>
-
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
-      // slide changes (different for each slide format).
-
-      (function () {
-
-        // dispatch for htmlwidgets
-
-        function fireSlideEnter() {
-
-          const event = window.document.createEvent("Event");
-
-          event.initEvent("slideenter", true, true);
-
-          window.document.dispatchEvent(event);
-
-        }
-
-    
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-
-          fireSlideEnter();
-
-    
-
-          // dispatch for shiny
-
-          if (window.jQuery) {
-
-            if (previousSlide) {
-
-              window.jQuery(previousSlide).trigger("hidden");
-
-            }
-
-            if (currentSlide) {
-
-              window.jQuery(currentSlide).trigger("shown");
-
-            }
-
-          }
-
-        }
-
-    
-
-        // hookup for slidy
-
-        if (window.w3c_slidy) {
-
-          window.w3c_slidy.add_observer(function (slide_num) {
-
-            // slide_num starts at position 1
-
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
-          });
-
-        }
-
-    
-
-      })();
-
-    </script>
-
-    
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

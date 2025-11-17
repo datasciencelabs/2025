@@ -11,7 +11,6 @@ execute:
 - **No additional packages**: Use only base R functions (assume basic packages like `dslabs` are pre-loaded if needed)
 - **No for-loops**: Use vectorized operations and built-in functions
 - **One line of code**: Problems 1 and 3-6 require exactly one line of code for the solution
-- **Midterm preparation**: We recommend completing this independently without AI assistance
 
 ---
 
@@ -123,6 +122,18 @@ $$
 
 
 15. Using the MNIST data, find which pixel position (row and column in the 28×28 image grid) has the highest average intensity across all training images. Return both the row and column indices. *Hint: Use `which.max()` and `arrayInd()`.*
+
+```{r}
+## your code here
+```
+
+16. Using the MNIST training data, take the first 100 observations and reshape them into a 100×28×28 multidimensional array. Then compute the per-pixel averages across the first dimension to get a 28×28 matrix of average pixel intensities. You can visualize this average image using `image(1:28, 1:28, pixel_averages[, 28:1])` to see what the "average" digit looks like across these 100 observations.
+
+```{r}
+## your code here
+```
+
+17. Select the first 20 observations labeled as "1" and the first 20 observations labeled as "0" from the MNIST training data. Compute three correlation matrices: (a) correlations within the 1's group, (b) correlations within the 0's group, and (c) correlations between the 1's and 0's groups. Compare the average within-group correlation to the average between-group correlation.
 
 ```{r}
 ## your code here
