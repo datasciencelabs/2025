@@ -58,7 +58,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | Nov 16   |  medium | 
 | Problem Set 9          | Matrices | Nov 23   | easy | 
 | Problem Set 10         | Digit reading | Dec 15   | hard | 
-|Final Project| NHANES Data Analysis | Dec 15   | hard  |
+|[Final Project](final-project.qmd) | NHANES Data Analysis | Dec 15   | hard  |
 
 ## Office Hour Times
 
