@@ -62,7 +62,7 @@ We will have a Slack workspace for you to ask questions during and after class.
 | Component | Weight |
 |-----------|--------|
 | 10 Problem Sets | 30% |
-| 4 Oral Evaluations | 20% |
+| 3 Oral Evaluations | 20% |
 | Midterm 1 | 10% |
 | Midterm 2 | 20% |
 | Final Project | 20% |
