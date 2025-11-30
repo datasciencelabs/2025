@@ -1,6 +1,5 @@
 ---
 title: "Conditionals"
-author: "Rafael A. Irizarry"
 keywords: "Machine Learning"
 date: "2025-12-01"
 format:

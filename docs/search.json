@@ -15637,7 +15637,7 @@
     "href": "slides/ml/37-intro-ml.html#machine-learning-1",
     "title": "Introduction",
     "section": "Machine Learning",
-    "text": "Machine Learning\n\nOther significant advances include movie recommendation systems, spam and malware detection, housing price prediction algorithms, and the ongoing development of autonomous vehicles.\nThe field of Artificial Intelligence (AI) has been evolving for several decades."
+    "text": "Machine Learning\n\nOther significant advances include movie recommendation systems, spam and malware detection, housing price prediction algorithms, the ongoing development of autonomous vehicles and biomedical applications (genomics, transcriptomics, proteomics, etc).\nThe field of Artificial Intelligence (AI) has been evolving for several decades."
   },
   {
     "objectID": "slides/ml/37-intro-ml.html#machine-learning-2",
@@ -15896,7 +15896,7 @@
     "href": "slides/ml/41-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.859 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-1",

@@ -1,6 +1,5 @@
 ---
 title: "Introduction"
-author: "Rafael A. Irizarry"
 keywords: "Machine Learning"
 date: "2025-12-01"
 format:
@@ -23,7 +22,7 @@ options(digits = 3)
 
 ## Machine Learning
 
-- Other significant advances include movie recommendation systems, spam and malware detection, housing price prediction algorithms, and the ongoing development of autonomous vehicles.
+- Other significant advances include movie recommendation systems, spam and malware detection, housing price prediction algorithms, the ongoing development of autonomous vehicles and biomedical applications (genomics, transcriptomics, proteomics, etc).
 
 - The field of _Artificial Intelligence (AI)_ has been evolving for several decades.
 
@@ -38,13 +37,6 @@ options(digits = 3)
 - It focuses on decision-making through algorithms trained with data.
 
 - In recent years, the terms AI and Machine Learning have been used interchangeably in many contexts, though they have distinct meanings.
-
-
-## Machine Learning
-
-- Machine learning has achieved remarkable successes, ranging from the postal service's handwritten zip code readers to voice recognition systems like Apple's Siri.
-
-- These advances also include movie recommendation systems, spam and malware detection, housing price prediction algorithms, and the development of driverless cars.
 
 
 
