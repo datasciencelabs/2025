@@ -1,41 +1,204 @@
 ---
-title: Problem set 10
-date: 2025-12-15
+title: "Problem Set 10"
+date: "2025-12-19"
+format: html
 execute: 
   eval: false
 ---
 
-The data for this problem set is provided by this link: `https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/pset-10-mnist.rds`
+## Instructions
 
-Read this object into R. For example, you can use:
+- Use only base R functions and the packages: `dslabs`, `caret`, `randomForest`, and `matrixStats`
+- The dataset is provided at the link below
+- Show all code used to arrive at your answers
+
+---
+
+## Load the data
+
+The data for this problem set is provided by this link: `https://github.com/datasciencelabs/2025/raw/refs/heads/main/data/pset-10-mnist.rds`
+
+Read this object into R:
 
 ```{r}
+library(caret)
+library(dslabs)
+library(randomForest)
+library(matrixStats)
+
 fn <- tempfile()
-download.file("https://github.com/datasciencelabs/2024/raw/refs/heads/main/data/pset-10-mnist.rds", fn)
+download.file("https://github.com/datasciencelabs/2025/raw/refs/heads/main/data/pset-10-mnist.rds", fn)
 dat <- readRDS(fn)
 file.remove(fn)
 ```
 
+The object `dat` is a list with two components: `dat$train` and `dat$test`. Each contains `images` (a matrix of pixel values) and `labels` (the true digits). Note that `dat$test$labels` is `NA` because you will predict these values.
 
-The object is a list with two components `dat$train` and `dat$test`. Use the data in `dat$train` to  develop a machine learning algorithms to predict the labels for the images in the `dat$test$images` component.
+For this problem set, we will work exclusively with the training data, creating our own train/validation/test splits.
 
-Save the your predicted labels in an object called `digit_predictions`. This should be a vector of integers with length `nrow(dat$test$images)`. It is important that the `digit_predictions` is ordered to match the rows of `dat$test$images`.
+---
 
-Save the object to a file called `digit_predictions.rds` using:
+
+1. How many observations are in `dat$train$images`? How many predictors (pixels) does each observation have? How many unique digits (classes) are in `dat$train$labels`?
 
 ```{r}
-saveRDS(digit_predictions, file = "digit_predictions.rds")
+## your code here
 ```
 
-You will submit:
+2. To speed up computation, create a balanced subset of the training data with exactly 500 observations per digit (5,000 observations total). Store the images in a matrix called `x` and the labels in a factor called `y`. Use `set.seed(2025)` before sampling.
 
-1. The file `digit_predictions.rds`
-
-2. A quarto file that reproduces your analysis and provides brief explanations for your choices. 
-
-**If your code reproduces the result**, your grade will be your accuracy  rounded up the closest integer. So,for example, if your accuracy is .993 your grade will be 100%. 
-
-You will have two opportunities to submit your predictions and see your accuracy before your submitting your final predictions.
+*Hint: For each digit 0–9, sample 500 observations.*
 
 
 
+```{r}
+set.seed(2025)
+## your code here
+```
+
+3. Using `createDataPartition`, split your subset (`x` and `y`) into:
+
+- 80% training set (`x_train`, `y_train`)
+- 20% test set (`x_test`, `y_test`)
+
+Use `set.seed(2025)` and report the number of observations in each set.
+
+
+```{r}
+set.seed(2025)
+## your code here
+```
+
+4. Fit a k-nearest neighbors model with `k = 5` using the `knn3` function from `caret`. Predict on the test set and report the overall accuracy.
+
+*Hint: Use `knn3(y_train ~ ., data = data.frame(x_train, y_train = y_train), k = 5)`, then use `predict()` with `type = "class"`.*
+
+
+```{r}
+## your code here
+```
+
+5. Using the predictions from Question 4, create a confusion matrix with `confusionMatrix()`. Which digit is most often confused with the digit "4"? Report the digit and the count of misclassifications.
+
+*Hint: Extract the table from the confusion matrix and examine the row corresponding to digit 4.*
+
+
+```{r}
+## your code here
+```
+
+6. For the digit "7", compute the sensitivity and specificity from your kNN model (k=5). Treat "7" as the positive class and all other digits as negative.
+
+*Hint: Create a binary outcome: `y_binary <- factor(ifelse(y_test == "7", "7", "other"), levels = c("7", "other"))` and similarly for predictions, then use `sensitivity()` and `specificity()`.*
+
+
+```{r}
+## your code here
+```
+
+7. Use the `train` function in `caret` to find the optimal value of `k` for kNN. Use 4-fold cross-validation and test `k` values: `seq(1, 9, by = 2)`. What value of `k` maximizes accuracy? What is the cross-validated accuracy for this optimal `k`?
+
+Use `set.seed(2025)` before calling `train`.
+
+*Note: This may take a few minutes to run.*
+
+
+
+```{r}
+set.seed(2025)
+## your code here
+```
+
+8. Use `nearZeroVar` to identify predictors (pixel columns) with near-zero variance in `x_train`. How many predictors are flagged for removal? Create a new training matrix `x_train_nzv` and test matrix `x_test_nzv` with these predictors removed.
+
+
+```{r}
+## your code here
+```
+
+9. Fit a kNN model (using `train`) with `k` values from Question 7 and `preProcess = "nzv"` to remove near-zero variance predictors automatically. Use 5-fold cross-validation. Does the cross-validated accuracy improve compared to Question 7? Report the optimal `k` and the corresponding accuracy.
+
+Use `set.seed(2025)`.
+
+```{r}
+set.seed(2025)
+## your code here
+```
+
+10. Fit a Random Forest model using `randomForest()` with `ntree = 100` and the near-zero variance predictors removed (use `x_train_nzv` and `x_test_nzv` from Question 8). Use `set.seed(2025)` and report the test set accuracy.
+
+
+```{r}
+set.seed(2025)
+## your code here
+```
+
+11. You now have three models:
+
+- kNN with optimal k (from Question 7 or 9)
+- Random Forest (from Question 10)
+- A simple baseline: predict the most common digit in the training set for all test observations
+
+Compute the test set accuracy for all three approaches. Which performs best?
+
+
+```{r}
+## your code here
+```
+
+12. Create a binary classification problem: digit "3" vs. all others. Using the training data with near-zero variance predictors removed:
+
+a) Fit a logistic regression model (`glm` with `family = "binomial"`)  
+b) Obtain predicted probabilities for the test set  
+c) Compute the True Positive Rate (TPR) and False Positive Rate (FPR) for cutoffs: `seq(0.1, 0.9, by = 0.1)`  
+d) Plot FPR (x-axis) vs TPR (y-axis) to create a simple ROC curve
+
+Report the TPR and FPR for cutoff = 0.5.
+
+
+```{r}
+## your code here
+```
+
+13. Using `x_train_nzv`:
+
+a) Perform PCA using `prcomp()` (no need to scale since pixels are already on the same scale)  
+b) How many principal components are needed to explain at least 80% of the variance?  
+c) Create a new training set using only these principal components  
+d) Fit a kNN model (k=5) on the PCA-transformed data and report test set accuracy
+
+*Hint: Transform `x_test_nzv` using the same PCA rotation matrix from the training set.*
+
+Use `set.seed(2025)` when fitting kNN.
+
+
+```{r}
+set.seed(2025)
+## your code here
+```
+
+14. Create an ensemble by combining predictions from:
+- Your best kNN model (from Question 9)
+- Your Random Forest model (from Question 10)
+
+Use **majority vote**: for each test observation, predict the digit that received the most votes from the two models. If there's a tie, use the kNN prediction.
+
+Report the ensemble's test set accuracy. Does it improve upon the individual models?
+
+
+```{r}
+## your code here
+```
+
+15. Using the confusion matrix from your Random Forest model (Question 10):
+
+a) Which pair of distinct digits is most often confused with each other? (i.e., which off-diagonal cell has the highest value when you sum `confusionMatrix[i,j] + confusionMatrix[j,i]`?)  
+b) For the most-confused pair, compute the average pixel intensity for each digit in the training set and visualize both as 28×28 images using `image()` or `as.raster()`. Briefly describe (1-2 sentences) why you think these two digits are confused.
+
+*Hint: Convert the pixel vector to a 28×28 matrix and plot with `image(matrix(avg_pixels, 28, 28)[, 28:1])`.*
+
+
+
+```{r}
+## your code here
+```

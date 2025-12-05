@@ -56,7 +56,7 @@ Lecture slides, class notes, and problem sets are linked below. New material is 
 | [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election |Nov 05   |  hard | 
 | [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | Nov 16   |  medium | 
 | [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | Nov 23   | easy | 
-| Problem Set 10         | Digit reading | Dec 15   | hard | 
+| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | Dec 19   | hard | 
 |[Final Project](final-project.qmd) | NHANES Data Analysis | Dec 15   | hard  |
 
 ## Office Hour Times
