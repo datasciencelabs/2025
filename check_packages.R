@@ -1,56 +1,52 @@
 ## check_packages.R
-## Run before building the site to confirm every R package used in course
-## materials is installed.  Exits non-zero if anything is missing.
+## Run before building the site to confirm R packages are available.
+##
+## Two tiers:
+##   build_pkgs  -- used in executed code chunks; missing ones WILL break render
+##   student_pkgs -- referenced in eval:false exercise templates; students need
+##                   them but the site renders fine without them
+##
+## Exits non-zero only if build-critical packages are missing.
 
-cran_pkgs <- c(
+build_pkgs <- c(
   "broom", "caret", "data.table", "devtools", "doParallel",
   "dplyr", "dslabs", "emmeans", "forcats", "geomtextpath",
-  "gganimate", "ggExtra", "ggplot2", "ggrepel", "ggridges",
-  "ggthemes", "gridExtra", "gsheet", "gtools", "HistData",
-  "httr2", "janitor", "jsonlite", "kableExtra", "knitr",
-  "Lahman", "lattice", "lpSolve", "lubridate", "maps",
-  "MASS", "matrixStats", "NHANES", "purrr", "randomForest",
-  "RColorBrewer", "readr", "readxl", "remotes", "reshape2",
-  "rpart", "rvest", "scales", "shiny", "tidyr", "tidyverse",
-  "VennDiagram"
+  "ggplot2", "ggrepel", "ggridges", "ggthemes", "gridExtra",
+  "gtools", "HistData", "httr2", "janitor", "jsonlite",
+  "kableExtra", "knitr", "Lahman", "lattice", "lpSolve",
+  "lubridate", "maps", "MASS", "matrixStats", "NHANES",
+  "purrr", "randomForest", "RColorBrewer", "readr", "readxl",
+  "remotes", "reshape2", "rpart", "rvest", "scales",
+  "shiny", "ThemePark", "tidyr", "tidyverse", "VennDiagram"
 )
 
-# Packages installed from GitHub (check by name only)
-github_pkgs <- c("excessmort", "ThemePark")
+# eval:false in student exercise templates — site renders without these,
+# but students need them to complete the problem sets
+student_pkgs <- c(
+  "excessmort",  # pset-08 (install_github("rafalab/excessmort"))
+  "gganimate",   # dataviz slide (eval:false demo)
+  "gsheet"       # pset-07 (eval:false)
+)
 
-all_pkgs <- c(cran_pkgs, github_pkgs)
+check <- function(pkgs) {
+  pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+}
 
-missing <- all_pkgs[!vapply(all_pkgs, requireNamespace, logical(1), quietly = TRUE)]
+missing_build   <- check(build_pkgs)
+missing_student <- check(student_pkgs)
 
-if (length(missing) == 0) {
-  cat("OK: all", length(all_pkgs), "packages are available.\n")
+if (length(missing_student) > 0) {
+  cat("NOTE: student-exercise packages not installed (site will still render):\n")
+  for (pkg in missing_student) cat("  ", pkg, "\n")
+  cat("\n")
+}
+
+if (length(missing_build) == 0) {
+  cat("OK: all", length(build_pkgs), "build-critical packages are available.\n")
 } else {
-  cat("MISSING packages (", length(missing), "):\n", sep = "")
-  for (pkg in missing) {
-    if (pkg %in% github_pkgs) {
-      src <- switch(pkg,
-        excessmort = "rafalab/excessmort",
-        ThemePark  = "MatthewBJane/ThemePark"
-      )
-      cat("  ", pkg, "  [GitHub:", src, "]\n")
-    } else {
-      cat("  ", pkg, "\n")
-    }
-  }
-  cat("\nInstall CRAN packages with:\n")
-  cran_missing <- missing[missing %in% cran_pkgs]
-  if (length(cran_missing))
-    cat('  install.packages(c(', paste0('"', cran_missing, '"', collapse = ", "), '))\n')
-  gh_missing <- missing[missing %in% github_pkgs]
-  if (length(gh_missing)) {
-    cat("Install GitHub packages with:\n")
-    for (pkg in gh_missing) {
-      src <- switch(pkg,
-        excessmort = "rafalab/excessmort",
-        ThemePark  = "MatthewBJane/ThemePark"
-      )
-      cat('  remotes::install_github("', src, '")\n', sep = "")
-    }
-  }
+  cat("ERROR: build-critical packages missing (", length(missing_build), ") -- render will fail:\n", sep = "")
+  for (pkg in missing_build) cat("  ", pkg, "\n")
+  cat("\nInstall with:\n")
+  cat('  install.packages(c(', paste0('"', missing_build, '"', collapse = ", "), '))\n')
   quit(status = 1)
 }
