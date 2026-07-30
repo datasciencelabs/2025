@@ -1,4 +1,8 @@
-.PHONY: render preview clean check-legacy check-urls check-years
+.PHONY: render preview clean precheck check-legacy check-urls check-years
+
+# Verify all R packages used in course materials are installed
+precheck:
+	@Rscript check_packages.R
 
 render:
 	quarto render
