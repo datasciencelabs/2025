@@ -1,8 +1,26 @@
-.PHONY: render preview clean precheck check-legacy check-urls check-years
+.PHONY: render preview clean precheck check-cran check-legacy check-urls check-years
 
 # Verify all R packages used in course materials are installed
 precheck:
 	@Rscript check_packages.R
+
+# Verify CRAN packages are still listed on CRAN (catches archiving between course iterations)
+# Requires internet access.  GitHub-sourced packages (ThemePark, excessmort) are excluded.
+check-cran:
+	@Rscript -e "\
+	  source('check_packages.R', echo=FALSE); \
+	  cat('Checking CRAN availability...\n'); \
+	  avail <- rownames(available.packages(repos='https://cloud.r-project.org')); \
+	  gone  <- setdiff(cran_build_pkgs, avail); \
+	  also  <- setdiff(c('gganimate','gsheet'), avail); \
+	  all_gone <- c(gone, also); \
+	  if (length(all_gone) == 0) { \
+	    cat('OK: all CRAN packages are still listed on CRAN.\n') \
+	  } else { \
+	    cat('WARNING: these packages no longer appear on CRAN:\n'); \
+	    for (p in all_gone) cat('  ', p, '\n'); \
+	    quit(status=1) \
+	  }"
 
 render:
 	quarto render
