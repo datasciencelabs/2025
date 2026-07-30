@@ -6,12 +6,12 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2025-09-29">
   <meta name="keywords" content="Wrangling">
-  <title>BST 260: Introduction to Data Science – Data APIs</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Data APIs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -96,7 +96,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -286,14 +286,14 @@
 <li><p>Here is an example providing information Nobel prize winners:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(jsonlite) </span>
-<span id="cb2-2"><a></a>nobel <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">"http://api.nobelprize.org/v1/prize.json"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(jsonlite) </span>
+<span id="cb2-2"><a></a>nobel <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(<span class="st">"http://api.nobelprize.org/v1/prize.json"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>This downloads a JSON file and reads into a list:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">class</span>(nobel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">class</span>(nobel)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "list"</code></pre>
 </div>
@@ -315,11 +315,11 @@
 <li>The object is rather complicated. The <code>prizes</code> component includes a list of data frames with information about Nobel Laureates:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>nobel<span class="sc">$</span>prizes <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>nobel<span class="sc">$</span>prizes <span class="sc">|&gt;</span> </span>
 <span id="cb5-2"><a></a>  <span class="fu">filter</span>(category <span class="sc">==</span> <span class="st">"literature"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="st">"1971"</span>) <span class="sc">|&gt;</span>  </span>
 <span id="cb5-3"><a></a>  <span class="fu">pull</span>(laureates) <span class="sc">|&gt;</span> </span>
 <span id="cb5-4"><a></a>  <span class="fu">first</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-5"><a></a>  <span class="fu">select</span>(id, firstname, surname) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a></a>  <span class="fu">select</span>(id, firstname, surname) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id firstname surname
 1 645     Pablo  Neruda</code></pre>
@@ -352,14 +352,14 @@
 <li>By visiting their data catalog <a href="https://data.cdc.gov" class="uri">https://data.cdc.gov</a> you can search for datasets and find that the data is provided through this API:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://data.cdc.gov/resource/muzy-jte6.csv"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://data.cdc.gov/resource/muzy-jte6.csv"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>We can then make create and perform a request like this:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(httr2) </span>
-<span id="cb8-2"><a></a>response <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">library</span>(httr2) </span>
+<span id="cb8-2"><a></a>response <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span> <span class="fu">req_perform</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-httr2-package-3" class="slide level2">
@@ -368,7 +368,7 @@
 <li>We can see the results of the request by looking at the returned object.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>response</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>response</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;httr2_response&gt;
 GET https://data.cdc.gov/resource/muzy-jte6.csv
@@ -384,8 +384,8 @@ Body: In memory (210922 bytes)</code></pre>
 <li>To extract the body, which is where the data are, we can use <code>resp_body_string</code> and send the result, a comma delimited string, to <code>read_csv</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(readr) </span>
-<span id="cb11-2"><a></a>tab <span class="ot">&lt;-</span> response <span class="sc">|&gt;</span> <span class="fu">resp_body_string</span>() <span class="sc">|&gt;</span> <span class="fu">read_csv</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(readr) </span>
+<span id="cb11-2"><a></a>tab <span class="ot">&lt;-</span> response <span class="sc">|&gt;</span> <span class="fu">resp_body_string</span>() <span class="sc">|&gt;</span> <span class="fu">read_csv</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><p>We note that the returned object is only 1000 entries.</p></li>
@@ -400,9 +400,9 @@ Body: In memory (210922 bytes)</code></pre>
 <li><p>We can use the <code>req_url_path_append</code> to add this to our request:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>response <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>response <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a></a>  <span class="fu">req_url_query</span>(<span class="at">.multi =</span> <span class="st">"comma"</span>, <span class="st">`</span><span class="at">$limit</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"100000"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a></a>  <span class="fu">req_perform</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a></a>  <span class="fu">req_perform</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>The CDC service returns data in csv format but a more common format used by web services is JSON.</li>
@@ -414,15 +414,15 @@ Body: In memory (210922 bytes)</code></pre>
 <li>The CDC also provides data in json format through:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://data.cdc.gov/resource/muzy-jte6.json"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://data.cdc.gov/resource/muzy-jte6.json"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>To extract the data table we use the <code>fromJSON</code> function from the <strong>jsonlite</strong> package.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>tab <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>tab <span class="ot">&lt;-</span> <span class="fu">request</span>(url) <span class="sc">|&gt;</span>  </span>
 <span id="cb14-2"><a></a>   <span class="fu">req_perform</span>() <span class="sc">|&gt;</span>  </span>
-<span id="cb14-3"><a></a>   <span class="fu">resp_body_json</span>(<span class="at">simplifyDataFrame =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-3"><a></a>   <span class="fu">resp_body_json</span>(<span class="at">simplifyDataFrame =</span> <span class="cn">TRUE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>When working with APIs, it’s essential to check the API’s documentation for rate limits, required headers, or authentication methods.</li>
@@ -625,7 +625,7 @@ Body: In memory (210922 bytes)</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -652,80 +652,42 @@ Body: In memory (210922 bytes)</code></pre>
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -775,13 +737,14 @@ Body: In memory (210922 bytes)</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -796,7 +759,7 @@ Body: In memory (210922 bytes)</code></pre>
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+            var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

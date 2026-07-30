@@ -1,0 +1,9 @@
+# Course infrastructure
+site_url: "https://vjcitn.github.io/2026vjc/"
+canvas_url: "https://canvas.harvard.edu/courses/158943"
+slack_url: "https://bst-260-f25-7j2.slack.com/"
+course_github: "https://github.com/vjcitn/2026vjc/"
+
+# Textbook base URLs
+dsbook1: "http://rafalab.dfci.harvard.edu/dsbook-part-1/"
+dsbook2: "http://rafalab.dfci.harvard.edu/dsbook-part-2/"

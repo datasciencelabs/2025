@@ -6,12 +6,12 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2025-12-03">
   <meta name="keywords" content="Machine Learning">
-  <title>BST 260: Introduction to Data Science – Smoothing</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Smoothing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -96,7 +96,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -243,9 +243,9 @@
 <li><p>Here is a plot of the <span class="math inline">\(x_2\)</span>s versus the <span class="math inline">\(x_1\)</span>s with color determining if <span class="math inline">\(y\)</span> is 1 (blue) or 0 (red):</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(caret) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(caret) </span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(dslabs) </span>
-<span id="cb1-3"><a></a>mnist_27<span class="sc">$</span>train <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(x_1, x_2, <span class="at">color =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a></a>mnist_27<span class="sc">$</span>train <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(x_1, x_2, <span class="at">color =</span> y)) <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="example-is-it-a-2-or-a-7-2" class="slide level2">
@@ -361,7 +361,7 @@ x_2 = (0.5-\hat{\beta}_0)/\hat{\beta}_2  -\hat{\beta}_1/\hat{\beta}_2 x_1
 <li><p>Later we will learn about methods, such as k-nearest neighbors, that can be used to smooth with higher dimensions.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="signal-plus-noise-model-1" class="slide level2">
@@ -472,19 +472,19 @@ E[Y_i | X_i = x_i ] \approx \mu \mbox{   if   }  |x_i - x_0| \leq 3.5
 <li>At each value of <span class="math inline">\(x_0\)</span>, we keep the estimate <span class="math inline">\(\hat{f}(x_0)\)</span> and move on to the next point:</li>
 </ul>
 
-<img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/binsmoother-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/binsmoother-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="bin-smoothing-7" class="slide level2">
 <h2>Bin smoothing</h2>
 <ul>
 <li>The final code and resulting estimate look like this:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>span <span class="ot">&lt;-</span> <span class="dv">7</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>span <span class="ot">&lt;-</span> <span class="dv">7</span>  </span>
 <span id="cb3-2"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">with</span>(polls_2008, <span class="fu">ksmooth</span>(day, margin, <span class="at">kernel =</span> <span class="st">"box"</span>, <span class="at">bandwidth =</span> span)) </span>
 <span id="cb3-3"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">fit =</span> fit<span class="sc">$</span>y) <span class="sc">|&gt;</span> </span>
 <span id="cb3-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> day)) <span class="sc">+</span> </span>
 <span id="cb3-5"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> margin), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span>  </span>
-<span id="cb3-6"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> fit), <span class="at">color =</span> <span class="st">"red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> fit), <span class="at">color =</span> <span class="st">"red"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="bin-smoothing-8" class="slide level2">
@@ -527,12 +527,12 @@ E[Y_i | X_i = x_i ] \approx \mu \mbox{   if   }  |x_i - x_0| \leq 3.5
 <li>The final code and resulting plot for the normal kernel look like this:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>span <span class="ot">&lt;-</span> <span class="dv">7</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>span <span class="ot">&lt;-</span> <span class="dv">7</span> </span>
 <span id="cb4-2"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">with</span>(polls_2008, <span class="fu">ksmooth</span>(day, margin, <span class="at">kernel =</span> <span class="st">"normal"</span>, <span class="at">bandwidth =</span> span)) </span>
 <span id="cb4-3"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">smooth =</span> fit<span class="sc">$</span>y) <span class="sc">|&gt;</span> </span>
 <span id="cb4-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
 <span id="cb4-5"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span>  </span>
-<span id="cb4-6"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth), <span class="at">color =</span> <span class="st">"red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth), <span class="at">color =</span> <span class="st">"red"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="kernels-5" class="slide level2">
@@ -570,7 +570,7 @@ E[Y_i | X_i = x_i ] \approx \mu \mbox{   if   }  |x_i - x_0| \leq 3.5
 <li>To see why this makes sense, consider the curved edges gardeners make using straight-edged spades:</li>
 </ul>
 
-<img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/garden.png" class="r-stretch"></section>
+<img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/garden.png" class="r-stretch"></section>
 <section id="local-weighted-regression-2" class="slide level2">
 <h2>Local weighted regression</h2>
 <ul>
@@ -603,20 +603,20 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) \mbox{   if   }  |x_i - x_0| \
 <section id="local-weighted-regression-6" class="slide level2">
 <h2>Local weighted regression</h2>
 
-<img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="local-weighted-regression-7" class="slide level2">
 <h2>Local weighted regression</h2>
 <ul>
 <li>The final result is a smoother fit than the bin smoother since we use larger sample sizes to estimate our local parameters:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>total_days <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">range</span>(polls_2008<span class="sc">$</span>day)) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>total_days <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">range</span>(polls_2008<span class="sc">$</span>day)) </span>
 <span id="cb5-2"><a></a>span <span class="ot">&lt;-</span> <span class="dv">21</span><span class="sc">/</span>total_days </span>
 <span id="cb5-3"><a></a>fit <span class="ot">&lt;-</span> <span class="fu">loess</span>(margin <span class="sc">~</span> day, <span class="at">degree =</span> <span class="dv">1</span>, <span class="at">span =</span> span, <span class="at">data =</span> polls_2008) </span>
 <span id="cb5-4"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">smooth =</span> fit<span class="sc">$</span>fitted) <span class="sc">|&gt;</span> </span>
 <span id="cb5-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
 <span id="cb5-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span> </span>
-<span id="cb5-7"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth), <span class="at">color =</span> <span class="st">"red"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth), <span class="at">color =</span> <span class="st">"red"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="local-weighted-regression-8" class="slide level2">
@@ -633,7 +633,7 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) \mbox{   if   }  |x_i - x_0| \
 <section id="local-weighted-regression-10" class="slide level2">
 <h2>Local weighted regression</h2>
 
-<img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-multi-span-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-multi-span-animation.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="local-weighted-regression-11" class="slide level2">
 <h2>Local weighted regression</h2>
 <ul>
@@ -675,7 +675,7 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) + \beta_2 (x_i-x_0)^2 \mbox{  
 <li><p>Here is a comparison of the fitting lines (red dashed) and fitting parabolas (orange solid):</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>total_days <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">range</span>(polls_2008<span class="sc">$</span>day)) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>total_days <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">range</span>(polls_2008<span class="sc">$</span>day)) </span>
 <span id="cb6-2"><a></a>span <span class="ot">&lt;-</span> <span class="dv">28</span><span class="sc">/</span>total_days </span>
 <span id="cb6-3"><a></a>fit_1 <span class="ot">&lt;-</span> <span class="fu">loess</span>(margin <span class="sc">~</span> day, <span class="at">degree =</span> <span class="dv">1</span>, <span class="at">span =</span> span, <span class="at">data =</span> polls_2008) </span>
 <span id="cb6-4"><a></a>fit_2 <span class="ot">&lt;-</span> <span class="fu">loess</span>(margin <span class="sc">~</span> day, <span class="at">span =</span> span, <span class="at">data =</span> polls_2008) </span>
@@ -683,7 +683,7 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) + \beta_2 (x_i-x_0)^2 \mbox{  
 <span id="cb6-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
 <span id="cb6-7"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span> </span>
 <span id="cb6-8"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth_1), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb6-9"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth_2), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">lty =</span> <span class="dv">1</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-9"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, smooth_2), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">lty =</span> <span class="dv">1</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="fitting-parabolas-2" class="slide level2">
@@ -703,9 +703,9 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) + \beta_2 (x_i-x_0)^2 \mbox{  
 <li><code>ggplot</code> uses loess in its <code>geom_smooth</code> function:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
 <span id="cb7-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  </span>
-<span id="cb7-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="beware-of-default-1" class="slide level2">
@@ -719,9 +719,9 @@ E[Y_i | X_i = x_i ] = \beta_0 + \beta_1 (x_i-x_0) + \beta_2 (x_i-x_0)^2 \mbox{  
 <li><p>However, you can conveniently change them:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>polls_2008 <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, margin)) <span class="sc">+</span> </span>
 <span id="cb8-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  </span>
-<span id="cb8-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">span =</span> <span class="fl">0.15</span>, <span class="at">degree =</span> <span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">span =</span> <span class="fl">0.15</span>, <span class="at">degree =</span> <span class="dv">1</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="beware-of-default-3" class="slide level2">
@@ -947,7 +947,7 @@ p(\mathbf{x}) = \mbox{Pr}(Y=1 \mid X_1=x_1 , X_2 = x_2).
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -974,80 +974,42 @@ p(\mathbf{x}) = \mbox{Pr}(Y=1 \mid X_1=x_1 , X_2 = x_2).
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1097,13 +1059,14 @@ p(\mathbf{x}) = \mbox{Pr}(Y=1 \mid X_1=x_1 , X_2 = x_2).
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -1118,7 +1081,7 @@ p(\mathbf{x}) = \mbox{Pr}(Y=1 \mid X_1=x_1 , X_2 = x_2).
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+            var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

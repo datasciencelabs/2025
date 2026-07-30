@@ -6,12 +6,12 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2025-09-29">
   <meta name="keywords" content="Wrangling">
-  <title>BST 260: Introduction to Data Science – Dates And Times</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Dates And Times</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -96,7 +96,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -225,9 +225,9 @@
 <li>We can see an example of the data type R uses for data here:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(dslabs) </span>
-<span id="cb1-3"><a></a>polls_us_election_2016<span class="sc">$</span>startdate <span class="sc">|&gt;</span> <span class="fu">head</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a></a>polls_us_election_2016<span class="sc">$</span>startdate <span class="sc">|&gt;</span> <span class="fu">head</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2016-11-03" "2016-11-01" "2016-11-02" "2016-11-04" "2016-11-03"
 [6] "2016-11-03"</code></pre>
@@ -237,7 +237,7 @@
 <li>The dates look like strings, but they are not:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">class</span>(polls_us_election_2016<span class="sc">$</span>startdate) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">class</span>(polls_us_election_2016<span class="sc">$</span>startdate) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Date"</code></pre>
 </div>
@@ -249,7 +249,7 @@
 <li>Look at what happens when we convert them to numbers:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">as.numeric</span>(polls_us_election_2016<span class="sc">$</span>startdate) <span class="sc">|&gt;</span> <span class="fu">head</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">as.numeric</span>(polls_us_election_2016<span class="sc">$</span>startdate) <span class="sc">|&gt;</span> <span class="fu">head</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17108 17106 17107 17109 17108 17108</code></pre>
 </div>
@@ -265,7 +265,7 @@
 <li><p>So to see that the epoch is day 0 we can type.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">as.Date</span>(<span class="st">"1970-01-01"</span>) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">as.Date</span>(<span class="st">"1970-01-01"</span>) <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
@@ -280,11 +280,11 @@
 <li>Scatterplots use the numeric representation to assign positions, but include the string in the labels:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span> </span>
 <span id="cb9-2"><a></a>  <span class="fu">filter</span>(startdate <span class="sc">&gt;=</span> <span class="fu">make_date</span>(<span class="dv">2016</span>, <span class="dv">6</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb9-3"><a></a>  <span class="fu">filter</span>(pollster <span class="sc">==</span> <span class="st">"Ipsos"</span> <span class="sc">&amp;</span> state <span class="sc">==</span> <span class="st">"U.S."</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb9-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(startdate, rawpoll_clinton)) <span class="sc">+</span> </span>
-<span id="cb9-5"><a></a>  <span class="fu">geom_line</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a></a>  <span class="fu">geom_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="12-dates-and-times_files/figure-revealjs/rawpolls-vs-time-1.png" width="960" class="r-stretch"></section>
@@ -296,13 +296,13 @@
 <div id="tabset-1-1">
 <p><strong>ggplot</strong> offers convenient functions to change labels:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span> </span>
 <span id="cb10-2"><a></a>  <span class="fu">filter</span>(startdate <span class="sc">&gt;=</span> <span class="fu">make_date</span>(<span class="dv">2016</span>, <span class="dv">6</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a></a>  <span class="fu">filter</span>(pollster <span class="sc">==</span> <span class="st">"Ipsos"</span> <span class="sc">&amp;</span> state <span class="sc">==</span> <span class="st">"U.S."</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb10-4"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(startdate, rawpoll_clinton)) <span class="sc">+</span> </span>
 <span id="cb10-5"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb10-6"><a></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"2 weeks"</span>, <span class="at">date_labels =</span> <span class="st">"%b %d"</span>) <span class="sc">+</span> </span>
-<span id="cb10-7"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">"2016-10-28"</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-7"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">as.Date</span>(<span class="st">"2016-10-28"</span>), <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -325,15 +325,15 @@
 <li>The <strong>lubridate</strong> package provides tools to work with date and times.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(lubridate) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(lubridate) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>We will take a random sample of dates to show some of the useful things one can do:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">set.seed</span>(<span class="dv">2002</span>) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">set.seed</span>(<span class="dv">2002</span>) </span>
 <span id="cb12-2"><a></a>dates <span class="ot">&lt;-</span> <span class="fu">sample</span>(polls_us_election_2016<span class="sc">$</span>startdate, <span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">sort</span>() </span>
-<span id="cb12-3"><a></a>dates </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a></a>dates </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "2016-05-31" "2016-08-08" "2016-08-19" "2016-09-22" "2016-09-27"
  [6] "2016-10-12" "2016-10-24" "2016-10-26" "2016-10-29" "2016-10-30"</code></pre>
@@ -346,7 +346,7 @@
 <li>The functions <code>year</code>, <code>month</code> and <code>day</code> extract those values:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">tibble</span>(<span class="at">date =</span> dates, <span class="at">month =</span> <span class="fu">month</span>(dates), <span class="at">day =</span> <span class="fu">day</span>(dates), <span class="at">year =</span> <span class="fu">year</span>(dates)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">tibble</span>(<span class="at">date =</span> dates, <span class="at">month =</span> <span class="fu">month</span>(dates), <span class="at">day =</span> <span class="fu">day</span>(dates), <span class="at">year =</span> <span class="fu">year</span>(dates)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    date       month   day  year
@@ -370,7 +370,7 @@
 <li>We can also extract the month labels:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">month</span>(dates, <span class="at">label =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">month</span>(dates, <span class="at">label =</span> <span class="cn">TRUE</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] May Aug Aug Sep Sep Oct Oct Oct Oct Oct
 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</code></pre>
@@ -384,9 +384,9 @@
 <li><p>The function <code>ymd</code> assumes the dates are in the format YYYY-MM-DD and tries to parse as well as possible.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20090101</span>, <span class="st">"2009-01-02"</span>, <span class="st">"2009 01 03"</span>, <span class="st">"2009-1-4"</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20090101</span>, <span class="st">"2009-01-02"</span>, <span class="st">"2009 01 03"</span>, <span class="st">"2009-1-4"</span>, </span>
 <span id="cb18-2"><a></a>       <span class="st">"2009-1, 5"</span>, <span class="st">"Created on 2009 1 6"</span>, <span class="st">"200901 !!! 07"</span>) </span>
-<span id="cb18-3"><a></a><span class="fu">ymd</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a></a><span class="fu">ymd</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2009-01-01" "2009-01-02" "2009-01-03" "2009-01-04" "2009-01-05"
 [6] "2009-01-06" "2009-01-07"</code></pre>
@@ -411,7 +411,7 @@
 <li><p>For example, if the string is:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>x <span class="ot">&lt;-</span> <span class="st">"09/01/02"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>x <span class="ot">&lt;-</span> <span class="st">"09/01/02"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-lubridate-package-6" class="slide level2">
@@ -420,7 +420,7 @@
 <li>The <code>ymd</code> function assumes the first entry is the year, the second is the month, and the third is the day, so it converts it to:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ymd</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ymd</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2009-01-02"</code></pre>
 </div>
@@ -432,7 +432,7 @@
 <li>The <code>mdy</code> function assumes the first entry is the month, then the day, then the year:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">mdy</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">mdy</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2002-09-01"</code></pre>
 </div>
@@ -445,7 +445,7 @@
 <li><p>Here is the other common one:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">dmy</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">dmy</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2002-01-09"</code></pre>
 </div>
@@ -459,13 +459,13 @@
 <li><p>The <strong>lubridate</strong> package provides a slightly more advanced function, <code>now</code>, that permits you to define the time zone:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">now</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">now</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-11-17 16:47:10 EST"</code></pre>
+<pre><code>[1] "2026-07-30 06:58:55 EDT"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">now</span>(<span class="st">"GMT"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">now</span>(<span class="st">"GMT"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-11-17 21:47:10 GMT"</code></pre>
+<pre><code>[1] "2026-07-30 10:58:55 GMT"</code></pre>
 </div>
 </div>
 </section>
@@ -475,7 +475,7 @@
 <li>You can see all the available time zones with:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">OlsonNames</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">OlsonNames</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1] "Africa/Abidjan"                   "Africa/Accra"                    
   [3] "Africa/Addis_Ababa"               "Africa/Algiers"                  
@@ -526,257 +526,258 @@
  [93] "America/Cayman"                   "America/Chicago"                 
  [95] "America/Chihuahua"                "America/Ciudad_Juarez"           
  [97] "America/Coral_Harbour"            "America/Cordoba"                 
- [99] "America/Costa_Rica"               "America/Creston"                 
-[101] "America/Cuiaba"                   "America/Curacao"                 
-[103] "America/Danmarkshavn"             "America/Dawson"                  
-[105] "America/Dawson_Creek"             "America/Denver"                  
-[107] "America/Detroit"                  "America/Dominica"                
-[109] "America/Edmonton"                 "America/Eirunepe"                
-[111] "America/El_Salvador"              "America/Ensenada"                
-[113] "America/Fort_Nelson"              "America/Fort_Wayne"              
-[115] "America/Fortaleza"                "America/Glace_Bay"               
-[117] "America/Godthab"                  "America/Goose_Bay"               
-[119] "America/Grand_Turk"               "America/Grenada"                 
-[121] "America/Guadeloupe"               "America/Guatemala"               
-[123] "America/Guayaquil"                "America/Guyana"                  
-[125] "America/Halifax"                  "America/Havana"                  
-[127] "America/Hermosillo"               "America/Indiana/Indianapolis"    
-[129] "America/Indiana/Knox"             "America/Indiana/Marengo"         
-[131] "America/Indiana/Petersburg"       "America/Indiana/Tell_City"       
-[133] "America/Indiana/Vevay"            "America/Indiana/Vincennes"       
-[135] "America/Indiana/Winamac"          "America/Indianapolis"            
-[137] "America/Inuvik"                   "America/Iqaluit"                 
-[139] "America/Jamaica"                  "America/Jujuy"                   
-[141] "America/Juneau"                   "America/Kentucky/Louisville"     
-[143] "America/Kentucky/Monticello"      "America/Knox_IN"                 
-[145] "America/Kralendijk"               "America/La_Paz"                  
-[147] "America/Lima"                     "America/Los_Angeles"             
-[149] "America/Louisville"               "America/Lower_Princes"           
-[151] "America/Maceio"                   "America/Managua"                 
-[153] "America/Manaus"                   "America/Marigot"                 
-[155] "America/Martinique"               "America/Matamoros"               
-[157] "America/Mazatlan"                 "America/Mendoza"                 
-[159] "America/Menominee"                "America/Merida"                  
-[161] "America/Metlakatla"               "America/Mexico_City"             
-[163] "America/Miquelon"                 "America/Moncton"                 
-[165] "America/Monterrey"                "America/Montevideo"              
-[167] "America/Montreal"                 "America/Montserrat"              
-[169] "America/Nassau"                   "America/New_York"                
-[171] "America/Nipigon"                  "America/Nome"                    
-[173] "America/Noronha"                  "America/North_Dakota/Beulah"     
-[175] "America/North_Dakota/Center"      "America/North_Dakota/New_Salem"  
-[177] "America/Nuuk"                     "America/Ojinaga"                 
-[179] "America/Panama"                   "America/Pangnirtung"             
-[181] "America/Paramaribo"               "America/Phoenix"                 
-[183] "America/Port-au-Prince"           "America/Port_of_Spain"           
-[185] "America/Porto_Acre"               "America/Porto_Velho"             
-[187] "America/Puerto_Rico"              "America/Punta_Arenas"            
-[189] "America/Rainy_River"              "America/Rankin_Inlet"            
-[191] "America/Recife"                   "America/Regina"                  
-[193] "America/Resolute"                 "America/Rio_Branco"              
-[195] "America/Rosario"                  "America/Santa_Isabel"            
-[197] "America/Santarem"                 "America/Santiago"                
-[199] "America/Santo_Domingo"            "America/Sao_Paulo"               
-[201] "America/Scoresbysund"             "America/Shiprock"                
-[203] "America/Sitka"                    "America/St_Barthelemy"           
-[205] "America/St_Johns"                 "America/St_Kitts"                
-[207] "America/St_Lucia"                 "America/St_Thomas"               
-[209] "America/St_Vincent"               "America/Swift_Current"           
-[211] "America/Tegucigalpa"              "America/Thule"                   
-[213] "America/Thunder_Bay"              "America/Tijuana"                 
-[215] "America/Toronto"                  "America/Tortola"                 
-[217] "America/Vancouver"                "America/Virgin"                  
-[219] "America/Whitehorse"               "America/Winnipeg"                
-[221] "America/Yakutat"                  "America/Yellowknife"             
-[223] "Antarctica/Casey"                 "Antarctica/Davis"                
-[225] "Antarctica/DumontDUrville"        "Antarctica/Macquarie"            
-[227] "Antarctica/Mawson"                "Antarctica/McMurdo"              
-[229] "Antarctica/Palmer"                "Antarctica/Rothera"              
-[231] "Antarctica/South_Pole"            "Antarctica/Syowa"                
-[233] "Antarctica/Troll"                 "Antarctica/Vostok"               
-[235] "Arctic/Longyearbyen"              "Asia/Aden"                       
-[237] "Asia/Almaty"                      "Asia/Amman"                      
-[239] "Asia/Anadyr"                      "Asia/Aqtau"                      
-[241] "Asia/Aqtobe"                      "Asia/Ashgabat"                   
-[243] "Asia/Ashkhabad"                   "Asia/Atyrau"                     
-[245] "Asia/Baghdad"                     "Asia/Bahrain"                    
-[247] "Asia/Baku"                        "Asia/Bangkok"                    
-[249] "Asia/Barnaul"                     "Asia/Beirut"                     
-[251] "Asia/Bishkek"                     "Asia/Brunei"                     
-[253] "Asia/Calcutta"                    "Asia/Chita"                      
-[255] "Asia/Choibalsan"                  "Asia/Chongqing"                  
-[257] "Asia/Chungking"                   "Asia/Colombo"                    
-[259] "Asia/Dacca"                       "Asia/Damascus"                   
-[261] "Asia/Dhaka"                       "Asia/Dili"                       
-[263] "Asia/Dubai"                       "Asia/Dushanbe"                   
-[265] "Asia/Famagusta"                   "Asia/Gaza"                       
-[267] "Asia/Harbin"                      "Asia/Hebron"                     
-[269] "Asia/Ho_Chi_Minh"                 "Asia/Hong_Kong"                  
-[271] "Asia/Hovd"                        "Asia/Irkutsk"                    
-[273] "Asia/Istanbul"                    "Asia/Jakarta"                    
-[275] "Asia/Jayapura"                    "Asia/Jerusalem"                  
-[277] "Asia/Kabul"                       "Asia/Kamchatka"                  
-[279] "Asia/Karachi"                     "Asia/Kashgar"                    
-[281] "Asia/Kathmandu"                   "Asia/Katmandu"                   
-[283] "Asia/Khandyga"                    "Asia/Kolkata"                    
-[285] "Asia/Krasnoyarsk"                 "Asia/Kuala_Lumpur"               
-[287] "Asia/Kuching"                     "Asia/Kuwait"                     
-[289] "Asia/Macao"                       "Asia/Macau"                      
-[291] "Asia/Magadan"                     "Asia/Makassar"                   
-[293] "Asia/Manila"                      "Asia/Muscat"                     
-[295] "Asia/Nicosia"                     "Asia/Novokuznetsk"               
-[297] "Asia/Novosibirsk"                 "Asia/Omsk"                       
-[299] "Asia/Oral"                        "Asia/Phnom_Penh"                 
-[301] "Asia/Pontianak"                   "Asia/Pyongyang"                  
-[303] "Asia/Qatar"                       "Asia/Qostanay"                   
-[305] "Asia/Qyzylorda"                   "Asia/Rangoon"                    
-[307] "Asia/Riyadh"                      "Asia/Saigon"                     
-[309] "Asia/Sakhalin"                    "Asia/Samarkand"                  
-[311] "Asia/Seoul"                       "Asia/Shanghai"                   
-[313] "Asia/Singapore"                   "Asia/Srednekolymsk"              
-[315] "Asia/Taipei"                      "Asia/Tashkent"                   
-[317] "Asia/Tbilisi"                     "Asia/Tehran"                     
-[319] "Asia/Tel_Aviv"                    "Asia/Thimbu"                     
-[321] "Asia/Thimphu"                     "Asia/Tokyo"                      
-[323] "Asia/Tomsk"                       "Asia/Ujung_Pandang"              
-[325] "Asia/Ulaanbaatar"                 "Asia/Ulan_Bator"                 
-[327] "Asia/Urumqi"                      "Asia/Ust-Nera"                   
-[329] "Asia/Vientiane"                   "Asia/Vladivostok"                
-[331] "Asia/Yakutsk"                     "Asia/Yangon"                     
-[333] "Asia/Yekaterinburg"               "Asia/Yerevan"                    
-[335] "Atlantic/Azores"                  "Atlantic/Bermuda"                
-[337] "Atlantic/Canary"                  "Atlantic/Cape_Verde"             
-[339] "Atlantic/Faeroe"                  "Atlantic/Faroe"                  
-[341] "Atlantic/Jan_Mayen"               "Atlantic/Madeira"                
-[343] "Atlantic/Reykjavik"               "Atlantic/South_Georgia"          
-[345] "Atlantic/St_Helena"               "Atlantic/Stanley"                
-[347] "Australia/ACT"                    "Australia/Adelaide"              
-[349] "Australia/Brisbane"               "Australia/Broken_Hill"           
-[351] "Australia/Canberra"               "Australia/Currie"                
-[353] "Australia/Darwin"                 "Australia/Eucla"                 
-[355] "Australia/Hobart"                 "Australia/LHI"                   
-[357] "Australia/Lindeman"               "Australia/Lord_Howe"             
-[359] "Australia/Melbourne"              "Australia/North"                 
-[361] "Australia/NSW"                    "Australia/Perth"                 
-[363] "Australia/Queensland"             "Australia/South"                 
-[365] "Australia/Sydney"                 "Australia/Tasmania"              
-[367] "Australia/Victoria"               "Australia/West"                  
-[369] "Australia/Yancowinna"             "Brazil/Acre"                     
-[371] "Brazil/DeNoronha"                 "Brazil/East"                     
-[373] "Brazil/West"                      "Canada/Atlantic"                 
-[375] "Canada/Central"                   "Canada/Eastern"                  
-[377] "Canada/Mountain"                  "Canada/Newfoundland"             
-[379] "Canada/Pacific"                   "Canada/Saskatchewan"             
-[381] "Canada/Yukon"                     "CET"                             
-[383] "Chile/Continental"                "Chile/EasterIsland"              
-[385] "CST6CDT"                          "Cuba"                            
-[387] "EET"                              "Egypt"                           
-[389] "Eire"                             "EST"                             
-[391] "EST5EDT"                          "Etc/GMT"                         
-[393] "Etc/GMT-0"                        "Etc/GMT-1"                       
-[395] "Etc/GMT-10"                       "Etc/GMT-11"                      
-[397] "Etc/GMT-12"                       "Etc/GMT-13"                      
-[399] "Etc/GMT-14"                       "Etc/GMT-2"                       
-[401] "Etc/GMT-3"                        "Etc/GMT-4"                       
-[403] "Etc/GMT-5"                        "Etc/GMT-6"                       
-[405] "Etc/GMT-7"                        "Etc/GMT-8"                       
-[407] "Etc/GMT-9"                        "Etc/GMT+0"                       
-[409] "Etc/GMT+1"                        "Etc/GMT+10"                      
-[411] "Etc/GMT+11"                       "Etc/GMT+12"                      
-[413] "Etc/GMT+2"                        "Etc/GMT+3"                       
-[415] "Etc/GMT+4"                        "Etc/GMT+5"                       
-[417] "Etc/GMT+6"                        "Etc/GMT+7"                       
-[419] "Etc/GMT+8"                        "Etc/GMT+9"                       
-[421] "Etc/GMT0"                         "Etc/Greenwich"                   
-[423] "Etc/UCT"                          "Etc/Universal"                   
-[425] "Etc/UTC"                          "Etc/Zulu"                        
-[427] "Europe/Amsterdam"                 "Europe/Andorra"                  
-[429] "Europe/Astrakhan"                 "Europe/Athens"                   
-[431] "Europe/Belfast"                   "Europe/Belgrade"                 
-[433] "Europe/Berlin"                    "Europe/Bratislava"               
-[435] "Europe/Brussels"                  "Europe/Bucharest"                
-[437] "Europe/Budapest"                  "Europe/Busingen"                 
-[439] "Europe/Chisinau"                  "Europe/Copenhagen"               
-[441] "Europe/Dublin"                    "Europe/Gibraltar"                
-[443] "Europe/Guernsey"                  "Europe/Helsinki"                 
-[445] "Europe/Isle_of_Man"               "Europe/Istanbul"                 
-[447] "Europe/Jersey"                    "Europe/Kaliningrad"              
-[449] "Europe/Kiev"                      "Europe/Kirov"                    
-[451] "Europe/Kyiv"                      "Europe/Lisbon"                   
-[453] "Europe/Ljubljana"                 "Europe/London"                   
-[455] "Europe/Luxembourg"                "Europe/Madrid"                   
-[457] "Europe/Malta"                     "Europe/Mariehamn"                
-[459] "Europe/Minsk"                     "Europe/Monaco"                   
-[461] "Europe/Moscow"                    "Europe/Nicosia"                  
-[463] "Europe/Oslo"                      "Europe/Paris"                    
-[465] "Europe/Podgorica"                 "Europe/Prague"                   
-[467] "Europe/Riga"                      "Europe/Rome"                     
-[469] "Europe/Samara"                    "Europe/San_Marino"               
-[471] "Europe/Sarajevo"                  "Europe/Saratov"                  
-[473] "Europe/Simferopol"                "Europe/Skopje"                   
-[475] "Europe/Sofia"                     "Europe/Stockholm"                
-[477] "Europe/Tallinn"                   "Europe/Tirane"                   
-[479] "Europe/Tiraspol"                  "Europe/Ulyanovsk"                
-[481] "Europe/Uzhgorod"                  "Europe/Vaduz"                    
-[483] "Europe/Vatican"                   "Europe/Vienna"                   
-[485] "Europe/Vilnius"                   "Europe/Volgograd"                
-[487] "Europe/Warsaw"                    "Europe/Zagreb"                   
-[489] "Europe/Zaporozhye"                "Europe/Zurich"                   
-[491] "GB"                               "GB-Eire"                         
-[493] "GMT"                              "GMT-0"                           
-[495] "GMT+0"                            "GMT0"                            
-[497] "Greenwich"                        "Hongkong"                        
-[499] "HST"                              "Iceland"                         
-[501] "Indian/Antananarivo"              "Indian/Chagos"                   
-[503] "Indian/Christmas"                 "Indian/Cocos"                    
-[505] "Indian/Comoro"                    "Indian/Kerguelen"                
-[507] "Indian/Mahe"                      "Indian/Maldives"                 
-[509] "Indian/Mauritius"                 "Indian/Mayotte"                  
-[511] "Indian/Reunion"                   "Iran"                            
-[513] "Israel"                           "Jamaica"                         
-[515] "Japan"                            "Kwajalein"                       
-[517] "Libya"                            "MET"                             
-[519] "Mexico/BajaNorte"                 "Mexico/BajaSur"                  
-[521] "Mexico/General"                   "MST"                             
-[523] "MST7MDT"                          "Navajo"                          
-[525] "NZ"                               "NZ-CHAT"                         
-[527] "Pacific/Apia"                     "Pacific/Auckland"                
-[529] "Pacific/Bougainville"             "Pacific/Chatham"                 
-[531] "Pacific/Chuuk"                    "Pacific/Easter"                  
-[533] "Pacific/Efate"                    "Pacific/Enderbury"               
-[535] "Pacific/Fakaofo"                  "Pacific/Fiji"                    
-[537] "Pacific/Funafuti"                 "Pacific/Galapagos"               
-[539] "Pacific/Gambier"                  "Pacific/Guadalcanal"             
-[541] "Pacific/Guam"                     "Pacific/Honolulu"                
-[543] "Pacific/Johnston"                 "Pacific/Kanton"                  
-[545] "Pacific/Kiritimati"               "Pacific/Kosrae"                  
-[547] "Pacific/Kwajalein"                "Pacific/Majuro"                  
-[549] "Pacific/Marquesas"                "Pacific/Midway"                  
-[551] "Pacific/Nauru"                    "Pacific/Niue"                    
-[553] "Pacific/Norfolk"                  "Pacific/Noumea"                  
-[555] "Pacific/Pago_Pago"                "Pacific/Palau"                   
-[557] "Pacific/Pitcairn"                 "Pacific/Pohnpei"                 
-[559] "Pacific/Ponape"                   "Pacific/Port_Moresby"            
-[561] "Pacific/Rarotonga"                "Pacific/Saipan"                  
-[563] "Pacific/Samoa"                    "Pacific/Tahiti"                  
-[565] "Pacific/Tarawa"                   "Pacific/Tongatapu"               
-[567] "Pacific/Truk"                     "Pacific/Wake"                    
-[569] "Pacific/Wallis"                   "Pacific/Yap"                     
-[571] "Poland"                           "Portugal"                        
-[573] "PRC"                              "PST8PDT"                         
-[575] "ROC"                              "ROK"                             
-[577] "Singapore"                        "Turkey"                          
-[579] "UCT"                              "Universal"                       
-[581] "US/Alaska"                        "US/Aleutian"                     
-[583] "US/Arizona"                       "US/Central"                      
-[585] "US/East-Indiana"                  "US/Eastern"                      
-[587] "US/Hawaii"                        "US/Indiana-Starke"               
-[589] "US/Michigan"                      "US/Mountain"                     
-[591] "US/Pacific"                       "US/Samoa"                        
-[593] "UTC"                              "W-SU"                            
-[595] "WET"                              "Zulu"                            
+ [99] "America/Costa_Rica"               "America/Coyhaique"               
+[101] "America/Creston"                  "America/Cuiaba"                  
+[103] "America/Curacao"                  "America/Danmarkshavn"            
+[105] "America/Dawson"                   "America/Dawson_Creek"            
+[107] "America/Denver"                   "America/Detroit"                 
+[109] "America/Dominica"                 "America/Edmonton"                
+[111] "America/Eirunepe"                 "America/El_Salvador"             
+[113] "America/Ensenada"                 "America/Fort_Nelson"             
+[115] "America/Fort_Wayne"               "America/Fortaleza"               
+[117] "America/Glace_Bay"                "America/Godthab"                 
+[119] "America/Goose_Bay"                "America/Grand_Turk"              
+[121] "America/Grenada"                  "America/Guadeloupe"              
+[123] "America/Guatemala"                "America/Guayaquil"               
+[125] "America/Guyana"                   "America/Halifax"                 
+[127] "America/Havana"                   "America/Hermosillo"              
+[129] "America/Indiana/Indianapolis"     "America/Indiana/Knox"            
+[131] "America/Indiana/Marengo"          "America/Indiana/Petersburg"      
+[133] "America/Indiana/Tell_City"        "America/Indiana/Vevay"           
+[135] "America/Indiana/Vincennes"        "America/Indiana/Winamac"         
+[137] "America/Indianapolis"             "America/Inuvik"                  
+[139] "America/Iqaluit"                  "America/Jamaica"                 
+[141] "America/Jujuy"                    "America/Juneau"                  
+[143] "America/Kentucky/Louisville"      "America/Kentucky/Monticello"     
+[145] "America/Knox_IN"                  "America/Kralendijk"              
+[147] "America/La_Paz"                   "America/Lima"                    
+[149] "America/Los_Angeles"              "America/Louisville"              
+[151] "America/Lower_Princes"            "America/Maceio"                  
+[153] "America/Managua"                  "America/Manaus"                  
+[155] "America/Marigot"                  "America/Martinique"              
+[157] "America/Matamoros"                "America/Mazatlan"                
+[159] "America/Mendoza"                  "America/Menominee"               
+[161] "America/Merida"                   "America/Metlakatla"              
+[163] "America/Mexico_City"              "America/Miquelon"                
+[165] "America/Moncton"                  "America/Monterrey"               
+[167] "America/Montevideo"               "America/Montreal"                
+[169] "America/Montserrat"               "America/Nassau"                  
+[171] "America/New_York"                 "America/Nipigon"                 
+[173] "America/Nome"                     "America/Noronha"                 
+[175] "America/North_Dakota/Beulah"      "America/North_Dakota/Center"     
+[177] "America/North_Dakota/New_Salem"   "America/Nuuk"                    
+[179] "America/Ojinaga"                  "America/Panama"                  
+[181] "America/Pangnirtung"              "America/Paramaribo"              
+[183] "America/Phoenix"                  "America/Port_of_Spain"           
+[185] "America/Port-au-Prince"           "America/Porto_Acre"              
+[187] "America/Porto_Velho"              "America/Puerto_Rico"             
+[189] "America/Punta_Arenas"             "America/Rainy_River"             
+[191] "America/Rankin_Inlet"             "America/Recife"                  
+[193] "America/Regina"                   "America/Resolute"                
+[195] "America/Rio_Branco"               "America/Rosario"                 
+[197] "America/Santa_Isabel"             "America/Santarem"                
+[199] "America/Santiago"                 "America/Santo_Domingo"           
+[201] "America/Sao_Paulo"                "America/Scoresbysund"            
+[203] "America/Shiprock"                 "America/Sitka"                   
+[205] "America/St_Barthelemy"            "America/St_Johns"                
+[207] "America/St_Kitts"                 "America/St_Lucia"                
+[209] "America/St_Thomas"                "America/St_Vincent"              
+[211] "America/Swift_Current"            "America/Tegucigalpa"             
+[213] "America/Thule"                    "America/Thunder_Bay"             
+[215] "America/Tijuana"                  "America/Toronto"                 
+[217] "America/Tortola"                  "America/Vancouver"               
+[219] "America/Virgin"                   "America/Whitehorse"              
+[221] "America/Winnipeg"                 "America/Yakutat"                 
+[223] "America/Yellowknife"              "Antarctica/Casey"                
+[225] "Antarctica/Davis"                 "Antarctica/DumontDUrville"       
+[227] "Antarctica/Macquarie"             "Antarctica/Mawson"               
+[229] "Antarctica/McMurdo"               "Antarctica/Palmer"               
+[231] "Antarctica/Rothera"               "Antarctica/South_Pole"           
+[233] "Antarctica/Syowa"                 "Antarctica/Troll"                
+[235] "Antarctica/Vostok"                "Arctic/Longyearbyen"             
+[237] "Asia/Aden"                        "Asia/Almaty"                     
+[239] "Asia/Amman"                       "Asia/Anadyr"                     
+[241] "Asia/Aqtau"                       "Asia/Aqtobe"                     
+[243] "Asia/Ashgabat"                    "Asia/Ashkhabad"                  
+[245] "Asia/Atyrau"                      "Asia/Baghdad"                    
+[247] "Asia/Bahrain"                     "Asia/Baku"                       
+[249] "Asia/Bangkok"                     "Asia/Barnaul"                    
+[251] "Asia/Beirut"                      "Asia/Bishkek"                    
+[253] "Asia/Brunei"                      "Asia/Calcutta"                   
+[255] "Asia/Chita"                       "Asia/Choibalsan"                 
+[257] "Asia/Chongqing"                   "Asia/Chungking"                  
+[259] "Asia/Colombo"                     "Asia/Dacca"                      
+[261] "Asia/Damascus"                    "Asia/Dhaka"                      
+[263] "Asia/Dili"                        "Asia/Dubai"                      
+[265] "Asia/Dushanbe"                    "Asia/Famagusta"                  
+[267] "Asia/Gaza"                        "Asia/Harbin"                     
+[269] "Asia/Hebron"                      "Asia/Ho_Chi_Minh"                
+[271] "Asia/Hong_Kong"                   "Asia/Hovd"                       
+[273] "Asia/Irkutsk"                     "Asia/Istanbul"                   
+[275] "Asia/Jakarta"                     "Asia/Jayapura"                   
+[277] "Asia/Jerusalem"                   "Asia/Kabul"                      
+[279] "Asia/Kamchatka"                   "Asia/Karachi"                    
+[281] "Asia/Kashgar"                     "Asia/Kathmandu"                  
+[283] "Asia/Katmandu"                    "Asia/Khandyga"                   
+[285] "Asia/Kolkata"                     "Asia/Krasnoyarsk"                
+[287] "Asia/Kuala_Lumpur"                "Asia/Kuching"                    
+[289] "Asia/Kuwait"                      "Asia/Macao"                      
+[291] "Asia/Macau"                       "Asia/Magadan"                    
+[293] "Asia/Makassar"                    "Asia/Manila"                     
+[295] "Asia/Muscat"                      "Asia/Nicosia"                    
+[297] "Asia/Novokuznetsk"                "Asia/Novosibirsk"                
+[299] "Asia/Omsk"                        "Asia/Oral"                       
+[301] "Asia/Phnom_Penh"                  "Asia/Pontianak"                  
+[303] "Asia/Pyongyang"                   "Asia/Qatar"                      
+[305] "Asia/Qostanay"                    "Asia/Qyzylorda"                  
+[307] "Asia/Rangoon"                     "Asia/Riyadh"                     
+[309] "Asia/Saigon"                      "Asia/Sakhalin"                   
+[311] "Asia/Samarkand"                   "Asia/Seoul"                      
+[313] "Asia/Shanghai"                    "Asia/Singapore"                  
+[315] "Asia/Srednekolymsk"               "Asia/Taipei"                     
+[317] "Asia/Tashkent"                    "Asia/Tbilisi"                    
+[319] "Asia/Tehran"                      "Asia/Tel_Aviv"                   
+[321] "Asia/Thimbu"                      "Asia/Thimphu"                    
+[323] "Asia/Tokyo"                       "Asia/Tomsk"                      
+[325] "Asia/Ujung_Pandang"               "Asia/Ulaanbaatar"                
+[327] "Asia/Ulan_Bator"                  "Asia/Urumqi"                     
+[329] "Asia/Ust-Nera"                    "Asia/Vientiane"                  
+[331] "Asia/Vladivostok"                 "Asia/Yakutsk"                    
+[333] "Asia/Yangon"                      "Asia/Yekaterinburg"              
+[335] "Asia/Yerevan"                     "Atlantic/Azores"                 
+[337] "Atlantic/Bermuda"                 "Atlantic/Canary"                 
+[339] "Atlantic/Cape_Verde"              "Atlantic/Faeroe"                 
+[341] "Atlantic/Faroe"                   "Atlantic/Jan_Mayen"              
+[343] "Atlantic/Madeira"                 "Atlantic/Reykjavik"              
+[345] "Atlantic/South_Georgia"           "Atlantic/St_Helena"              
+[347] "Atlantic/Stanley"                 "Australia/ACT"                   
+[349] "Australia/Adelaide"               "Australia/Brisbane"              
+[351] "Australia/Broken_Hill"            "Australia/Canberra"              
+[353] "Australia/Currie"                 "Australia/Darwin"                
+[355] "Australia/Eucla"                  "Australia/Hobart"                
+[357] "Australia/LHI"                    "Australia/Lindeman"              
+[359] "Australia/Lord_Howe"              "Australia/Melbourne"             
+[361] "Australia/North"                  "Australia/NSW"                   
+[363] "Australia/Perth"                  "Australia/Queensland"            
+[365] "Australia/South"                  "Australia/Sydney"                
+[367] "Australia/Tasmania"               "Australia/Victoria"              
+[369] "Australia/West"                   "Australia/Yancowinna"            
+[371] "Brazil/Acre"                      "Brazil/DeNoronha"                
+[373] "Brazil/East"                      "Brazil/West"                     
+[375] "Canada/Atlantic"                  "Canada/Central"                  
+[377] "Canada/Eastern"                   "Canada/Mountain"                 
+[379] "Canada/Newfoundland"              "Canada/Pacific"                  
+[381] "Canada/Saskatchewan"              "Canada/Yukon"                    
+[383] "CET"                              "Chile/Continental"               
+[385] "Chile/EasterIsland"               "CST6CDT"                         
+[387] "Cuba"                             "EET"                             
+[389] "Egypt"                            "Eire"                            
+[391] "EST"                              "EST5EDT"                         
+[393] "Etc/GMT"                          "Etc/GMT-0"                       
+[395] "Etc/GMT-1"                        "Etc/GMT-10"                      
+[397] "Etc/GMT-11"                       "Etc/GMT-12"                      
+[399] "Etc/GMT-13"                       "Etc/GMT-14"                      
+[401] "Etc/GMT-2"                        "Etc/GMT-3"                       
+[403] "Etc/GMT-4"                        "Etc/GMT-5"                       
+[405] "Etc/GMT-6"                        "Etc/GMT-7"                       
+[407] "Etc/GMT-8"                        "Etc/GMT-9"                       
+[409] "Etc/GMT+0"                        "Etc/GMT+1"                       
+[411] "Etc/GMT+10"                       "Etc/GMT+11"                      
+[413] "Etc/GMT+12"                       "Etc/GMT+2"                       
+[415] "Etc/GMT+3"                        "Etc/GMT+4"                       
+[417] "Etc/GMT+5"                        "Etc/GMT+6"                       
+[419] "Etc/GMT+7"                        "Etc/GMT+8"                       
+[421] "Etc/GMT+9"                        "Etc/GMT0"                        
+[423] "Etc/Greenwich"                    "Etc/UCT"                         
+[425] "Etc/Universal"                    "Etc/UTC"                         
+[427] "Etc/Zulu"                         "Europe/Amsterdam"                
+[429] "Europe/Andorra"                   "Europe/Astrakhan"                
+[431] "Europe/Athens"                    "Europe/Belfast"                  
+[433] "Europe/Belgrade"                  "Europe/Berlin"                   
+[435] "Europe/Bratislava"                "Europe/Brussels"                 
+[437] "Europe/Bucharest"                 "Europe/Budapest"                 
+[439] "Europe/Busingen"                  "Europe/Chisinau"                 
+[441] "Europe/Copenhagen"                "Europe/Dublin"                   
+[443] "Europe/Gibraltar"                 "Europe/Guernsey"                 
+[445] "Europe/Helsinki"                  "Europe/Isle_of_Man"              
+[447] "Europe/Istanbul"                  "Europe/Jersey"                   
+[449] "Europe/Kaliningrad"               "Europe/Kiev"                     
+[451] "Europe/Kirov"                     "Europe/Kyiv"                     
+[453] "Europe/Lisbon"                    "Europe/Ljubljana"                
+[455] "Europe/London"                    "Europe/Luxembourg"               
+[457] "Europe/Madrid"                    "Europe/Malta"                    
+[459] "Europe/Mariehamn"                 "Europe/Minsk"                    
+[461] "Europe/Monaco"                    "Europe/Moscow"                   
+[463] "Europe/Nicosia"                   "Europe/Oslo"                     
+[465] "Europe/Paris"                     "Europe/Podgorica"                
+[467] "Europe/Prague"                    "Europe/Riga"                     
+[469] "Europe/Rome"                      "Europe/Samara"                   
+[471] "Europe/San_Marino"                "Europe/Sarajevo"                 
+[473] "Europe/Saratov"                   "Europe/Simferopol"               
+[475] "Europe/Skopje"                    "Europe/Sofia"                    
+[477] "Europe/Stockholm"                 "Europe/Tallinn"                  
+[479] "Europe/Tirane"                    "Europe/Tiraspol"                 
+[481] "Europe/Ulyanovsk"                 "Europe/Uzhgorod"                 
+[483] "Europe/Vaduz"                     "Europe/Vatican"                  
+[485] "Europe/Vienna"                    "Europe/Vilnius"                  
+[487] "Europe/Volgograd"                 "Europe/Warsaw"                   
+[489] "Europe/Zagreb"                    "Europe/Zaporozhye"               
+[491] "Europe/Zurich"                    "Factory"                         
+[493] "GB"                               "GB-Eire"                         
+[495] "GMT"                              "GMT-0"                           
+[497] "GMT+0"                            "GMT0"                            
+[499] "Greenwich"                        "Hongkong"                        
+[501] "HST"                              "Iceland"                         
+[503] "Indian/Antananarivo"              "Indian/Chagos"                   
+[505] "Indian/Christmas"                 "Indian/Cocos"                    
+[507] "Indian/Comoro"                    "Indian/Kerguelen"                
+[509] "Indian/Mahe"                      "Indian/Maldives"                 
+[511] "Indian/Mauritius"                 "Indian/Mayotte"                  
+[513] "Indian/Reunion"                   "Iran"                            
+[515] "Israel"                           "Jamaica"                         
+[517] "Japan"                            "Kwajalein"                       
+[519] "Libya"                            "MET"                             
+[521] "Mexico/BajaNorte"                 "Mexico/BajaSur"                  
+[523] "Mexico/General"                   "MST"                             
+[525] "MST7MDT"                          "Navajo"                          
+[527] "NZ"                               "NZ-CHAT"                         
+[529] "Pacific/Apia"                     "Pacific/Auckland"                
+[531] "Pacific/Bougainville"             "Pacific/Chatham"                 
+[533] "Pacific/Chuuk"                    "Pacific/Easter"                  
+[535] "Pacific/Efate"                    "Pacific/Enderbury"               
+[537] "Pacific/Fakaofo"                  "Pacific/Fiji"                    
+[539] "Pacific/Funafuti"                 "Pacific/Galapagos"               
+[541] "Pacific/Gambier"                  "Pacific/Guadalcanal"             
+[543] "Pacific/Guam"                     "Pacific/Honolulu"                
+[545] "Pacific/Johnston"                 "Pacific/Kanton"                  
+[547] "Pacific/Kiritimati"               "Pacific/Kosrae"                  
+[549] "Pacific/Kwajalein"                "Pacific/Majuro"                  
+[551] "Pacific/Marquesas"                "Pacific/Midway"                  
+[553] "Pacific/Nauru"                    "Pacific/Niue"                    
+[555] "Pacific/Norfolk"                  "Pacific/Noumea"                  
+[557] "Pacific/Pago_Pago"                "Pacific/Palau"                   
+[559] "Pacific/Pitcairn"                 "Pacific/Pohnpei"                 
+[561] "Pacific/Ponape"                   "Pacific/Port_Moresby"            
+[563] "Pacific/Rarotonga"                "Pacific/Saipan"                  
+[565] "Pacific/Samoa"                    "Pacific/Tahiti"                  
+[567] "Pacific/Tarawa"                   "Pacific/Tongatapu"               
+[569] "Pacific/Truk"                     "Pacific/Wake"                    
+[571] "Pacific/Wallis"                   "Pacific/Yap"                     
+[573] "Poland"                           "Portugal"                        
+[575] "PRC"                              "PST8PDT"                         
+[577] "ROC"                              "ROK"                             
+[579] "Singapore"                        "Turkey"                          
+[581] "UCT"                              "Universal"                       
+[583] "US/Alaska"                        "US/Aleutian"                     
+[585] "US/Arizona"                       "US/Central"                      
+[587] "US/East-Indiana"                  "US/Eastern"                      
+[589] "US/Hawaii"                        "US/Indiana-Starke"               
+[591] "US/Michigan"                      "US/Mountain"                     
+[593] "US/Pacific"                       "US/Samoa"                        
+[595] "UTC"                              "W-SU"                            
+[597] "WET"                              "Zulu"                            
 attr(,"Version")
-[1] "2024a"</code></pre>
+[1] "2026c"</code></pre>
 </div>
 </div>
 </section>
@@ -786,17 +787,17 @@ attr(,"Version")
 <li>We can also extract hours, minutes, and seconds:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">hour</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">hour</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 16</code></pre>
+<pre><code>[1] 6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">minute</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">minute</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 47</code></pre>
+<pre><code>[1] 58</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">second</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">now</span>() <span class="sc">|&gt;</span> <span class="fu">second</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.12048</code></pre>
+<pre><code>[1] 55.55812</code></pre>
 </div>
 </div>
 </section>
@@ -806,13 +807,13 @@ attr(,"Version")
 <li>The package also includes a function to parse strings into times as well as parsers for time objects that include dates:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"12:34:56"</span>) </span>
-<span id="cb39-2"><a></a><span class="fu">hms</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"12:34:56"</span>) </span>
+<span id="cb39-2"><a></a><span class="fu">hms</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "12H 34M 56S"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>x <span class="ot">&lt;-</span> <span class="st">"Nov/2/2012 12:34:56"</span> </span>
-<span id="cb41-2"><a></a><span class="fu">mdy_hms</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>x <span class="ot">&lt;-</span> <span class="st">"Nov/2/2012 12:34:56"</span> </span>
+<span id="cb41-2"><a></a><span class="fu">mdy_hms</span>(x) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2012-11-02 12:34:56 UTC"</code></pre>
 </div>
@@ -825,7 +826,7 @@ attr(,"Version")
 <li><p>For example, to create an date object representing, for example, July 6, 2019 we write:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">make_date</span>(<span class="dv">2019</span>, <span class="dv">7</span>, <span class="dv">6</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">make_date</span>(<span class="dv">2019</span>, <span class="dv">7</span>, <span class="dv">6</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2019-07-06"</code></pre>
 </div>
@@ -838,7 +839,7 @@ attr(,"Version")
 <li><p>To make a vector of January 1 for the 80s we write:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">make_date</span>(<span class="dv">1980</span><span class="sc">:</span><span class="dv">1989</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">make_date</span>(<span class="dv">1980</span><span class="sc">:</span><span class="dv">1989</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "1980-01-01" "1981-01-01" "1982-01-01" "1983-01-01" "1984-01-01"
  [6] "1985-01-01" "1986-01-01" "1987-01-01" "1988-01-01" "1989-01-01"</code></pre>
@@ -862,12 +863,12 @@ attr(,"Version")
 <li>Example: if we want to group all the polls by week of the year we can do the following:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>polls_us_election_2016 <span class="sc">|&gt;</span>  </span>
 <span id="cb47-2"><a></a>  <span class="fu">mutate</span>(<span class="at">week =</span> <span class="fu">round_date</span>(startdate, <span class="st">"week"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb47-3"><a></a>  <span class="fu">group_by</span>(week) <span class="sc">|&gt;</span> </span>
 <span id="cb47-4"><a></a>  <span class="fu">summarize</span>(<span class="at">margin =</span> <span class="fu">mean</span>(rawpoll_clinton <span class="sc">-</span> rawpoll_trump)) <span class="sc">|&gt;</span> </span>
 <span id="cb47-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(week, margin)) <span class="sc">+</span> </span>
-<span id="cb47-6"><a></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-6"><a></a>  <span class="fu">geom_point</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-2-2">
@@ -1082,7 +1083,7 @@ attr(,"Version")
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1109,80 +1110,42 @@ attr(,"Version")
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1232,13 +1195,14 @@ attr(,"Version")
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -1253,7 +1217,7 @@ attr(,"Version")
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+            var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
