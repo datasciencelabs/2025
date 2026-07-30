@@ -144,7 +144,7 @@ res |> ggplot(aes(x=r)) + geom_histogram(binwidth = 0.1, color = "black")
 library(broom) 
 sim_data |>  
   filter(group == res$group[which.max(res$r)]) |> 
-  summarize(tidy(lm(y ~ x))) |>  
+  reframe(tidy(lm(y ~ x))) |>  
   filter(term == "x") 
 ``` 
 
@@ -261,7 +261,7 @@ galton_heights <- GaltonFamilies |>
 ``` 
 
 ```{r} 
-galton_heights |> summarize(tidy(lm(father ~ son))) 
+galton_heights |> reframe(tidy(lm(father ~ son))) 
 ``` 
 
 

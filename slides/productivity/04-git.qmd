@@ -308,13 +308,13 @@ The main actions in Git are to:
 ## The four areas of Git
 
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-layout.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-layout.png)
 
 ----
 
 ## Status
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-status.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-status.png)
 ```{r}
 #| echo: true
 #| eval: false
@@ -329,7 +329,7 @@ git status filename
 
 Use `git add` to put file to staging area.
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-add.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-add.png)
 
 ```{r}
 #| echo: true
@@ -359,7 +359,7 @@ git status <filename>
 
 
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-commit.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-commit.png)
 
 
 
@@ -400,7 +400,7 @@ git commit -m "must add comment" <filename>
 
 * To move to upstream repo we use `git push`
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-push.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-push.png)
 
 ```{r}
 #| echo: true
@@ -449,7 +449,7 @@ git push
 git fetch
 ```
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-fetch.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-fetch.png)
 
 ----
 
@@ -465,7 +465,7 @@ git fetch
 git merge
 ```
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-merge.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-merge.png)
 
 ----
 
@@ -484,7 +484,7 @@ git pull
 ```
 
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img/git/git-pull.png)
+![]({{< var dsbook1 >}}productivity/img/git/git-pull.png)
 
 
 

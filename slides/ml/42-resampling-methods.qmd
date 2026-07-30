@@ -68,18 +68,18 @@ $$
 
 ## Cross validation
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-1.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-1.png){fig-align=center}
 
 
 
 
 ## Cross validation
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-3.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-3.png){fig-align=center}
 
 ## Cross validation
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-4.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-4.png){fig-align=center}
 
 
 ## K-fold cross validation
@@ -118,7 +118,7 @@ $$
 
 - In K-fold cross validation, we randomly split the observations into $B$ non-overlapping sets:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-5.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-5.png){fig-align=center}
 
 ## K-fold cross validation
 
@@ -178,14 +178,14 @@ $$
 
 ## MSE of our optimized algorithm
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-6.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-6.png){fig-align=center}
 
 
 ## MSE of our optimized algorithm
 
 - We can actually do cross validation again:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-7.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-7.png){fig-align=center}
 
 
 
@@ -211,7 +211,7 @@ $$
 
 ## MSE of our optimized algorithm
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/cv-8.png){fig-align=center}
+![]({{< var dsbook2 >}}ml/img/cv-8.png){fig-align=center}
 
 
 ## Boostrap resampling

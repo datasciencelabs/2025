@@ -300,7 +300,7 @@ gapminder <- gapminder |>
 
 ## Animation
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/intro-dataviz_files/figure-html/gampnider-example-plot-1.gif)
+![]({{< var dsbook1 >}}dataviz/intro-dataviz_files/figure-html/gampnider-example-plot-1.gif)
 
 :::
 

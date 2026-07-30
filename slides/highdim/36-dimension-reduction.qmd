@@ -568,7 +568,7 @@ z <- x %*% V
 
 ## Principal Component Analysis 
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/img/pca.gif){fig-align="center"} 
+![]({{< var dsbook2 >}}highdim/img/pca.gif){fig-align="center"} 
 
 
 ## Principal Component Analysis 

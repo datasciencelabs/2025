@@ -19,7 +19,7 @@ format:
 
 ## Course Description
 
-Lecture notes: <https://datasciencelabs.github.io/2025/>
+Lecture notes: [{{< var site_url >}}]({{< var site_url >}})
 
 ![](https://pbs.twimg.com/media/EN5AnSsWAAAtWmN.jpg){width="25%" fig-align="center"}
 

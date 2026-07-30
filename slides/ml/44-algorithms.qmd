@@ -501,7 +501,7 @@ text(train_rpart$finalModel, cex = 0.75)
 - Decision trees like this are often used in practice.
 
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/Decision-Tree-for-Heart-Attack-Victim-adapted-from-Gigerenzer-et-al-1999-4.png){fig.align="center}
+![]({{< var dsbook2 >}}ml/img/Decision-Tree-for-Heart-Attack-Victim-adapted-from-Gigerenzer-et-al-1999-4.png){fig.align="center}
 
 
 ## Regression trees
@@ -690,7 +690,7 @@ polls_2008 |>
 
 ## Random forests
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/rf.gif){fig.aling="center"}
+![]({{< var dsbook2 >}}ml/img/rf.gif){fig.aling="center"}
 
 ## Random forests
 

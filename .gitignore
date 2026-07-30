@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-downloading-course-materials.qmd 
+downloading-course-materials.qmd
 notes.txt
 /.quarto/
 .DS_Store
@@ -12,3 +12,4 @@ census-key.R
 *_cache
 election-comp.R
 canvas-to-my-harvard.R
+**/*.quarto_ipynb

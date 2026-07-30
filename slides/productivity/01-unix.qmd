@@ -58,7 +58,7 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 ## The filesystem 
 
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//unix/filesystem.png)
+![]({{< var dsbook1 >}}productivity/img//unix/filesystem.png)
 
 ---
 
@@ -67,9 +67,9 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 ::: {layout-ncol=2}
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//windows-screenshots/VirtualBox_Windows-7-Enterprise_23_03_2018_14_53_13.png) 
+![]({{< var dsbook1 >}}productivity/img//windows-screenshots/VirtualBox_Windows-7-Enterprise_23_03_2018_14_53_13.png) 
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//mac-screenshots/Screen-Shot-2018-04-13-at-4.34.01-PM.png) 
+![]({{< var dsbook1 >}}productivity/img//mac-screenshots/Screen-Shot-2018-04-13-at-4.34.01-PM.png) 
 :::
 
 
@@ -79,7 +79,7 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 The structure on Windows looks something like this:
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//unix/windows-filesystem-from-root.png)
+![]({{< var dsbook1 >}}productivity/img//unix/windows-filesystem-from-root.png)
 
 ---
  
@@ -87,7 +87,7 @@ The structure on Windows looks something like this:
  
  And on MacOS something like this:
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//unix/mac-filesystem-from-root.png)
+![]({{< var dsbook1 >}}productivity/img//unix/mac-filesystem-from-root.png)
 
 ---
 
