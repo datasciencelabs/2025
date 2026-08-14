@@ -10,10 +10,10 @@ format:
 ## General Information
 
 -   BST 260 Introduction to Data Science
--   Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
--   TFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li
--   Mondays we have lectures, Wednesday we have labs.
--   In lab we work on problem sets together.
+-   Instructor: [Vince Carey](https://vjcitn.github.io/)
+-   TFs: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang
+-   Course meetings will have varied layouts, typically including
+    lecturing over slides and demonstrations, and hands-on computing
 
 ------------------------------------------------------------------------
 
@@ -40,10 +40,10 @@ Please read the syllabus!
 
 ## What's coming
 
--   UNIX/Linux shell.
+-   UNIX/Linux shell
 -   Reproducible document preparation
 -   Version control with git and GitHub
--   R programming
+-   Rstudio and R programming
 -   Data wrangling with dplyr and data.table
 -   Data visualization with ggplot2
 -   Probability theory, inference and modeling

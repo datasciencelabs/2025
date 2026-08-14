@@ -7,3 +7,7 @@ course_github: "https://github.com/vjcitn/2026vjc/"
 # Textbook base URLs
 dsbook1: "http://rafalab.dfci.harvard.edu/dsbook-part-1/"
 dsbook2: "http://rafalab.dfci.harvard.edu/dsbook-part-2/"
+
+# staff names
+instructor_list: "[Vincent Carey](https://vjcitn.github.io)"
+tf_list: "Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang"
