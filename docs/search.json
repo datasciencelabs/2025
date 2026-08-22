@@ -1094,7 +1094,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4370732 0.4989268\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.428114 0.489886\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4082412 0.4697588\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.3973327 0.4586673\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -1136,7 +1136,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9454"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9488"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -4888,7 +4888,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-2",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 304892 0.829\n 2 644580 0.796\n 3 704337 0.786\n 4 430922 0.768\n 5 860212 0.762\n 6  94896 0.754\n 7 664579 0.750\n 8 682513 0.744\n 9 154974 0.743\n10 262574 0.743\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.829."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 842732 0.796\n 2 854047 0.785\n 3  10940 0.785\n 4  54357 0.773\n 5 536089 0.767\n 6 140731 0.761\n 7 176149 0.761\n 8 475949 0.758\n 9 740645 0.754\n10 960611 0.753\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.796."
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-3",
@@ -4923,7 +4923,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-7",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.823     0.116      7.11 0.000000306"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.764     0.121      6.30 0.00000197"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-8",
@@ -6911,7 +6911,7 @@
     "href": "index.html",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Instructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -6921,7 +6921,7 @@
     "href": "index.html#course-information",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Instructors: Robert Gentleman, Anthony Christidis\nTeaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Instructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -6931,7 +6931,7 @@
     "href": "index.html#lectures",
     "title": "BST 260 Introduction to Data Science",
     "section": "Lectures",
-    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.\n\n\n\n\nDates\nTopic\nSlides\nReading\nInstructor(s)\n\n\n\n\nSep 03\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\nRobert\n\n\nSep 08, Sep 10\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git and GitHub Tutorial, Git and GitHub Book Reading\nRobert\n\n\nSep 15, Sep 17\nR\nR basics, Vectorization\nR Basics, Vectorization\nRobert\n\n\nSep 22, Sep 24\nR\nTidyverse, ggplot2, Tyding Data\ndplyr, ggplot2, Reshaping Data\nRobert\n\n\nSep 29, Oct 01\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web Scraping, Joining tables\nImporting Data, dates and times, Locales, Joining Tables, Extracting data from the web\nAnthony\n\n\nOct 06, Oct 08\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\nAnthony\n\n\nOct 15\nMidterm 1\n\nCovers material from Sep 03-Oct 08\nAnthony\n\n\nOct 20\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables, Central Limit Theorem\nAnthony\n\n\nOct 22\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\nAnthony\n\n\nOct 27, Oct 29\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\nAnthony\n\n\nNov 03, Nov 05\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\nRobert\n\n\nNov 10, Nov 12\nLinear models\nMultivariate Regression, Treatment Effect Models, Association is Not Causation\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association is Not Causation\nRobert\n\n\nNov 17, Nov 19\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R, Distance, Dimension Reduction\nMatrices in R, Applied Linear Algebra, Dimension Reduction\nRobert\n\n\nNov 24\nMidterm 2\n\nCovers material from Sep 03-Nov 12\nRobert\n\n\nDec 01, Dec 03\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and Terminology, Evaluation Metrics, Conditional Probabilities, Smoothing\nRobert\n\n\nDec 08, Dec 10\nMachine Learning\nkNN, Resampling Methods, caret Package, Algorithms\nResampling Methods, ML Algorithms\nAnthony\n\n\nDec 15\nMachine Learning\nML in Practice\nML in Practice\nAnthony\n\n\nDec 17\nOther topics\nShiny Example Code\nShiny Basics\nRobert",
+    "text": "Lectures\nLecture slides, class notes, and problem sets are linked below.\n\n\n\n\nDates\nTopic\nSlides\nReading\n\n\n\n\nAug 31\nProductivity Tools\nIntro, Unix\nInstalling R and RStudio on Windows or Mac, Getting Started, Unix\n\n\nSep 02, Sep 09\nProductivity Tools\nRStudio, Quarto, Git and GitHub\nRStudio Projects, Quarto, Git and GitHub Tutorial, Git and GitHub Book Reading\n\n\nSep 14, Sep 16\nR\nR basics, Vectorization\nR Basics, Vectorization\n\n\nSep 21, Sep 23\nR\nTidyverse, ggplot2, Tyding Data\ndplyr, ggplot2, Reshaping Data\n\n\nSep 28, Sep 30\nWrangling\nIntro, Data Importing, Dates and Times, Locales, Data APIs, Web Scraping, Joining tables\nImporting Data, dates and times, Locales, Joining Tables, Extracting data from the web\n\n\nOct 05, Oct 07\nData visualization\nData Viz Principles, Distributions, Dataviz in practice\nDistributions, Dataviz Principles\n\n\nOct 14\nMidterm 1\n\nCovers material from Aug 31-Oct 07\n\n\nOct 19\nProbability\nIntro, Foundations for Inference\nMonte Carlo, Random Variables, Central Limit Theorem\n\n\nOct 21\nInference\nIntro, Parameter and estimates, Confidence Intervals\nParameters & Estimates, Confidence Intervals\n\n\nOct 26, Oct 28\nStatistical Models\nModels, Bayes, Hierarchical Models\nData-driven Models, Bayesian Statistics, Hierarchical Models\n\n\nNov 02, Nov 04\nLinear models\nIntro, Regression\nRegression, Multivariate Regression\n\n\nNov 09, Nov 11\nLinear models\nMultivariate Regression, Treatment Effect Models, Association is Not Causation\nMeasurement Error Models, Treatment Effect Models, Association Tests, Association is Not Causation\n\n\nNov 16, Nov 18\nHigh dimensional data\nIntro to Linear Algebra, Matrices in R, Distance, Dimension Reduction\nMatrices in R, Applied Linear Algebra, Dimension Reduction\n\n\nNov 23\nMidterm 2\n\nCovers material from Aug 31-Nov 11\n\n\nNov 30, Dec 02\nMachine Learning\nIntro, Metrics, Conditionals, Smoothing\nNotation and Terminology, Evaluation Metrics, Conditional Probabilities, Smoothing\n\n\nDec 07, Dec 09\nMachine Learning\nkNN, Resampling Methods, caret Package, Algorithms\nResampling Methods, ML Algorithms\n\n\nDec 14\nMachine Learning\nML in Practice\nML in Practice\n\n\nDec 16\nOther topics\nShiny Example Code\nShiny Basics",
     "crumbs": [
       "Home"
     ]
@@ -6941,7 +6941,7 @@
     "href": "index.html#problem-sets",
     "title": "BST 260 Introduction to Data Science",
     "section": "Problem Sets",
-    "text": "Problem Sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\nProblem Set 1\nUnix, Quarto\nSep 12\neasy\n\n\nProblem Set 2\nR\nSep 18\nmedium\n\n\nProblem Set 3\nTidyverse\nSep 28\nhard\n\n\nProblem Set 4\nWrangling\nOct 5\nhard\n\n\nProblem Set 5\nCovid 19 data visualization\nOct 12\nmedium\n\n\nProblem Set 6\nProbability\nOct 26\neasy\n\n\nProblem Set 7\nPredict the election\nNov 05\nhard\n\n\nProblem Set 8\nExcess mortality after Hurricane María\nNov 16\nmedium\n\n\nProblem Set 9\nMatrices\nNov 23\neasy\n\n\nProblem Set 10\nDigit reading\nDec 19\nhard\n\n\nFinal Project\nNHANES Data Analysis\nDec 15\nhard",
+    "text": "Problem Sets\n\n\n\nProblem set\nTopic\nDue Date\nDifficulty\n\n\n\n\nProblem Set 1\nUnix, Quarto\nSep 11\neasy\n\n\nProblem Set 2\nR\nSep 18\nmedium\n\n\nProblem Set 3\nTidyverse\nSep 27\nhard\n\n\nProblem Set 4\nWrangling\nOct 4\nhard\n\n\nProblem Set 5\nCovid 19 data visualization\nOct 11\nmedium\n\n\nProblem Set 6\nProbability\nOct 25\neasy\n\n\nProblem Set 7\nPredict the election\nNov 04\nhard\n\n\nProblem Set 8\nExcess mortality after Hurricane María\nNov 15\nmedium\n\n\nProblem Set 9\nMatrices\nNov 22\neasy\n\n\nProblem Set 10\nDigit reading\nDec 18\nhard\n\n\nFinal Project\nNHANES Data Analysis\nDec 14\nhard",
     "crumbs": [
       "Home"
     ]
@@ -6961,7 +6961,7 @@
     "href": "index.html#acknowledgments",
     "title": "BST 260 Introduction to Data Science",
     "section": "Acknowledgments",
-    "text": "Acknowledgments\nFor the Fall 2025 iteration of BST 260, the course website was modified by Anthony Christidis, building on the Fall 2024 course template. We thank Maria Tackett and Mine Çetinkaya-Rundel for sharing their web page template, which we used in creating this website.",
+    "text": "Acknowledgments\nFor the Fall 2026 iteration of BST 260, the course website was modified by Vincent Carey, building on the Fall 2025 course template. We thank Maria Tackett and Mine Çetinkaya-Rundel for sharing their web page template, which we used in creating this website.",
     "crumbs": [
       "Home"
     ]
@@ -7056,6 +7056,13 @@
     "title": "Problem set 1",
     "section": "",
     "text": "After finishing the homework, you are to turn in all the code to GitHub using git.\n\nStart an RStudio project. Pick a good name following a naming convention. Start a Quarto document called beginning.qmd.\nCreate a directory called img and save a screen shot of your RStudio session for the project. Include your screenshot in the Quarto document.\nNext, in your Quarto document, define variables \\(a=1, b=-1, c=-2\\) and print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nInclude a graph of \\(f(x)\\) versus \\(x\\) for \\(x \\in (-5,5)\\).\n\n\nx &lt;- seq(-5, 5, length = 100)\n# Hint: Use the plot function\n\n\nCreate a directory called docs. Use the command quarto render to create a PDF and save it to the docs directory. Show us the command you typed:\n\n# Your code here\n\nUse Unix to create a directory called data in the project home directory. Include the Unix command you used to create the directory.\n\n# Your code here\n\nUse a terminal-based text editor to create a file coefs.txt in the data directory and save three coefficients, 1 -1 -2 for example. Show us the Unix commands you used to achieve this:\n\n# Your code here\n\nMake a directory called code. Use Unix to copy the file beginning.qmd to a file called quadratic.qmd in the code directory. Show us the Unix commands you used.\n\n# Your code here\n\nEdit the quadratic.qmd file to read in a, b, and c from the file coefs.txt. Make sure to use a relative path when reading the file. As before, print out the solutions to \\(f(x) = ax^2+bx+c=0\\). Do not report complex solutions, only real numbers.\nChange the path of the file you are reading to the full path you get when you type file.path(getwd(), \"data/coefs.txt\"). Confirm that the file still renders. Then move the entire pset-01-rmarkdown project to a directory called RtmpyDknq4. Does the file render? Change the path back to a relative path and see if it renders."
+  },
+  {
+    "objectID": "init-repos.html",
+    "href": "init-repos.html",
+    "title": "Initial GitHub usage",
+    "section": "",
+    "text": "Overview\nData science for public health research inevitably involves evolving\n\nsource code,\ndocumentation,\nweb-based resources.\n\nGitHub.com will play a central role in our work with these information modalities in this course. You must establish a free account at github.com.\n\n\nDay 1 task\n\nfile an issue at https://github.com/vjcitn/ghintro\nuse the template to provide\n\nyour GitHub username\nyour degree program\nyour year in program\nself-evaluated acquaintance with R and GitHub\n\n\nWe will analyze the results of your issue contributions during the first day."
   },
   {
     "objectID": "psets/pset-09-matrices.html",
@@ -7880,7 +7887,7 @@
     "href": "slides/00-intro.html#general-information",
     "title": "Introduction",
     "section": "General Information",
-    "text": "General Information\n\nBST 260 Introduction to Data Science\nInstructors: Robert Gentleman, Anthony Christidis\nTFs: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li\nMondays we have lectures, Wednesday we have labs.\nIn lab we work on problem sets together."
+    "text": "General Information\n\nBST 260 Introduction to Data Science\nInstructor: Vince Carey\nTFs: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nCourse meetings will have varied layouts, typically including lecturing over slides and demonstrations, and hands-on computing"
   },
   {
     "objectID": "slides/00-intro.html#course-description",
@@ -7901,7 +7908,7 @@
     "href": "slides/00-intro.html#whats-coming",
     "title": "Introduction",
     "section": "What’s coming",
-    "text": "What’s coming\n\nUNIX/Linux shell.\nReproducible document preparation\nVersion control with git and GitHub\nR programming\nData wrangling with dplyr and data.table\nData visualization with ggplot2\nProbability theory, inference and modeling\nHigh-dimensional data techniques\nMachine learning"
+    "text": "What’s coming\n\nUNIX/Linux shell\nReproducible document preparation\nVersion control with git and GitHub\nRstudio and R programming\nData wrangling with dplyr and data.table\nData visualization with ggplot2\nProbability theory, inference and modeling\nHigh-dimensional data techniques\nMachine learning"
   },
   {
     "objectID": "slides/00-intro.html#lets-get-started",
@@ -9476,7 +9483,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Female Male   Female Female Female Female Female Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Female Male   Female Female Female Female Female Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Male   Male   Female Male   Female Female Male   Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Male   Male   Female Male   Female Female Male   Female\nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -9651,7 +9658,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x1045a72e8&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x11828a0c8&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -9763,7 +9770,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.08354 62.00304 65.99069 70.14874 69.97744 72.78669 67.14316 73.00843\n [9] 67.00410 69.97201"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.00163 62.04325 66.00008 69.93622 69.90860 72.99864 66.91832 73.03828\n [9] 66.84133 70.06796"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -10820,14 +10827,14 @@
     "href": "slides/ml/41-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.86 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-1",
     "href": "slides/ml/41-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.994\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.998\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-2",
@@ -11366,7 +11373,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-07-30 08:16:39 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-07-30 12:16:39 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-08-22 06:51:42 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-08-22 10:51:42 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -11380,7 +11387,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 8\n\nnow() |&gt; minute() \n\n[1] 16\n\nnow() |&gt; second() \n\n[1] 39.16644"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 6\n\nnow() |&gt; minute() \n\n[1] 51\n\nnow() |&gt; second() \n\n[1] 42.85254"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -11765,7 +11772,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.449871\n\nsd(x_hat) \n\n[1] 0.01595469"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4498682\n\nsd(x_hat) \n\n[1] 0.01583737"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",

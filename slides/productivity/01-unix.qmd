@@ -4,7 +4,7 @@ keywords: "Productivity Tools"
 date: "2025-09-03"
 format:
   revealjs:
-    theme: night
+    theme: solarized
 ---
 
 ## Naming conventions
