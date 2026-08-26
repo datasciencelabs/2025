@@ -65,7 +65,8 @@ execute:
 library(tidyverse) 
 library(rvest) 
 #url <- "http://www.stevetheump.com/Payrolls.htm" 
-url <- "http://web.archive.org/web/20260711162616/http://stevetheump.com/Payrolls.htm"
+#url <- "http://web.archive.org/web/20260711162616/http://stevetheump.com/Payrolls.htm"
+url <- "https://raw.githubusercontent.com/vjcitn/2026vjc/main/wayback/Payrolls.htm"
 h <- read_html(url)  
 i <- h |> html_nodes(".style3") |> html_text() |> stringr::str_which("2002") 
 h |> html_nodes("table") |>  
