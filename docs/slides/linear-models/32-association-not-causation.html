@@ -273,21 +273,21 @@
 <pre><code># A tibble: 1,000,000 × 2
     group     r
     &lt;int&gt; &lt;dbl&gt;
- 1 782176 0.803
- 2 477238 0.789
- 3 976907 0.777
- 4 866197 0.771
- 5  87562 0.768
- 6 175569 0.761
- 7 408263 0.760
- 8  12635 0.760
- 9 685630 0.755
-10 509788 0.754
+ 1 324615 0.838
+ 2  62224 0.826
+ 3 765366 0.813
+ 4 978375 0.808
+ 5 952047 0.775
+ 6 774177 0.767
+ 7 731661 0.765
+ 8 238323 0.761
+ 9 291628 0.759
+10 586915 0.758
 # ℹ 999,990 more rows</code></pre>
 </div>
 </div>
 <ul>
-<li>We see a maximum correlation of 0.803.</li>
+<li>We see a maximum correlation of 0.838.</li>
 </ul>
 </section>
 <section id="spurious-correlation-3" class="slide level2">
@@ -313,7 +313,7 @@
 <section id="spurious-correlation-6" class="slide level2">
 <h2>Spurious correlation</h2>
 <ul>
-<li>It’s simply a mathematical fact that if we observe random correlations that are expected to be 0, but have a standard error of 0.205, then the largest one will be close to 1.</li>
+<li>It’s simply a mathematical fact that if we observe random correlations that are expected to be 0, but have a standard error of 0.204, then the largest one will be close to 1.</li>
 </ul>
 </section>
 <section id="spurious-correlation-7" class="slide level2">
@@ -326,9 +326,9 @@
 <span id="cb5-5"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
-  term  estimate std.error statistic    p.value
-  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1 x        0.978     0.151      6.47 0.00000134</code></pre>
+  term  estimate std.error statistic     p.value
+  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+1 x        0.801     0.109      7.35 0.000000177</code></pre>
 </div>
 </div>
 </section>
