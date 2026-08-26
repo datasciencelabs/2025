@@ -11,7 +11,7 @@ title: "BST 260 Introduction to Data Science"
 * Textbooks: [DS Book (Part 1)]({{< var dsbook1 >}}), [DS Book (Part 2)]({{< var dsbook2 >}})
 * Slack: [BST 260 Slack Workspace]({{< var slack_url >}})
 * Canvas: [Home Page]({{< var canvas_url >}})
-* GitHub: [Course Repository](https://github.com/datasciencelabs/2026)
+* GitHub: [Course Repository](https://github.com/vjcitn/2026vjc)
 * Remember to read the [syllabus](syllabus.qmd)
 
 ## Lectures 
