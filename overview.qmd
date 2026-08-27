@@ -79,3 +79,16 @@ that teams of approximately 4 students each can be formed in real time
 - Students will then reorganize in the classroom to form groups to collaboratively
 tackle a problem in real time
 - Paper and pens may play a role in case you are asked to create some text or tables "by hand"
+
+## Evaluation processes; communication
+
+- I want this course to add profoundly to your appreciation of modern data science
+practices, so that you see how to solve key problems of data organization, interpretation,
+and scientific communication that arise in your research.
+- "Problem sets", "exams", and "projects" are elements of evaluation that will be used.
+- I would like each student to be able to prepare a web site that evolves over the
+course timeline, using GitHub pages
+    - the site will include pages representing student encounters with data and
+data science methods of interest
+    - the site can be public, or, if private, shared with instructor and TFs
+    - this site may be the locus for work (and evaluation of work) on course problems and projects
