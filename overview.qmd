@@ -1,0 +1,81 @@
+---
+title: "Overview of BST 260 Introduction to Data Science"
+author: "Vince Carey, instructor, Fall 2026 edition"
+---
+
+# Prologue
+
+The course includes activities in three main domains:
+
+- surveying *data science and statistics* as foundations of basic integrity and efficiency of research
+- introducing and using *tools for implementing data science methods* for research
+- critically exploring opportunities afforded by *large language models and agentic AI* for automation of repetitive detailed tasks
+
+A significant concern with AI adoption in education is the risk of "de-skilling": students need to
+be able to 
+
+- *guide* agentic processes to accomplish clear goals 
+- *verify* success and supply solutions in case of agent failure
+- *propose paths forward* after success is achieved
+
+The course is intended to be highly interactive and open.  Slack and GitHub
+are important tools facilitating visibility of our problems and solutions
+as they emerge over time.
+
+Fundamental material for the course is provided in Prof. Irizarry's text book.  Please
+do get very familiar with it.  When you think you have identified a gap in
+reasoning or in your understanding of aspects of the text, open a discussion either
+in slack or in class.
+
+The 2026 edition of BST 260 comes at a time of heavy churn in the fields of
+AI, cloud computing, data storage and management.  We will rely in part on
+materials developed by Anthony Christidis and Robert Gentleman for the
+2025 edition of the course.  These are all made available as legacy materials.
+
+**The course web site for 2026 will be updated frequently and I will try to make
+the changes as visible as possible as changes are made.**
+
+# Course pillars
+
+## Integrity and efficiency topics
+
+- Files and project structures
+- git, GitHub.com, project evolution
+- markdown: a syntax for integrative communication
+
+## Tools for implementing data science strategies
+
+- R: A language and software system for statistics and data science
+    - CRAN, R-universe
+- Probability: models for unpredictable and uncertain phenomena
+- Statistics: frameworks for measuring, predicting, interpreting *observations*
+
+## AI in relation to data science for research
+
+- Confidentiality and compliance issues are fundamental; we will not be
+using any controlled-access data in this course, but the regulatory
+frameworks imposed by our institutions must be fully understood
+- *Defining AI*: data + algorithm + interface
+   - data for data science with AI: **all** open data and code are used to train foundational models
+        - code and documents used in training are of highly variable quality
+        - highly amateurish solutions are commonly encountered
+   - algorithms for AI: many possibilities
+   - interfaces: many possibilities
+- **Always acknowledge use of AI in your coursework and research**
+
+# Starting off
+
+## Equipment and accounts
+
+- It is assumed you are in possession of a laptop capable of running current R and Rstudio,
+and on which you have administrative privileges.  Please contact me if this is not so.
+- You must have an account at github.com (free, use a .edu email address to get more
+capabilities) and at google.com (free, for working with Google Sheets, Slides, and Docs).
+
+## Forming teams during class time
+
+- I will from time to time ask students to "count off" typically to 20 or so, so
+that teams of approximately 4 students each can be formed in real time
+- Students will then reorganize in the classroom to form groups to collaboratively
+tackle a problem in real time
+- Paper and pens may play a role in case you are asked to create some text or tables "by hand"

@@ -18,6 +18,9 @@ title: "BST 260 Introduction to Data Science"
 
 Lecture slides, class notes, and problem sets are linked below. 
 
+NOTE FOR FALL 2026: Much of the content provided below is from the 2025
+edition of the course, and will change. 
+
 ::: {.table colwidths="[10, 5, 45, 30]"}
 | Dates   | Topic  |    Slides | Reading |
 |:---|:---|:---|:---|
@@ -41,34 +44,35 @@ Lecture slides, class notes, and problem sets are linked below.
 | Dec 16 | Other topics  |  [Shiny Example Code](https://github.com/datasciencelabs/2026/tree/main/shiny)| [Shiny Basics](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) |
 :::
 
+## Problem Sets for 2026.  To be determined.
 
+## Final projects for 2026.  To be determined.
 
-## Problem Sets
+## Problem Set/Project Examples from 2025.  
 
 | Problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
-| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|Sep 11   | easy |
-| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | Sep 18   |medium |
-| [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | Sep 27   |hard |
-| [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | Oct 4   | hard |
-| [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | Oct 11   |medium |
-| [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | Oct 25   | easy |
-| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election |Nov 04   |  hard |
-| [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | Nov 15   |  medium |
-| [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | Nov 22   | easy |
-| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | Dec 18   | hard |
-|[Final Project](final-project.qmd) | NHANES Data Analysis | Dec 14   | hard  |
+| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|~~Sep 11~~   | easy |
+| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | ~~Sep 18~~   |medium |
+| [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | ~~Sep 27~~   |hard |
+| [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | ~~Oct 4~~   | hard |
+| [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | ~~Oct 11~~   |medium |
+| [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | ~~Oct 25~~   | easy |
+| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election | ~~Nov 04~~   |  hard |
+| [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | ~~Nov 15~~   |  medium |
+| [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | ~~Nov 22~~   | easy |
+| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | ~~Dec 18~~   | hard |
+|[Final Project](final-project.qmd) | NHANES Data Analysis | ~~Dec 14~~   | hard  |
 
 ## Office Hour Times
 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
-| Robert Gentleman  | Monday, 1:00 pm to 2:00 pm  |   Building 2 Room 437F (October via Appointment)     |
-| Anthony Christidis  | Friday, 11:30 am to 12:30 pm |   [Zoom]({{< var canvas_url >}}/external_tools/97810)     |
-| Angela Wang | Monday, 3:45 pm to 4:45 pm     | Kresge 204 (Except 11/3 which will be in FXB G13)         |
-| Ava Harrington   | Thursday, 2:00 pm to 3:00 pm     | Kresge 204         |
-| Emma Crenshaw | Tuesday, 10:00 am to 11:00 am | FXB G03 (Except  9/9 which will be in Kresge 201) |
-| Jing Li | Wednesday, 1:30 pm to 2:30 pm     | Kresge LL6 |
+| Vince Carey  | TBD |   TBD |
+| Ethan Lee | TBD | TBD |
+| Qianyu Fan | TBD | TBD |
+| Gabrielle Gonzalez | TBD | TBD |
+| Yiyang Zhang | TBD | TBD |
 
 ## Acknowledgments
 
