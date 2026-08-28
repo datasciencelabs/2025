@@ -69,10 +69,10 @@ edition of the course, and will change.
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
 | Vince Carey  | TBD |   TBD |
-| Ethan Lee | TBD | TBD |
+| Ethan Lee | Tues 9AM | FXB G03 |
 | Qianyu Fan | TBD | TBD |
-| Gabrielle Gonzalez | TBD | TBD |
-| Yiyang Zhang | TBD | TBD |
+| Gabrielle Gonzalez | Weds 2PM | Kresge 205 |
+| Yiyang Zhang | Thurs 3PM | TBD |
 
 ## Acknowledgments
 
