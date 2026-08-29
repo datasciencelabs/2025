@@ -6,12 +6,12 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2025-09-24">
   <meta name="keywords" content="R">
-  <title>BST 260: Introduction to Data Science – Tidying data</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Tidying data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -96,7 +96,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -207,12 +207,12 @@
 <li>We will a <em>wide format dataset</em> as an example:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse) </span>
 <span id="cb1-2"><a></a><span class="fu">library</span>(dslabs)</span>
 <span id="cb1-3"><a></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="at">package =</span> <span class="st">"dslabs"</span>)</span>
 <span id="cb1-4"><a></a>filename <span class="ot">&lt;-</span> <span class="fu">file.path</span>(path, <span class="st">"fertility-two-countries-example.csv"</span>)</span>
 <span id="cb1-5"><a></a>wide_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(filename)</span>
-<span id="cb1-6"><a></a><span class="fu">select</span>(wide_data, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a></a><span class="fu">select</span>(wide_data, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 10
   country     `1960` `1961` `1962` `1963` `1964` `1965` `1966` `1967` `1968`
@@ -250,9 +250,9 @@
 <h2><code>pivot_longer</code></h2>
 <p>The code to pivot the fertility data therefore looks like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>new_tidy_data <span class="ot">&lt;-</span> wide_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>new_tidy_data <span class="ot">&lt;-</span> wide_data <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="st">`</span><span class="at">1960</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2015</span><span class="st">`</span>, <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="at">values_to =</span> <span class="st">"fertility"</span>)</span>
-<span id="cb3-3"><a></a><span class="fu">head</span>(new_tidy_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a></a><span class="fu">head</span>(new_tidy_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country year  fertility
@@ -275,8 +275,8 @@
 <li>A quicker way to write this code is to specify which column will <strong>not</strong> include in the pivot:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>new_tidy_data <span class="ot">&lt;-</span> wide_data <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>country, <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="at">values_to =</span> <span class="st">"fertility"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>new_tidy_data <span class="ot">&lt;-</span> wide_data <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>country, <span class="at">names_to =</span> <span class="st">"year"</span>, <span class="at">values_to =</span> <span class="st">"fertility"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="pivot_longer-5" class="slide level2">
@@ -285,10 +285,10 @@
 <li>Now that the data is tidy, we can use it with other <em>tidyverse</em> functions, such <strong>ggplot2</strong>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>new_tidy_data <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>new_tidy_data <span class="sc">|&gt;</span> </span>
 <span id="cb6-2"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.numeric</span>(year)) <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, fertility, <span class="at">color =</span> country)) <span class="sc">+</span> </span>
-<span id="cb6-4"><a></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="09-tidyr_files/figure-revealjs/fertility-year-check-1.png" width="960" class="r-stretch"></section>
@@ -312,9 +312,9 @@
 <h2><code>pivot_wider</code></h2>
 <p>Here is some example code</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>new_wide_data <span class="ot">&lt;-</span> new_tidy_data <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>new_wide_data <span class="ot">&lt;-</span> new_tidy_data <span class="sc">|&gt;</span> </span>
 <span id="cb7-2"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> fertility)</span>
-<span id="cb7-3"><a></a><span class="fu">select</span>(new_wide_data, country, <span class="st">`</span><span class="at">1960</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">1967</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a></a><span class="fu">select</span>(new_wide_data, country, <span class="st">`</span><span class="at">1960</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">1967</span><span class="st">`</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 9
   country     `1960` `1961` `1962` `1963` `1964` `1965` `1966` `1967`
@@ -329,13 +329,13 @@
 <h2>Example</h2>
 <p>We now demonstrate with a more complex example in which we have to use both <code>pivot_longer</code> and <code>pivot_wider</code> to tidy the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="at">package =</span> <span class="st">"dslabs"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="at">package =</span> <span class="st">"dslabs"</span>)</span>
 <span id="cb9-2"><a></a></span>
 <span id="cb9-3"><a></a>filename <span class="ot">&lt;-</span> <span class="st">"life-expectancy-and-fertility-two-countries-example.csv"</span></span>
 <span id="cb9-4"><a></a>filename <span class="ot">&lt;-</span>  <span class="fu">file.path</span>(path, filename)</span>
 <span id="cb9-5"><a></a></span>
 <span id="cb9-6"><a></a>raw_dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(filename)</span>
-<span id="cb9-7"><a></a><span class="fu">select</span>(raw_dat, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a></a><span class="fu">select</span>(raw_dat, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   country     `1960_fertility` `1960_life_expectancy` `1961_fertility`
@@ -361,7 +361,7 @@
 <li><p>We will call it <code>name</code>, the default, for now:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>raw_dat <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="sc">-</span>country) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>raw_dat <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="sc">-</span>country) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country name                 value
@@ -389,11 +389,11 @@
 <li>Encoding multiple variables in a column name is such a common problem that the <strong>tidyr</strong> package includes function to separate these columns into two or more:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>raw_dat <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>raw_dat <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>country) <span class="sc">|&gt;</span> </span>
 <span id="cb13-3"><a></a>  <span class="fu">separate_wider_delim</span>(name, <span class="at">delim =</span> <span class="st">"_"</span>,  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"name"</span>), </span>
 <span id="cb13-4"><a></a>                       <span class="at">too_many =</span> <span class="st">"merge"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-5"><a></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-5"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country year  name            value
@@ -418,14 +418,14 @@
 <section id="example-6" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>dat <span class="ot">&lt;-</span> raw_dat <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>dat <span class="ot">&lt;-</span> raw_dat <span class="sc">|&gt;</span> </span>
 <span id="cb15-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>country) <span class="sc">|&gt;</span> </span>
 <span id="cb15-3"><a></a>  <span class="fu">separate_wider_delim</span>(name, <span class="at">delim =</span> <span class="st">"_"</span>, </span>
 <span id="cb15-4"><a></a>                       <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"name"</span>), </span>
 <span id="cb15-5"><a></a>                       <span class="at">too_many =</span> <span class="st">"merge"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb15-6"><a></a>  <span class="fu">pivot_wider</span>() <span class="sc">|&gt;</span></span>
 <span id="cb15-7"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(year))</span>
-<span id="cb15-8"><a></a><span class="fu">head</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-8"><a></a><span class="fu">head</span>(dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country  year fertility life_expectancy
@@ -443,9 +443,9 @@
 <h2>Example</h2>
 <p>The data is now is now in tidy form and we can use with other packages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>p1 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, fertility, <span class="at">color =</span> country)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>p1 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, fertility, <span class="at">color =</span> country)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb17-2"><a></a>p2 <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, life_expectancy, <span class="at">color =</span> country)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
-<span id="cb17-3"><a></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">widths =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">widths =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 
@@ -640,7 +640,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -667,80 +667,42 @@
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -790,13 +752,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -811,7 +774,7 @@
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+            var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -7,9 +7,9 @@ title: "Syllabus"
 - BST 260 Introduction to Data Science
 - Kresge G1 (HSPH)
 - Monday Mon & Wed 9:45 am - 11:15 am
-- Lecture notes: [https://datasciencelabs.github.io/2025/](https://datasciencelabs.github.io/2025/)
-- Slack: [BST 260 Slack Workspace](https://bst-260-f25-7j2.slack.com/)
-- Canvas: [Home Page](https://canvas.harvard.edu/courses/158943)
+- Lecture notes: [{{< var site_url >}}]({{< var site_url >}})
+- Slack: [BST 260 Slack Workspace]({{< var slack_url >}})
+- Canvas: [Home Page]({{< var canvas_url >}})
 
 ## Prerequisites
 
@@ -19,8 +19,8 @@ Students not matriculated in an HSPH Biostatistics graduate program (HDS SM60, B
 
 ## Textbooks
 
-- [Introduction to Data Science: Data Wrangling and Visualization with R](http://rafalab.dfci.harvard.edu/dsbook-part-1/)
-- [Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies](http://rafalab.dfci.harvard.edu/dsbook-part-2/)
+- [Introduction to Data Science: Data Wrangling and Visualization with R]({{< var dsbook1 >}})
+- [Introduction to Data Science: Statistics and Prediction Algorithms Through Case Studies]({{< var dsbook2 >}})
 
 ## Course Description
 
@@ -102,7 +102,7 @@ During each session, your TF may ask you to:
 
 **Grading Scale**: 0-5 points based on your demonstrated understanding, ranging from no understanding (0 points) to excellent understanding with minimal gaps (5 points).
 
-See the [Oral Evaluations page](https://datasciencelabs.github.io/2025/oral-evaluations.html) for complete details including scheduling instructions, TF assignments, and full grading criteria.
+See the [Oral Evaluations page](oral-evaluations.qmd) for complete details including scheduling instructions, TF assignments, and full grading criteria.
 
 ## Midterm Policy
 
@@ -138,7 +138,7 @@ Students may use AI tools as complementary aids but must clearly document where 
 
 **Important**: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours to provide guidance.
 
-For complete details including team assignments, project options, submission guidelines, grading rubrics, and formatting requirements, see the [Final Project page](https://datasciencelabs.github.io/2025/final-project.html).
+For complete details including team assignments, project options, submission guidelines, grading rubrics, and formatting requirements, see the [Final Project page](final-project.qmd).
 
 ## ChatGPT Policy
 

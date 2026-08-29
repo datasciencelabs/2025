@@ -1,0 +1,9 @@
+The following packages (and some more) were needed
+
+install.packages("geomtextpath")
+install.packages("HistData")
+install.packages("Lahman")
+install.packages("pBrackets")
+install.packages("ThemePark")
+install.packages("MatthewBJane/ThemePark")
+devtools::install_github("MatthewBJane/ThemePark")

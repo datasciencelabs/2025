@@ -95,7 +95,7 @@ tab |> ggplot(aes(population/10^6, ev, label = abb)) +
 
 ## Joins
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/joins.png){width="35%" fig-align="center"}.
+![]({{< var dsbook1 >}}wrangling/img/joins.png){width="35%" fig-align="center"}.
 
 Note: These names are based on SQL.
 

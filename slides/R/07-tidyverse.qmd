@@ -271,7 +271,7 @@ murders |> summarize(median = median(population), min = min(population), max = m
 * Why don't we use `quantiles`? 
 
 ```{r}
-murders |> summarize(quantiles = quantile(population, c(0.5, 0, 1)))
+murders |> reframe(quantiles = quantile(population, c(0.5, 0, 1)))
 ```
 
 

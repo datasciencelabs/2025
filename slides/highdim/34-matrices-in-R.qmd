@@ -32,7 +32,7 @@ execute:
 
 - The first step in handling mail received in the post office is to sort letters by zip code:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/how-to-write-a-address-on-an-envelope-how-to-write-the-address-on-an-envelope-write-address-on-envelope-india-finishedenvelope-x69070.png){width="50%"}
+![]({{< var dsbook2 >}}ml/img/how-to-write-a-address-on-an-envelope-how-to-write-the-address-on-an-envelope-write-address-on-envelope-india-finishedenvelope-x69070.png){width="50%"}
 
 ## Case study: MNIST
 

@@ -64,7 +64,9 @@ execute:
 ```{r mlb-2002-payroll, echo=FALSE, message=FALSE, warning=FALSE, fig.height = 4.5} 
 library(tidyverse) 
 library(rvest) 
-url <- "http://www.stevetheump.com/Payrolls.htm" 
+#url <- "http://www.stevetheump.com/Payrolls.htm" 
+#url <- "http://web.archive.org/web/20260711162616/http://stevetheump.com/Payrolls.htm"
+url <- "https://raw.githubusercontent.com/vjcitn/2026vjc/main/wayback/Payrolls.htm"
 h <- read_html(url)  
 i <- h |> html_nodes(".style3") |> html_text() |> stringr::str_which("2002") 
 h |> html_nodes("table") |>  
@@ -90,7 +92,7 @@ h |> html_nodes("table") |>
 
 ## Baseball basics
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/img/Baseball_Diamond1.png)
+![]({{< var dsbook2 >}}linear-models/img/Baseball_Diamond1.png)
 
 
 ## Baseball basics
@@ -124,7 +126,7 @@ h |> html_nodes("table") |>
 
 ## No awards for base on balls
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/img/JumboTron.png)
+![]({{< var dsbook2 >}}linear-models/img/JumboTron.png)
 
 ## Base on balls or stolen bases?
 

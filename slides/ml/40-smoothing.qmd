@@ -439,7 +439,7 @@ tmp |> filter(center %in% c(-125, -55)) |>
 
 - At each value of $x_0$, we keep the estimate $\hat{f}(x_0)$ and move on to the next point:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/binsmoother-animation.gif){fig-align="center"}
+![]({{< var dsbook2 >}}ml/img/binsmoother-animation.gif){fig-align="center"}
 
 
 ## Bin smoothing
@@ -584,7 +584,7 @@ polls_2008 |> mutate(smooth = fit$y) |>
 
 - To see why this makes sense, consider the curved edges gardeners make using straight-edged spades:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/garden.png)
+![]({{< var dsbook2 >}}ml/img/garden.png)
 
 
 
@@ -642,7 +642,7 @@ tmp |>
 
 ## Local weighted regression 
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-animation.gif){fig-align="center"} 
+![]({{< var dsbook2 >}}ml/img/loess-animation.gif){fig-align="center"} 
 
 ## Local weighted regression 
 
@@ -682,7 +682,7 @@ polls_2008 |> mutate(smooth = fit$fitted) |>
 
 ## Local weighted regression 
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/img/loess-multi-span-animation.gif){fig-align="center"}
+![]({{< var dsbook2 >}}ml/img/loess-multi-span-animation.gif){fig-align="center"}
 
 ## Local weighted regression 
 

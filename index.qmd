@@ -4,74 +4,78 @@ title: "BST 260 Introduction to Data Science"
 
 ## Course Information
 
-* Instructors: [Robert Gentleman](https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/), [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis)
-* Teaching fellows:  Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li
+* Instructor: {{< var instructor_list >}}
+* Teaching fellows:  {{< var tf_list >}}
 * Location: Kresge G1,	HSPH
 * Date and time: Mon & Wed 9:45 am - 11:15 am
-* Textbooks: [DS Book (Part 1)](https://rafalab.dfci.harvard.edu/dsbook-part-1/), [DS Book (Part 2)](https://rafalab.dfci.harvard.edu/dsbook-part-2/)
-* Slack: [BST 260 Slack Workspace](https://bst-260-f25-7j2.slack.com/)
-* Canvas: [Home Page](https://canvas.harvard.edu/courses/158943)
-* GitHub: [Course Repository](https://github.com/datasciencelabs/2025)
+* Textbooks: [DS Book (Part 1)]({{< var dsbook1 >}}), [DS Book (Part 2)]({{< var dsbook2 >}})
+* Slack: [BST 260 Slack Workspace]({{< var slack_url >}})
+* Canvas: [Home Page]({{< var canvas_url >}})
+* GitHub: [Course Repository](https://github.com/vjcitn/2026vjc)
 * Remember to read the [syllabus](syllabus.qmd)
 
 ## Lectures 
 
-Lecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.
+Lecture slides, class notes, and problem sets are linked below. 
 
-::: {.table colwidths="[10, 5, 45, 30, 10]"}
-| Dates   | Topic  |    Slides | Reading | Instructor(s) |
-|:---|:---|:---|:---|:---|
-| Sep 03 | Productivity Tools| [Intro](slides/00-intro.qmd), [Unix](slides/productivity/01-unix.qmd) | Installing R and RStudio on [Windows](https://teacherscollege.screenstepslive.com/a/1108074-install-r-and-rstudio-for-windows) or [Mac](https://teacherscollege.screenstepslive.com/a/1135059-install-r-and-rstudio-for-mac), [Getting Started](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/getting-started.html), [Unix](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/unix.html)| Robert |
-| Sep 08,  Sep 10| Productivity Tools| [RStudio](slides/productivity/02-rstudio.qmd), [Quarto](slides/productivity/03-quarto.qmd), [Git and GitHub](slides/productivity/04-git.qmd) | [RStudio Projects, Quarto](https://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/reproducible-projects.html), [Git and GitHub Tutorial](extra/git_tutorial.qmd), [Git and GitHub Book Reading](http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/git.html) | Robert |
-| Sep 15, Sep 17 | R | [R basics](slides/R/05-r-basics.qmd), [Vectorization](slides/R/06-vectorization.qmd) |  [R Basics](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/R-basics.html), [Vectorization](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/programming-basics.html#sec-vectorization) | Robert |
-| Sep 22, Sep 24 | R | [Tidyverse](slides/R/07-tidyverse.qmd), [ggplot2](slides/R/08-ggplot2.qmd), [Tyding Data](slides/R/09-tidyr.qmd) | [dplyr](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/tidyverse.html), [ggplot2](http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/ggplot2.html), [Reshaping Data](http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/reshaping-data.html) | Robert |
-| Sep 29, Oct 01 | Wrangling  | [Intro](slides/wrangling/10-intro-to-wrangling.qmd), [Data Importing](slides/wrangling/11-importing-files.qmd), [Dates and Times](slides/wrangling/12-dates-and-times.qmd), [Locales](slides/wrangling/13-locales.qmd), [Data APIs](slides/wrangling/14-data-apis.qmd), [Web Scraping](slides/wrangling/15-web-scraping.qmd), [Joining tables](slides/wrangling/16-joining-tables.qmd) | [Importing Data](https://rafalab.dfci.harvard.edu/dsbook-part-1/R/importing-data.html), [dates and times](http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/dates-and-times.html), [Locales](https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/locales.html), [Joining Tables](http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/joining-tables.html), [Extracting data from the web](https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/web-scraping.html)| Anthony |
-| Oct 06, Oct 08 | Data visualization  | [Data Viz Principles](slides/dataviz/17-dataviz-principles.qmd), [Distributions](slides/dataviz/18-distributions.qmd), [Dataviz in practice](slides/dataviz/19-dataviz-in-practice.qmd)| [Distributions](http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/distributions.html), [Dataviz Principles](http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/dataviz-principles.html) | Anthony |
-| Oct 15 | Midterm 1 | | Covers material from Sep 03-Oct 08| Anthony |
-| Oct 20 | Probability   | [Intro](slides/prob/20-intro-to-prob.qmd), [Foundations for Inference](slides/prob/21-inference-foundations.qmd)| [Monte Carlo](http://rafalab.dfci.harvard.edu/dsbook-part-2/prob/continuous-probability.html#monte-carlo), [Random Variables](https://rafalab.dfci.harvard.edu/dsbook-part-2/prob/random-variables.html), [Central Limit Theorem](https://rafalab.dfci.harvard.edu/dsbook-part-2/prob/sampling-models-and-clt.html) | Anthony |
-| Oct 22 | Inference | [Intro](slides/inference/22-intro-inference.qmd), [Parameter and estimates](slides/inference/23-parameters-estimates.qmd), [Confidence Intervals](slides/inference/24-confidence-intervals.qmd) | [Parameters & Estimates](https://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html), [Confidence Intervals](https://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html#confidence-intervals) | Anthony |
-| Oct 27, Oct 29 | Statistical Models | [Models](slides/inference/25-models.qmd), [Bayes](slides/inference/26-bayes.qmd), [Hierarchical Models](slides/inference/27-hierarchical-models.qmd) | [Data-driven Models](http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/models.html),  [Bayesian Statistics](http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/bayes.html), [Hierarchical Models](http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/hierarchical-models.html) | Anthony |
-| Nov 03, Nov 05 |  Linear models  | [Intro](slides/linear-models/28-intro-to-linear-models.qmd), [Regression](slides/linear-models/29-regression.qmd) |  [Regression](http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/regression.html), [Multivariate Regression](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/multivariable-regression.html) | Robert |
-| Nov 10, Nov 12 |  Linear models  | [Multivariate Regression](slides/linear-models/30-multivariate-regression.qmd), [Treatment Effect Models](slides/linear-models/31-treatment-effect-models.qmd), [Association is Not Causation](slides/linear-models/32-association-not-causation.qmd) |  [Measurement Error Models](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/linear-model-framework.html#measurement-error-models), [Treatment Effect Models](http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/treatment-effect-models.html), [Association Tests](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/glm.html#sec-association-tests), [Association is Not Causation](https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/association-not-causation.html) | Robert |
-|  Nov 17, Nov 19 | High dimensional data| [Intro to Linear Algebra](slides/highdim/33-linear-algebra-intro.qmd), [Matrices in R](slides/highdim/34-matrices-in-R.qmd), [Distance](slides/highdim/35-distance.qmd), [Dimension Reduction](slides/highdim/36-dimension-reduction.qmd) | [Matrices in R](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/matrices-in-R.html), [Applied Linear Algebra](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/linear-algebra.html), [Dimension Reduction](https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/dimension-reduction.html) | Robert |
-| Nov 24 | Midterm 2 | | Covers material from Sep 03-Nov 12| Robert |
-| Dec 01, Dec 03 | Machine Learning | [Intro](slides/ml/37-intro-ml.qmd), [Metrics](slides/ml/38-evaluation-metrics.qmd), [Conditionals](slides/ml/39-conditionals.qmd), [Smoothing](slides/ml/40-smoothing.qmd) |[Notation and Terminology](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/notation-and-terminology.html), [Evaluation Metrics](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/evaluation-metrics.html), [Conditional Probabilities](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html), [Smoothing](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html#sec-smoothing) | Robert |
-|  Dec 08, Dec 10 | Machine Learning | [kNN](slides/ml/41-knn.qmd), [Resampling Methods](slides/ml/42-resampling-methods.qmd), [caret Package](slides/ml/43-caret.qmd), [Algorithms](slides/ml/44-algorithms.qmd) | [Resampling Methods](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/resampling-methods.html), [ML Algorithms](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/algorithms.html) | Anthony |
-|  Dec 15 | Machine Learning | [ML in Practice](slides/ml/45-ml-in-practice.qmd)| [ML in Practice](https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/ml-in-practice.html) | Anthony |
-| Dec 17 | Other topics  |  [Shiny Example Code](https://github.com/datasciencelabs/2025/tree/main/shiny)| [Shiny Basics](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) | Robert |
+NOTE FOR FALL 2026: Much of the content provided below is from the 2025
+edition of the course, and will change. 
+
+::: {.table colwidths="[10, 5, 45, 30]"}
+| Dates   | Topic  |    Slides | Reading |
+|:---|:---|:---|:---|
+| Aug 31 | Productivity Tools| [Intro](slides/00-intro.qmd), [Unix](slides/productivity/01-unix.qmd) | Installing R and RStudio on [Windows](https://teacherscollege.screenstepslive.com/a/1108074-install-r-and-rstudio-for-windows) or [Mac](https://teacherscollege.screenstepslive.com/a/1135059-install-r-and-rstudio-for-mac), [Getting Started]({{< var dsbook1 >}}R/getting-started.html), [Unix]({{< var dsbook1 >}}productivity/unix.html)|
+| Sep 02,  Sep 09| Productivity Tools| [RStudio](slides/productivity/02-rstudio.qmd), [Quarto](slides/productivity/03-quarto.qmd), [Git and GitHub](slides/productivity/04-git.qmd) | [RStudio Projects, Quarto]({{< var dsbook1 >}}productivity/reproducible-projects.html), [Git and GitHub Tutorial](extra/git_tutorial.qmd), [Git and GitHub Book Reading]({{< var dsbook1 >}}productivity/git.html) |
+| Sep 14, Sep 16 | R | [R basics](slides/R/05-r-basics.qmd), [Vectorization](slides/R/06-vectorization.qmd) |  [R Basics]({{< var dsbook1 >}}R/R-basics.html), [Vectorization]({{< var dsbook1 >}}R/programming-basics.html#sec-vectorization) |
+| Sep 21, Sep 23 | R | [Tidyverse](slides/R/07-tidyverse.qmd), [ggplot2](slides/R/08-ggplot2.qmd), [Tyding Data](slides/R/09-tidyr.qmd) | [dplyr]({{< var dsbook1 >}}R/tidyverse.html), [ggplot2]({{< var dsbook1 >}}dataviz/ggplot2.html), [Reshaping Data]({{< var dsbook1 >}}wrangling/reshaping-data.html) |
+| Sep 28, Sep 30 | Wrangling  | [Intro](slides/wrangling/10-intro-to-wrangling.qmd), [Data Importing](slides/wrangling/11-importing-files.qmd), [Dates and Times](slides/wrangling/12-dates-and-times.qmd), [Locales](slides/wrangling/13-locales.qmd), [Data APIs](slides/wrangling/14-data-apis.qmd), [Web Scraping](slides/wrangling/15-web-scraping.qmd), [Joining tables](slides/wrangling/16-joining-tables.qmd) | [Importing Data]({{< var dsbook1 >}}R/importing-data.html), [dates and times]({{< var dsbook1 >}}wrangling/dates-and-times.html), [Locales]({{< var dsbook1 >}}wrangling/locales.html), [Joining Tables]({{< var dsbook1 >}}wrangling/joining-tables.html), [Extracting data from the web]({{< var dsbook1 >}}wrangling/web-scraping.html)|
+| Oct 05, Oct 07 | Data visualization  | [Data Viz Principles](slides/dataviz/17-dataviz-principles.qmd), [Distributions](slides/dataviz/18-distributions.qmd), [Dataviz in practice](slides/dataviz/19-dataviz-in-practice.qmd)| [Distributions]({{< var dsbook1 >}}dataviz/distributions.html), [Dataviz Principles]({{< var dsbook1 >}}dataviz/dataviz-principles.html) |
+| Oct 14 | Midterm 1 | | Covers material from Aug 31-Oct 07|
+| Oct 19 | Probability   | [Intro](slides/prob/20-intro-to-prob.qmd), [Foundations for Inference](slides/prob/21-inference-foundations.qmd)| [Monte Carlo]({{< var dsbook2 >}}prob/continuous-probability.html#monte-carlo), [Random Variables]({{< var dsbook2 >}}prob/random-variables.html), [Central Limit Theorem]({{< var dsbook2 >}}prob/sampling-models-and-clt.html) |
+| Oct 21 | Inference | [Intro](slides/inference/22-intro-inference.qmd), [Parameter and estimates](slides/inference/23-parameters-estimates.qmd), [Confidence Intervals](slides/inference/24-confidence-intervals.qmd) | [Parameters & Estimates]({{< var dsbook2 >}}inference/estimates-confidence-intervals.html), [Confidence Intervals]({{< var dsbook2 >}}inference/estimates-confidence-intervals.html#confidence-intervals) |
+| Oct 26, Oct 28 | Statistical Models | [Models](slides/inference/25-models.qmd), [Bayes](slides/inference/26-bayes.qmd), [Hierarchical Models](slides/inference/27-hierarchical-models.qmd) | [Data-driven Models]({{< var dsbook2 >}}inference/models.html),  [Bayesian Statistics]({{< var dsbook2 >}}inference/bayes.html), [Hierarchical Models]({{< var dsbook2 >}}inference/hierarchical-models.html) |
+| Nov 02, Nov 04 |  Linear models  | [Intro](slides/linear-models/28-intro-to-linear-models.qmd), [Regression](slides/linear-models/29-regression.qmd) |  [Regression]({{< var dsbook2 >}}linear-models/regression.html), [Multivariate Regression]({{< var dsbook2 >}}linear-models/multivariable-regression.html) |
+| Nov 09, Nov 11 |  Linear models  | [Multivariate Regression](slides/linear-models/30-multivariate-regression.qmd), [Treatment Effect Models](slides/linear-models/31-treatment-effect-models.qmd), [Association is Not Causation](slides/linear-models/32-association-not-causation.qmd) |  [Measurement Error Models]({{< var dsbook2 >}}linear-models/linear-model-framework.html#measurement-error-models), [Treatment Effect Models]({{< var dsbook2 >}}linear-models/treatment-effect-models.html), [Association Tests]({{< var dsbook2 >}}linear-models/glm.html#sec-association-tests), [Association is Not Causation]({{< var dsbook2 >}}linear-models/association-not-causation.html) |
+|  Nov 16, Nov 18 | High dimensional data| [Intro to Linear Algebra](slides/highdim/33-linear-algebra-intro.qmd), [Matrices in R](slides/highdim/34-matrices-in-R.qmd), [Distance](slides/highdim/35-distance.qmd), [Dimension Reduction](slides/highdim/36-dimension-reduction.qmd) | [Matrices in R]({{< var dsbook2 >}}highdim/matrices-in-R.html), [Applied Linear Algebra]({{< var dsbook2 >}}highdim/linear-algebra.html), [Dimension Reduction]({{< var dsbook2 >}}highdim/dimension-reduction.html) |
+| Nov 23 | Midterm 2 | | Covers material from Aug 31-Nov 11|
+| Nov 30, Dec 02 | Machine Learning | [Intro](slides/ml/37-intro-ml.qmd), [Metrics](slides/ml/38-evaluation-metrics.qmd), [Conditionals](slides/ml/39-conditionals.qmd), [Smoothing](slides/ml/40-smoothing.qmd) |[Notation and Terminology]({{< var dsbook2 >}}ml/notation-and-terminology.html), [Evaluation Metrics]({{< var dsbook2 >}}ml/evaluation-metrics.html), [Conditional Probabilities]({{< var dsbook2 >}}ml/conditionals-and-smoothing.html), [Smoothing]({{< var dsbook2 >}}ml/conditionals-and-smoothing.html#sec-smoothing) |
+|  Dec 07, Dec 09 | Machine Learning | [kNN](slides/ml/41-knn.qmd), [Resampling Methods](slides/ml/42-resampling-methods.qmd), [caret Package](slides/ml/43-caret.qmd), [Algorithms](slides/ml/44-algorithms.qmd) | [Resampling Methods]({{< var dsbook2 >}}ml/resampling-methods.html), [ML Algorithms]({{< var dsbook2 >}}ml/algorithms.html) |
+|  Dec 14 | Machine Learning | [ML in Practice](slides/ml/45-ml-in-practice.qmd)| [ML in Practice]({{< var dsbook2 >}}ml/ml-in-practice.html) |
+| Dec 16 | Other topics  |  [Shiny Example Code](https://github.com/datasciencelabs/2026/tree/main/shiny)| [Shiny Basics](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) |
 :::
 
+## Problem Sets for 2026.  To be determined.
 
+## Final projects for 2026.  To be determined.
 
-## Problem Sets
+## Problem Set/Project Examples from 2025.  
 
 | Problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
-| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|Sep 12   | easy | 
-| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | Sep 18   |medium | 
-| [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | Sep 28   |hard | 
-| [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | Oct 5   | hard | 
-| [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | Oct 12   |medium | 
-| [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | Oct 26   | easy | 
-| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election |Nov 05   |  hard | 
-| [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | Nov 16   |  medium | 
-| [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | Nov 23   | easy | 
-| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | Dec 19   | hard | 
-|[Final Project](final-project.qmd) | NHANES Data Analysis | Dec 15   | hard  |
+| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|~~Sep 11~~   | easy |
+| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | ~~Sep 18~~   |medium |
+| [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | ~~Sep 27~~   |hard |
+| [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | ~~Oct 4~~   | hard |
+| [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | ~~Oct 11~~   |medium |
+| [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | ~~Oct 25~~   | easy |
+| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election | ~~Nov 04~~   |  hard |
+| [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | ~~Nov 15~~   |  medium |
+| [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | ~~Nov 22~~   | easy |
+| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | ~~Dec 18~~   | hard |
+|[Final Project](final-project.qmd) | NHANES Data Analysis | ~~Dec 14~~   | hard  |
 
 ## Office Hour Times
 
 | Meeting | Time  | Location                 |
 |---------|----------|------------------------|
-| Robert Gentleman  | Monday, 1:00 pm to 2:00 pm  |   Building 2 Room 437F (October via Appointment)     |
-| Anthony Christidis  | Friday, 11:30 am to 12:30 pm |   [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)     |
-| Angela Wang | Monday, 3:45 pm to 4:45 pm     | Kresge 204 (Except 11/3 which will be in FXB G13)         |
-| Ava Harrington   | Thursday, 2:00 pm to 3:00 pm     | Kresge 204         |
-| Emma Crenshaw | Tuesday, 10:00 am to 11:00 am | FXB G03 (Except  9/9 which will be in Kresge 201) |
-| Jing Li | Wednesday, 1:30 pm to 2:30 pm     | Kresge LL6 |
+| Vince Carey  | TBD |   TBD |
+| Ethan Lee | Tues 9AM | FXB G03 |
+| Qianyu Fan | TBD | TBD |
+| Gabrielle Gonzalez | Weds 2PM | Kresge 205 |
+| Yiyang Zhang | Thurs 3PM | TBD |
 
 ## Acknowledgments
 
 
-For the Fall 2025 iteration of BST 260, the course website was modified by [Anthony Christidis](https://dbmi.hms.harvard.edu/people/anthony-christidis), building on the [Fall 2024](https://datasciencelabs.github.io/2024/) course template. We thank [Maria Tackett](https://github.com/matackett) and [Mine Çetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel) for sharing their [web page template](https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main), which we used in creating this website.
+For the Fall 2026 iteration of BST 260, the course website was modified by [Vincent Carey](https://vjcitn.github.io), building on the [Fall 2025](https://datasciencelabs.github.io/2025/) course template. We thank [Maria Tackett](https://github.com/matackett) and [Mine Çetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel) for sharing their [web page template](https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main), which we used in creating this website.
 

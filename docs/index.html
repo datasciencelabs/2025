@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BST 260 Introduction to Data Science – BST 260: Introduction to Data Science</title>
+<title>BST 260 Introduction to Data Science – DRAFT FOR 2026 fall of BST 260: Introduction to Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,14 +31,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8e0d6fe173fc884be9977477430247b6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-812140dedb5f8f9c99aaf53c94a43c18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -95,10 +96,11 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
-    <a href="https://github.com/datasciencelabs/2025" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/vjcitn/2026vjc" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -156,11 +158,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#course-information" id="toc-course-information" class="nav-link active" data-scroll-target="#course-information">Course Information</a></li>
   <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets">Problem Sets</a></li>
+  <li><a href="#problem-sets-for-2026.-to-be-determined." id="toc-problem-sets-for-2026.-to-be-determined." class="nav-link" data-scroll-target="#problem-sets-for-2026.-to-be-determined.">Problem Sets for 2026. To be determined.</a></li>
+  <li><a href="#final-projects-for-2026.-to-be-determined." id="toc-final-projects-for-2026.-to-be-determined." class="nav-link" data-scroll-target="#final-projects-for-2026.-to-be-determined.">Final projects for 2026. To be determined.</a></li>
+  <li><a href="#problem-setproject-examples-from-2025." id="toc-problem-setproject-examples-from-2025." class="nav-link" data-scroll-target="#problem-setproject-examples-from-2025.">Problem Set/Project Examples from 2025.</a></li>
   <li><a href="#office-hour-times" id="toc-office-hour-times" class="nav-link" data-scroll-target="#office-hour-times">Office Hour Times</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/vjcitn/2026vjc/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -187,21 +191,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="course-information" class="level2">
 <h2 class="anchored" data-anchor-id="course-information">Course Information</h2>
 <ul>
-<li>Instructors: <a href="https://ds.dfci.harvard.edu/our-people/robert-gentleman-phd/">Robert Gentleman</a>, <a href="https://dbmi.hms.harvard.edu/people/anthony-christidis">Anthony Christidis</a></li>
-<li>Teaching fellows: Angela Wang, Ava Harrington, Emma Crenshaw, Jing Li</li>
+<li>Instructor: <a href="https://vjcitn.github.io">Vincent Carey</a></li>
+<li>Teaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang</li>
 <li>Location: Kresge G1, HSPH</li>
 <li>Date and time: Mon &amp; Wed 9:45 am - 11:15 am</li>
-<li>Textbooks: <a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/">DS Book (Part 1)</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/">DS Book (Part 2)</a></li>
-<li>Slack: <a href="https://bst-260-f25-7j2.slack.com/">BST 260 Slack Workspace</a></li>
-<li>Canvas: <a href="https://canvas.harvard.edu/courses/158943">Home Page</a></li>
-<li>GitHub: <a href="https://github.com/datasciencelabs/2025">Course Repository</a></li>
+<li>Textbooks: <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/">DS Book (Part 1)</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/">DS Book (Part 2)</a></li>
+<li>Slack: <a href="https://bst-260-f26-anj.slack.com/ssb/redirect">BST 260 Slack Workspace</a></li>
+<li>Canvas: <a href="https://canvas.harvard.edu/courses/174610/pages/course-home-page">Home Page</a></li>
+<li>GitHub: <a href="https://github.com/vjcitn/2026vjc">Course Repository</a></li>
 <li>Remember to read the <a href="./syllabus.html">syllabus</a></li>
 </ul>
 </section>
 <section id="lectures" class="level2">
 <h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
-<p>Lecture slides, class notes, and problem sets are linked below. New material is added approximately on a weekly basis.</p>
-<div class="table" data-colwidths="[10, 5, 45, 30, 10]">
+<p>Lecture slides, class notes, and problem sets are linked below.</p>
+<p>NOTE FOR FALL 2026: Much of the content provided below is from the 2025 edition of the course, and will change.</p>
+<div class="table" data-colwidths="[10, 5, 45, 30]">
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -209,142 +214,129 @@ ul.task-list li input[type="checkbox"] {
 <th style="text-align: left;">Topic</th>
 <th style="text-align: left;">Slides</th>
 <th style="text-align: left;">Reading</th>
-<th style="text-align: left;">Instructor(s)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Sep 03</td>
+<td style="text-align: left;">Aug 31</td>
 <td style="text-align: left;">Productivity Tools</td>
 <td style="text-align: left;"><a href="./slides/00-intro.html">Intro</a>, <a href="./slides/productivity/01-unix.html">Unix</a></td>
 <td style="text-align: left;">Installing R and RStudio on <a href="https://teacherscollege.screenstepslive.com/a/1108074-install-r-and-rstudio-for-windows">Windows</a> or <a href="https://teacherscollege.screenstepslive.com/a/1135059-install-r-and-rstudio-for-mac">Mac</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/R/getting-started.html">Getting Started</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/unix.html">Unix</a></td>
-<td style="text-align: left;">Robert</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Sep 08, Sep 10</td>
+<td style="text-align: left;">Sep 02, Sep 09</td>
 <td style="text-align: left;">Productivity Tools</td>
 <td style="text-align: left;"><a href="./slides/productivity/02-rstudio.html">RStudio</a>, <a href="./slides/productivity/03-quarto.html">Quarto</a>, <a href="./slides/productivity/04-git.html">Git and GitHub</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/reproducible-projects.html">RStudio Projects, Quarto</a>, <a href="./extra/git_tutorial.html">Git and GitHub Tutorial</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/git.html">Git and GitHub Book Reading</a></td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/reproducible-projects.html">RStudio Projects, Quarto</a>, <a href="./extra/git_tutorial.html">Git and GitHub Tutorial</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/git.html">Git and GitHub Book Reading</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sep 15, Sep 17</td>
+<td style="text-align: left;">Sep 14, Sep 16</td>
 <td style="text-align: left;">R</td>
 <td style="text-align: left;"><a href="./slides/R/05-r-basics.html">R basics</a>, <a href="./slides/R/06-vectorization.html">Vectorization</a></td>
 <td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/R/R-basics.html">R Basics</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/R/programming-basics.html#sec-vectorization">Vectorization</a></td>
-<td style="text-align: left;">Robert</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Sep 22, Sep 24</td>
+<td style="text-align: left;">Sep 21, Sep 23</td>
 <td style="text-align: left;">R</td>
 <td style="text-align: left;"><a href="./slides/R/07-tidyverse.html">Tidyverse</a>, <a href="./slides/R/08-ggplot2.html">ggplot2</a>, <a href="./slides/R/09-tidyr.html">Tyding Data</a></td>
 <td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/R/tidyverse.html">dplyr</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/ggplot2.html">ggplot2</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/reshaping-data.html">Reshaping Data</a></td>
-<td style="text-align: left;">Robert</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sep 29, Oct 01</td>
+<td style="text-align: left;">Sep 28, Sep 30</td>
 <td style="text-align: left;">Wrangling</td>
 <td style="text-align: left;"><a href="./slides/wrangling/10-intro-to-wrangling.html">Intro</a>, <a href="./slides/wrangling/11-importing-files.html">Data Importing</a>, <a href="./slides/wrangling/12-dates-and-times.html">Dates and Times</a>, <a href="./slides/wrangling/13-locales.html">Locales</a>, <a href="./slides/wrangling/14-data-apis.html">Data APIs</a>, <a href="./slides/wrangling/15-web-scraping.html">Web Scraping</a>, <a href="./slides/wrangling/16-joining-tables.html">Joining tables</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/R/importing-data.html">Importing Data</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/dates-and-times.html">dates and times</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/locales.html">Locales</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/joining-tables.html">Joining Tables</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/web-scraping.html">Extracting data from the web</a></td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/R/importing-data.html">Importing Data</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/dates-and-times.html">dates and times</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/locales.html">Locales</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/joining-tables.html">Joining Tables</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/web-scraping.html">Extracting data from the web</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Oct 06, Oct 08</td>
+<td style="text-align: left;">Oct 05, Oct 07</td>
 <td style="text-align: left;">Data visualization</td>
 <td style="text-align: left;"><a href="./slides/dataviz/17-dataviz-principles.html">Data Viz Principles</a>, <a href="./slides/dataviz/18-distributions.html">Distributions</a>, <a href="./slides/dataviz/19-dataviz-in-practice.html">Dataviz in practice</a></td>
 <td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/distributions.html">Distributions</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/dataviz-principles.html">Dataviz Principles</a></td>
-<td style="text-align: left;">Anthony</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Oct 15</td>
+<td style="text-align: left;">Oct 14</td>
 <td style="text-align: left;">Midterm 1</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Covers material from Sep 03-Oct 08</td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;">Covers material from Aug 31-Oct 07</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Oct 20</td>
+<td style="text-align: left;">Oct 19</td>
 <td style="text-align: left;">Probability</td>
 <td style="text-align: left;"><a href="./slides/prob/20-intro-to-prob.html">Intro</a>, <a href="./slides/prob/21-inference-foundations.html">Foundations for Inference</a></td>
-<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/prob/continuous-probability.html#monte-carlo">Monte Carlo</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/prob/random-variables.html">Random Variables</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/prob/sampling-models-and-clt.html">Central Limit Theorem</a></td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/prob/continuous-probability.html#monte-carlo">Monte Carlo</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/prob/random-variables.html">Random Variables</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/prob/sampling-models-and-clt.html">Central Limit Theorem</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Oct 22</td>
+<td style="text-align: left;">Oct 21</td>
 <td style="text-align: left;">Inference</td>
 <td style="text-align: left;"><a href="./slides/inference/22-intro-inference.html">Intro</a>, <a href="./slides/inference/23-parameters-estimates.html">Parameter and estimates</a>, <a href="./slides/inference/24-confidence-intervals.html">Confidence Intervals</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html">Parameters &amp; Estimates</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html#confidence-intervals">Confidence Intervals</a></td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html">Parameters &amp; Estimates</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/estimates-confidence-intervals.html#confidence-intervals">Confidence Intervals</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Oct 27, Oct 29</td>
+<td style="text-align: left;">Oct 26, Oct 28</td>
 <td style="text-align: left;">Statistical Models</td>
 <td style="text-align: left;"><a href="./slides/inference/25-models.html">Models</a>, <a href="./slides/inference/26-bayes.html">Bayes</a>, <a href="./slides/inference/27-hierarchical-models.html">Hierarchical Models</a></td>
 <td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/models.html">Data-driven Models</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/bayes.html">Bayesian Statistics</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/inference/hierarchical-models.html">Hierarchical Models</a></td>
-<td style="text-align: left;">Anthony</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Nov 03, Nov 05</td>
+<td style="text-align: left;">Nov 02, Nov 04</td>
 <td style="text-align: left;">Linear models</td>
 <td style="text-align: left;"><a href="./slides/linear-models/28-intro-to-linear-models.html">Intro</a>, <a href="./slides/linear-models/29-regression.html">Regression</a></td>
-<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/regression.html">Regression</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/multivariable-regression.html">Multivariate Regression</a></td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/regression.html">Regression</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/multivariable-regression.html">Multivariate Regression</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nov 10, Nov 12</td>
+<td style="text-align: left;">Nov 09, Nov 11</td>
 <td style="text-align: left;">Linear models</td>
 <td style="text-align: left;"><a href="./slides/linear-models/30-multivariate-regression.html">Multivariate Regression</a>, <a href="./slides/linear-models/31-treatment-effect-models.html">Treatment Effect Models</a>, <a href="./slides/linear-models/32-association-not-causation.html">Association is Not Causation</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/linear-model-framework.html#measurement-error-models">Measurement Error Models</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/treatment-effect-models.html">Treatment Effect Models</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/glm.html#sec-association-tests">Association Tests</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/association-not-causation.html">Association is Not Causation</a></td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/linear-model-framework.html#measurement-error-models">Measurement Error Models</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/treatment-effect-models.html">Treatment Effect Models</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/glm.html#sec-association-tests">Association Tests</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/linear-models/association-not-causation.html">Association is Not Causation</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Nov 17, Nov 19</td>
+<td style="text-align: left;">Nov 16, Nov 18</td>
 <td style="text-align: left;">High dimensional data</td>
 <td style="text-align: left;"><a href="./slides/highdim/33-linear-algebra-intro.html">Intro to Linear Algebra</a>, <a href="./slides/highdim/34-matrices-in-R.html">Matrices in R</a>, <a href="./slides/highdim/35-distance.html">Distance</a>, <a href="./slides/highdim/36-dimension-reduction.html">Dimension Reduction</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/matrices-in-R.html">Matrices in R</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/linear-algebra.html">Applied Linear Algebra</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/dimension-reduction.html">Dimension Reduction</a></td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/matrices-in-R.html">Matrices in R</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/linear-algebra.html">Applied Linear Algebra</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/highdim/dimension-reduction.html">Dimension Reduction</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nov 24</td>
+<td style="text-align: left;">Nov 23</td>
 <td style="text-align: left;">Midterm 2</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">Covers material from Sep 03-Nov 12</td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;">Covers material from Aug 31-Nov 11</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dec 01, Dec 03</td>
+<td style="text-align: left;">Nov 30, Dec 02</td>
 <td style="text-align: left;">Machine Learning</td>
 <td style="text-align: left;"><a href="./slides/ml/37-intro-ml.html">Intro</a>, <a href="./slides/ml/38-evaluation-metrics.html">Metrics</a>, <a href="./slides/ml/39-conditionals.html">Conditionals</a>, <a href="./slides/ml/40-smoothing.html">Smoothing</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/notation-and-terminology.html">Notation and Terminology</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/evaluation-metrics.html">Evaluation Metrics</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html">Conditional Probabilities</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html#sec-smoothing">Smoothing</a></td>
-<td style="text-align: left;">Robert</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/notation-and-terminology.html">Notation and Terminology</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/evaluation-metrics.html">Evaluation Metrics</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html">Conditional Probabilities</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/conditionals-and-smoothing.html#sec-smoothing">Smoothing</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Dec 08, Dec 10</td>
+<td style="text-align: left;">Dec 07, Dec 09</td>
 <td style="text-align: left;">Machine Learning</td>
 <td style="text-align: left;"><a href="./slides/ml/41-knn.html">kNN</a>, <a href="./slides/ml/42-resampling-methods.html">Resampling Methods</a>, <a href="./slides/ml/43-caret.html">caret Package</a>, <a href="./slides/ml/44-algorithms.html">Algorithms</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/resampling-methods.html">Resampling Methods</a>, <a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/algorithms.html">ML Algorithms</a></td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/resampling-methods.html">Resampling Methods</a>, <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/algorithms.html">ML Algorithms</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dec 15</td>
+<td style="text-align: left;">Dec 14</td>
 <td style="text-align: left;">Machine Learning</td>
 <td style="text-align: left;"><a href="./slides/ml/45-ml-in-practice.html">ML in Practice</a></td>
-<td style="text-align: left;"><a href="https://rafalab.dfci.harvard.edu/dsbook-part-2/ml/ml-in-practice.html">ML in Practice</a></td>
-<td style="text-align: left;">Anthony</td>
+<td style="text-align: left;"><a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/ml/ml-in-practice.html">ML in Practice</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Dec 17</td>
+<td style="text-align: left;">Dec 16</td>
 <td style="text-align: left;">Other topics</td>
-<td style="text-align: left;"><a href="https://github.com/datasciencelabs/2025/tree/main/shiny">Shiny Example Code</a></td>
+<td style="text-align: left;"><a href="https://github.com/datasciencelabs/2026/tree/main/shiny">Shiny Example Code</a></td>
 <td style="text-align: left;"><a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Shiny Basics</a></td>
-<td style="text-align: left;">Robert</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="problem-sets" class="level2">
-<h2 class="anchored" data-anchor-id="problem-sets">Problem Sets</h2>
+<section id="problem-sets-for-2026.-to-be-determined." class="level2">
+<h2 class="anchored" data-anchor-id="problem-sets-for-2026.-to-be-determined.">Problem Sets for 2026. To be determined.</h2>
+</section>
+<section id="final-projects-for-2026.-to-be-determined." class="level2">
+<h2 class="anchored" data-anchor-id="final-projects-for-2026.-to-be-determined.">Final projects for 2026. To be determined.</h2>
+</section>
+<section id="problem-setproject-examples-from-2025." class="level2">
+<h2 class="anchored" data-anchor-id="problem-setproject-examples-from-2025.">Problem Set/Project Examples from 2025.</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -358,67 +350,67 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;"><a href="./psets/pset-01-unix-quarto.html">Problem Set 1</a></td>
 <td style="text-align: left;">Unix, Quarto</td>
-<td style="text-align: left;">Sep 12</td>
+<td style="text-align: left;"><del>Sep 11</del></td>
 <td style="text-align: left;">easy</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="./psets/pset-02-r-vectorization.html">Problem Set 2</a></td>
 <td style="text-align: left;">R</td>
-<td style="text-align: left;">Sep 18</td>
+<td style="text-align: left;"><del>Sep 18</del></td>
 <td style="text-align: left;">medium</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./psets/pset-03-tidyverse.html">Problem Set 3</a></td>
 <td style="text-align: left;">Tidyverse</td>
-<td style="text-align: left;">Sep 28</td>
+<td style="text-align: left;"><del>Sep 27</del></td>
 <td style="text-align: left;">hard</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="./psets/pset-04-wrangling.html">Problem Set 4</a></td>
 <td style="text-align: left;">Wrangling</td>
-<td style="text-align: left;">Oct 5</td>
+<td style="text-align: left;"><del>Oct 4</del></td>
 <td style="text-align: left;">hard</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./psets/pset-05-dataviz.html">Problem Set 5</a></td>
 <td style="text-align: left;">Covid 19 data visualization</td>
-<td style="text-align: left;">Oct 12</td>
+<td style="text-align: left;"><del>Oct 11</del></td>
 <td style="text-align: left;">medium</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="./psets/pset-06-prob.html">Problem Set 6</a></td>
 <td style="text-align: left;">Probability</td>
-<td style="text-align: left;">Oct 26</td>
+<td style="text-align: left;"><del>Oct 25</del></td>
 <td style="text-align: left;">easy</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./psets/pset-07-election.html">Problem Set 7</a></td>
 <td style="text-align: left;">Predict the election</td>
-<td style="text-align: left;">Nov 05</td>
+<td style="text-align: left;"><del>Nov 04</del></td>
 <td style="text-align: left;">hard</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="./psets/pset-08-linear-models.html">Problem Set 8</a></td>
 <td style="text-align: left;">Excess mortality after Hurricane María</td>
-<td style="text-align: left;">Nov 16</td>
+<td style="text-align: left;"><del>Nov 15</del></td>
 <td style="text-align: left;">medium</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./psets/pset-09-matrices.html">Problem Set 9</a></td>
 <td style="text-align: left;">Matrices</td>
-<td style="text-align: left;">Nov 23</td>
+<td style="text-align: left;"><del>Nov 22</del></td>
 <td style="text-align: left;">easy</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="./psets/pset-10-ml.html">Problem Set 10</a></td>
 <td style="text-align: left;">Digit reading</td>
-<td style="text-align: left;">Dec 19</td>
+<td style="text-align: left;"><del>Dec 18</del></td>
 <td style="text-align: left;">hard</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="./final-project.html">Final Project</a></td>
 <td style="text-align: left;">NHANES Data Analysis</td>
-<td style="text-align: left;">Dec 15</td>
+<td style="text-align: left;"><del>Dec 14</del></td>
 <td style="text-align: left;">hard</td>
 </tr>
 </tbody>
@@ -436,41 +428,36 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Robert Gentleman</td>
-<td>Monday, 1:00 pm to 2:00 pm</td>
-<td>Building 2 Room 437F (October via Appointment)</td>
+<td>Vince Carey</td>
+<td>TBD</td>
+<td>TBD</td>
 </tr>
 <tr class="even">
-<td>Anthony Christidis</td>
-<td>Friday, 11:30 am to 12:30 pm</td>
-<td><a href="https://canvas.harvard.edu/courses/158943/external_tools/97810">Zoom</a></td>
+<td>Ethan Lee</td>
+<td>Tues 9AM</td>
+<td>FXB G03</td>
 </tr>
 <tr class="odd">
-<td>Angela Wang</td>
-<td>Monday, 3:45 pm to 4:45 pm</td>
-<td>Kresge 204 (Except 11/3 which will be in FXB G13)</td>
+<td>Qianyu Fan</td>
+<td>TBD</td>
+<td>TBD</td>
 </tr>
 <tr class="even">
-<td>Ava Harrington</td>
-<td>Thursday, 2:00 pm to 3:00 pm</td>
-<td>Kresge 204</td>
+<td>Gabrielle Gonzalez</td>
+<td>Weds 2PM</td>
+<td>Kresge 205</td>
 </tr>
 <tr class="odd">
-<td>Emma Crenshaw</td>
-<td>Tuesday, 10:00 am to 11:00 am</td>
-<td>FXB G03 (Except 9/9 which will be in Kresge 201)</td>
-</tr>
-<tr class="even">
-<td>Jing Li</td>
-<td>Wednesday, 1:30 pm to 2:30 pm</td>
-<td>Kresge LL6</td>
+<td>Yiyang Zhang</td>
+<td>Thurs 3PM</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="acknowledgments" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>For the Fall 2025 iteration of BST 260, the course website was modified by <a href="https://dbmi.hms.harvard.edu/people/anthony-christidis">Anthony Christidis</a>, building on the <a href="https://datasciencelabs.github.io/2024/">Fall 2024</a> course template. We thank <a href="https://github.com/matackett">Maria Tackett</a> and <a href="https://github.com/mine-cetinkaya-rundel">Mine Çetinkaya-Rundel</a> for sharing their <a href="https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main">web page template</a>, which we used in creating this website.</p>
+<p>For the Fall 2026 iteration of BST 260, the course website was modified by <a href="https://vjcitn.github.io">Vincent Carey</a>, building on the <a href="https://datasciencelabs.github.io/2025/">Fall 2025</a> course template. We thank <a href="https://github.com/matackett">Maria Tackett</a> and <a href="https://github.com/mine-cetinkaya-rundel">Mine Çetinkaya-Rundel</a> for sharing their <a href="https://github.com/rstudio-conf-2022/teach-ds-course-website/tree/main">web page template</a>, which we used in creating this website.</p>
 
 
 </section>
@@ -527,13 +514,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -548,7 +536,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+        var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -880,4 +868,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/datasciencelabs/2025/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/vjcitn/2026vjc/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

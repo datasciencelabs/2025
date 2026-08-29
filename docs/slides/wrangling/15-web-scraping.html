@@ -6,12 +6,12 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2025-09-29">
   <meta name="keywords" content="Wrangling">
-  <title>BST 260: Introduction to Data Science – Web Scraping</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Web Scraping</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -96,7 +96,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-00033b64c7f4405b1251d0bf85080562.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -208,9 +208,9 @@
 <li><p>For example, the US murders dataset we used in the R Basics chapter originally comes from this Wikipedia page:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://en.wikipedia.org/w/index.php?title="</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://en.wikipedia.org/w/index.php?title="</span>, </span>
 <span id="cb1-2"><a></a>              <span class="st">"Gun_violence_in_the_United_States_by_state"</span>, </span>
-<span id="cb1-3"><a></a>              <span class="st">"&amp;direction=prev&amp;oldid=810166167"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a></a>              <span class="st">"&amp;direction=prev&amp;oldid=810166167"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="scraping-html-1" class="slide level2">
@@ -218,7 +218,7 @@
 <ul>
 <li>You can see the data table when you visit the webpage:</li>
 </ul>
-<p><img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/murders-data-wiki-page.png">.</p>
+<p><img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/murders-data-wiki-page.png">.</p>
 <ul>
 <li><em>Web scraping</em>, or <em>web harvesting</em>, is the term we use to describe the process of extracting data from a website.</li>
 </ul>
@@ -234,7 +234,7 @@
 </section>
 <section id="scraping-html-3" class="slide level2">
 <h2>Scraping HTML</h2>
-<p><img data-src="https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/html-code.png">.</p>
+<p><img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/html-code.png">.</p>
 </section>
 <section id="html" class="slide level2">
 <h2>HTML</h2>
@@ -309,9 +309,9 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li><p>The package makes this quite simple:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidyverse) </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(tidyverse) </span>
 <span id="cb3-2"><a></a><span class="fu">library</span>(rvest) </span>
-<span id="cb3-3"><a></a>h <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a></a>h <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Note that the entire Murders in the US Wikipedia webpage is now contained in <code>h</code>.</li>
@@ -323,7 +323,7 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li>The class of this object is:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">class</span>(h) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">class</span>(h) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "xml_document" "xml_node"    </code></pre>
 </div>
@@ -341,7 +341,7 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li><p>We can see all the code that defines the downloaded webpage using the <code>html_text</code> function like this:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">html_text</span>(h) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">html_text</span>(h) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-rvest-package-3" class="slide level2">
@@ -364,7 +364,7 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li>To extract the tables from the html code we use:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>tab <span class="ot">&lt;-</span> h <span class="sc">|&gt;</span> <span class="fu">html_nodes</span>(<span class="st">"table"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>tab <span class="ot">&lt;-</span> h <span class="sc">|&gt;</span> <span class="fu">html_nodes</span>(<span class="st">"table"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Now, instead of the entire webpage, we just have the html code for the tables in the page:</li>
@@ -373,10 +373,10 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <section id="the-rvest-package-6" class="slide level2">
 <h2>The rvest package</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tab </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tab </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{xml_nodeset (2)}
-[1] &lt;table class="wikitable sortable"&gt;&lt;tbody&gt;\n&lt;tr&gt;\n&lt;th&gt;State\n&lt;/th&gt;\n&lt;th&gt;\n ...
+[1] &lt;table class="wikitable sortable" id="mwDQ"&gt;&lt;tbody id="mwDg"&gt;\n&lt;tr id="mw ...
 [2] &lt;table class="nowraplinks hlist mw-collapsible mw-collapsed navbox-inner" ...</code></pre>
 </div>
 </div>
@@ -384,11 +384,11 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li>The table we are interested is the first one:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>tab[[<span class="dv">1</span>]] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>tab[[<span class="dv">1</span>]] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{html_node}
-&lt;table class="wikitable sortable"&gt;
-[1] &lt;tbody&gt;\n&lt;tr&gt;\n&lt;th&gt;State\n&lt;/th&gt;\n&lt;th&gt;\n&lt;a href="/wiki/List_of_U.S._states ...</code></pre>
+&lt;table class="wikitable sortable" id="mwDQ"&gt;
+[1] &lt;tbody id="mwDg"&gt;\n&lt;tr id="mwDw"&gt;\n&lt;th id="mwEA"&gt;State&lt;/th&gt;\n&lt;th id="mwEQ ...</code></pre>
 </div>
 </div>
 </section>
@@ -400,8 +400,8 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li><p>In fact, <strong>rvest</strong> includes a function just for converting HTML tables into data frames:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>tab <span class="ot">&lt;-</span> tab[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> <span class="fu">html_table</span>() </span>
-<span id="cb12-2"><a></a><span class="fu">class</span>(tab) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>tab <span class="ot">&lt;-</span> tab[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> <span class="fu">html_table</span>() </span>
+<span id="cb12-2"><a></a><span class="fu">class</span>(tab) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
@@ -413,10 +413,10 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
 <li>We can now make the data frame:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>tab <span class="ot">&lt;-</span> tab <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>tab <span class="ot">&lt;-</span> tab <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a></a>  <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">"state"</span>, <span class="st">"population"</span>, <span class="st">"total"</span>, <span class="st">"murder_rate"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(population, total), parse_number))</span>
-<span id="cb14-4"><a></a><span class="fu">head</span>(tab) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a></a><span class="fu">head</span>(tab) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   state      population total murder_rate
@@ -628,7 +628,7 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -655,80 +655,42 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -778,13 +740,14 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -799,7 +762,7 @@ title="List of U.S. states and territories by population"&gt;Population&lt;/a&gt
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/datasciencelabs\.github\.io\/2025\/");
+            var filterRegex = new RegExp("https:\/\/vjcitn\.github\.io\/2026vjc\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

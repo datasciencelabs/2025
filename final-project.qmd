@@ -1,6 +1,9 @@
 ---
-title: "Final Project"
+title: "Final Project, 2025 edition"
 ---
+
+**This material is provided as illustration only; for the 2026 edition of the
+course a different approach will be taken**
 
 # General Instructions
 
@@ -12,26 +15,7 @@ You will be assigned to a **pre-assigned team of 3 or 4 students** and a **Teach
 
 | Team | TF | Team Slack Channel | Members |
 |:--------------|:--------------|:---------------------------------|:----------------|
-| Team 1 | Angela | [#bst-260-project-team1](https://harvard.enterprise.slack.com/archives/C09MCF1BW5Q)               | Motohiko Adomi, Jethro Au, Kate Bucci, Anthony Candelmo |
-| Team 2 | Angela | [#bst-260-project-team2](https://harvard.enterprise.slack.com/archives/C09M919D58V)                | Tiger Chaisutyakorn, Yixiao Chen, EK Cheng, Huihan Cui |
-| Team 3 | Angela | [#bst-260-project-team3](https://harvard.enterprise.slack.com/archives/C09MG1JMZ60)                | Sylvia Deng, Yinuo Du, Qianyu Fan |
-| Team 4 | Angela | [#bst-260-project-team4](https://harvard.enterprise.slack.com/archives/C09N6P792N4)                | Tanvi Gaitonde, Gabrielle Gonzalez, Allen Gu, Camila Guetter |
-| Team 5 | Angela | [#bst-260-project-team5](https://harvard.enterprise.slack.com/archives/C09M632U4MR)                | Siwei Guo, Hannah Hamling, Shuying Han, Runpeng Hu |
-| Team 6 | Ava | [#bst-260-project-team6](https://harvard.enterprise.slack.com/archives/C09MG1KMD7W)                | Anthea Hua, Jiaming Huang, Helen Keetley, Helena Li |
-| Team 7 | Ava | [#bst-260-project-team7](https://harvard.enterprise.slack.com/archives/C09M91K2A13)                | Stellen Li, Yutong Li, Jason Liang, Julia Lin |
-| Team 8 | Ava | [#bst-260-project-team8](https://harvard.enterprise.slack.com/archives/C09N6P85R8Q)                | Siyan Lin, Cindy Liu, Jasper Liu, Junhao Luo |
-| Team 9 | Ava | [#bst-260-project-team9](https://harvard.enterprise.slack.com/archives/C09LX1CB49M)                | Peng Luo, Yuxi Luo, Adriana Manjon, Neel Mirani |
-| Team 10 | Ava | [#bst-260-project-team10](https://harvard.enterprise.slack.com/archives/C09M634FFL3)                | Bao Han Ngo, Ryan Ou, Katelyn Power, Chloe Qiu |
-| Team 11 | Emma | [#bst-260-project-team11](https://harvard.enterprise.slack.com/archives/C09MG1MD0UC)                | Yvonne Qiu, Ziyue Qiu, Varshini Ramanathan, April Ren |
-| Team 12 | Emma | [#bst-260-project-team12](https://harvard.enterprise.slack.com/archives/C09MCF7DCJE)                | Aanika Schueler, Emily Shen, Shriya Sai Shivakumar, Erica Song |
-| Team 13 | Emma | [#bst-260-project-team13](https://harvard.enterprise.slack.com/archives/C09M91CB1QD)               | Rahul Srinivasaragavan, Nyah Strickland, Christina Wang, Hengyuan Wang |
-| Team 14 | Emma | [#bst-260-project-team14](https://harvard.enterprise.slack.com/archives/C09MCF7K5PU)                | Siwen Wang, Yuanshu Wang, Emily Weng, Andrew Wu |
-| Team 15 | Emma | [#bst-260-project-team15](https://harvard.enterprise.slack.com/archives/C09N6P9TXLG)                | Kai Wu, Yanting Wu, Zhentian Wu, Baoyue Xing |
-| Team 16 | Jing | [#bst-260-project-team16](https://harvard.enterprise.slack.com/archives/C09M91DAJ5T)                | Lavinia Xu, Xinyu Xu, Xu Yan, Cuiqiyun Yang |
-| Team 17 | Jing | [#bst-260-project-team17](https://harvard.enterprise.slack.com/archives/C09LX1ELXT9)                | Yuntian Yang, Haochen Ye, Haihan Yuan, Yiwei Yun |
-| Team 18 | Jing | [#bst-260-project-team18](https://harvard.enterprise.slack.com/archives/C09MCF89VQA)                | Irene Zhang, Iris Zhang, Yiyang Zhang, Zihan Zhang |
-| Team 19 | Jing | [#bst-260-project-team19](https://harvard.enterprise.slack.com/archives/C09M636P8UB)                | Johnny Zhao, Mengze Zhao, Tianyu Zhao, Yinuo Zhao |
-| Team 20 | Jing | [#bst-260-project-team20](https://harvard.enterprise.slack.com/archives/C09MG1PK9E0)                | Zifan Zhao, Junyi Zhou, Zi Zhu |
+| Team 1 | TBD | EXAMPLE [#bst-260-project-team1](https://harvard.enterprise.slack.com/archives/C09MCF1BW5Q)               | 4 names |
 
 **Note**: All project communication should happen in this channel with your TF.
 

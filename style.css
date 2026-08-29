@@ -1,5 +1,15 @@
 /*-- scss:rules --*/
 
+/* Sidebar logo: constrain size and suppress dark-mode duplicate */
+.sidebar-logo {
+    max-width: 120px;
+    height: auto;
+}
+
+.dark-content.sidebar-logo {
+    display: none !important;
+}
+
 /* Overall page styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

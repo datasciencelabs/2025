@@ -1,6 +1,9 @@
 ---
-title: "Oral Evaluations"
+title: "Oral Evaluations as conducted in 2025 edition of the course"
 ---
+
+**This material is provided for illustration only; the 2026 edition of the course
+will have different dates and approaches**
 
 # Overview
 
@@ -35,7 +38,7 @@ Contact your assigned TF through their dedicated Slack channel to schedule your 
 - Emma: [#oral-evals-emma](https://harvard.enterprise.slack.com/archives/C09DJ3AV9AL)
 - Jing: [#oral-evals-jing](https://harvard.enterprise.slack.com/archives/C09CAK3N8AK)
 
-**Zoom Link for Oral Evaluations**: [Zoom](https://canvas.harvard.edu/courses/158943/external_tools/97810)
+**Zoom Link for Oral Evaluations**: [Zoom]({{< var canvas_url >}}/external_tools/97810)
 
 ## Evaluation Criteria
 

@@ -16,7 +16,7 @@ format:
 
 ## The panes
 
-![](http://rafalab.dfci.harvard.edu/dsbook-part-1/R/img/rstudio.png)
+![]({{< var dsbook1 >}}R/img/rstudio.png)
 
 ------------------------------------------------------------------------
 

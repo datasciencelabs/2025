@@ -25,7 +25,7 @@ url <- paste0("https://en.wikipedia.org/w/index.php?title=",
 
 - You can see the data table when you visit the webpage:
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/murders-data-wiki-page.png).
+![]({{< var dsbook1 >}}wrangling/img/murders-data-wiki-page.png).
 
 - _Web scraping_, or _web harvesting_, is the term we use to describe the process of extracting data from a website.
 
@@ -46,7 +46,7 @@ url <- paste0("https://en.wikipedia.org/w/index.php?title=",
 ## Scraping HTML
 
 
-![](https://rafalab.dfci.harvard.edu/dsbook-part-1/wrangling/img/html-code.png).
+![]({{< var dsbook1 >}}wrangling/img/html-code.png).
 
 
 ## HTML
