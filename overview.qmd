@@ -33,7 +33,7 @@ materials developed by Anthony Christidis and Robert Gentleman for the
 2025 edition of the course.  These are all made available as legacy materials.
 
 **The course web site for 2026 will be updated frequently and I will try to make
-the changes as visible as possible as changes are made.**
+the changes as visible as possible as they are made.**
 
 # Course pillars
 
@@ -92,3 +92,26 @@ course timeline, using GitHub pages
 data science methods of interest
     - the site can be public, or, if private, shared with instructor and TFs
     - this site may be the locus for work (and evaluation of work) on course problems and projects
+
+## Day 1 tasks
+
+- install R
+- install Rstudio
+- use github.com: create your account
+- complete google form with basic initial data
+    - transform results to google sheet
+    - retrieve the sheet via sheets API
+    - obtain some basic statistics about course participants
+- form teams of about 4 persons each via "count down"
+    - create with pencil and paper a table summarizing team
+members' experiences with infectious diseases and cancer
+    - tables are collected and reviewed visually
+    - one or more tables are turned into markdown and CSV using a multimodal LLM
+
+## Take home tasks
+
+- create repository `bst260' in your organization (account)
+- invite teaching team as collaborators
+- create folder 'task-01'
+- add file README.md in that folder, with a header `# Overview`
+
