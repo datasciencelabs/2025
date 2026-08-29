@@ -1,6 +1,8 @@
 ---
 title: "Overview of BST 260 Introduction to Data Science"
 author: "Vince Carey, instructor, Fall 2026 edition"
+shortcodes:
+  - git-rev.lua
 ---
 
 # Prologue
@@ -43,6 +45,13 @@ the changes as visible as possible as they are made.**
 - git, GitHub.com, project evolution
 - markdown: a syntax for integrative communication
 
+## Team:
+
+- Vince, Ethan, Gaby, Rita, Yiyang
+- Check the office hours/sites on the course web page
+- https://vjcitn.github.io/2026vjc
+    - this web site will be the "source of truth", along with the canvas page, unless otherwise noted
+
 ## Tools for implementing data science strategies
 
 - R: A language and software system for statistics and data science
@@ -62,6 +71,16 @@ frameworks imposed by our institutions must be fully understood
    - algorithms for AI: many possibilities
    - interfaces: many possibilities
 - **Always acknowledge use of AI in your coursework and research**
+- Illustration: using an LLM to quiz yourself
+
+![quiz1](images/GitQuiz1.jpg)
+
+![quiz2](images/GitQuiz2.jpg)
+
+It doesn't always come out well; understanding this result will be a future exercise.
+
+![quiz3](images/ecdfQuiz2.jpg)
+
 
 # Starting off
 
@@ -85,7 +104,7 @@ tackle a problem in real time
 - I want this course to add profoundly to your appreciation of modern data science
 practices, so that you see how to solve key problems of data organization, interpretation,
 and scientific communication that arise in your research.
-- "Problem sets", "exams", and "projects" are elements of evaluation that will be used.
+- "Problem sets", "exams/oral evals", and "projects" are elements of evaluation that will be used.
 - I would like each student to be able to prepare a web site that evolves over the
 course timeline, using GitHub pages
     - the site will include pages representing student encounters with data and
@@ -115,3 +134,4 @@ members' experiences with infectious diseases and cancer
 - create folder 'task-01'
 - add file README.md in that folder, with a header `# Overview`
 
+Last built from commit {{< git-rev >}}.
