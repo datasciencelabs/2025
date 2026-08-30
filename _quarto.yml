@@ -26,7 +26,7 @@ website:
     - href: slides.qmd
       text: Slides
     - href: psets.qmd
-      text: Problem Sets
+      text: Problem Sets (for 2025 edition)
     - href: oral-evaluations.qmd
       text: Oral Evaluations
     - href: final-project.qmd
