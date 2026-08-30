@@ -1,8 +1,12 @@
 ---
 title: "BST 260 Introduction to Data Science"
+shortcodes:
+  - git-rev.lua
 ---
 
 ## Course Information
+
+Last built from commit {{< git-rev >}}.
 
 * Instructor: {{< var instructor_list >}}
 * Teaching fellows:  {{< var tf_list >}}

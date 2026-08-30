@@ -1,0 +1,59 @@
+---
+title: "Introduction"
+keywords: "First day"
+date: 2025-09-03
+format: 
+  revealjs:
+    theme: night
+---
+
+## General Information
+
+-   BST 260 Introduction to Data Science
+-   Instructor: [Vince Carey](https://vjcitn.github.io/)
+-   TFs: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang
+-   Course meetings will have varied layouts, typically including
+    lecturing over slides and demonstrations, and hands-on computing
+
+------------------------------------------------------------------------
+
+## Course Description
+
+Lecture notes: [{{< var site_url >}}]({{< var site_url >}})
+
+![](https://pbs.twimg.com/media/EN5AnSsWAAAtWmN.jpg){width="25%" fig-align="center"}
+
+Please read the syllabus!
+
+------------------------------------------------------------------------
+
+## Important details
+
+-   Complete readings before class.
+-   Midterms are in person. There are no makeups.
+-   Make sure you read messages sent via Canvas
+-   You can select your own final project, but need approval.
+-   You should start your final project by October 22.
+-   Help us pick office hours: <https://forms.gle/GiQXqDTaeYVxaXd78>
+
+------------------------------------------------------------------------
+
+## What's coming
+
+-   UNIX/Linux shell
+-   Reproducible document preparation
+-   Version control with git and GitHub
+-   Rstudio and R programming
+-   Data wrangling with dplyr and data.table
+-   Data visualization with ggplot2
+-   Probability theory, inference and modeling
+-   High-dimensional data techniques
+-   Machine learning
+
+------------------------------------------------------------------------
+
+## Let's get started
+
+-   Install R.
+-   Install RStudio.
+-   Make sure you have access to a terminal.

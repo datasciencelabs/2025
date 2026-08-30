@@ -18,12 +18,11 @@ listing:
       - slides/other-topics/*.qmd
 
     type: table
-    fields: [keywords, title, date]
+    fields: [keywords, title]
     date-format: "ddd, MMM DD"
     field-display-names:
       keywords: "Topic"
       title: "Title"
-      date: "Date"
     sort: [filename]
     sort-ui: false
     filter-ui: false

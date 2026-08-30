@@ -1,59 +1,137 @@
 ---
-title: "Introduction"
-keywords: "First day"
-date: 2025-09-03
-format: 
-  revealjs:
-    theme: night
+title: "Overview of BST 260 Introduction to Data Science"
+author: "Vince Carey, instructor, Fall 2026 edition"
+shortcodes:
+  - git-rev.lua
 ---
 
-## General Information
+# Prologue
 
--   BST 260 Introduction to Data Science
--   Instructor: [Vince Carey](https://vjcitn.github.io/)
--   TFs: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang
--   Course meetings will have varied layouts, typically including
-    lecturing over slides and demonstrations, and hands-on computing
+The course includes activities in three main domains:
 
-------------------------------------------------------------------------
+- surveying *data science and statistics* as foundations of basic integrity and efficiency of research
+- introducing and using *tools for implementing data science methods* for research
+- critically exploring opportunities afforded by *large language models and agentic AI* for automation of repetitive detailed tasks
 
-## Course Description
+A significant concern with AI adoption in education is the risk of "de-skilling": students need to
+be able to 
 
-Lecture notes: [{{< var site_url >}}]({{< var site_url >}})
+- *guide* agentic processes to accomplish clear goals 
+- *verify* success and supply solutions in case of agent failure
+- *propose paths forward* after success is achieved
 
-![](https://pbs.twimg.com/media/EN5AnSsWAAAtWmN.jpg){width="25%" fig-align="center"}
+The course is intended to be highly interactive and open.  Slack and GitHub
+are important tools facilitating visibility of our problems and solutions
+as they emerge over time.
 
-Please read the syllabus!
+Fundamental material for the course is provided in Prof. Irizarry's text book.  Please
+do get very familiar with it.  When you think you have identified a gap in
+reasoning or in your understanding of aspects of the text, open a discussion either
+in slack or in class.
 
-------------------------------------------------------------------------
+The 2026 edition of BST 260 comes at a time of heavy churn in the fields of
+AI, cloud computing, data storage and management.  We will rely in part on
+materials developed by Anthony Christidis and Robert Gentleman for the
+2025 edition of the course.  These are all made available as legacy materials.
 
-## Important details
+**The course web site for 2026 will be updated frequently and I will try to make
+the changes as visible as possible as they are made.**
 
--   Complete readings before class.
--   Midterms are in person. There are no makeups.
--   Make sure you read messages sent via Canvas
--   You can select your own final project, but need approval.
--   You should start your final project by October 22.
--   Help us pick office hours: <https://forms.gle/GiQXqDTaeYVxaXd78>
+# Course pillars
 
-------------------------------------------------------------------------
+## Integrity and efficiency topics
 
-## What's coming
+- Files and project structures
+- git, GitHub.com, project evolution
+- markdown: a syntax for integrative communication
 
--   UNIX/Linux shell
--   Reproducible document preparation
--   Version control with git and GitHub
--   Rstudio and R programming
--   Data wrangling with dplyr and data.table
--   Data visualization with ggplot2
--   Probability theory, inference and modeling
--   High-dimensional data techniques
--   Machine learning
+## Team:
 
-------------------------------------------------------------------------
+- Vince, Ethan, Gaby, Rita, Yiyang
+- Check the office hours/sites on the course web page
+- https://vjcitn.github.io/2026vjc
+    - this web site will be the "source of truth", along with the canvas page, unless otherwise noted
 
-## Let's get started
+## Tools for implementing data science strategies
 
--   Install R.
--   Install RStudio.
--   Make sure you have access to a terminal.
+- R: A language and software system for statistics and data science
+    - CRAN, R-universe
+- Probability: models for unpredictable and uncertain phenomena
+- Statistics: frameworks for measuring, predicting, interpreting *observations*
+
+## AI in relation to data science for research
+
+- Confidentiality and compliance issues are fundamental; we will not be
+using any controlled-access data in this course, but the regulatory
+frameworks imposed by our institutions must be fully understood
+- *Defining AI*: data + algorithm + interface
+   - data for data science with AI: **all** open data and code are used to train foundational models
+        - code and documents used in training are of highly variable quality
+        - highly amateurish solutions are commonly encountered
+   - algorithms for AI: many possibilities
+   - interfaces: many possibilities
+- **Always acknowledge use of AI in your coursework and research**
+- Illustration: using an LLM to quiz yourself
+
+![quiz1](images/GitQuiz1.jpg)
+
+![quiz2](images/GitQuiz2.jpg)
+
+It doesn't always come out well; understanding this result will be a future exercise.
+
+![quiz3](images/ecdfQuiz2.jpg)
+
+
+# Starting off
+
+## Equipment and accounts
+
+- It is assumed you are in possession of a laptop capable of running current R and Rstudio,
+and on which you have administrative privileges.  Please contact me if this is not so.
+- You must have an account at github.com (free, use a .edu email address to get more
+capabilities) and at google.com (free, for working with Google Sheets, Slides, and Docs).
+
+## Forming teams during class time
+
+- I will from time to time ask students to "count off" typically to 20 or so, so
+that teams of approximately 4 students each can be formed in real time
+- Students will then reorganize in the classroom to form groups to collaboratively
+tackle a problem in real time
+- Paper and pens may play a role in case you are asked to create some text or tables "by hand"
+
+## Evaluation processes; communication
+
+- I want this course to add profoundly to your appreciation of modern data science
+practices, so that you see how to solve key problems of data organization, interpretation,
+and scientific communication that arise in your research.
+- "Problem sets", "exams/oral evals", and "projects" are elements of evaluation that will be used.
+- I would like each student to be able to prepare a web site that evolves over the
+course timeline, using GitHub pages
+    - the site will include pages representing student encounters with data and
+data science methods of interest
+    - the site can be public, or, if private, shared with instructor and TFs
+    - this site may be the locus for work (and evaluation of work) on course problems and projects
+
+## Day 1 tasks
+
+- install R
+- install Rstudio
+- use github.com: create your account
+- complete google form with basic initial data
+    - transform results to google sheet
+    - retrieve the sheet via sheets API
+    - obtain some basic statistics about course participants
+- form teams of about 4 persons each via "count down"
+    - create with pencil and paper a table summarizing team
+members' experiences with infectious diseases and cancer
+    - tables are collected and reviewed visually
+    - one or more tables are turned into markdown and CSV using a multimodal LLM
+
+## Take home tasks
+
+- create repository `bst260' in your organization (account)
+- invite teaching team as collaborators
+- create folder 'task-01'
+- add file README.md in that folder, with a header `# Overview`
+
+Last built from commit {{< git-rev >}}.
