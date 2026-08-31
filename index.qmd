@@ -50,23 +50,27 @@ edition of the course, and will change.
 
 ## Problem Sets for 2026.  To be determined.
 
+| 2026 Problem Sets| Topic | Due Date |  Difficulty |
+|:-------|:--------------|:---------|:----------|
+| [Problem Set 1](psets2026/pset-01-github.qmd)   |  GitHub, Markdown|Sep 2~~   | easy |
+
 ## Final projects for 2026.  To be determined.
 
 ## Problem Set/Project Examples from 2025.  
 
-| Problem set| Topic | Due Date |  Difficulty |
+| Past problem set| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
-| [Problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|~~Sep 11~~   | easy |
-| [Problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | ~~Sep 18~~   |medium |
-| [Problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | ~~Sep 27~~   |hard |
-| [Problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | ~~Oct 4~~   | hard |
-| [Problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | ~~Oct 11~~   |medium |
-| [Problem Set 6](psets/pset-06-prob.qmd)        | Probability | ~~Oct 25~~   | easy |
-| [Problem Set 7](psets/pset-07-election.qmd)          | Predict the election | ~~Nov 04~~   |  hard |
-| [Problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | ~~Nov 15~~   |  medium |
-| [Problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | ~~Nov 22~~   | easy |
-| [Problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | ~~Dec 18~~   | hard |
-|[Final Project](final-project.qmd) | NHANES Data Analysis | ~~Dec 14~~   | hard  |
+| [Past problem Set 1](psets/pset-01-unix-quarto.qmd)   |  Unix, Quarto|~~Sep 11~~   | easy |
+| [Past problem Set 2](psets/pset-02-r-vectorization.qmd) |  R | ~~Sep 18~~   |medium |
+| [Past problem Set 3](psets/pset-03-tidyverse.qmd)         |  Tidyverse | ~~Sep 27~~   |hard |
+| [Past problem Set 4](psets/pset-04-wrangling.qmd)          | Wrangling | ~~Oct 4~~   | hard |
+| [Past problem Set 5](psets/pset-05-dataviz.qmd)  |  Covid 19 data visualization | ~~Oct 11~~   |medium |
+| [Past problem Set 6](psets/pset-06-prob.qmd)        | Probability | ~~Oct 25~~   | easy |
+| [Past problem Set 7](psets/pset-07-election.qmd)          | Predict the election | ~~Nov 04~~   |  hard |
+| [Past problem Set 8](psets/pset-08-linear-models.qmd)          | Excess mortality after Hurricane María | ~~Nov 15~~   |  medium |
+| [Past problem Set 9](psets/pset-09-matrices.qmd)          | Matrices | ~~Nov 22~~   | easy |
+| [Past problem Set 10](psets/pset-10-ml.qmd)         | Digit reading | ~~Dec 18~~   | hard |
+|[Past Final Project](final-project.qmd) | NHANES Data Analysis | ~~Dec 14~~   | hard  |
 
 ## Office Hour Times
 

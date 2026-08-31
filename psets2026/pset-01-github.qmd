@@ -1,0 +1,14 @@
+---
+title: Problem set 1
+date: 2026-09-02
+---
+
+## Take home tasks, please complete by Sept 2 2026
+
+- create repository `bst260' in your organization (account)
+- invite teaching team as collaborators
+- create folder 'task-01'
+- add file README.md in that folder, with a header `# Overview`
+
+
+
