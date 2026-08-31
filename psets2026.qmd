@@ -1,0 +1,24 @@
+---
+title: "Problem Sets, Fall 2026"
+author: ""
+date: ""
+listing:
+  - id: psets2026
+    contents:
+      - psets2026/pset-01-github.qmd
+      - psets2026/pset-02-poly-md.qmd
+    type: table
+    fields: [title, date]
+    date-format: "ddd, MMM DD"
+    field-display-names:
+      title: "Topic"
+      date: "Due date (at 11:59 PM)"
+    sort: [filename]
+    sort-ui: false
+    filter-ui: false
+tbl-colwidths: [10,50,40]
+---
+
+::: {#psets2026}
+:::
+

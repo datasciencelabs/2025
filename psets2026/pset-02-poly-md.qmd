@@ -1,0 +1,52 @@
+---
+title: Problem set 2 (not finalized)
+date: 2026-09-11
+---
+
+# Scatterplots and polynomials 
+
+The `anscombe` dataset provided in R originates from
+a [1973 paper](https://hollis.harvard.edu/permalink/01HVD_INST/726dgh/cdi_jstor_primary_10_2307_2682899).
+
+We will come back to this dataset for various purposes.  Here
+we have some inelegant plotting code.
+
+```{r lk1}
+par(mfrow=c(2,2), mar=c(4,2,1,1))
+with(anscombe, plot(x1,y1,xlim=c(4,20), ylim=c(3,13)))
+with(anscombe, plot(x2,y2,xlim=c(4,20), ylim=c(3,13)))
+with(anscombe, plot(x3,y3,xlim=c(4,20), ylim=c(3,13)))
+with(anscombe, plot(x4,y4,xlim=c(4,20), ylim=c(3,13)))
+```
+
+1. Create a markdown document "poly1.qmd".  In the yaml header, put title: poly1 and author: [your name]
+
+2. Add the section heading `# Anscombe plots` and place the code chunk seen above in that section.
+
+3. Add text after the plots that describes in words the purpose of the xlim and ylim settings.
+
+4. We will now explore the role of polynomial functions in
+describing patterns seen in scatterplots.
+
+- Markdown setup
+
+    - Add a new section heading `# A polynomial function to model the Anscombe x2:y2 data`
+
+    - Define, in an r code chunk, the function `q1 = function(x) -7 + 2.78*x -.127*x*x`
+
+    - Use the following commands to produce a fresh plot of the anscombe x2, y2 vectors.
+
+```{r lk2}
+par(mfrow=c(1,1))
+with(anscombe, plot(x2,y2))
+```
+
+- Expand this chunk of code:
+
+    - Produce a new vector of "x values" `newx = seq(4,14,.1)`
+
+    - Use the lines command to add newx and q1(newx) to the x2:y2 plot
+
+    - Define a function q2 similar to q1, for which the line traced by the values `(newx, q2(newx))` "go through" the x2:y2 points.
+
+    - Give a mathematical explanation of the "defect" of q1 in "fitting" the x2:y2 pattern.  Describe how you "repaired" the defect.

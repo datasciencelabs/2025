@@ -48,11 +48,11 @@ edition of the course, and will change.
 | Dec 16 | Other topics  |  [Shiny Example Code](https://github.com/datasciencelabs/2026/tree/main/shiny)| [Shiny Basics](https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/) |
 :::
 
-## Problem Sets for 2026.  To be determined.
+## Problem Sets for 2026.  
 
 | 2026 Problem Sets| Topic | Due Date |  Difficulty |
 |:-------|:--------------|:---------|:----------|
-| [Problem Set 1](psets2026/pset-01-github.qmd)   |  GitHub, Markdown|Sep 2~~   | easy |
+| [Problem Set 1](psets2026/pset-01-github.qmd)   |  GitHub, Markdown|Sep 2| easy |
 
 ## Final projects for 2026.  To be determined.
 
