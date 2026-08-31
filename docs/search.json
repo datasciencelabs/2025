@@ -44,7 +44,7 @@
     "href": "syllabus.html#course-description",
     "title": "Syllabus",
     "section": "Course Description",
-    "text": "Course Description\nThis course introduces the following:\n\nUNIX/Linux shell\nReproducible document preparation with RStudio, knitr, and markdown\nVersion control with git and GitHub\nR programming\nData wrangling with dplyr and data.table\nData visualization with ggplot2\n\nWe also demonstrate how the following concepts are applied in data analysis:\n\nProbability theory\nStatistical inference and modeling\nHigh-dimensional data techniques\nMachine learning\n\nWe do not cover the theory and details of these methods as they are covered in other courses.\nThroughout the course, we use motivating case studies and data analysis problem sets based on challenges similar to those you encounter in scientific research.",
+    "text": "Course Description\nThe course includes activities in three main domains:\n\nsurveying data science and statistics as foundations of basic integrity and efficiency of research\nintroducing and using tools for implementing data science methods for research\ncritically exploring opportunities afforded by large language models and agentic AI for automation of repetitive detailed tasks\n\nThis course introduces the following:\n\nUNIX/Linux shell\nReproducible document preparation with RStudio, knitr, quarto, and markdown\nVersion control and information management with git and GitHub\nR programming\nData wrangling with dplyr and data.table\nData visualization in static and dynamic forms\n\nWe also demonstrate how the following concepts are applied in data analysis:\n\nProbability theory\nStatistical inference and modeling\nHigh-dimensional data techniques\nMachine learning\n\nWe do not cover the theory and details of these methods as they are covered in other courses.\nThroughout the course, we use motivating case studies and data analysis problem sets based on challenges similar to those you encounter in scientific research.",
     "crumbs": [
       "Syllabus"
     ]
@@ -54,17 +54,17 @@
     "href": "syllabus.html#weekly-course-structure",
     "title": "Syllabus",
     "section": "Weekly Course Structure",
-    "text": "Weekly Course Structure\n\nMonday lectures: We describe the concepts, methods, and skills needed for problem sets.\nWednesday labs: We work together on problem sets.\nFriday: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class.",
+    "text": "Weekly Course Structure\n\nMonday and Wednesday course meetings: frequently interactive with live coding, team formation, real-time data collection on student progress\nOffice hours: Available on most week days\nFridays: Problem sets due (see Key Dates and Problem Sets).\n\nPlease ensure that you read the chapters listed in the syllabus before each Monday. The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.\nLectures will not be recorded.\nWe will have a Slack workspace for you to ask questions during and after class; the link is in canvas",
     "crumbs": [
       "Syllabus"
     ]
   },
   {
-    "objectID": "syllabus.html#grade-distribution",
-    "href": "syllabus.html#grade-distribution",
+    "objectID": "syllabus.html#grade-distribution-from-2025-subject-to-change-in-2026",
+    "href": "syllabus.html#grade-distribution-from-2025-subject-to-change-in-2026",
     "title": "Syllabus",
-    "section": "Grade Distribution",
-    "text": "Grade Distribution\n\n\n\nComponent\nWeight\n\n\n\n\n10 Problem Sets\n30%\n\n\n3 Oral Evaluations\n20%\n\n\nMidterm 1\n10%\n\n\nMidterm 2\n20%\n\n\nFinal Project\n20%",
+    "section": "Grade Distribution – from 2025, subject to change in 2026",
+    "text": "Grade Distribution – from 2025, subject to change in 2026\n\n\n\nComponent\nWeight\n\n\n\n\n10 Problem Sets\n30%\n\n\n3 Oral Evaluations\n20%\n\n\nMidterm 1\n10%\n\n\nMidterm 2\n20%\n\n\nFinal Project\n20%",
     "crumbs": [
       "Syllabus"
     ]
@@ -74,7 +74,7 @@
     "href": "syllabus.html#problem-sets",
     "title": "Syllabus",
     "section": "Problem Sets",
-    "text": "Problem Sets\nProblem sets will be due every week or every other week, depending on difficulty. They will be due at 11:59 PM on the day denoted on the Problem Sets page.\nSome problem sets include open ended questions that will be difficult to answer on your own. We will be working on these together during Wednesday labs. We also offer office hours where you can get help with unanswered questions.\nProblem sets must be submitted via GitHub. Students are required to have a GitHub account and create a repository for the course. We will be providing further instructions during the first lab.\n10% of the total points for the problem sets will be deducted for every late day. Students can have a total of 4 late days without penalty during the entire semester. No need to provide a written excuse. Providing an excuse does not give you more days unless an accommodation is requested and approved by the Office of Student Affairs (this includes COVID).\nProblem set submissions need to be completely reproducible Quarto documents. If your Quarto file does not compile it will be considered a late day, and you will be notified and will need to resubmit a Quarto file that does compile. You will be deducted further late days for every day it takes for you to turn in a Quarto file that does knit. You are required to check emails that come through the Canvas system, as this the only way we will communicate problems with your problem sets.",
+    "text": "Problem Sets\nProblem sets will be due every week or every other week, depending on difficulty. They will be due at 11:59 PM on the day denoted on the Problem Sets page.\nSome problem sets include open ended questions that may be difficult to answer on your own. We will often be working on related problems during course meetings. We also offer office hours where you can get help with unanswered questions.\nProblem sets must be submitted via GitHub. Students are required to have a GitHub account and create a repository for the course. We will be providing further instructions during the first lab.\n10% of the total points for the problem sets will be deducted for every late day. Students can have a total of 4 late days without penalty during the entire semester. No need to provide a written excuse. Providing an excuse does not give you more days unless an accommodation is requested and approved by the Office of Student Affairs (this includes COVID).\nProblem set submissions need to be completely reproducible Quarto documents. If your Quarto file does not compile it will be considered a late day, and you will be notified and will need to resubmit a Quarto file that does compile. You will be deducted further late days for every day it takes for you to turn in a Quarto file that does knit. You are required to check emails that come through the Canvas system, as this the only way we will communicate problems with your problem sets.",
     "crumbs": [
       "Syllabus"
     ]
@@ -104,7 +104,7 @@
     "href": "syllabus.html#final-project",
     "title": "Syllabus",
     "section": "Final Project",
-    "text": "Final Project\nYou will be assigned to a pre-assigned team of 4 or 5 students and a Teaching Fellow (TF) who will supervise your project throughout the semester.\nGrading: The final project accounts for 20% of your course grade, divided as follows:\n\nFinal Project Report: 10% of course grade\n\nOral Presentation: 10% of course grade\n\n\nProject Overview\nYour team will select from a list of available data science projects or propose a custom research topic (subject to TF approval). You will prepare a comprehensive 2,500-3,000 word academic-style report with sections including Abstract, Introduction, Methods, Results, and Discussion.\n\n\nKey Requirements\n\nTeam Collaboration: Work in assigned teams of 4-5 students\nReproducible Analysis: Submit via GitHub repository with all code and data\nOral Presentation: 20-minute team presentation scheduled between December 16-19\nIndividual Accountability: All team members must participate and demonstrate understanding of their contributions\n\n\n\nAI Policy\nStudents may use AI tools as complementary aids but must clearly document where AI was used in their analysis or writing.\nImportant: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours to provide guidance.\nFor complete details including team assignments, project options, submission guidelines, grading rubrics, and formatting requirements, see the Final Project page.",
+    "text": "Final Project\nYou will be assigned to a team of 4 or 5 students and a Teaching Fellow (TF) who will supervise your project throughout the semester.\nGrading: The final project accounts for 20% of your course grade, divided as follows:\n\nFinal Project Report: 10% of course grade\n\nOral Presentation: 10% of course grade\n\n\nProject Overview\nYour team will select from a list of available data science projects or propose a custom research topic (subject to TF approval). You will prepare a comprehensive 2,500-3,000 word academic-style report with sections including Abstract, Introduction, Methods, Results, and Discussion.\n\n\nKey Requirements\n\nTeam Collaboration: Work in assigned teams of 4-5 students\nReproducible Analysis: Submit via GitHub repository with all code and data\nOral Presentation: 20-minute team presentation scheduled between December 16-19\nIndividual Accountability: All team members must participate and demonstrate understanding of their contributions\n\n\n\nAI Policy\nStudents may use AI tools as complementary aids but must clearly document where AI was used in their analysis or writing.\nImportant: You should start working on your project after the first midterm. Do not wait until the last week. Teaching staff will be available during office hours to provide guidance.\nFor complete details including team assignments, project options, submission guidelines, grading rubrics, and formatting requirements, see the Final Project page.",
     "crumbs": [
       "Syllabus"
     ]
@@ -124,7 +124,7 @@
     "href": "syllabus.html#key-dates",
     "title": "Syllabus",
     "section": "Key Dates",
-    "text": "Key Dates\n\n\n\nDate\nEvent\n\n\n\n\nOct 13\nNo class: Indigenous Peoples’ Day\n\n\nOct 15\nMidterm 1: covers material from Sep 03-Oct 08\n\n\nOct 22\nStart final project\n\n\nNov 24\nMidterm 2: cover material from Sep 03-Nov 19\n\n\nNov 26\nNo class: Thanksgiving Recess Begins\n\n\nDec 19\nFinal Project due",
+    "text": "Key Dates\n\n\n\nDate\nEvent\n\n\n\n\nSep 7\nNo class: Labor Day\n\n\nOct 12\nNo class: Indigenous People’s Day\n\n\nOct 19\nMidterm 1: covers material from Aug 31-Oct 07\n\n\nOct 19\nStart final project\n\n\nNov 11\nNo class: Veterans’ Day\n\n\nNov 23\nMidterm 2: cover material from Aug 31-Nov 18\n\n\nNov 25\nNo class: Thanksgiving Recess Begins\n\n\nDec 16\nFinal Project due; last day of class",
     "crumbs": [
       "Syllabus"
     ]
@@ -1094,7 +1094,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4340857 0.4959143\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4610136 0.5229864\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4251299 0.4868701\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.3854501 0.4465499\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -1136,7 +1136,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.948"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.946"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",
@@ -3222,7 +3222,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.10585 62.00868 65.92444 69.99257 70.08304 73.00869 66.95558 73.06678\n [9] 67.05396 70.08967"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.04174 61.91865 65.93092 70.16818 70.00685 73.04167 67.07419 72.82114\n [9] 66.95901 69.82935"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -3558,7 +3558,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Female Female Female Male   Female Female Male   Male   Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Female Female Female Male   Female Female Male   Male   Male  \nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Female Female Female Female Male   Female Female Female Male   Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Female Female Female Female Male   Female Female Female Male   Male  \nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -3733,7 +3733,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x134d49e90&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x113d7d490&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -5224,7 +5224,7 @@
     "href": "slides/00-intro.html#take-home-tasks",
     "title": "Overview of BST 260 Introduction to Data Science",
     "section": "Take home tasks",
-    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 83979d1."
+    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 10de40b."
   },
   {
     "objectID": "slides/prob/20-intro-to-prob.html#probability",
@@ -6119,7 +6119,7 @@
     "href": "overview.html#take-home-tasks",
     "title": "Overview of BST 260 Introduction to Data Science",
     "section": "Take home tasks",
-    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 83979d1."
+    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 10de40b."
   },
   {
     "objectID": "psets/pset-01-unix-quarto.html",
@@ -6217,7 +6217,7 @@
     "href": "index.html",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit 83979d1.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 10de40b.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -6227,7 +6227,7 @@
     "href": "index.html#course-information",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit 83979d1.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 10de40b.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -8089,7 +8089,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-2",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 346543 0.784\n 2 389187 0.762\n 3 892626 0.759\n 4 676084 0.758\n 5 912035 0.757\n 6 453592 0.755\n 7 389963 0.749\n 8 592573 0.748\n 9 796872 0.746\n10 478072 0.746\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.784."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 878705 0.831\n 2  79516 0.809\n 3 731710 0.796\n 4 126164 0.780\n 5 259267 0.764\n 6 389486 0.749\n 7 747546 0.747\n 8 108131 0.743\n 9  75058 0.738\n10  22291 0.735\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.831."
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-3",
@@ -8124,7 +8124,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-7",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic    p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 x        0.807     0.133      6.06 0.00000352"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x        0.780     0.109      7.17 0.000000264"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-8",
@@ -11533,7 +11533,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-08-30 13:35:43 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-08-30 17:35:43 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-08-30 19:57:53 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-08-30 23:57:53 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -11547,7 +11547,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 13\n\nnow() |&gt; minute() \n\n[1] 35\n\nnow() |&gt; second() \n\n[1] 43.06291"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 19\n\nnow() |&gt; minute() \n\n[1] 57\n\nnow() |&gt; second() \n\n[1] 53.57575"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -11932,7 +11932,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4501335\n\nsd(x_hat) \n\n[1] 0.0156835"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499622\n\nsd(x_hat) \n\n[1] 0.01583798"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",

@@ -73,13 +73,13 @@ frameworks imposed by our institutions must be fully understood
 - **Always acknowledge use of AI in your coursework and research**
 - Illustration: using an LLM to quiz yourself
 
-![quiz1](images/GitQuiz1.jpg)
+![quiz1](../images/GitQuiz1.jpg)
 
-![quiz2](images/GitQuiz2.jpg)
+![quiz2](../images/GitQuiz2.jpg)
 
 It doesn't always come out well; understanding this result will be a future exercise.
 
-![quiz3](images/ecdfQuiz2.jpg)
+![quiz3](../images/ecdfQuiz2.jpg)
 
 
 # Starting off
@@ -117,7 +117,7 @@ data science methods of interest
 - install R
 - install Rstudio
 - use github.com: create your account
-- complete google form with basic initial data
+- complete [google form](https://docs.google.com/forms/d/e/1FAIpQLSeHVtpw8h1BHsK0nu5FHKdUla5PExfzzLG_m64x7J0BhJMNxw/viewform?usp=header) with basic initial data
     - transform results to google sheet
     - retrieve the sheet via sheets API
     - obtain some basic statistics about course participants

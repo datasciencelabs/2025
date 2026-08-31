@@ -24,14 +24,21 @@ Students not matriculated in an HSPH Biostatistics graduate program (HDS SM60, B
 
 ## Course Description
 
+The course includes activities in three main domains:
+
+- surveying *data science and statistics* as foundations of _basic integrity and efficiency of research_
+- introducing and using *tools for implementing data science methods* for research
+- critically exploring opportunities afforded by *large language models and agentic AI* for automation of repetitive detailed tasks
+
+
 This course introduces the following:
 
 * UNIX/Linux shell
-* Reproducible document preparation with RStudio, knitr, and markdown
-* Version control with git and GitHub
+* Reproducible document preparation with RStudio, knitr, quarto, and markdown
+* Version control and information management with git and GitHub
 * R programming
 * Data wrangling with dplyr and data.table
-* Data visualization with ggplot2
+* Data visualization in static and dynamic forms
 
 We also demonstrate how the following concepts are applied in data analysis:
 
@@ -47,17 +54,18 @@ Throughout the course, **we use motivating case studies and data analysis proble
 
 ## Weekly Course Structure
 
-* Monday lectures: We describe the concepts, methods, and skills needed for problem sets.
-* Wednesday labs: We work together on problem sets.
-* Friday: Problem sets due (see Key Dates and Problem Sets).
+* Monday and Wednesday course meetings: frequently interactive with live coding, team formation, real-time
+data collection on student progress
+* Office hours: Available on most week days
+* Fridays: Problem sets due (see Key Dates and Problem Sets).
 
 **Please ensure that you read the chapters listed in the syllabus before each Monday.** The lectures are designed with the assumption that you have completed the readings, enabling us to dive deeper into the nuances of data analysis and coding.
 
 **Lectures will not be recorded.**
 
-We will have a Slack workspace for you to ask questions during and after class.
+We will have a Slack workspace for you to ask questions during and after class; the link is in canvas
 
-## Grade Distribution
+## Grade Distribution -- from 2025, subject to change in 2026
 
 | Component | Weight |
 |-----------|--------|
@@ -71,7 +79,7 @@ We will have a Slack workspace for you to ask questions during and after class.
 
 Problem sets will be due every week or every other week, depending on difficulty. They will be due at 11:59 PM on the day denoted on the Problem Sets page.
 
-Some problem sets include open ended questions that will be difficult to answer on your own. **We will be working on these together during Wednesday labs**. We also offer office hours where you can get help with unanswered questions.
+Some problem sets include open ended questions that may be difficult to answer on your own. **We will often be working on related problems during course meetings**. We also offer office hours where you can get help with unanswered questions.
 
 Problem sets must be submitted via GitHub. **Students are required to have a GitHub account and create a repository for the course.**  We will be providing further instructions during the first lab.
 
@@ -115,7 +123,7 @@ Please make sure you can come to class on the midterm dates provided in the **Ke
 
 ## Final Project
 
-You will be assigned to a **pre-assigned team of 4 or 5 students** and a **Teaching Fellow (TF)** who will supervise your project throughout the semester.
+You will be assigned to a team of 4 or 5 students and a **Teaching Fellow (TF)** who will supervise your project throughout the semester.
 
 **Grading**: The final project accounts for **20% of your course grade**, divided as follows:
 
@@ -148,10 +156,12 @@ You can use ChatGPT however you want. Do remember **you won't be able to use it 
 
 | Date | Event |
 |------|-------|
-| Oct 13 | No class: Indigenous Peoples' Day |
-| Oct 15 | Midterm 1: covers material from Sep 03-Oct 08 |
-| Oct 22 | Start final project |
-| Nov 24 | Midterm 2: cover material from Sep 03-Nov 19 | 
-| Nov 26 | No class: Thanksgiving Recess Begins |
-| Dec 19 | Final Project due | 
+| Sep 7 | No class: Labor Day |
+| Oct 12 | No class: Indigenous People's Day |
+| Oct 19 | Midterm 1: covers material from Aug 31-Oct 07 |
+| Oct 19 | Start final project |
+| Nov 11 | No class: Veterans' Day |
+| Nov 23 | Midterm 2: cover material from Aug 31-Nov 18 | 
+| Nov 25 | No class: Thanksgiving Recess Begins |
+| Dec 16 | Final Project due; last day of class | 
 
