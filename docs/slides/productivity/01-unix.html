@@ -9,9 +9,9 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
-  <meta name="dcterms.date" content="2025-09-03">
+  <meta name="dcterms.date" content="2026-09-02">
   <meta name="keywords" content="Productivity Tools">
-  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Unix</title>
+  <title>DRAFT FOR 2026 fall of BST 260: Introduction to Data Science – Unix: an operating system with 50+ years of significance in scientific computing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -194,28 +194,87 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Unix</h1>
+  <h1 class="title">Unix: an operating system with 50+ years of significance in scientific computing</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2025-09-03</p>
+  <p class="date">2026-09-02</p>
 </section>
-<section id="naming-conventions" class="slide level2">
-<h2>Naming conventions</h2>
+<section id="before-we-begin-partial-recap-of-aug-31" class="slide level2">
+<h2>Before we begin … partial recap of Aug 31</h2>
 <ul>
-<li><p>In general you want to name your files in a way that is related to their contents and specifies how they relate to other files.</p></li>
+<li><p>When designing a table for data organization, which is most important?</p>
+<ul>
+<li>choice of columns</li>
+<li>choice of rows</li>
+<li>options for cell contents</li>
+</ul></li>
+<li><p>When different groups wish to combine data from separately created tables, how should they proceed?</p></li>
+<li><p><a href="https://primedconsortium.org/research/data">PRIMED</a> is a relevant resource</p></li>
+</ul>
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>We take for granted the notion that we can “start the computer” and “type in commands” and get essentially immediate responses for many tasks</li>
+<li>The origins of this capability are historically complex; let’s have a little background</li>
+</ul>
+</section>
+<section id="antitrust-facts-from-sonnet-and-gemini" class="slide level2 smaller">
+<h2>Antitrust (facts from sonnet and gemini)</h2>
+<ul>
+<li><p>True or false: Because of AT&amp;T’s 1956 antitrust consent decree, the company was barred from competing in the computer business, so it could not sell Unix as a commercial product. Instead it licensed the source tape to universities for a nominal fee (little more than the cost of media and shipping).</p></li>
+<li><p>True: To resolve an antitrust lawsuit (United States v. Western Electric Co.), AT&amp;T signed a consent decree restricting the Bell System to regulated “common-carrier telecommunications services” and related equipment manufacturing. The decree legally barred AT&amp;T from entering other commercial markets, including data processing and computer software.</p></li>
+</ul>
+</section>
+<section id="shipping-costs" class="slide level2 smaller">
+<h2>“Shipping costs”</h2>
+<ul>
+<li>Licensing Unix “As-Is”: Because AT&amp;T could not market Unix as a commercial software product, Bell Labs provided the source code to universities, research labs, and government agencies under an educational license. The fee was nominal—typically around $150 to $300—just enough to cover magnetic tapes, printed documentation, and handling. AT&amp;T explicitly provided no technical support, warranty, or bug fixes.</li>
+<li>The Impact: This policy inadvertently sparked a computing revolution. Because universities received full source code and had to maintain the OS themselves, a generation of students and researchers studied, debugged, and extended Unix. This culture gave rise to John Lions’ famous <a href="https://en.wikipedia.org/wiki/A_Commentary_on_the_UNIX_Operating_System">Commentary on UNIX 6th Edition</a>, the Berkeley Software Distribution (BSD), and the modern open-source movement. When AT&amp;T was broken up in 1984 and released from the 1956 decree, the company immediately sought to commercialize Unix (System V) and enforce strict, expensive licensing, igniting the famous “Unix Wars.”</li>
+</ul>
+</section>
+<section id="dos-vs-unix" class="slide level2">
+<h2>DOS vs UNIX</h2>
+<p>Try a prompt like</p>
+<pre><code>Can you provide some facts and interpretations, and discuss a bit how 
+DOS came about -- why unix could not be relevant for microcomputers in the evolution of microsoft.</code></pre>
+<p>to learn about CP/M, QDOS, and steps towards windows powershell. You will not be responsible for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware; DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips</p>
+</section>
+<section id="some-future-targets" class="slide level2">
+<h2>Some future targets</h2>
+<ul>
+<li>We will establish accounts on a real “linux” system run by HSPH IT</li>
+<li>We will create portable software tools in a compiled language, possibly C and C++</li>
+<li>We will learn how to use debuggers and profilers to identify errors and performance deficiencies</li>
+</ul>
+</section>
+<section id="naming-conventions-for-file-collections" class="slide level2">
+<h2>Naming conventions for file collections</h2>
+<ul>
+<li><p>Name your files in a way that is related to their contents and specifies how they relate to other files.</p></li>
 <li><p>The <a href="https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf">Smithsonian Data Management Best Practices</a> has “Five precepts of file naming and organization”</p></li>
+<li><p>Any folder worth creating deserves a README.md inside the folder explaining why it was made and what its intended contents are —</p></li>
 </ul>
 </section>
 <section id="five-precepts-of-file-naming-and-organization" class="slide level2 smaller">
 <h2>Five precepts of file naming and organization</h2>
 <ul>
-<li>Have a distinctive, human-readable name that describes the content.</li>
-<li>Follow a consistent pattern that is machine-friendly.</li>
-<li>Organize files into directories (when necessary) that follow a consistent pattern.</li>
-<li>Avoid repetition of semantic elements among file and directory names.</li>
-<li>Have a file extension that matches the file format (no changing extensions!)</li>
+<li>Have a distinctive name that describes the content.</li>
+<li>Follow a consistent pattern that fosters convenient references to files to simplify software that operates on them</li>
+<li>Organize files into directories that follow a consistent pattern.</li>
+<li>Avoid repetition of semantic elements among file and directory names.
+<ul>
+<li>What could that mean?</li>
+</ul></li>
+<li>Have a file extension that matches the file format (no changing extensions!)
+<ul>
+<li>jpg and jpeg are suffixes for a fixed image format</li>
+<li>sometimes csv is used as a suffix for tsv information! and <em>vice versa</em></li>
+<li>.txt conveys very little information</li>
+</ul></li>
+<li>markdown and json are formats that you should be comfortable with</li>
 </ul>
 <p>For specific recommendations we highly recommend you follow The <a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></p>
 </section>
@@ -241,6 +300,7 @@
 </section>
 <section id="the-filesystem" class="slide level2">
 <h2>The filesystem</h2>
+<!-- fixme?  make this local? -->
 
 <img data-src="http://rafalab.dfci.harvard.edu/dsbook-part-1/productivity/img//unix/filesystem.png" class="r-stretch"></section>
 
@@ -254,9 +314,9 @@
 <li><p>files have permissions: use <code>ls -lh</code> to view details</p></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>drwxr<span class="sc">-</span>xr<span class="sc">-</span>x    <span class="dv">4</span> robert  staff   <span class="dv">128</span>B Aug  <span class="dv">8</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">03</span> bin</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">20</span>M Jun <span class="dv">24</span> <span class="dv">09</span><span class="sc">:</span><span class="dv">11</span> boots.png</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">26</span>M Jun <span class="dv">23</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">23</span> boots1.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>drwxr<span class="sc">-</span>xr<span class="sc">-</span>x    <span class="dv">4</span> robert  staff   <span class="dv">128</span>B Aug  <span class="dv">8</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">03</span> bin</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">20</span>M Jun <span class="dv">24</span> <span class="dv">09</span><span class="sc">:</span><span class="dv">11</span> boots.png</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">26</span>M Jun <span class="dv">23</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">23</span> boots1.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>you can <strong>r</strong>ead, <strong>w</strong>rite, or e<strong>x</strong>ecute files and control who can see or use them by changing permissions</li>
@@ -356,6 +416,15 @@
 <li><a href="https://www.codecademy.com/learn/learn-the-command-line" class="uri">https://www.codecademy.com/learn/learn-the-command-line</a></li>
 <li><a href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-1" class="uri">https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-1</a></li>
 <li><a href="https://www.coursera.org/learn/unix" class="uri">https://www.coursera.org/learn/unix</a></li>
+</ul>
+</section>
+<section id="lets-get-learning" class="slide level2">
+<h2>Let’s get learning</h2>
+<ul>
+<li>witnessing effects of file compression and decompression</li>
+<li>“storage quotas” to avoid crashing your machine</li>
+<li>pattern matching with regular expressions; searching collections of files</li>
+<li>setting and retrieving values of ENVIRONMENT VARIABLES</li>
 </ul>
 
 

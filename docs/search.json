@@ -5990,7 +5990,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Topic\n\n\n\nTitle\n\n\n\n\n\n\n\n\n \n\n\nOverview of BST 260 Introduction to Data Science\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nTitle\n\n\n\n\n\n\n\n\n \n\n\nOverview of BST 260 Introduction to Data Science\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix: an operating system with 50+ years of significance in scientific computing\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
     ]
@@ -6234,7 +6234,7 @@
     "href": "index.html",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit 72f1b31.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 3b44b49.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -6244,7 +6244,7 @@
     "href": "index.html#course-information",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit 72f1b31.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 3b44b49.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -12605,105 +12605,105 @@
   {
     "objectID": "slides/productivity/01-unix.html#naming-conventions",
     "href": "slides/productivity/01-unix.html#naming-conventions",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Naming conventions",
-    "text": "Naming conventions\n\nIn general you want to name your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “Five precepts of file naming and organization”"
+    "text": "Naming conventions\n\nName your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “Five precepts of file naming and organization”\nAny folder worth creating deserves a README.md inside the folder explaining why it was made and what its intended contents are —"
   },
   {
     "objectID": "slides/productivity/01-unix.html#five-precepts-of-file-naming-and-organization",
     "href": "slides/productivity/01-unix.html#five-precepts-of-file-naming-and-organization",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Five precepts of file naming and organization",
-    "text": "Five precepts of file naming and organization\n\nHave a distinctive, human-readable name that describes the content.\nFollow a consistent pattern that is machine-friendly.\nOrganize files into directories (when necessary) that follow a consistent pattern.\nAvoid repetition of semantic elements among file and directory names.\nHave a file extension that matches the file format (no changing extensions!)\n\nFor specific recommendations we highly recommend you follow The Tidyverse Style Guide"
+    "text": "Five precepts of file naming and organization\n\nHave a distinctive name that describes the content.\nFollow a consistent pattern that fosters convenient references to files to simplify software that operates on them\nOrganize files into directories that follow a consistent pattern.\nAvoid repetition of semantic elements among file and directory names.\n\nWhat could that mean?\n\nHave a file extension that matches the file format (no changing extensions!)\n\njpg and jpeg are suffixes for a fixed image format\nsometimes csv is used as a suffix for tsv information! and vice versa\n.txt conveys very little information\n\nmarkdown and json are formats that you should be comfortable with\n\nFor specific recommendations we highly recommend you follow The Tidyverse Style Guide"
   },
   {
     "objectID": "slides/productivity/01-unix.html#the-system",
     "href": "slides/productivity/01-unix.html#the-system",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "The System",
     "text": "The System\n\nInstead of clicking, dragging, and dropping to organize our files and folders, we will be typing Unix commands into the terminal.\nThe way we do this is similar to how we type commands into the R console, but instead of generating plots and statistical summaries, we will be organizing files on our system.\nThe file system is hierarchical, you create directories (folders) in other folders\nWhen you log in to a Unix computer you are in your home directory\nthe command line has a prompt that is configurable and is printed on screen to let you know that the terminal is ready for input\nEnvironment variables control your computing environment and many are customizable by users\nLLMs are useful tools for finding commands and getting help navigating through your first exposure to Unix and the ideas it is based on"
   },
   {
     "objectID": "slides/productivity/01-unix.html#the-terminal",
     "href": "slides/productivity/01-unix.html#the-terminal",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "The terminal",
     "text": "The terminal\n\nThe terminal is integrated into Mac and Linux systems, but Windows users will have to install an emulator.\nOnce you have a terminal open, you can start typing commands.\nYou should see a blinking cursor at the spot where what you type will show up. This position is called the command line."
   },
   {
     "objectID": "slides/productivity/01-unix.html#the-filesystem",
     "href": "slides/productivity/01-unix.html#the-filesystem",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "The filesystem",
     "text": "The filesystem"
   },
   {
     "objectID": "slides/productivity/01-unix.html#files-and-permissions",
     "href": "slides/productivity/01-unix.html#files-and-permissions",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Files and permissions",
     "text": "Files and permissions\n\nwithin each directory you can create files and other directories\nfiles whose names start with a period . are hidden by default; use ls -a to view them\nfiles have permissions: use ls -lh to view details\n\n\ndrwxr-xr-x    4 robert  staff   128B Aug  8 10:03 bin\n-rw-r--r--@   1 robert  staff    20M Jun 24 09:11 boots.png\n-rw-r--r--@   1 robert  staff    26M Jun 23 15:23 boots1.pdf\n\n\nyou can read, write, or execute files and control who can see or use them by changing permissions"
   },
   {
     "objectID": "slides/productivity/01-unix.html#working-directory",
     "href": "slides/productivity/01-unix.html#working-directory",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Working directory",
     "text": "Working directory\n\nThe working directory is the directly you are currently in.\nCommands you issue will generally take effect in this directory\nYou can see your working directory using the Unix command pwd\nYou can list the contents of the directory (files and other directories) using ls\nYou can find out about how ls works by issuing the command: man ls"
   },
   {
     "objectID": "slides/productivity/01-unix.html#paths",
     "href": "slides/productivity/01-unix.html#paths",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Paths",
     "text": "Paths\n\nThe string returned by pwd command is the full path to the working directory.\nThe full path to your home directory is stored in an environment variable.\nYou can see it like this echo $HOME"
   },
   {
     "objectID": "slides/productivity/01-unix.html#paths-1",
     "href": "slides/productivity/01-unix.html#paths-1",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Paths",
     "text": "Paths\n\nIn Unix, we use the shorthand ~ as a nickname for your home directory\n\nExample: the full path for docs (image in prev. slides) can be written like this ~/docs.\n\nA common default for the prompt is to show the path to the working directory (that path might be long, but you can change it)\nLet’s open a terminal window and see what the prompt is.\nyou have an environment variable called PATH which you can display using echo\n\nthat variable is a set of individual paths, separated by : (colon) and it tells your Unix shell where to look for commands\nyou can modify that path, so that you can have it look for commands in other, non-standard places (eg make your own bin directory)"
   },
   {
     "objectID": "slides/productivity/01-unix.html#unix-commands",
     "href": "slides/productivity/01-unix.html#unix-commands",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Unix commands",
     "text": "Unix commands\n\nls: Listing directory content\nmkdir and rmdir: make and remove a directory\ncd: navigating the filesystem by changing directories\npwd: see your workding directory\nmv: moving files\ncp: copying files\nrm: removing files\nmore and less: display the contents of a file"
   },
   {
     "objectID": "slides/productivity/01-unix.html#autocomplete",
     "href": "slides/productivity/01-unix.html#autocomplete",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Autocomplete",
     "text": "Autocomplete\n\nIn Unix you can auto-complete by hitting tab.\nThis means that we can type cd d then hit tab.\nUnix will either auto-complete if docs is the only directory/file starting with d or show you the options.\nTry it out! Using Unix without auto-complete will make it unbearable."
   },
   {
     "objectID": "slides/productivity/01-unix.html#text-editors",
     "href": "slides/productivity/01-unix.html#text-editors",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Text editors",
     "text": "Text editors\nCommand-line text editors are essential tools, especially for system administrators, developers, and other users who frequently work in a terminal environment. Here are some of the most popular command-line text editors:\n\nNano\nPico\nVi or Vim\nEmacs"
   },
   {
     "objectID": "slides/productivity/01-unix.html#other-useful-commands",
     "href": "slides/productivity/01-unix.html#other-useful-commands",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Other useful commands",
     "text": "Other useful commands\n\ncurl - download data from the internet.\ntar - archive files and directories into one file.\ngzip - and other compression tools - make big files small\nssh - connect to another computer.\nfind - search for files by filename in your system.\ngrep - search for patterns in a file.\nawk/sed - These are two very powerful commands that permit you to find specific strings in files and change them."
   },
   {
     "objectID": "slides/productivity/01-unix.html#a-deeper-dive",
     "href": "slides/productivity/01-unix.html#a-deeper-dive",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "A deeper dive",
     "text": "A deeper dive\n\nThe shell you use helps to organize and facilitate your interactions with the operating system\necho $SHELL will display the shell you are using\nmany software tools use hidden files and directories to provide customization e.g. .gitconfig or .ssh\nmost shells have two files that are commonly used to provide user level customization .zsh, and .zprofile"
   },
   {
     "objectID": "slides/productivity/01-unix.html#resources",
     "href": "slides/productivity/01-unix.html#resources",
-    "title": "Unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Resources",
     "text": "Resources\nTo get started.\n\nhttps://www.codecademy.com/learn/learn-the-command-line\nhttps://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-1\nhttps://www.coursera.org/learn/unix"
   },
@@ -12896,5 +12896,61 @@
     "title": "Problem set 1",
     "section": "",
     "text": "create repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#history",
+    "href": "slides/productivity/01-unix.html#history",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "History",
+    "text": "History\n\nWe take for granted the notion that we can “start the computer” and “type in commands” and get essentially immediate responses for many tasks\nThe origins of this capability are historically complex; let’s have a little background"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#antitrust-facts-from-sonnet-and-gemini",
+    "href": "slides/productivity/01-unix.html#antitrust-facts-from-sonnet-and-gemini",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Antitrust (facts from sonnet and gemini)",
+    "text": "Antitrust (facts from sonnet and gemini)\n\nTrue or false: Because of AT&T’s 1956 antitrust consent decree, the company was barred from competing in the computer business, so it could not sell Unix as a commercial product. Instead it licensed the source tape to universities for a nominal fee (little more than the cost of media and shipping).\nTrue: To resolve an antitrust lawsuit (United States v. Western Electric Co.), AT&T signed a consent decree restricting the Bell System to regulated “common-carrier telecommunications services” and related equipment manufacturing. The decree legally barred AT&T from entering other commercial markets, including data processing and computer software."
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#shipping-costs",
+    "href": "slides/productivity/01-unix.html#shipping-costs",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "“Shipping costs”",
+    "text": "“Shipping costs”\n\nLicensing Unix “As-Is”: Because AT&T could not market Unix as a commercial software product, Bell Labs provided the source code to universities, research labs, and government agencies under an educational license. The fee was nominal—typically around $150 to $300—just enough to cover magnetic tapes, printed documentation, and handling. AT&T explicitly provided no technical support, warranty, or bug fixes.\nThe Impact: This policy inadvertently sparked a computing revolution. Because universities received full source code and had to maintain the OS themselves, a generation of students and researchers studied, debugged, and extended Unix. This culture gave rise to John Lions’ famous Commentary on UNIX 6th Edition, the Berkeley Software Distribution (BSD), and the modern open-source movement. When AT&T was broken up in 1984 and released from the 1956 decree, the company immediately sought to commercialize Unix (System V) and enforce strict, expensive licensing, igniting the famous “Unix Wars.”"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#before-we-begin-partial-recap-of-aug-31",
+    "href": "slides/productivity/01-unix.html#before-we-begin-partial-recap-of-aug-31",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Before we begin … partial recap of Aug 31",
+    "text": "Before we begin … partial recap of Aug 31\n\nWhen designing a table for data organization, which is most important?\n\nchoice of columns\nchoice of rows\noptions for cell contents\n\nWhen different groups wish to combine data from separately created tables, how should they proceed?\nPRIMED is a relevant resource"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#some-future-targets",
+    "href": "slides/productivity/01-unix.html#some-future-targets",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Some future targets",
+    "text": "Some future targets\n\nWe will establish accounts on a real “linux” system run by HSPH IT\nWe will create portable software tools in a compiled language, possibly C and C++\nWe will learn how to use debuggers and profilers to identify errors and performance deficiencies"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#naming-conventions-for-file-collections",
+    "href": "slides/productivity/01-unix.html#naming-conventions-for-file-collections",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Naming conventions for file collections",
+    "text": "Naming conventions for file collections\n\nName your files in a way that is related to their contents and specifies how they relate to other files.\nThe Smithsonian Data Management Best Practices has “Five precepts of file naming and organization”\nAny folder worth creating deserves a README.md inside the folder explaining why it was made and what its intended contents are —"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#dos-vs-unix",
+    "href": "slides/productivity/01-unix.html#dos-vs-unix",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "DOS vs UNIX",
+    "text": "DOS vs UNIX\nTry a prompt like\nCan you provide some facts and interpretations, and discuss a bit how \nDOS came about -- why unix could not be relevant for microcomputers in the evolution of microsoft.\nto learn about CP/M, QDOS, and steps towards windows powershell. You will not be responsible for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware; DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#lets-get-learning",
+    "href": "slides/productivity/01-unix.html#lets-get-learning",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Let’s get learning",
+    "text": "Let’s get learning\n\nwitnessing effects of file compression and decompression\n“storage quotas” to avoid crashing your machine\npattern matching with regular expressions; searching collections of files\nsetting and retrieving values of ENVIRONMENT VARIABLES"
   }
 ]

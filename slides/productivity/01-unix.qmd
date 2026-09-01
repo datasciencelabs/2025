@@ -1,27 +1,86 @@
 ---
-title: "Unix"
+title: "Unix: an operating system with 50+ years of significance in scientific computing"
 keywords: "Productivity Tools"
-date: "2025-09-03"
+date: "2026-09-02"
 format:
   revealjs:
     theme: solarized
 ---
+## Before we begin ... partial recap of Aug 31
 
-## Naming conventions
+* When designing a table for data organization, which is most important?
 
-* In general you want to name your files in a way that is related to their contents and specifies how they relate to other files. 
+    - choice of columns
+    - choice of rows
+    - options for cell contents
+
+* When different groups wish to combine data from separately created tables, 
+how should they proceed?
+
+* [PRIMED](https://primedconsortium.org/research/data) is a relevant resource 
+
+## History
+
+* We take for granted the notion that we can "start the computer" and "type in commands" and
+get essentially immediate responses for many tasks
+* The origins of this capability are historically complex; let's have a little
+background
+
+## Antitrust (facts from sonnet and gemini){.smaller}
+
+* True or false: Because of AT&T's 1956 antitrust consent decree, the company was barred from competing in the computer business, so it could not sell Unix as a commercial product. Instead it licensed the source tape to universities for a nominal fee (little more than the cost of media and shipping).
+
+* True: To resolve an antitrust lawsuit (United States v. Western Electric Co.), AT&T signed a consent decree restricting the Bell System to regulated "common-carrier telecommunications services" and related equipment manufacturing. The decree legally barred AT&T from entering other commercial markets, including data processing and computer software.
+
+
+## "Shipping costs"{.smaller}
+
+* Licensing Unix "As-Is": Because AT&T could not market Unix as a commercial software product, Bell Labs provided the source code to universities, research labs, and government agencies under an educational license. The fee was nominal—typically around $150 to $300—just enough to cover magnetic tapes, printed documentation, and handling. AT&T explicitly provided no technical support, warranty, or bug fixes.
+* The Impact: This policy inadvertently sparked a computing revolution. Because universities received full source code and had to maintain the OS themselves, a generation of students and researchers studied, debugged, and extended Unix. This culture gave rise to John Lions' famous [Commentary on UNIX 6th Edition](https://en.wikipedia.org/wiki/A_Commentary_on_the_UNIX_Operating_System), the Berkeley Software Distribution (BSD), and the modern open-source movement.
+When AT&T was broken up in 1984 and released from the 1956 decree, the company immediately sought to commercialize Unix (System V) and enforce strict, expensive licensing, igniting the famous "Unix Wars."
+
+## DOS vs UNIX
+
+Try a prompt like
+
+```
+Can you provide some facts and interpretations, and discuss a bit how 
+DOS came about -- why unix could not be relevant for microcomputers in the evolution of microsoft.
+```
+
+to learn about CP/M, QDOS, and steps towards windows powershell.  You will not be responsible
+for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware;
+DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips
+
+## Some future targets
+
+* We will establish accounts on a real "linux" system run by HSPH IT
+* We will create portable software tools in a compiled language, possibly C and C++
+* We will learn how to use debuggers and profilers to identify errors and performance deficiencies
+
+## Naming conventions for file collections
+
+* Name your files in a way that is related to their contents and specifies how they relate to other files. 
 
 * The [Smithsonian Data Management Best Practices](https://library.si.edu/sites/default/files/tutorial/pdf/filenamingorganizing20180227.pdf) has "Five precepts of file naming and organization"
 
+* Any folder worth creating deserves a README.md inside the folder explaining why it was
+made and what its intended contents are
 --- 
 
 ## Five precepts of file naming and organization{.smaller}
 
-* Have a distinctive, human-readable name that describes the content.
-* Follow a consistent pattern that is machine-friendly.
-* Organize files into directories (when necessary) that follow a consistent pattern.
+* Have a distinctive name that describes the content.
+* Follow a consistent pattern that fosters convenient references to files
+to simplify software that operates on them
+* Organize files into directories that follow a consistent pattern.
 * Avoid repetition of semantic elements among file and directory names.
+    - What could that mean?
 * Have a file extension that matches the file format (no changing extensions!)
+    - jpg and jpeg are suffixes for a fixed image format
+    - sometimes csv is used as a suffix for tsv information!  and *vice versa*
+    - .txt conveys very little information
+* markdown and json are formats that you should be comfortable with
 
 For specific recommendations we highly recommend you follow The [Tidyverse Style Guide](https://style.tidyverse.org/)
 
@@ -57,6 +116,7 @@ For specific recommendations we highly recommend you follow The [Tidyverse Style
 
 ## The filesystem 
 
+<!-- fixme?  make this local? -->
 
 ![]({{< var dsbook1 >}}productivity/img//unix/filesystem.png)
 
@@ -233,3 +293,10 @@ To get started.
 -   <https://www.codecademy.com/learn/learn-the-command-line>
 -   <https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-1>
 -   <https://www.coursera.org/learn/unix>
+
+## Let's get learning
+
+- witnessing effects of file compression and decompression
+- "storage quotas" to avoid crashing your machine
+- pattern matching with regular expressions; searching collections of files
+- setting and retrieving values of ENVIRONMENT VARIABLES
