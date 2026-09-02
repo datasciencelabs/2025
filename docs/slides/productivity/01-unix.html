@@ -214,8 +214,35 @@
 <li><p><a href="https://primedconsortium.org/research/data">PRIMED</a> is a relevant resource</p></li>
 </ul>
 </section>
-<section id="history" class="slide level2">
-<h2>History</h2>
+<section id="please-fill-out-second-form-httpstinyurl.combst260form2" class="slide level2">
+<h2>Please fill out second form: https://tinyurl.com/bst260form2</h2>
+<p>This version does not have free text responses on tool usage, etc.</p>
+<p>We do need accurate statement of “github handle”</p>
+</section>
+<section id="emerging-role-of-github-in-content-management-for-the-course" class="slide level2 smaller">
+<h2>Emerging role of github in content management for the course</h2>
+<p>I asked students to invite the teaching team as collaborators. We will change this arrangement, but it is of interest to be able to assess this strategy. Code was written to use the GitHub API to check created repos and contents.</p>
+<pre><code>&gt; github_private_repo_collaborators([handle], "bst260")
+       login        id type role_name site_admin admin maintain push triage pull
+1     vjcitn   4624066 User     write      FALSE FALSE    FALSE TRUE   TRUE TRUE
+2 QianyuFan8  88663047 User     write      FALSE FALSE    FALSE TRUE   TRUE TRUE
+3  [handle]   [id    ] User     admin      FALSE  TRUE     TRUE TRUE   TRUE TRUE
+&gt; dir("R")
+[1] "github_private_repo_collaborators.R" "github_repo_has_file.R"              "github_repo_markdown_headers.R"     
+&gt; source("R/github_repo_markdown_headers.R")
+&gt; args(github_repo_markdown_headers)
+function (org, repo, folder, file, token = NULL) 
+NULL
+&gt; github_repo_markdown_headers([handle], "bst260", "task-01", "README.md")
+[1] "Overview"</code></pre>
+<p>Two points:</p>
+<ul>
+<li>default assignment of ‘write’ privilege to collaborators should probably not be taken</li>
+<li>the API permits retrieval of content, which will be used for grading</li>
+</ul>
+</section>
+<section id="a-little-history-of-unix-and-commodity-computing" class="slide level2">
+<h2>A little history of unix and “commodity” computing</h2>
 <ul>
 <li>We take for granted the notion that we can “start the computer” and “type in commands” and get essentially immediate responses for many tasks</li>
 <li>The origins of this capability are historically complex; let’s have a little background</li>
@@ -235,7 +262,7 @@
 <li>The Impact: This policy inadvertently sparked a computing revolution. Because universities received full source code and had to maintain the OS themselves, a generation of students and researchers studied, debugged, and extended Unix. This culture gave rise to John Lions’ famous <a href="https://en.wikipedia.org/wiki/A_Commentary_on_the_UNIX_Operating_System">Commentary on UNIX 6th Edition</a>, the Berkeley Software Distribution (BSD), and the modern open-source movement. When AT&amp;T was broken up in 1984 and released from the 1956 decree, the company immediately sought to commercialize Unix (System V) and enforce strict, expensive licensing, igniting the famous “Unix Wars.”</li>
 </ul>
 </section>
-<section id="dos-vs-unix" class="slide level2">
+<section id="dos-vs-unix" class="slide level2 smaller">
 <h2>DOS vs UNIX</h2>
 <p>Try a prompt like</p>
 <pre><code>Can you provide some facts and interpretations, and discuss a bit how 
@@ -316,9 +343,9 @@ DOS came about -- why unix could not be relevant for microcomputers in the evolu
 <li><p>files have permissions: use <code>ls -lh</code> to view details</p></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>drwxr<span class="sc">-</span>xr<span class="sc">-</span>x    <span class="dv">4</span> robert  staff   <span class="dv">128</span>B Aug  <span class="dv">8</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">03</span> bin</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">20</span>M Jun <span class="dv">24</span> <span class="dv">09</span><span class="sc">:</span><span class="dv">11</span> boots.png</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">26</span>M Jun <span class="dv">23</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">23</span> boots1.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>drwxr<span class="sc">-</span>xr<span class="sc">-</span>x    <span class="dv">4</span> robert  staff   <span class="dv">128</span>B Aug  <span class="dv">8</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">03</span> bin</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">20</span>M Jun <span class="dv">24</span> <span class="dv">09</span><span class="sc">:</span><span class="dv">11</span> boots.png</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>rw<span class="sc">-</span>r<span class="sc">--</span>r<span class="sc">--</span><span class="er">@</span>   <span class="dv">1</span> robert  staff    <span class="dv">26</span>M Jun <span class="dv">23</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">23</span> boots1.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>you can <strong>r</strong>ead, <strong>w</strong>rite, or e<strong>x</strong>ecute files and control who can see or use them by changing permissions</li>
@@ -424,7 +451,7 @@ DOS came about -- why unix could not be relevant for microcomputers in the evolu
 <h2>Let’s get learning</h2>
 <ul>
 <li>witnessing effects of file compression and decompression</li>
-<li>“storage quotas” to avoid crashing your machine</li>
+<li>“storage quotas” (or monitoring `df’) to avoid crashing your machine</li>
 <li>pattern matching with regular expressions; searching collections of files</li>
 <li>setting and retrieving values of ENVIRONMENT VARIABLES</li>
 </ul>

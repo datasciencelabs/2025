@@ -19,7 +19,40 @@ how should they proceed?
 
 * [PRIMED](https://primedconsortium.org/research/data) is a relevant resource 
 
-## History
+## Please fill out second form: https://tinyurl.com/bst260form2
+
+This version does not have free text responses on tool usage, etc.
+
+We do need accurate statement of "github handle"
+
+## Emerging role of github in content management for the course{.smaller}
+
+I asked students to invite the teaching team as collaborators.  We
+will change this arrangement, but it is of interest to be able to
+assess this strategy.  Code was written to use the GitHub API to
+check created repos and contents.
+```
+> github_private_repo_collaborators([handle], "bst260")
+       login        id type role_name site_admin admin maintain push triage pull
+1     vjcitn   4624066 User     write      FALSE FALSE    FALSE TRUE   TRUE TRUE
+2 QianyuFan8  88663047 User     write      FALSE FALSE    FALSE TRUE   TRUE TRUE
+3  [handle]   [id    ] User     admin      FALSE  TRUE     TRUE TRUE   TRUE TRUE
+> dir("R")
+[1] "github_private_repo_collaborators.R" "github_repo_has_file.R"              "github_repo_markdown_headers.R"     
+> source("R/github_repo_markdown_headers.R")
+> args(github_repo_markdown_headers)
+function (org, repo, folder, file, token = NULL) 
+NULL
+> github_repo_markdown_headers([handle], "bst260", "task-01", "README.md")
+[1] "Overview"
+```
+Two points:
+
+- default assignment of 'write' privilege to collaborators should probably not be taken
+- the API permits retrieval of content, which will be used for grading
+
+
+## A little history of unix and "commodity" computing
 
 * We take for granted the notion that we can "start the computer" and "type in commands" and
 get essentially immediate responses for many tasks
@@ -39,7 +72,7 @@ background
 * The Impact: This policy inadvertently sparked a computing revolution. Because universities received full source code and had to maintain the OS themselves, a generation of students and researchers studied, debugged, and extended Unix. This culture gave rise to John Lions' famous [Commentary on UNIX 6th Edition](https://en.wikipedia.org/wiki/A_Commentary_on_the_UNIX_Operating_System), the Berkeley Software Distribution (BSD), and the modern open-source movement.
 When AT&T was broken up in 1984 and released from the 1956 decree, the company immediately sought to commercialize Unix (System V) and enforce strict, expensive licensing, igniting the famous "Unix Wars."
 
-## DOS vs UNIX
+## DOS vs UNIX{.smaller}
 
 Try a prompt like
 
@@ -302,6 +335,6 @@ To get started.
 ## Let's get learning
 
 - witnessing effects of file compression and decompression
-- "storage quotas" to avoid crashing your machine
+- "storage quotas" (or monitoring `df') to avoid crashing your machine
 - pattern matching with regular expressions; searching collections of files
 - setting and retrieving values of ENVIRONMENT VARIABLES
