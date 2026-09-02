@@ -19,6 +19,17 @@ how should they proceed?
 
 * [PRIMED](https://primedconsortium.org/research/data) is a relevant resource 
 
+## Another point about table design
+
+* It can be useful to think of rows as "replicates" -- observations on
+sets of features (columns) that are "replicated" on different "study subjects"
+* In our case, individual students were subjects, and the groups that were
+formed are a higher-level "study unit"
+* We want to be able to distinguish which responses come from different
+units at different levels
+* need a group identifier and a subject identifier
+* subject may have multiple observations
+
 ## Please fill out second form: https://tinyurl.com/bst260form2
 
 This version does not have free text responses on tool usage, etc.
