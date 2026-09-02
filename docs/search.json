@@ -212,7 +212,7 @@
     "href": "slides/productivity/04-git.html#motivation",
     "title": "Git and GitHub",
     "section": "Motivation",
-    "text": "Motivation\nWe want to avoid this:\n\nPosted by rjkb041 on r/ProgrammerHumor"
+    "text": "Motivation\n\nGit is a version control system that provides a systematic approach to keeping versions of files.\nGitHub uses git to foster\n\n\nSharing.\nCollaborating.\nVersion control.\n\nWe focus on the sharing aspects of Git and GitHub, but introduce some of the basics that permit you to collaborate and use version control."
   },
   {
     "objectID": "slides/productivity/04-git.html#motivation-1",
@@ -5990,7 +5990,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Topic\n\n\n\nTitle\n\n\n\n\n\n\n\n\n \n\n\nOverview of BST 260 Introduction to Data Science\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix: an operating system with 50+ years of significance in scientific computing\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nTitle\n\n\n\n\n\n\n\n\n \n\n\nOverview of BST 260 Introduction to Data Science\n\n\n\n\n\n\nProductivity Tools\n\n\nUnix: an operating system with 50+ years of significance in scientific computing\n\n\n\n\n\n\nProductivity Tools\n\n\nRStudio IDE\n\n\n\n\n\n\nProductivity Tools\n\n\nQuarto\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub\n\n\n\n\n\n\nProductivity Tools\n\n\nGit and GitHub, 2025 edition\n\n\n\n\n\n\nR\n\n\nR Basics\n\n\n\n\n\n\nR\n\n\nVectorization\n\n\n\n\n\n\nR\n\n\nTidyverse\n\n\n\n\n\n\nR\n\n\nggplot2\n\n\n\n\n\n\nR\n\n\nTidying data\n\n\n\n\n\n\nWrangling\n\n\nIntroduction to Wrangling\n\n\n\n\n\n\nWrangling\n\n\nImporting files\n\n\n\n\n\n\nWrangling\n\n\nDates And Times\n\n\n\n\n\n\nWrangling\n\n\nLocales\n\n\n\n\n\n\nWrangling\n\n\nData APIs\n\n\n\n\n\n\nWrangling\n\n\nWeb Scraping\n\n\n\n\n\n\nWrangling\n\n\nJoining Tables\n\n\n\n\n\n\nData Visualization\n\n\nData Visualization Principles\n\n\n\n\n\n\nData Visualization\n\n\nDistributions\n\n\n\n\n\n\nData Visualization\n\n\nDataviz In Practice\n\n\n\n\n\n\nProbability\n\n\nIntroduction to Probability\n\n\n\n\n\n\nProbability\n\n\nFoundations of Statistical Inference\n\n\n\n\n\n\nInference\n\n\nIntroduction to Statistical Inference and Models\n\n\n\n\n\n\nInference\n\n\nParameters and Estimates\n\n\n\n\n\n\nInference\n\n\nConfidence Intervals\n\n\n\n\n\n\nInference\n\n\nData-driven models\n\n\n\n\n\n\nInference\n\n\nBayesian Models\n\n\n\n\n\n\nInference\n\n\nHierarchical Models\n\n\n\n\n\n\nLinear Models\n\n\nIntroduction\n\n\n\n\n\n\nLinear Models\n\n\nRegression\n\n\n\n\n\n\nLinear Models\n\n\nMultivariate Regression\n\n\n\n\n\n\nLinear Models\n\n\nTreatment Effect Models\n\n\n\n\n\n\nOther topics\n\n\nAssociation Not Causation\n\n\n\n\n\n\nHigh dimensional data\n\n\nIntroduction to Linear Algebra\n\n\n\n\n\n\nHigh dimensional data\n\n\nMatrices In R\n\n\n\n\n\n\nHigh dimensional data\n\n\nDistance\n\n\n\n\n\n\nHigh dimensional data\n\n\nDimension Reduction\n\n\n\n\n\n\nMachine Learning\n\n\nIntroduction\n\n\n\n\n\n\nMachine Learning\n\n\nEvaluation Metrics\n\n\n\n\n\n\nMachine Learning\n\n\nConditionals\n\n\n\n\n\n\nMachine Learning\n\n\nSmoothing\n\n\n\n\n\n\nMachine Learning\n\n\nk-nearest neighbors (knn)\n\n\n\n\n\n\nMachine Learning\n\n\nResampling Methods\n\n\n\n\n\n\nMachine Learning\n\n\nThe caret package\n\n\n\n\n\n\nMachine Learning\n\n\nAlgorithms\n\n\n\n\n\n\nMachine Learning\n\n\nML In Practice\n\n\n\n\n\n\nOther topics\n\n\nIntroduction to Shiny\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Slides"
     ]
@@ -12614,7 +12614,7 @@
     "href": "slides/productivity/01-unix.html#five-precepts-of-file-naming-and-organization",
     "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Five precepts of file naming and organization",
-    "text": "Five precepts of file naming and organization\n\nHave a distinctive name that describes the content.\nFollow a consistent pattern that fosters convenient references to files to simplify software that operates on them\nOrganize files into directories that follow a consistent pattern.\nAvoid repetition of semantic elements among file and directory names.\n\nWhat could that mean?\n\nHave a file extension that matches the file format (no changing extensions!)\n\njpg and jpeg are suffixes for a fixed image format\nsometimes csv is used as a suffix for tsv information! and vice versa\n.txt conveys very little information\n\nmarkdown and json are formats that you should be comfortable with\n\nFor specific recommendations we highly recommend you follow The Tidyverse Style Guide"
+    "text": "Five precepts of file naming and organization\n\nHave a distinctive name that describes the content.\nFollow a consistent pattern that fosters convenient references to files to simplify software that operates on them\nOrganize files into directories that follow a consistent pattern.\nAvoid repetition of semantic elements among file and directory names.\n\nWhat could that mean?\n\nHave a file extension that matches the file format (no changing extensions!)\n\njpg and jpeg are suffixes for a fixed image format\nsometimes csv is used as a suffix for tsv information! and vice versa\n.txt conveys very little information\n\nmarkdown and json are formats that you should be comfortable with\n\nFor specific recommendations we recommend you follow The Tidyverse Style Guide"
   },
   {
     "objectID": "slides/productivity/01-unix.html#the-system",
@@ -12691,7 +12691,7 @@
     "href": "slides/productivity/01-unix.html#other-useful-commands",
     "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Other useful commands",
-    "text": "Other useful commands\n\ncurl - download data from the internet.\ntar - archive files and directories into one file.\ngzip - and other compression tools - make big files small\nssh - connect to another computer.\nfind - search for files by filename in your system.\ngrep - search for patterns in a file.\nawk/sed - These are two very powerful commands that permit you to find specific strings in files and change them."
+    "text": "Other useful commands\n\ncurl - download data from the internet.\ntar - archive files and directories into one file.\ngzip, zstd - and other compression tools - make big files small\nssh - connect to another computer.\nfind - search for files by filename in your system.\ngrep - search for patterns in a file.\nawk/sed - These are two very powerful commands that permit you to find specific strings in files and change them."
   },
   {
     "objectID": "slides/productivity/01-unix.html#a-deeper-dive",
@@ -12930,7 +12930,7 @@
     "href": "slides/productivity/01-unix.html#some-future-targets",
     "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Some future targets",
-    "text": "Some future targets\n\nWe will establish accounts on a real “linux” system run by HSPH IT\nWe will create portable software tools in a compiled language, possibly C and C++\nWe will learn how to use debuggers and profilers to identify errors and performance deficiencies"
+    "text": "Some future targets\n\nWe will establish accounts on a “linux” through GitHub code spaces (verify that you can start one from your GitHub IDE)\nWe will create portable software tools in a compiled language, possibly C and C++\nWe will learn how to use debuggers and profilers to identify errors and performance deficiencies"
   },
   {
     "objectID": "slides/productivity/01-unix.html#naming-conventions-for-file-collections",
@@ -12944,7 +12944,7 @@
     "href": "slides/productivity/01-unix.html#dos-vs-unix",
     "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "DOS vs UNIX",
-    "text": "DOS vs UNIX\nTry a prompt like\nCan you provide some facts and interpretations, and discuss a bit how \nDOS came about -- why unix could not be relevant for microcomputers in the evolution of microsoft.\nto learn about CP/M, QDOS, and steps towards windows powershell. You will not be responsible for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware; DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips"
+    "text": "DOS vs UNIX\nTry a prompt like\nCan you provide some facts and interpretations, and discuss a bit how \nDOS came about -- why unix could not be relevant for microcomputers in the evolution of microsoft.\nto learn about CP/M, QDOS, and steps towards windows powershell. You will not be responsible for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware; DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips\nConclusion: AT&T was broken up\nMaybe search for “how did the MFJ issued for AT&T affect its ability to continue bell labs scientific research and operating system development”"
   },
   {
     "objectID": "slides/productivity/01-unix.html#lets-get-learning",
@@ -12952,5 +12952,292 @@
     "title": "Unix: an operating system with 50+ years of significance in scientific computing",
     "section": "Let’s get learning",
     "text": "Let’s get learning\n\nwitnessing effects of file compression and decompression\n“storage quotas” to avoid crashing your machine\npattern matching with regular expressions; searching collections of files\nsetting and retrieving values of ENVIRONMENT VARIABLES"
+  },
+  {
+    "objectID": "slides/productivity/01-unix.html#some-future-targets-for-the-class",
+    "href": "slides/productivity/01-unix.html#some-future-targets-for-the-class",
+    "title": "Unix: an operating system with 50+ years of significance in scientific computing",
+    "section": "Some future targets for the class",
+    "text": "Some future targets for the class\n\nWe will establish accounts on a linux system through GitHub code spaces (verify that you can start one from your GitHub IDE)\nWe will create portable software tools in a compiled language, possibly C and C++\nWe will learn how to use debuggers and profilers to identify errors and performance deficiencies"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#note-for-2026-class-because-we-have-already-established-github-accounts-we-will-be-skipping-many-of-the-details-here",
+    "href": "slides/productivity/05-git2025.html#note-for-2026-class-because-we-have-already-established-github-accounts-we-will-be-skipping-many-of-the-details-here",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "note for 2026 class: because we have already established github accounts we will be skipping many of the details here",
+    "text": "note for 2026 class: because we have already established github accounts we will be skipping many of the details here"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#goal-for-the-day",
+    "href": "slides/productivity/05-git2025.html#goal-for-the-day",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Goal for the day",
+    "text": "Goal for the day\n\nCreate an account\nGenerate an SSH key and add it to the GitHub account.\nCreate a repository\npush something to the repository\nconnect RStudio to GitHub"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#ssh",
+    "href": "slides/productivity/05-git2025.html#ssh",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "SSH",
+    "text": "SSH\n\nmake sure you have ssh installed\nthen issue the command ssh-keygen\naccept the suggested location and do not use a passphrase\n\n\ntest@80f55a35ef03:/HostData/Epiconnector$ ssh-keygen \nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/test/.ssh/id_ed25519): \nCreated directory '/home/test/.ssh'.\nEnter passphrase (empty for no passphrase): \nEnter same passphrase again: \nYour identification has been saved in /home/test/.ssh/id_ed25519\nYour public key has been saved in /home/test/.ssh/id_ed25519.pub"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#do-you-have-git",
+    "href": "slides/productivity/05-git2025.html#do-you-have-git",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Do you have git?",
+    "text": "Do you have git?\nBefore we start:\n\nMake sure you have Git installed.\nOpen a terminal and type:\n\n\ngit --version\n\nIf not installed\n\non a Mac, follow the instructions after typing the above.\non Windows follow these instructions"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#motivation",
+    "href": "slides/productivity/05-git2025.html#motivation",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Motivation",
+    "text": "Motivation\nWe want to avoid this:\n\nPosted by rjkb041 on r/ProgrammerHumor"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#motivation-1",
+    "href": "slides/productivity/05-git2025.html#motivation-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Motivation",
+    "text": "Motivation\n\nThis is particularly difficult to manage when more than one person is collaborating and editing the file.\nEven more important when there are multiple files, as there is in software development, and to some extent data analysis."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#motivation-2",
+    "href": "slides/productivity/05-git2025.html#motivation-2",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Motivation",
+    "text": "Motivation\n\nGit is a version control system that provides a systematic approach to keeping versions of files.\n\n\nPosted on devrant.com/ by bhimanshukalra"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#motivation-3",
+    "href": "slides/productivity/05-git2025.html#motivation-3",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Motivation",
+    "text": "Motivation\nBut we have to learn some things.\n\nFrom Meme Git Compilation by Lulu Ilmaknun Qurotaini"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#why-use-git-and-github",
+    "href": "slides/productivity/05-git2025.html#why-use-git-and-github",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Why use Git and GitHub?",
+    "text": "Why use Git and GitHub?\n\nSharing.\nCollaborating.\nVersion control.\n\nWe focus on the sharing aspects of Git and GitHub, but introduce some of the basics that permit you to collaborate and use version control."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#what-is-git",
+    "href": "slides/productivity/05-git2025.html#what-is-git",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "What is Git?",
+    "text": "What is Git?"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#what-is-github",
+    "href": "slides/productivity/05-git2025.html#what-is-github",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nDescribed a social network for software developers.\nBasically, it’s a service that hosts the remote repository (repo) on the web.\nThis facilitates collaboration and sharing."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#what-is-github-1",
+    "href": "slides/productivity/05-git2025.html#what-is-github-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\nThere many other features such as\n\nRecognition system: reward, badges and stars.\nYou can host web pages, like the class notes for example.\nPermits contributions via forks and pull requests.\nIssue tracking\nAutomation tools"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#what-is-github-2",
+    "href": "slides/productivity/05-git2025.html#what-is-github-2",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nThe main tool behind GitHub is Git.\nSimilar to how the main tool behind RStudio is R."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#github-accounts",
+    "href": "slides/productivity/05-git2025.html#github-accounts",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "GitHub accounts",
+    "text": "GitHub accounts\n\nPick a professional sounding name.\nConsider adding a profile README.md.\nInstructions are here.\nExample here."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#repositories",
+    "href": "slides/productivity/05-git2025.html#repositories",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Repositories",
+    "text": "Repositories\n\nWe are ready to create a GitHub repository (repo).\nYou will have at least two copies of your code: one on your computer and one on GitHub.\nIf you add collaborators to this repo, then each will have a copy on their computer.\nThe GitHub copy is considered the main (previously called master) copy that everybody syncs to.\nGit will help you keep all the different copies synced."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#repositories-1",
+    "href": "slides/productivity/05-git2025.html#repositories-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Repositories",
+    "text": "Repositories\n\nLet’s go make one on GitHub…\nThen create a directory on your computer, this will be the local repo, and connect it to the Github repository.\nFirst copy and paste the location of your git repository. It should look something like this:\n\nhttps://github.com/your-username/your-repo-name.git"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#connect-git-and-github",
+    "href": "slides/productivity/05-git2025.html#connect-git-and-github",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Connect Git and GitHub",
+    "text": "Connect Git and GitHub\n\nWhen accessing GitHub you need credentials to verify your identity.\nThere are two ways to connect: HTTPS or SSH, each requiring different credentials.\nWe recommend using HTTPS, which uses a Personal Access Token (PAT).\nNote that your GitHub website password isn’t your access token."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#connect-git-and-github-1",
+    "href": "slides/productivity/05-git2025.html#connect-git-and-github-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Connect Git and GitHub",
+    "text": "Connect Git and GitHub\n\nDetailed instructions are here.\nCarefully follow the instructions provided by GitHub.\nWhen setting permissions for the token, choose non-expiring and select the repo option in the scopes section.\nOnce you complete these steps, GitHub will display your token—a lengthy string of characters.\nImmediately copy this token to your clipboard. This is the only time GitHub will show it to you."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#generate-a-token",
+    "href": "slides/productivity/05-git2025.html#generate-a-token",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Generate a token:",
+    "text": "Generate a token:\n\nFor security, save this token in a password manager. This ensures you can access it if needed later on.\nWhen git prompts you to enter your password, paste the token you’ve copied. After this, password prompts should no longer appear.\nIf you ever need the token again, retrieve it from your password manager.\n\nMore details available from Happy Git and GitHub for the use."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#connect-git-and-github-2",
+    "href": "slides/productivity/05-git2025.html#connect-git-and-github-2",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Connect Git and GitHub",
+    "text": "Connect Git and GitHub\n\nThe next step is to let Git know who we are on Github.\nTo to this type the following two commands in our terminal window:\n\n\ngit config --global user.name \"Your Name\"\ngit config --global user.mail \"your@email.com\""
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#connect-git-and-github-3",
+    "href": "slides/productivity/05-git2025.html#connect-git-and-github-3",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Connect Git and GitHub",
+    "text": "Connect Git and GitHub\n\nThis will change the Git configuration in way that anytime you use Git, it will know this information.\nNote that you need to use the email account that you used to open your GitHub account."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#connect-git-and-github-4",
+    "href": "slides/productivity/05-git2025.html#connect-git-and-github-4",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Connect Git and GitHub",
+    "text": "Connect Git and GitHub\nTo connect working directory to the GitHub repo\n\ninitialize the directory:\n\n\ngit init\n\n\nLet Git know what is the remote repository.\n\n\ngit remote add origin &lt;remote-url&gt;\n\nNow the two are connected.\n\n\n\n\n\n\nNote\n\n\norigin is a nickname we will use for the remote. We can call it something else, but everybody calls it origin so best to stick with that."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#overview-of-git",
+    "href": "slides/productivity/05-git2025.html#overview-of-git",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Overview of Git",
+    "text": "Overview of Git\nThe main actions in Git are to:\n\npull changes from the remote repo.\nadd files, or as we say in the Git lingo stage files.\ncommit changes to the local repo.\npush changes to the remote repo."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#the-four-areas-of-git",
+    "href": "slides/productivity/05-git2025.html#the-four-areas-of-git",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "The four areas of Git",
+    "text": "The four areas of Git"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#status",
+    "href": "slides/productivity/05-git2025.html#status",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Status",
+    "text": "Status\n\n\ngit status filename"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#add",
+    "href": "slides/productivity/05-git2025.html#add",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Add",
+    "text": "Add\nUse git add to put file to staging area.\n\n\ngit add &lt;filename&gt;\n\nWe say that this file has been staged. Check to see what happened:\n\ngit status &lt;filename&gt;"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#commit",
+    "href": "slides/productivity/05-git2025.html#commit",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Commit",
+    "text": "Commit\n\nTo move all the staged files to the local repository we use git commit.\n\n\n\ngit commit -m \"must add comment\"\n\n\nOnce committed the files are tracked and a copy of this version is kept going forward.\nThis is like adding V1 to your filename."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#commit-1",
+    "href": "slides/productivity/05-git2025.html#commit-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Commit",
+    "text": "Commit\n\n\n\n\n\n\nNote\n\n\nYou can commit files directly without using add by explicitly writing the files at the end of the commit:\n\n\n\n\ngit commit -m \"must add comment\" &lt;filename&gt;"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#push",
+    "href": "slides/productivity/05-git2025.html#push",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Push",
+    "text": "Push\n\nTo move to upstream repo we use git push\n\n\n\ngit push -u origin main\n\n\nThe -u flag sets the upstream repo.\nBy using this flag, going forward you can simply use git push to push changes.\nSo going forward we can just type:\n\n\ngit push"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#push-1",
+    "href": "slides/productivity/05-git2025.html#push-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Push",
+    "text": "Push\n\nWhen using git push we need to be careful as if collaborating this will affect the work of others.\nIt might also create a conflict.\n\n\nPosted by andortang on Nothing is Impossible!"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#fetch",
+    "href": "slides/productivity/05-git2025.html#fetch",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Fetch",
+    "text": "Fetch\n\nTo update our local repository to the remote one we use\n\n\ngit fetch"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#merge",
+    "href": "slides/productivity/05-git2025.html#merge",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Merge",
+    "text": "Merge\n\nOnce we are sure this is good, we can merge with our local files:\n\n\ngit merge"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#pull",
+    "href": "slides/productivity/05-git2025.html#pull",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Pull",
+    "text": "Pull\n\nI rarely use fetch and merge and instead use pull which does both of these in one step\n\n\ngit pull"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#checkout",
+    "href": "slides/productivity/05-git2025.html#checkout",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Checkout",
+    "text": "Checkout\n\nIf you want to pull down a specific file you from the remote repo you can use:\n\n\ngit checkout filename\n\n\nI use this when I make changes but decide I want to go back to original version on remote repo.\n\n\n\n\n\n\n\nWarning\n\n\nIf you have a newer version in your local repository this will create a conflict. It won’t let you do it. If you are sure you want to get rid of your local copy you can remove it and then use checkout."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#checkout-1",
+    "href": "slides/productivity/05-git2025.html#checkout-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Checkout",
+    "text": "Checkout\n\nYou can also use checkout to obtain older version:\n\n\ngit checkout &lt;commit-id&gt; &lt;filename&gt;\n\n\nYou can get the commit-id either on the GitHub webpage or using\n\n\ngit log filename"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#reset",
+    "href": "slides/productivity/05-git2025.html#reset",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Reset",
+    "text": "Reset\n\nWhat if I commit and realize it was a mistake?\n\n\ngit reset HEAD~1\n\nundos the commit and unstages the files, but keeps your local copies. I use this command very often.\n\nThere are many wasy of using get reset and it covers most scenarios.\nChatGPT and stackoverflow are great resources to learn more."
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#branches",
+    "href": "slides/productivity/05-git2025.html#branches",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Branches",
+    "text": "Branches\n\nWe are just scratching the surface of Git.\nOne advanced feature to be aware of is that you can have several branches, useful for working in parallel or testing stuff out that might not make the main repo.\n\n\nArt by: Allison Horst"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#branches-1",
+    "href": "slides/productivity/05-git2025.html#branches-1",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Branches",
+    "text": "Branches\n\nWe wont go over this, but we might need to use these two related commands:\n\n\ngit remote -v\ngit branch"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#clone",
+    "href": "slides/productivity/05-git2025.html#clone",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Clone",
+    "text": "Clone\n\nAnother common command is git clone.\nIt let’s download an entire repo, including version history.\n\n\ngit clone &lt;repo-url&gt;"
+  },
+  {
+    "objectID": "slides/productivity/05-git2025.html#using-git-in-rstudio",
+    "href": "slides/productivity/05-git2025.html#using-git-in-rstudio",
+    "title": "Git and GitHub, 2025 edition",
+    "section": "Using Git in RStudio",
+    "text": "Using Git in RStudio\n\nGo to file, new project, version control, and follow the instructions.\nThen notice the Git tab in the preferences."
   }
 ]

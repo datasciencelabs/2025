@@ -52,9 +52,14 @@ to learn about CP/M, QDOS, and steps towards windows powershell.  You will not b
 for these facts but they are interesting: UNIX was intrinsically multiuser, share the hardware;
 DOS addressed a hardware limitation focusing on single-user processing for consumer-grade chips
 
-## Some future targets
+Conclusion: AT&T was [broken up](https://en.wikipedia.org/wiki/Modification_of_Final_Judgment)
 
-* We will establish accounts on a real "linux" system run by HSPH IT
+Maybe search for "how did the MFJ issued for AT&T affect its ability to continue bell 
+labs scientific research and operating system development"
+
+## Some future targets for the class
+
+* We will establish accounts on a linux system through GitHub code spaces (verify that you can start one from your GitHub IDE)
 * We will create portable software tools in a compiled language, possibly C and C++
 * We will learn how to use debuggers and profilers to identify errors and performance deficiencies
 
@@ -82,7 +87,7 @@ to simplify software that operates on them
     - .txt conveys very little information
 * markdown and json are formats that you should be comfortable with
 
-For specific recommendations we highly recommend you follow The [Tidyverse Style Guide](https://style.tidyverse.org/)
+For specific recommendations we recommend you follow The [Tidyverse Style Guide](https://style.tidyverse.org/)
 
 --- 
 
@@ -263,7 +268,7 @@ Command-line text editors are essential tools, especially for system administrat
 
 * `tar` - archive files and directories into one file.
 
-* `gzip` - and other compression tools - make big files small
+* `gzip`, `zstd` - and other compression tools - make big files small
 
 * `ssh` - connect to another computer.
 

@@ -62,45 +62,11 @@ If not installed
 
 ----
 
-## Motivation
-
-We want to avoid this:
-
-![Posted by rjkb041 on r/ProgrammerHumor](https://preview.redd.it/02o1a7v23qf71.jpg?auto=webp&s=bb61f40a88e2940e4f4b20a56640fcf12a7b1a39)
-
-----
-
-## Motivation
-
-* This is particularly difficult to manage when more than one person is collaborating and editing the file. 
-
-* Even more important when there are multiple files, as there is in software development, and to some extent data analysis.
-
-----
-
 ## Motivation 
 
 * Git is a version control system that provides a systematic approach to keeping versions of files. 
 
-![Posted on devrant.com/ by bhimanshukalra](https://img.devrant.com/devrant/rant/r_1840117_3JUPn.jpg)
-
-----
-
-## Motivation
-
-But we have to learn some things.
-
-![From Meme Git Compilation by Lulu Ilmaknun Qurotaini](https://miro.medium.com/v2/resize:fit:1200/format:webp/0*VcMPr1unIjAIHw2j.jpg)
-
-----
-
-:::{.callout-note}
-In these notes, I use `< >` to denote a placeholder. So if I say `<filename>` what you eventually type is the filename you want to use, without the `< >`
-:::
-
-----
-
-## Why use Git and GitHub?
+* GitHub uses git to foster 
 
 1. Sharing.
 
