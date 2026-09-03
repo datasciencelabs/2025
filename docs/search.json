@@ -2,9 +2,30 @@
   {
     "objectID": "psets2026/pset-02-poly-md.html",
     "href": "psets2026/pset-02-poly-md.html",
-    "title": "Problem set 2 (not finalized)",
+    "title": "Problem set 2",
     "section": "",
-    "text": "Scatterplots and polynomials\nThe anscombe dataset provided in R originates from a 1973 paper.\nWe will come back to this dataset for various purposes. Here we have some inelegant plotting code.\n\npar(mfrow=c(2,2), mar=c(4,2,1,1))\nwith(anscombe, plot(x1,y1,xlim=c(4,20), ylim=c(3,13)))\nwith(anscombe, plot(x2,y2,xlim=c(4,20), ylim=c(3,13)))\nwith(anscombe, plot(x3,y3,xlim=c(4,20), ylim=c(3,13)))\nwith(anscombe, plot(x4,y4,xlim=c(4,20), ylim=c(3,13)))\n\n\n\n\n\n\n\n\n\nCreate a markdown document “poly1.qmd”. In the yaml header, put title: poly1 and author: [your name]\nAdd the section heading # Anscombe plots and place the code chunk seen above in that section.\nAdd text after the plots that describes in words the purpose of the xlim and ylim settings.\nWe will now explore the role of polynomial functions in describing patterns seen in scatterplots.\n\n\nMarkdown setup\n\nAdd a new section heading # A polynomial function to model the Anscombe x2:y2 data\nDefine, in an r code chunk, the function q1 = function(x) -7 + 2.78*x -.127*x*x\nUse the following commands to produce a fresh plot of the anscombe x2, y2 vectors.\n\n\n\npar(mfrow=c(1,1))\nwith(anscombe, plot(x2,y2))\n\n\n\n\n\n\n\n\n\nExpand this chunk of code:\n\nProduce a new vector of “x values” newx = seq(4,14,.1)\nUse the lines command to add newx and q1(newx) to the x2:y2 plot\nDefine a function q2 similar to q1, for which the line traced by the values (newx, q2(newx)) “go through” the x2:y2 points.\nGive a mathematical explanation of the “defect” of q1 in “fitting” the x2:y2 pattern. Describe how you “repaired” the defect."
+    "text": "This problem set addresses basic operations in R.\nIf you use AI to help solve any problem, please provide information on 1) the model in use, 2) the prompt used to get help, 3) some comments on what you learned from the encounter.\nSolutions to this problem set should be submitted as quarto documents. Place the required file in your bst260 repository in folder “solutions” as “pset02.qmd” Use the title “BST 260 Problem set 2: Basics and polynomials”. Put your name as author."
+  },
+  {
+    "objectID": "psets2026/pset-02-poly-md.html#functions",
+    "href": "psets2026/pset-02-poly-md.html#functions",
+    "title": "Problem set 2",
+    "section": "Functions",
+    "text": "Functions\n\nAll actions in R occur with evaluation of functions.\nFunctions in R consist of a name, a body, and arguments. To create a function of one argument x that doubles its input, we can write\n\n\ndoub = function(x) 2*x\ndoub(5)\n\n[1] 10\n\n\nFunction calls can in certain cases be successfully composed.\n\ndoub(doub(5))\n\n[1] 20"
+  },
+  {
+    "objectID": "psets2026/pset-02-poly-md.html#vectors",
+    "href": "psets2026/pset-02-poly-md.html#vectors",
+    "title": "Problem set 2",
+    "section": "Vectors",
+    "text": "Vectors\nAn ordered collection of entities of a common type (typically numeric, character, or logical) is referred to as a “vector”. This is the simplest form of data in R.\n\nTypes\nVectors have “types”. The most important types are numeric, character, logical, and factor.\nWe will focus on numeric vectors in early problem sets.\nA good overview of vectors and data types is here; see also the course textbook.\n\n\nConstruction\n\nFunctions that make vectors\n\nOne way to create a vector is to use the c function, shorthand for “combine”.\nAnother way is with the seq function. The most commonly used arguments to seq are from, to, and by.\n\nExercise 1. Explain the result of evaluating: all.equal(c(1,2,3), seq(1,3,1))\nExercise 2. What is the length of the vector produced with seq(1,100,.5)? Show your code.\nArithmetic operations on vectors yield new vectors.\n\nc(1,2,3) + c(3,2,1)\n\n[1] 4 4 4\n\n\nSo do logical operations:\n\nc(1,2,3) &gt; c(3,2,1)\n\n[1] FALSE FALSE  TRUE\n\n\n\n\n\nThe recycling rule\nWhen a binary operation (arithmetic or logical) is performed on two vectors of unequal lengths, the shorter is “replicated” to the length of the longer.\n\nc(1,2,3) * 10\n\n[1] 10 20 30\n\n\nWe could say that this operation proceeded by copying 10 three times and then doing element-wise multiplication.\nExercise 3. Explain the result. What is its type?\n\nc(3,4,5,6) &gt; 4\n\n[1] FALSE FALSE  TRUE  TRUE"
+  },
+  {
+    "objectID": "psets2026/pset-02-poly-md.html#plotting",
+    "href": "psets2026/pset-02-poly-md.html#plotting",
+    "title": "Problem set 2",
+    "section": "Plotting",
+    "text": "Plotting\nBase R graphics are very simple and we will start with very simple approaches, focusing on scatterplots. For equal-length numeric vectors x and y, plot(x,y) produces a plot of y against x.\n\nx = seq(1,10,1)\ny = seq(10,1,-1)\nplot(x,y)\n\n\n\n\n\n\n\n\nWe can enhance an existing plot. For example, we can draw a line through the points produced above.\n\nplot(x,y)\nlines(x,y)\n\n\n\n\n\n\n\n\nWe can control margin size or graphic layout with par, as seen below."
   },
   {
     "objectID": "syllabus.html",
@@ -1458,7 +1479,7 @@
     "href": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-3",
     "title": "Parameters and Estimates",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4499903\n\nsd(x_hat) \n\n[1] 0.01583085"
+    "text": "A Monte Carlo simulation\n\nTo review, the theory tells us that \\(\\bar{X}\\) is approximately normally distributed, has expected value \\(p=\\) 0.45, and standard error \\(\\sqrt{p(1-p)/N}\\) = 0.0157321.\nThe simulation confirms this:\n\n\nmean(x_hat) \n\n[1] 0.4500759\n\nsd(x_hat) \n\n[1] 0.01571786"
   },
   {
     "objectID": "slides/inference/23-parameters-estimates.html#a-monte-carlo-simulation-4",
@@ -1752,7 +1773,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-9",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-09-02 07:00:24 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-09-02 11:00:24 GMT\""
+    "text": "The lubridate package\n\nThe lubridate package is also useful for dealing with times.\nIn base R, you can get the current time typing Sys.time().\nThe lubridate package provides a slightly more advanced function, now, that permits you to define the time zone:\n\n\nnow() \n\n[1] \"2026-09-02 20:47:06 EDT\"\n\nnow(\"GMT\") \n\n[1] \"2026-09-03 00:47:06 GMT\""
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-10",
@@ -1766,7 +1787,7 @@
     "href": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-11",
     "title": "Dates And Times",
     "section": "The lubridate package",
-    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 7\n\nnow() |&gt; minute() \n\n[1] 0\n\nnow() |&gt; second() \n\n[1] 24.60138"
+    "text": "The lubridate package\n\nWe can also extract hours, minutes, and seconds:\n\n\nnow() |&gt; hour() \n\n[1] 20\n\nnow() |&gt; minute() \n\n[1] 47\n\nnow() |&gt; second() \n\n[1] 6.048557"
   },
   {
     "objectID": "slides/wrangling/12-dates-and-times.html#the-lubridate-package-12",
@@ -2291,14 +2312,14 @@
     "href": "slides/ml/41-knn.html#over-training",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.858 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
+    "text": "Over-training\nCompare\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$train$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.859 \n\n\nto\n\ny_hat_knn &lt;- predict(knn_fit, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n   0.815"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-1",
     "href": "slides/ml/41-knn.html#over-training-1",
     "title": "k-nearest neighbors (knn)",
     "section": "Over-training",
-    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.995\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
+    "text": "Over-training\nCompare this:\n\nknn_fit_1 &lt;- knn3(y ~ ., data = mnist_27$train, k = 1) \ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$train, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$train$y)$overall[[\"Accuracy\"]] \n\n[1] 0.996\n\n\nto this:\n\ny_hat_knn_1 &lt;- predict(knn_fit_1, mnist_27$test, type = \"class\") \nconfusionMatrix(y_hat_knn_1, mnist_27$test$y)$overall[\"Accuracy\"] \n\nAccuracy \n    0.81 \n\n\n\nWe can see the over-fitting problem by plotting the decision rule boundaries produced by \\(p(\\mathbf{x})\\):"
   },
   {
     "objectID": "slides/ml/41-knn.html#over-training-2",
@@ -4916,7 +4937,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-2",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 265590 0.837\n 2 436637 0.784\n 3  43852 0.783\n 4 709658 0.764\n 5 787941 0.761\n 6 523821 0.759\n 7 296167 0.757\n 8 497958 0.754\n 9 384512 0.754\n10 765089 0.753\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.837."
+    "text": "Spurious correlation\n\nres &lt;- sim_data |&gt;  \n  group_by(group) |&gt;  \n  summarize(r = cor(x, y)) |&gt;  \n  arrange(desc(r)) \nres \n\n# A tibble: 1,000,000 × 2\n    group     r\n    &lt;int&gt; &lt;dbl&gt;\n 1 941247 0.857\n 2  43698 0.785\n 3 388676 0.781\n 4 999020 0.778\n 5 719240 0.775\n 6 526188 0.770\n 7 489071 0.769\n 8 930372 0.769\n 9 298238 0.764\n10 189555 0.760\n# ℹ 999,990 more rows\n\n\n\nWe see a maximum correlation of 0.857."
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-3",
@@ -4951,7 +4972,7 @@
     "href": "slides/linear-models/32-association-not-causation.html#spurious-correlation-7",
     "title": "Association Not Causation",
     "section": "Spurious correlation",
-    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic     p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1 x         1.02     0.139      7.34 0.000000183"
+    "text": "Spurious correlation\n\nlibrary(broom) \nsim_data |&gt;  \n  filter(group == res$group[which.max(res$r)]) |&gt; \n  reframe(tidy(lm(y ~ x))) |&gt;  \n  filter(term == \"x\") \n\n# A tibble: 1 × 5\n  term  estimate std.error statistic      p.value\n  &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n1 x         1.12     0.140      7.96 0.0000000462"
   },
   {
     "objectID": "slides/linear-models/32-association-not-causation.html#spurious-correlation-8",
@@ -6939,7 +6960,7 @@
     "href": "index.html",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit b62401e.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 8abfad8.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -6949,7 +6970,7 @@
     "href": "index.html#course-information",
     "title": "BST 260 Introduction to Data Science",
     "section": "",
-    "text": "Last built from commit b62401e.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
+    "text": "Last built from commit 8abfad8.\n\nInstructor: Vincent Carey\nTeaching fellows: Ethan Lee, Qianyu Fan, Gabrielle Gonzalez, Yiyang Zhang\nLocation: Kresge G1, HSPH\nDate and time: Mon & Wed 9:45 am - 11:15 am\nTextbooks: DS Book (Part 1), DS Book (Part 2)\nSlack: BST 260 Slack Workspace\nCanvas: Home Page\nGitHub: Course Repository\nRemember to read the syllabus",
     "crumbs": [
       "Home"
     ]
@@ -7019,7 +7040,7 @@
     "href": "psets2026.html",
     "title": "Problem Sets, Fall 2026",
     "section": "",
-    "text": "Topic\n\n\n\nDue date (at 11:59 PM)\n\n\n\n\n\n\n\n\nProblem set 1\n\n\nWed, Sep 02\n\n\n\n\n\n\nProblem set 2 (not finalized)\n\n\nFri, Sep 11\n\n\n\n\n\n\nNo matching items",
+    "text": "Topic\n\n\n\nDue date (at 11:59 PM)\n\n\n\n\n\n\n\n\nProblem set 1\n\n\nWed, Sep 02\n\n\n\n\n\n\nProblem set 2\n\n\nFri, Sep 11\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Problem Sets 2026"
     ]
@@ -7155,7 +7176,7 @@
     "href": "overview.html#take-home-tasks",
     "title": "Overview of BST 260 Introduction to Data Science",
     "section": "Take home tasks",
-    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit b62401e."
+    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 8abfad8."
   },
   {
     "objectID": "psets/pset-01-unix-quarto.html",
@@ -8078,7 +8099,7 @@
     "href": "slides/00-intro.html#take-home-tasks",
     "title": "Overview of BST 260 Introduction to Data Science",
     "section": "Take home tasks",
-    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit b62401e."
+    "text": "Take home tasks\n\ncreate repository `bst260’ in your organization (account)\ninvite teaching team as collaborators\ncreate folder ‘task-01’\nadd file README.md in that folder, with a header # Overview\n\nLast built from commit 8abfad8."
   },
   {
     "objectID": "slides/linear-models/31-treatment-effect-models.html#treatment-effect-models",
@@ -9646,7 +9667,7 @@
     "href": "slides/R/05-r-basics.html#setting-levels",
     "title": "R Basics",
     "section": "Setting Levels",
-    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Female Female Male   Male   Male   Male   Female Female\nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Female Female Male   Male   Male   Male   Female Female\nLevels: Female Male"
+    "text": "Setting Levels\n\nyou can set up the levels as you would like, when creating a factor\nif you do not set them up, then they will be created in lexicographic order (in the locale you are using)\n\n\nx = sample(c(\"Male\", \"Female\"), 50, replace =TRUE)\ny1 = factor(x, levels=c(\"Male\", \"Female\"))\ny2 = factor(x, levels = c(\"Female\", \"Male\"))\ny1[1:10]\n\n [1] Male   Female Male   Male   Male   Female Female Male   Male   Male  \nLevels: Male Female\n\ny2[1:10]\n\n [1] Male   Female Male   Male   Male   Female Female Male   Male   Male  \nLevels: Female Male"
   },
   {
     "objectID": "slides/R/05-r-basics.html#categories-based-on-strata",
@@ -9821,7 +9842,7 @@
     "href": "slides/R/05-r-basics.html#lexical-scope-1",
     "title": "R Basics",
     "section": "Lexical Scope",
-    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x1432aa5b0&gt;"
+    "text": "Lexical Scope\n\nwe can write some interesting functions - like a function that evaluates the log likelihood for any given set of data\nhere we use rexp to generate values from an Exponential distribution\nnotice that a function is returned and that R notes that it is a closure\n\n\nx = rexp(100, rate = 4)\n\nllExp = function(DATA) {\n   n = length(DATA)\n   sumx = sum(DATA)\n   return(function(mu) {n * log(mu) - mu * sumx})\n}\n\nmyLL = llExp(x)\nmyLL\n\nfunction (mu) \n{\n    n * log(mu) - mu * sumx\n}\n&lt;environment: 0x12e746c40&gt;"
   },
   {
     "objectID": "slides/R/05-r-basics.html#lexical-scope-example",
@@ -9933,7 +9954,7 @@
     "href": "slides/R/06-vectorization.html#vectorization-4",
     "title": "Vectorization",
     "section": "Vectorization",
-    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 68.96495 61.75875 66.12170 70.22318 70.01160 73.04884 66.90054 72.97885\n [9] 66.98889 69.91478"
+    "text": "Vectorization\n\nIf we operate on two vectors, vectorization is componentwise.\nHere is an example:\n\n\nheights &lt;- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)\nerror &lt;- rnorm(length(heights), 0, 0.1)\nheights + error\n\n [1] 69.00966 61.85295 65.89078 69.98638 69.81864 73.20553 67.10469 72.90475\n [9] 66.76724 69.92776"
   },
   {
     "objectID": "slides/R/06-vectorization.html#exercise",
@@ -12145,7 +12166,7 @@
     "href": "slides/inference/24-confidence-intervals.html#confidence-intervals-7",
     "title": "Confidence Intervals",
     "section": "Confidence intervals",
-    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4062567 0.4677433\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4430516 0.5049484\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
+    "text": "Confidence intervals\n\nAnd notice that the interval here:\n\n\nx &lt;- sample(c(0, 1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4012976 0.4627024\n\n\n\nis different from this one:\n\n\nx &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \nx_hat &lt;- mean(x) \nse_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \nc(x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n\n[1] 0.4390655 0.5009345\n\n\n\nKeep sampling and creating intervals, and you will see the random variation."
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#confidence-intervals-8",
@@ -12187,7 +12208,7 @@
     "href": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation",
     "title": "Confidence Intervals",
     "section": "A Monte Carlo simulation",
-    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9504"
+    "text": "A Monte Carlo simulation\n\nWe can run a Monte Carlo simulation to confirm that, in fact, a 95% confidence interval includes \\(p\\) 95% of the time.\n\n\nN &lt;- 1000 \nB &lt;- 10000 \ninside &lt;- replicate(B, { \n  x &lt;- sample(c(0,1), size = N, replace = TRUE, prob = c(1 - p, p)) \n  x_hat &lt;- mean(x) \n  se_hat &lt;- sqrt(x_hat*(1 - x_hat)/N) \n  between(p, x_hat - 1.96*se_hat, x_hat + 1.96*se_hat) \n}) \nmean(inside) \n\n[1] 0.9458"
   },
   {
     "objectID": "slides/inference/24-confidence-intervals.html#a-monte-carlo-simulation-1",

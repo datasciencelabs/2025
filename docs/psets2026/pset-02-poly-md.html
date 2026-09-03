@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-09-11">
 
-<title>Problem set 2 (not finalized) – DRAFT FOR 2026 fall of BST 260: Introduction to Data Science</title>
+<title>Problem set 2 – DRAFT FOR 2026 fall of BST 260: Introduction to Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem set 2 (not finalized)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Problem set 2</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +198,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#scatterplots-and-polynomials" id="toc-scatterplots-and-polynomials" class="nav-link active" data-scroll-target="#scatterplots-and-polynomials">Scatterplots and polynomials</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#review-of-key-r-concepts" id="toc-review-of-key-r-concepts" class="nav-link" data-scroll-target="#review-of-key-r-concepts">Review of key R concepts</a>
+  <ul class="collapse">
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a>
+  <ul class="collapse">
+  <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types">Types</a></li>
+  <li><a href="#construction" id="toc-construction" class="nav-link" data-scroll-target="#construction">Construction</a></li>
+  <li><a href="#the-recycling-rule" id="toc-the-recycling-rule" class="nav-link" data-scroll-target="#the-recycling-rule">The recycling rule</a></li>
+  </ul></li>
+  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
+  </ul></li>
+  <li><a href="#scatterplots-and-polynomials" id="toc-scatterplots-and-polynomials" class="nav-link" data-scroll-target="#scatterplots-and-polynomials">Scatterplots and polynomials</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/vjcitn/2026vjc/blob/main/psets2026/pset-02-poly-md.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -207,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem set 2 (not finalized)</h1>
+<h1 class="title">Problem set 2</h1>
 </div>
 
 
@@ -230,16 +242,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>This problem set addresses basic operations in R.</p>
+<p>If you use AI to help solve any problem, please provide information on 1) the model in use, 2) the prompt used to get help, 3) some comments on what you learned from the encounter.</p>
+<p>Solutions to this problem set should be submitted as quarto documents. Place the required file in your bst260 repository in folder “solutions” as “pset02.qmd” Use the title “BST 260 Problem set 2: Basics and polynomials”. Put your name as author.</p>
+</section>
+<section id="review-of-key-r-concepts" class="level1">
+<h1>Review of key R concepts</h1>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<ul>
+<li><p>All actions in R occur with evaluation of <strong>functions</strong>.</p></li>
+<li><p>Functions in R consist of a name, a body, and arguments. To create a function of one argument x that doubles its input, we can write</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>doub <span class="ot">=</span> <span class="cf">function</span>(x) <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">doub</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<p>Function calls can in certain cases be successfully composed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">doub</span>(<span class="fu">doub</span>(<span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+</section>
+<section id="vectors" class="level2">
+<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
+<p>An ordered collection of entities of a common type (typically numeric, character, or logical) is referred to as a “vector”. This is the simplest form of data in R.</p>
+<section id="types" class="level3">
+<h3 class="anchored" data-anchor-id="types">Types</h3>
+<p>Vectors have “types”. The most important types are numeric, character, logical, and factor.</p>
+<p>We will focus on numeric vectors in early problem sets.</p>
+<p>A good overview of vectors and data types is <a href="https://seandavi.github.io/RBiocBook/vectors.html">here</a>; see also <a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/R/R-basics.html#data-types">the course textbook</a>.</p>
+</section>
+<section id="construction" class="level3">
+<h3 class="anchored" data-anchor-id="construction">Construction</h3>
+<section id="functions-that-make-vectors" class="level4">
+<h4 class="anchored" data-anchor-id="functions-that-make-vectors">Functions that make vectors</h4>
+<ul>
+<li><p>One way to create a vector is to use the <code>c</code> function, shorthand for “combine”.</p></li>
+<li><p>Another way is with the <code>seq</code> function. The most commonly used arguments to <code>seq</code> are <code>from</code>, <code>to</code>, and <code>by</code>.</p></li>
+</ul>
+<p><strong>Exercise 1.</strong> Explain the result of evaluating: <code>all.equal(c(1,2,3), seq(1,3,1))</code></p>
+<p><strong>Exercise 2.</strong> What is the length of the vector produced with <code>seq(1,100,.5)</code>? Show your code.</p>
+<p>Arithmetic operations on vectors yield new vectors.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 4 4</code></pre>
+</div>
+</div>
+<p>So do logical operations:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE  TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="the-recycling-rule" class="level3">
+<h3 class="anchored" data-anchor-id="the-recycling-rule">The recycling rule</h3>
+<p>When a binary operation (arithmetic or logical) is performed on two vectors of unequal lengths, the shorter is “replicated” to the length of the longer.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">*</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10 20 30</code></pre>
+</div>
+</div>
+<p>We could say that this operation proceeded by copying 10 three times and then doing element-wise multiplication.</p>
+<p><strong>Exercise 3.</strong> Explain the result. What is its type?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>) <span class="sc">&gt;</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE  TRUE  TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="plotting" class="level2">
+<h2 class="anchored" data-anchor-id="plotting">Plotting</h2>
+<p>Base R graphics are very simple and we will start with very simple approaches, focusing on scatterplots. For equal-length numeric vectors x and y, plot(x,y) produces a plot of y against x.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pset-02-poly-md_files/figure-html/lkpl1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can enhance an existing plot. For example, we can draw a line through the points produced above.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="pset-02-poly-md_files/figure-html/lkpl2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can control margin size or graphic layout with <code>par</code>, as seen below.</p>
+</section>
+</section>
 <section id="scatterplots-and-polynomials" class="level1">
 <h1>Scatterplots and polynomials</h1>
 <p>The <code>anscombe</code> dataset provided in R originates from a <a href="https://hollis.harvard.edu/permalink/01HVD_INST/726dgh/cdi_jstor_primary_10_2307_2682899">1973 paper</a>.</p>
 <p>We will come back to this dataset for various purposes. Here we have some inelegant plotting code.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x1,y1,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x2,y2,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x3,y3,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x4,y4,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x1,y1,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x2,y2,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x3,y3,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x4,y4,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">20</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">13</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -248,23 +373,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<ol type="1">
-<li><p>Create a markdown document “poly1.qmd”. In the yaml header, put title: poly1 and author: [your name]</p></li>
-<li><p>Add the section heading <code># Anscombe plots</code> and place the code chunk seen above in that section.</p></li>
-<li><p>Add text after the plots that describes in words the purpose of the xlim and ylim settings.</p></li>
-<li><p>We will now explore the role of polynomial functions in describing patterns seen in scatterplots.</p></li>
-</ol>
+<p><strong>Exercise 4.</strong> Add a section heading <code># Anscombe plots</code> and place the code chunk seen above in that section.</p>
+<p><strong>Exercise 5.</strong> Add text after the plots that describes in words the purpose of the xlim and ylim settings.</p>
+<p><strong>Exercise 6</strong>. We will now explore the role of polynomial functions in describing patterns seen in scatterplots.</p>
 <ul>
 <li><p>Markdown setup</p>
 <ul>
-<li><p>Add a new section heading <code># A polynomial function to model the Anscombe x2:y2 data</code></p></li>
+<li><p>Add a new subsection heading <code>## A polynomial function to model the Anscombe x2:y2 data</code></p></li>
 <li><p>Define, in an r code chunk, the function <code>q1 = function(x) -7 + 2.78*x -.127*x*x</code></p></li>
 <li><p>Use the following commands to produce a fresh plot of the anscombe x2, y2 vectors.</p></li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x2,y2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(anscombe, <span class="fu">plot</span>(x2,y2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -277,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Expand this chunk of code:</p>
 <ul>
 <li><p>Produce a new vector of “x values” <code>newx = seq(4,14,.1)</code></p></li>
-<li><p>Use the lines command to add newx and q1(newx) to the x2:y2 plot</p></li>
+<li><p>Use the <code>lines</code> command to add newx and q1(newx) to the x2:y2 plot</p></li>
 <li><p>Define a function q2 similar to q1, for which the line traced by the values <code>(newx, q2(newx))</code> “go through” the x2:y2 points.</p></li>
 <li><p>Give a mathematical explanation of the “defect” of q1 in “fitting” the x2:y2 pattern. Describe how you “repaired” the defect.</p></li>
 </ul></li>
